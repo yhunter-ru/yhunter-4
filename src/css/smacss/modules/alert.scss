@@ -1,0 +1,30 @@
+/* Alerts mixin */
+
+%alert {
+    position: relative;
+    
+}
+
+.alert {
+
+    @each $name, $color in $alerts {
+        &-#{$name} {
+
+            @extend %alert;
+            background-color: $color !important;
+            padding: 2*$hem;
+            
+            //border: 2px darken($color, 50) solid;
+            color: darken($color, 50);
+            text-align: center;
+            //@include border-radius($hem);
+
+
+        }    
+    }  
+}  
+
+
+    
+
+/* Alerts mixin end */

@@ -1,0 +1,9 @@
+/* Grid with empty spaces before its cells */
+
+.gpad {
+	$cols: (6);
+	$max-col: 12;
+	$align: "left";
+	@include grid-padding(768px,$cols,$max-col, $align);
+
+}

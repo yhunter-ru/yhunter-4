@@ -1,0 +1,62 @@
+/* Grid */
+
+.row {
+	clear: both;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.wrapper {
+	width: 100%;
+	padding: $hem*2;
+	box-sizing:  border-box; 
+	line-height: 1.5rem;
+	max-width: 1600px; 
+	overflow: hidden; // Предотрващает расползание перед FadeIn
+}
+
+.wide {
+	width: 100%;
+	overflow: hidden;
+	display: block;
+}
+
+li ol, li ul {
+	padding-left: $hem*5;
+}
+
+.centered {
+	margin: 0 auto !important;
+	float: none !important;
+}
+
+.no-more-space {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.margin0 {
+	margin: 0 !important;
+	}
+
+.padding0 {
+	padding: 0 !important;
+}
+
+@media only screen and (min-width: 768px) {
+
+
+	.wrapper {width: 90%; margin: 0 auto; padding: $hem*2;}
+
+	
+	/* Grid Desktop  */
+
+	.row {margin-right: $aHem; margin-left: $aHem;}		
+	
+	.colRight {float: right !important;}
+
+
+	/* Grid Desktop end */
+	
+}

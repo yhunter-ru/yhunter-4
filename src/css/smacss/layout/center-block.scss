@@ -1,0 +1,15 @@
+/* Centered block */
+
+
+@media only screen and (min-width: 768px) {
+	.ct-block {
+
+		  position: relative;
+		  @include center-block(30%);
+		  padding: 50px;
+		  top: 50%;
+		  transform: translateY(-50%);
+	}
+}	
+	
+/* Centered block end */

@@ -1,0 +1,147 @@
+/* Grid Mobile First */
+
+.row {clear: both; display: block; position: relative; overflow: hidden; }
+
+
+.col { 
+
+	$cols: (1,2,3,4,5,6,7,8,9,10,11,12);
+	$max-col: 12;
+	$col-options: (
+		padding: $hem*2
+	);
+	
+	@include mobile-grid(0,$cols,$max-col, $col-options);	
+	@include adaptive-grid(768px,$cols,$max-col, $col-options);
+
+}
+
+
+.mcol {
+
+	$cols: (3);
+	$max-col: 6;
+	$col-options: (
+		padding: 0
+	);
+
+
+	@include adaptive-grid(0,$cols,$max-col, $col-options);
+	@include mobile-grid(768px,$cols,$max-col, $col-options);
+
+}
+
+.gpad {
+	$cols: (6);
+	$max-col: 12;
+	$align: "left";
+	@include grid-padding(768px,$cols,$max-col, $align);
+
+}
+
+
+/* Grid Mobile First end */
+
+
+
+.wrapper {width: 100%; padding: $hem*2; box-sizing:  border-box; 
+line-height: 1.5rem;
+max-width: 1600px; 
+overflow: hidden; // Предотрващает расползание перед FadeIn
+
+}
+
+.wide {width: 100%; overflow: hidden; display: block;}
+
+li ol, li ul {padding-left: $hem*5;}
+
+.centered {margin: 0 auto !important; float: none !important;}
+
+.no-more-space {padding: 0 !important; margin: 0 !important;}
+.margin0 {margin: 0 !important;}
+.padding0 {padding: 0 !important;}
+
+/* Centered block */
+
+
+@media only screen and (min-width: 768px) {
+	.ct-block {
+
+		  position: relative;
+		  @include center-block(30%);
+		  padding: 50px;
+		  top: 50%;
+		  transform: translateY(-50%);
+	}
+}	
+	
+/* Centered block end */
+
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 768px) {
+
+
+	.wrapper {width: 90%; margin: 0 auto; padding: $hem*2;}
+
+	
+	/* Grid Desktop  */
+
+	.row {margin-right: 0; margin-left: 0;}		
+	
+	.colRight {float: right !important;}
+
+
+	/* Grid Desktop end */
+	
+}
+
+
+/* Clear */
+
+/**
+ * 9.0 Clearings
+ */
+
+.clear:before,
+.clear:after,
+.site:before,
+.site:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-content:before,
+.site-content:after,
+.nav-links:before,
+.nav-links:after,
+.comment-navigation:before,
+.comment-navigation:after,
+.social-navigation ul:before,
+.social-navigation ul:after,
+.textwidget:before,
+.textwidget:after {
+    content: "";
+    display: table;
+}
+
+.clear:after,
+.site:after,
+.entry-content:after,
+.comment-content:after,
+.site-content:after,
+.nav-links:after,
+.comment-navigation:after,
+.social-navigation ul:after,
+.textwidget:after {
+    clear: both;
+}
+
+
+/* Clear end */

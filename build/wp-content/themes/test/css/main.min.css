@@ -1,0 +1,610 @@
+@charset "UTF-8";
+/* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html┬а*/
+/* ╨║╨╛╨╜╨╡╤Ж ╨╝╨░╤Б╤И╤В╨░╨▒╨╕╤А╨╛╨▓╨░╨╜╨╕╤П┬а*/
+/* Em values to Px values */
+/* Em values to Px values end */
+/* Px values to Em values */
+/* Px values to Em values end */
+/* Rem Crossbrowser */
+/* Rem Crossbrowser end */
+/* Radius mixin */
+/* base┬а*/
+body {
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+/* layout┬а*/
+/* modules┬а*/
+/* Menu */
+nav {
+  margin: 0;
+  background: none;
+  display: block;
+  background: #fff; }
+
+.menu {
+  display: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  /* menu align */ }
+  .menu li {
+    display: block;
+    margin: 0;
+    text-align: left; }
+    .menu li a {
+      display: block;
+      font-weight: 600;
+      line-height: 3em !important;
+      padding: 0 0.5rem;
+      color: #1ab752;
+      -webkit-transition: all 0.2s ease-in-out 0s;
+      transition: all 0.2s ease-in-out 0s; }
+    .menu li:hover > a {
+      background: #1ab752;
+      color: #fff;
+      background: #1ab752; }
+    .menu li:hover ul {
+      display: block;
+      opacity: 1 !important;
+      visibility: visible !important; }
+    .menu li:first-child {
+      margin-left: 0; }
+  .menu ul {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0; }
+    .menu ul li {
+      display: block;
+      float: none;
+      background: none;
+      margin: 0;
+      padding: 0; }
+      .menu ul li a {
+        font-weight: normal;
+        display: block;
+        color: #797979;
+        border-left: 3px solid;
+        background: #efefef; }
+      .menu ul li:hover > a {
+        background: #efefef;
+        border-left: 3px solid #1ab752;
+        color: #797979; }
+    .menu ul ul {
+      left: 0;
+      padding: 0;
+      margin: 0; }
+
+.mobile-menu {
+  display: block;
+  line-height: 3rem;
+  padding: 0 0.5em;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+a.mobile-menu {
+  color: #1ab752 !important; }
+
+@media (min-width: 768px) {
+  nav {
+    background: #111; }
+
+  .FixedNav {
+    position: fixed;
+    z-index: 100;
+    width: 100%; }
+
+  .mainWrap {
+    width: 768px; }
+
+  .menu {
+    display: block !important; }
+    .menu ul {
+      background: #fff;
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 150px !important;
+      position: absolute !important;
+      top: 4em !important;
+      left: 0px !important;
+      line-height: 1em !important;
+      -webkit-transition: all 0.5s ease-in-out 0s;
+      transition: all 0.5s ease-in-out 0s; }
+      .menu ul li {
+        width: 100%; }
+        .menu ul li ul {
+          left: 149px !important;
+          top: 0px !important; }
+    .menu li {
+      display: inline-block !important;
+      position: relative !important;
+      z-index: 100 !important; }
+    .menu li a {
+      font-size: 1em;
+      line-height: 4em !important;
+      display: block !important; }
+
+  .mobile-menu {
+    display: none !important; } }
+/* end of menu */
+/* Pagination starts */
+.navigator {
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  position: relative; }
+  .navigator .page-numbers {
+    padding-left: 0; }
+  .navigator .page-numbers li {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    border: 1px #efefef solid;
+    border-radius: 0.25rem; }
+    .navigator .page-numbers li a {
+      display: block;
+      color: #319BDE;
+      background: #efefef;
+      line-height: 2rem;
+      min-width: 2rem; }
+  .navigator .prev {
+    display: inline-block;
+    left: 0;
+    width: 2rem;
+    height: 2rem; }
+  .navigator .prev:before {
+    content: "\2190";
+    display: inline-block;
+    clear: both;
+    position: relative; }
+  .navigator .next:before {
+    content: "\2192";
+    display: inline-block;
+    clear: both;
+    position: relative; }
+  .navigator .next {
+    display: inline-block;
+    right: 0;
+    width: 2rem;
+    height: 2rem; }
+  .navigator .current {
+    display: block;
+    color: #111;
+    line-height: 2rem;
+    min-width: 2rem;
+    background: none !important;
+    font-weight: bold; }
+
+/* Pagination  end */
+/* Forms */
+.forms input {
+  width: 60%;
+  margin: 0 auto;
+  display: block; }
+
+input, textarea, select {
+  line-height: 2em;
+  color: #111;
+  padding: 0 0.5rem;
+  border: 2px #1ab752 solid;
+  clear: both;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px !important; }
+
+select {
+  height: 2.5rem; }
+
+label {
+  margin: 0.5rem 0 0 0;
+  width: 100%;
+  clear: both; }
+
+textarea {
+  height: 5em;
+  margin: 0 auto;
+  display: block; }
+
+.count {
+  width: 2em !important;
+  display: inline !important;
+  margin: 0 0.5em !important;
+  text-align: center; }
+
+input[type="submit"] {
+  margin: 0 !important;
+  width: auto; }
+
+input[type="file"] {
+  line-height: 1;
+  padding: 0.5rem 0; }
+
+input[type="checkbox"], input[type="radio"] {
+  display: inline-block;
+  width: auto;
+  clear: none; }
+
+.wpcf7-list-item span {
+  margin-right: 1rem; }
+
+input[type="file"] {
+  border: none; }
+
+/* Forms end */
+/* Meta┬аtags */
+.meta {
+  clear: both;
+  width: 100%; }
+  .meta ul {
+    display: inline-block;
+    padding: 0 1rem 0 0.5rem; }
+    .meta ul li {
+      display: inline-block;
+      line-height: 2rem;
+      padding: 0 0.5rem;
+      background: #efefef;
+      border-radius: 0.25rem; }
+
+/* Meta tags end┬а*/
+/* Accordeon */
+.ask {
+  color: #1ab752 !important;
+  cursor: pointer;
+  border-bottom: 1px #1ab752 dashed;
+  display: inline; }
+
+.accordeon-item {
+  padding: 0.5rem 0; }
+
+/* Accordeon end */
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+    text-shadow: none !important; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+/**
+ * Featherlight Gallery тАУ an extension for the ultra slim jQuery lightbox
+ * Version 1.3.4 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2015, No├лl Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+@media all {
+  .featherlight-next,
+  .featherlight-previous {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 80%;
+    cursor: pointer;
+    /* preventing text selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* IE9 hack, otherwise navigation doesn't appear */
+    background: transparent;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+    opacity: 0; }
+
+  .featherlight-previous {
+    left: 0;
+    right: 80%; }
+
+  .featherlight-previous:hover {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;0.3+0,0+100 */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    /* FF3.6+ */
+    /* Chrome,Safari4+ */
+    /* Chrome10+,Safari5.1+ */
+    /* Opera 11.10+ */
+    /* IE10+ */
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), to(transparent));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d000000', endColorstr='#00000000',GradientType=1 );
+    /* IE6-8 */
+    opacity: 1; }
+
+  .featherlight-next:hover {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;0+0,0.3+100 */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4zIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    /* FF3.6+ */
+    /* Chrome,Safari4+ */
+    /* Chrome10+,Safari5.1+ */
+    /* Opera 11.10+ */
+    /* IE10+ */
+    background: -webkit-gradient(linear, left top, right top, from(transparent), to(rgba(0, 0, 0, 0.3)));
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#4d000000',GradientType=1 );
+    /* IE6-8 */
+    opacity: 1; }
+
+  .featherlight-next span,
+  .featherlight-previous span {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 82%;
+    /* center horizontally */
+    text-align: center;
+    font-size: 80px;
+    line-height: 80px;
+    /* center vertically */
+    margin-top: -40px;
+    color: #fff;
+    font-style: normal;
+    font-weight: normal; }
+
+  .featherlight-next span {
+    right: 5%;
+    left: auto; }
+
+  .featherlight-next:hover span,
+  .featherlight-previous:hover span {
+    display: inline-block; }
+
+  /* Hide navigation while loading */
+  .featherlight-loading .featherlight-previous, .featherlight-loading .featherlight-next {
+    display: none; } }
+/* Always display arrows on touch devices */
+@media only screen and (max-device-width: 1024px) {
+  .featherlight-next:hover,
+  .featherlight-previous:hover {
+    background: none; }
+
+  .featherlight-next span,
+  .featherlight-previous span {
+    display: block; } }
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+  .featherlight-next,
+  .featherlight-previous {
+    top: 0;
+    right: 0;
+    left: 85%; }
+
+  .featherlight-previous {
+    left: 0;
+    right: 85%; }
+
+  .featherlight-next span,
+  .featherlight-previous span {
+    margin-top: -30px;
+    font-size: 40px; } }
+/**
+ * Featherlight тАУ ultra slim jQuery lightbox
+ * Version 1.3.4 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2015, No├лl Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+@media all {
+  .featherlight {
+    display: none;
+    /* dimensions: spanning the background from edge to edge */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2147483647;
+    /* z-index needs to be >= elements on the site. */
+    /* position: centering content */
+    text-align: center;
+    /* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
+    white-space: nowrap;
+    /* styling */
+    cursor: pointer;
+    background: #333;
+    /* IE8 "hack" for nested featherlights */
+    background: transparent; }
+
+  /* support for nested featherlights. Does not work in IE8 (use JS to fix) */
+  .featherlight:last-of-type {
+    background: rgba(0, 0, 0, 0.8); }
+
+  .featherlight:before {
+    /* position: trick to center content vertically */
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; }
+
+  .featherlight .featherlight-content {
+    /* make content container for positioned elements (close button) */
+    position: relative;
+    /* position: centering vertical and horizontal */
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    /* dimensions: cut off images */
+    overflow: hidden;
+    padding: 0;
+    /* dimensions: handling small or empty content */
+    min-width: 30%;
+    /* dimensions: handling large content */
+    margin-left: 5%;
+    margin-right: 5%;
+    max-height: 95%;
+    /* styling */
+    background: #fff;
+    cursor: auto;
+    /* reset white-space wrapping */
+    white-space: normal; }
+
+  /* contains the content */
+  .featherlight .featherlight-inner {
+    /* make sure its visible */
+    display: block; }
+
+  .featherlight .featherlight-close-icon {
+    /* position: centering vertical and horizontal */
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    /* dimensions: 25px x 25px */
+    line-height: 25px;
+    width: 25px;
+    /* styling */
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    /* Set the background in case it overlaps the content */
+    background: rgba(255, 255, 255, 0.3);
+    color: #000; }
+
+  .featherlight .featherlight-image {
+    /* styling */
+    width: 100%; }
+
+  .featherlight-iframe .featherlight-content {
+    /* removed the border for image croping since iframe is edge to edge */
+    border-bottom: 0;
+    padding: 0; }
+
+  .featherlight iframe {
+    /* styling */
+    border: none; } }
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+  .featherlight .featherlight-content {
+    /* dimensions: maximize lightbox with for small screens */
+    margin-left: 0;
+    margin-right: 0;
+    max-height: 98%; } }
+/* states┬а*/
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+.invisible {
+  visibility: hidden; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/* Fade in viewportchecker */
+.jump-left {
+  position: relative;
+  left: -100%;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+  opacity: 0; }
+
+.jump-right {
+  position: relative;
+  right: -100%;
+  -webkit-transition: all 0.8s ease-in-out 0s;
+  transition: all 0.8s ease-in-out 0s;
+  opacity: 0; }
+
+.left-show {
+  left: 0 !important;
+  opacity: 1; }
+
+.right-show {
+  right: 0 !important;
+  opacity: 1; }
+
+/* Fade in end */
+/* theme┬а*/
+body {
+  scroll-behavior: smooth; }

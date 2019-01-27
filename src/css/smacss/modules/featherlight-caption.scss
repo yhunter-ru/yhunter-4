@@ -1,0 +1,39 @@
+/* Featherlight Caption */
+
+.featherlight-content {text-align: center !important;}
+.caption {
+	display: inline-block; 
+	color: color(light);
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	padding: 6*$hem 0 0 0;
+	line-height: 4*$hem;
+	
+	opacity: 0.7;
+	
+
+	
+	
+	
+	&:hover {		
+		
+		div {
+			opacity: 0;
+			
+			position: relative;
+		}
+	}
+
+	div {
+		display: inline-block;
+		background: color(txt);
+		padding: 0 1.5*$hem;
+		@include transit();
+		
+		
+	}
+}
+
+/* Featherlight Caption end */

@@ -1,0 +1,36 @@
+$grid: (
+    cols: repeat(12, 1fr) 2fr,
+    row-gap: 8px,
+    col-gap: 16px
+);
+
+.grid {
+    //  create grid 
+    @include grid($grid); 
+    max-width: 80%;
+    margin-left : auto;
+    margin-right: auto; 
+    box-sizing: border-box;   
+}
+
+.cell {
+    background: #ccc;
+}
+
+.cell-1 {
+    @include grid-column(1,2);
+    @include grid-row(1,1); 
+}
+.cell-2 {
+    @include grid-column(3,2);
+    @include grid-row(1,2);  
+}
+
+.cell-3 {
+    @include grid-column(5,9);
+    @include grid-row(1,2); 
+}
+
+.grid .grid {
+    max-width: 100%;
+}

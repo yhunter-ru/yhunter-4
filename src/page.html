@@ -1,0 +1,22 @@
+<!-- build:theme --><?php get_header();?><!-- endbuild --><!-- build:html -->[snp tpl="header.html" ]<!-- endbuild -->
+
+<!-- build:theme -->
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); // Начало цикла ?>
+<h1><?php the_title(); // Заголовок ?></h1>
+<?php the_content(); // Содержимое страницы ?>
+<?php endwhile; // Конец цикла ?>     
+<!-- endbuild -->
+
+
+
+<!-- build:theme -->
+<?php get_sidebar(); // Подключаем сайдбар ?>
+<!-- endbuild -->
+
+<!-- build:theme -->
+<?php get_footer(); // Подключаем футер ?>
+<!-- endbuild -->
+
+<!-- build:html -->
+[snp tpl="footer.html" ]
+<!-- endbuild -->

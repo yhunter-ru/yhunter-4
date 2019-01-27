@@ -1,0 +1,40 @@
+%btn {
+        display: inline-block;
+        text-decoration: none;
+
+        line-height: 3rem; 
+        padding: 0 1.5rem 0 1.5rem;
+        font-size: 1.2rem;
+        
+        @include border-radius($r);
+        
+        color: color(light) !important;
+        border: none;
+        margin-bottom: $fs - $fs/16;
+        
+        
+        position: relative;
+
+        @include transit(all, 0.2s, ease-in-out, 0s);
+        
+
+    }
+
+
+
+ .btn {
+    @each $name, $color in $btn-colors {
+        &-#{$name} {
+            @extend %btn;
+            background-color: $color;
+            @include shadow(0px, $fs / 4, 0px, darken($color, 20%));
+            &:hover{
+                transform: translate(0px,$fs / 4);
+                -webkit-transform: translate(0px,$fs / 4);
+                
+                @include shadow(0px, $fs/16, 0px, darken($color, 20%));
+            }
+
+        }
+    }    
+ }  

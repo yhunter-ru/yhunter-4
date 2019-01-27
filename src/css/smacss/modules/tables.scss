@@ -1,0 +1,45 @@
+/* Tables */
+
+.table {width: 100%; position: relative; 
+margin: 0.5rem, 0, 0.5rem, 0;
+}
+.table {
+	
+
+	thead {font-weight: bold; text-align: left;}
+	/*thead th:first-child {text-align: center;}*/
+	tr  {border-bottom: 1px color(lines) solid;}
+	thead {border-bottom: 1px color(lines) solid; }
+	tr:last-child {border-bottom: none;}
+	tr td {padding: $fs $fs $fs - 1 $fs;}
+	thead th {padding: $fs $fs $fs $fs;}
+	
+	caption {text-align: left; color: color(sub-header); 
+	font-size: 1.333rem;
+	line-height: 1.5rem;
+	margin: 0, 0, 0.5rem, 0;	
+
+	}
+}
+
+.striped {
+        tbody tr:nth-of-type(odd) {
+            background-color: color(bg);
+        }
+}
+
+.bordered {
+
+        th, td  {border: 1px color(lines) solid;}
+        thead th {padding: $fs - 1 $fs $fs - 1 $fs;}
+ }
+
+.responsive {
+    min-height: .01%;
+    overflow-x: auto;
+
+}
+
+
+
+/* Tables end */

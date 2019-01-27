@@ -1,0 +1,549 @@
+/* Menu */
+
+
+nav{
+	margin:0;
+	background:none;
+	display:block;
+	background: color(nav, BG2);	
+}
+
+
+.menu{
+		display:none;
+		padding: 0;
+		margin: 0;
+		text-align: right; /* menu align */
+	
+
+		li {
+			display:block;
+			margin:0;
+			text-align: left;
+			
+			a {
+				
+				display: block;
+				font-weight:600;
+				line-height: 3em !important;
+				padding:0 $hem;
+				
+
+				color: color(nav, links);
+
+			    @include transit(all, 0.2s, ease-in-out, 0s);
+			}
+
+			&:hover > a{
+				background: color(nav, HBG);
+				
+				
+				color: color(nav, hover);
+				background: color(nav, HBG);
+				
+			}	
+
+			&:hover ul {
+				display: block !important;
+			}
+
+			&:first-child {
+				margin-left:0;
+			}
+		}
+
+		ul {
+			display:block;
+			position:relative;
+			top:0;
+			left:0;
+			width:100%;
+			padding: 0; margin: 0;
+			
+			li  {
+					display:block;
+					float: none;
+					background:none;
+					margin:0;
+					padding:0;
+
+					a {
+						
+						font-weight:normal;
+						display:block;
+						color: color(nav, SubLinks);
+						border-left:3px solid color(nav, NavBG3);
+						background: color(nav, BG3);
+					}
+
+					&:hover > a {
+						
+						background: color(bg);
+						border-left:3px solid color(nav, HBG);
+						color: color(nav, SubLinks);
+
+					}
+
+			}
+
+
+			ul {
+				left:0;
+				padding: 0;
+				margin: 0;
+				
+				
+				li > a {
+					
+					
+					
+				}
+
+				li:hover > a {}
+
+			}
+		}	
+	
+	}
+
+
+.mobile-menu{
+
+	display:block;
+    line-height: $hem*6;
+    padding: 0 0.5em;
+    text-align: right;
+
+	//background: color(nav, BG1);
+	text-transform:uppercase;
+	font-weight:600;
+}
+
+a.mobile-menu {color: color(nav, links) !important;}
+
+a.mobile-menu:hover {
+
+}
+
+
+@media (min-width: 768px) {
+
+	nav {background: color(nav, BG1);}   
+	.FixedNav {position: fixed;  z-index: 100; width: 100%;}
+
+	.mainWrap{width:768px;}
+
+	.menu {
+		display: block !important;
+		
+
+				ul {
+					
+					background: color(nav, BG2);
+					display: none;
+					margin: 0 !important;
+					padding: 0 !important;
+					width: 150px !important;
+					position: absolute !important;
+					top: 4em !important;
+					left: 0px !important;
+					line-height: 1em !important;
+					
+					li {
+						width: 100%;
+						
+						ul {
+					    	left: 149px !important;
+					    	top: 0px !important;
+						}
+					}
+
+					
+				
+
+				}
+
+				li {
+					display: inline-block !important;
+					position: relative !important;
+					z-index:100 !important;
+				}
+
+				li a {
+					font-size:1em;
+					line-height: 4em !important;
+					display:block !important;
+				}
+
+		}
+
+
+	.mobile-menu {display: none !important;}
+
+
+}
+/* end of menu */
+
+
+
+/* Buttons */
+
+%btn {
+        display: inline-block;
+        text-decoration: none;
+
+        line-height: 3rem; 
+        padding: 0, 1.5rem, 0, 1.5rem;
+        font-size: 1.2rem;
+        
+        @include border-radius($hem);
+        
+        color: color(light) !important;
+        border: none;
+        margin-bottom: $fs - $fs/16;
+        
+        
+        position: relative;
+
+        @include transit(all, 0.2s, ease-in-out, 0s);
+        
+
+    }
+
+
+
+ .btn {
+    @each $name, $color in $btn-colors {
+        &-#{$name} {
+            @extend %btn;
+            background-color: $color;
+            @include shadow(0px, $fs / 4, 0px, darken($color, 20%));
+            &:hover{
+                transform: translate(0px,$fs / 4);
+                -webkit-transform: translate(0px,$fs / 4);
+                
+                @include shadow(0px, $fs/16, 0px, darken($color, 20%));
+            }
+
+        }
+    }    
+ }  
+ 
+ .btn-ghost {
+ 	
+ 		display: inline-block;
+        text-decoration: none;
+        color: color(ghost) !important;
+        @include border-radius($hem);
+        border:1px color(ghost) solid;
+        
+        line-height: 3rem; 
+        padding: 0, 1.5rem, 0, 1.5rem;
+        font-size: 1.2rem;
+        
+        &:hover {
+        	background: color(ghost-hover);
+        }
+        
+
+ }
+
+ %btn-ft {
+        display: inline-block;
+        text-decoration: none;
+
+        line-height: 3rem; 
+        padding: 0, 1.5rem, 0, 1.5rem;
+        font-size: 1.2rem;
+        @include border-radius($hem);
+        
+        color: color(light) !important;
+        border: none;
+        
+        
+        
+        position: relative;
+
+        @include transit(all, 0.2s, ease-in-out, 0s);
+        
+
+    }
+
+ .btn-ft {
+ 	@each $name, $color in $btn-colors {
+        &-#{$name} {
+            @extend %btn;
+            background-color: $color;
+            
+            &:hover{
+                
+               background-color: lighten($color, 10); 
+                
+            }
+
+        }
+    }
+
+ }
+
+
+/* Buttons end */
+
+
+/* Alerts mixin */
+
+%alert {
+    position: relative;
+    
+}
+
+.alert {
+
+    @each $name, $color in $alerts {
+        &-#{$name} {
+
+            @extend %alert;
+            background-color: $color !important;
+            padding: 2*$hem;
+            
+            //border: 2px darken($color, 50) solid;
+            color: darken($color, 50);
+            text-align: center;
+            //@include border-radius($hem);
+
+
+        }    
+    }  
+}  
+
+
+    
+
+/* Alerts mixin end */
+
+
+
+/* Images */
+
+.alignleft {
+    display: inline;
+    float: left;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+}
+
+.aligncenter img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+   
+}
+.aligncenter { text-align: center;}
+
+blockquote.alignleft,
+.wp-caption.alignleft,
+img.alignleft {
+    margin: 0 $hem*2 $hem*2 0;
+}
+
+blockquote.alignright,
+.wp-caption.alignright,
+img.alignright {
+    margin: $hem 0 $hem*2 $hem;
+}
+
+blockquote.aligncenter,
+.wp-caption.aligncenter,
+img.aligncenter {
+    clear: both;
+    margin-top: $hem;
+    margin-bottom: $hem * 2;
+}
+
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+    margin-bottom: $hem * 2;
+}
+
+.size-full, .size-medium, .size-thumbnail {
+
+    max-width: 100%; height: auto;  display: block;
+    width: 100% \9;
+}
+
+.thumbnail {
+	line-height: 10rem; 
+	display: inline-block;
+
+}
+
+figure a {display: block;}
+
+/* Images ends */
+
+
+/* Tables */
+
+.table {width: 100%; position: relative; 
+margin: 0.5rem, 0, 0.5rem, 0;
+}
+.table {
+	
+
+	thead {font-weight: bold; text-align: left;}
+	/*thead th:first-child {text-align: center;}*/
+	tr  {border-bottom: 1px color(lines) solid;}
+	thead {border-bottom: 1px color(lines) solid; }
+	tr:last-child {border-bottom: none;}
+	tr td {padding: $fs $fs $fs - 1 $fs;}
+	thead th {padding: $fs $fs $fs $fs;}
+	
+	caption {text-align: left; color: color(sub-header); 
+	font-size: 1.333rem;
+	line-height: 1.5rem;
+	margin: 0, 0, 0.5rem, 0;	
+
+	}
+}
+
+.striped {
+        tbody tr:nth-of-type(odd) {
+            background-color: color(bg);
+        }
+}
+
+.bordered {
+
+        th, td  {border: 1px color(lines) solid;}
+        thead th {padding: $fs - 1 $fs $fs - 1 $fs;}
+ }
+
+.responsive {
+    min-height: .01%;
+    overflow-x: auto;
+
+}
+
+
+
+/* Tables end */
+
+
+/* Cover Image */
+
+.ImageCover { background-color: color(txt); padding: $hem; }
+
+@media (min-width: 768px) {
+
+    .ImageCover {background-size: cover !important;}
+
+    .height100 {position: relative; overflow: hidden; height: 100%;}
+
+    .height50 {position: relative; overflow: hidden;}
+
+    .fade {height: 100%; position: relative;
+        overflow: hidden;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;0+50,0.65+100 */
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
+         
+        
+    }
+}    
+
+
+/* Cover Image End*/
+
+
+
+
+
+
+
+
+/*	BreadCrumbs start	*/
+
+.crumbs {
+
+
+		line-height: 6 * $hem;
+		margin: 2* $hem 0;
+		padding: 0;
+		border-bottom: 1px color(lines) solid;
+		
+
+		li {
+			display: inline-block;
+			list-style: none;
+			}
+		li:before {
+			content: " → ";
+			display: inline-block;
+			margin: 0 $hem;
+		}
+
+		li:first-child:before {
+			content: none;
+
+		}
+}
+
+
+/* BreadCrumbs end */
+
+/* Featherlight Caption */
+
+.featherlight-content {text-align: center !important;}
+.caption {
+	display: inline-block; 
+	color: color(light);
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	padding: 6 * $hem $hem 0 $hem;
+	line-height: 4* $hem;
+	
+	opacity: 0.7;
+	
+
+	
+	
+	
+	&:hover {		
+		
+		div {
+			opacity: 0;
+			
+			position: relative;
+		}
+	}
+
+	div {
+		display: inline-block;
+		background: color(txt);
+		padding: 0 1.5*$hem;
+		@include transit();
+		
+		
+	}
+}
+
+/* Featherlight Caption end */
+
+
+
+
+
+
+
+
+
+

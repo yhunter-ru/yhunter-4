@@ -1,0 +1,16 @@
+.col { 
+
+	$cols: (1,2,3,4,5,6,7,8,9,10,11,12);
+	$max-col: 12;
+	$col-options: (
+		padding: $hem*2
+	);
+	
+	@include mobile-grid(0,$cols,$max-col, $col-options);	
+	@include adaptive-grid(768px,$cols,$max-col, $col-options);
+
+}
+
+.col12 {
+	float: none !important;
+}

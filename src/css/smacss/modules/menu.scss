@@ -1,0 +1,189 @@
+/* Menu */
+
+
+nav{
+	margin:0;
+	background:none;
+	display:block;
+	background: color(nav, BG2);	
+}
+
+
+.menu{
+		display:none;
+		padding: 0;
+		margin: 0;
+		text-align: right; /* menu align */
+
+		li {
+			display:block;
+			margin:0;
+			text-align: left;
+			
+			a {
+				
+				display: block;
+				font-weight:600;
+				line-height: 3em !important;
+				padding:0 $hem;
+				
+
+				color: color(nav, links);
+
+			    @include transit(all, 0.2s, ease-in-out, 0s);
+			}
+
+			&:hover > a{
+				background: color(nav, HBG);
+				
+				
+				color: color(nav, hover);
+				background: color(nav, HBG);
+				
+			}	
+
+			&:hover ul {
+				display: block;
+				opacity: 1 !important;
+				visibility: visible !important;
+			}
+
+			&:first-child {
+				margin-left:0;
+			}
+		}
+
+		ul {
+			display:block;
+			position:relative;
+			top:0;
+			left:0;
+			width:100%;
+			padding: 0; margin: 0;
+			
+			li  {
+					display:block;
+					float: none;
+					background:none;
+					margin:0;
+					padding:0;
+
+					a {
+						
+						font-weight:normal;
+						display:block;
+						color: color(nav, SubLinks);
+						border-left:3px solid color(nav, NavBG3);
+						background: color(nav, BG3);
+					}
+
+					&:hover > a {
+						
+						background: color(bg);
+						border-left:3px solid color(nav, HBG);
+						color: color(nav, SubLinks);
+
+					}
+
+			}
+
+
+			ul {
+				left:0;
+				padding: 0;
+				margin: 0;
+				
+				
+				li > a {
+					
+					
+					
+				}
+
+				li:hover > a {}
+
+			}
+		}	
+	
+	}
+
+
+.mobile-menu{
+
+	display:block;
+    line-height: $hem*6;
+    padding: 0 0.5em;
+    text-align: right;
+
+	//background: color(nav, BG1);
+	text-transform:uppercase;
+	font-weight:600;
+}
+
+a.mobile-menu {color: color(nav, links) !important;}
+
+a.mobile-menu:hover {
+
+}
+
+
+@media (min-width: 768px) {
+
+	nav {background: color(nav, BG1);}   
+	.FixedNav {position: fixed;  z-index: 100; width: 100%;}
+
+	.mainWrap{width:768px;}
+
+	.menu {
+		display: block !important;
+		
+
+				ul {
+					
+					background: color(nav, BG2);
+					display: block;
+					visibility: hidden;
+					opacity: 0;
+					margin: 0 !important;
+					padding: 0 !important;
+					width: 150px !important;
+					position: absolute !important;
+					top: 4em !important;
+					left: 0px !important;
+					line-height: 1em !important;
+					@include transit();
+					
+					li {
+						width: 100%;
+						
+						ul {
+					    	left: 149px !important;
+					    	top: 0px !important;
+						}
+					}
+
+					
+				
+
+				}
+
+				li {
+					display: inline-block !important;
+					position: relative !important;
+					z-index:100 !important;
+				}
+
+				li a {
+					font-size:1em;
+					line-height: 4em !important;
+					display:block !important;
+				}
+
+		}
+
+
+	.mobile-menu {display: none !important;}
+
+
+}
+/* end of menu */

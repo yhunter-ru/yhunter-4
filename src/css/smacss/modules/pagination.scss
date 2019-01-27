@@ -1,0 +1,92 @@
+/* Pagination starts */
+
+.navigator {
+    text-align: center;
+    margin: 0 0 3*$hem 0;
+    position: relative;
+
+    .page-numbers {
+        padding-left: 0;
+    }
+    
+    .page-numbers li {
+        box-sizing:  border-box;
+        display: inline-block; 
+        position: relative;
+
+        border: 1px color(bg) solid;
+        
+        a {
+            display:block;
+            color: color(links);
+            background: color(bg);
+            line-height: 4*$hem;
+            min-width: 4*$hem;
+        }
+
+        
+        @include border-radius($hem/2);
+        
+      
+    }
+
+    .prev {
+        display: inline-block;
+        left: 0;
+        //position: absolute;
+        width: 4*$hem;
+        height: 4*$hem;
+
+        
+        //overflow: hidden;
+    
+    }
+
+    .prev:before {
+        content: "\2190";
+        display: inline-block;
+        clear:both;
+        //top: -.7em;
+        position: relative;
+
+
+    }
+
+    .next:before {
+        content: "\2192";
+        display: inline-block;
+        clear:both;
+        //top: -.7em;
+        position: relative;
+
+    }
+
+    .next{
+        display: inline-block;
+        right: 0;
+        //position: absolute;
+        width: 4*$hem;
+
+        height: 4*$hem;
+
+        
+
+        
+        
+        //overflow: hidden;
+    
+    }
+
+    .current {
+        display:block;
+        color: color(txt);
+        line-height: 4*$hem;
+        min-width: 4*$hem;
+        background: none !important;
+        //border: 2px color(bg) solid;
+        font-weight: bold;
+    }
+
+}
+
+/* Pagination  end */

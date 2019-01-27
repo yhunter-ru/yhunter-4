@@ -1,0 +1,61 @@
+/* Images */
+
+.alignleft {
+    display: inline;
+    float: left;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+}
+
+.aligncenter img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+   
+}
+.aligncenter { text-align: center;}
+
+blockquote.alignleft,
+.wp-caption.alignleft,
+img.alignleft {
+    margin: 0 $hem*2 $hem*2 0;
+}
+
+blockquote.alignright,
+.wp-caption.alignright,
+img.alignright {
+    margin: $hem 0 $hem*2 $hem;
+}
+
+blockquote.aligncenter,
+.wp-caption.aligncenter,
+img.aligncenter {
+    clear: both;
+    margin-top: $hem;
+    margin-bottom: $hem * 2;
+}
+
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+    margin-bottom: $hem * 2;
+}
+
+.size-full, .size-medium, .size-thumbnail {
+
+    max-width: 100%; height: auto;  display: block;
+    width: 100% \9;
+}
+
+.thumbnail {
+	line-height: 10rem; 
+	display: inline-block;
+
+}
+
+figure a {display: block;}
+
+/* Images ends */

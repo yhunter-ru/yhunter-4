@@ -1,0 +1,44 @@
+{
+  "name": "owl_framework",
+  "description": "front-end framework",
+  "author": "yhunter <mail@yhunter.ru> (http://yhunter.ru)",
+  "homepage": "http://yhunter.ru",
+  "dependencies": {
+    "gulp4": "^4.0.2",
+    "jquery": "*"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "del": "*",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "*",
+    "gulp-cache": "*",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-clean-css": "*",
+    "gulp-concat": "*",
+    "gulp-html-replace": "^1.5.5",
+    "gulp-imagemin": "*",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "*",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-notify": "*",
+    "gulp-file-include": "*",
+    "gulp-rename": "*",
+    "gulp-replace": "*",
+    "gulp-sass": "*",
+    "gulp-svgmin": "^2.1.0",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-ttf2woff": "^1.1.0",
+    "gulp-uglify": "*",
+    "jshint": "^2.9.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yhunter-ru/owl"
+  },
+  "bugs": {
+    "url": "https://github.com/yhunter-ru/owl/issues",
+    "email": "mail@yhunter.ru"
+  },
+  "optionalDependencies": {}
+}

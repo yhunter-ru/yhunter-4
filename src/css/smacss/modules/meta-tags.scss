@@ -1,0 +1,20 @@
+/* Meta tags */
+
+.meta {
+    clear: both;
+    width: 100%;
+    ul {
+        display: inline-block;
+        padding: 0 2*$hem 0 $hem;
+        li {
+            display: inline-block;
+            line-height: 4* $hem; padding: 0 $hem;
+            background: color(bg);
+            @include border-radius($hem/2)
+        }
+    }    
+
+}
+
+
+/* Meta tags end */

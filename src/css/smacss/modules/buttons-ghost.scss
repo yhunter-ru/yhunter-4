@@ -1,0 +1,18 @@
+ .btn-ghost {
+ 	
+ 	display: inline-block;
+        text-decoration: none;
+        color: color(ghost) !important;
+        @include border-radius($r);
+        border:1px color(ghost) solid;
+        
+        line-height: 3rem; 
+        padding: 0 1.5rem 0 1.5rem;
+        font-size: 1.2rem;
+        
+        &:hover {
+        	background: color(ghost-hover);
+        }
+        
+
+ }

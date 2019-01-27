@@ -1,0 +1,32 @@
+@import "options";
+@import "mixins";
+
+/* base */
+//@import "smacss/base/normalize";
+@import "smacss/base/base";
+
+/* layout */
+@import "smacss/layout/layout";
+
+
+/* modules */
+@import "smacss/modules/menu";
+@import "smacss/modules/pagination";
+@import "smacss/modules/forms";
+@import "smacss/modules/meta-tags";
+@import "smacss/modules/accordeon";
+@import "smacss/modules/print-styles";
+
+@import "smacss/modules/plugins/featherlight.gallery.scss";
+@import "smacss/modules/plugins/featherlight.scss";
+
+/* states */
+@import "smacss/states/helper-classes";
+@import "smacss/states/fade-in-viewport";
+
+/* theme */
+
+
+body {
+      scroll-behavior: smooth;
+}

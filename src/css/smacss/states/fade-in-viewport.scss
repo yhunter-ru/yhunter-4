@@ -1,0 +1,10 @@
+/* Fade in viewportchecker */
+
+    .jump-left {position: relative; left: -100%; @include transit(all, .5s, ease-in-out, 0s); opacity: 0; }
+    .jump-right {position: relative; right: -100%; @include transit(all, .8s, ease-in-out, 0s); opacity: 0;}
+
+
+    .left-show {left: 0 !important; opacity: 1;}
+    .right-show {right: 0 !important; opacity: 1;}
+
+/* Fade in end */

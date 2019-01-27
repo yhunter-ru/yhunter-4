@@ -1,0 +1,13 @@
+.mcol {
+
+	$cols: (3);
+	$max-col: 6;
+	$col-options: (
+		padding: 0
+	);
+
+
+	@include adaptive-grid(0,$cols,$max-col, $col-options);
+	@include mobile-grid(768px,$cols,$max-col, $col-options);
+
+}

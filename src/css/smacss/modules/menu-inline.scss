@@ -1,0 +1,71 @@
+/* Menu */
+
+
+nav{
+	display:block;
+}
+
+
+.menu{
+		display:none;
+
+		li {
+			display:block;
+	
+
+
+		}
+
+			
+	
+	}
+
+
+.mobile-menu{
+
+	display:block;
+
+}
+
+
+
+@media (min-width: 768px) {
+
+
+	.FixedNav {position: fixed;  z-index: 100; width: 100%;}
+
+
+
+	.menu {
+		display: block !important;
+		
+
+				ul {
+					
+
+					display: none;
+
+					
+
+
+					
+				
+
+				}
+
+				li {
+					display: inline-block !important;
+					position: relative !important;
+					z-index:100 !important;
+				}
+
+				
+
+		}
+
+
+	.mobile-menu {display: none !important;}
+
+
+}
+/* end of menu */

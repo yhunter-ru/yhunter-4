@@ -1,0 +1,53 @@
+<!-- build:theme --><?php get_header();?><!-- endbuild --><!-- build:html -->@@include('header.html')<!-- endbuild -->
+
+
+<!-- build:theme -->
+<?php if (have_posts()) : while (have_posts()) : the_post(); // Цикл записей ?>
+<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3><!-- Заголовок поста + ссылка на него -->
+<?php the_time('F j, Y'); // Дата создания поста ?>
+<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } // Проверяем наличие миниатюры, если есть показываем ?>
+<?php the_content(''); // Выводим анонс ?>
+<?php endwhile; // Конец цикла.
+else: echo '<h2>Извините, ничего не найдено...</h2>'; endif; // Если записей нет - извиняемся ?>	 
+<?php // Пагинация
+global $wp_query;
+$big = 999999999;
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+	'type' => 'list',
+	'prev_text'    => __('« Сюда'), 
+    'next_text'    => __('Туда »'),
+	'total' => $wp_query->max_num_pages
+) );
+?>
+<!-- endbuild -->
+
+<!-- build:html -->
+html
+<div class="grid">
+    <div class="cell cell-1">Area 51 👽</div>
+    <div class="cell cell-2">2<br><br><br><br></div>
+    <div class="cell cell-3">
+		<div class="grid">
+		    <div class="cell cell-1">Area 51 👽</div>
+		    <div class="cell cell-2">2<br><br><br><br></div> 
+		</div> 
+
+    </div>
+</div>    
+<!-- endbuild -->
+
+
+<!-- build:theme -->
+<?php get_sidebar(); // Подключаем сайдбар ?>
+<!-- endbuild -->
+
+<!-- build:theme -->
+<?php get_footer(); // Подключаем футер ?>
+<!-- endbuild -->
+
+<!-- build:html -->
+@@include('footer.html')
+<!-- endbuild -->

@@ -1,0 +1,464 @@
+/* Em values to Px values */
+@function emtopx($target, $context){
+	@return ($target*$context)+0px;
+}
+
+/* Em values to Px values end */
+
+/* Px values to Em values */
+@function pxtoem($target, $context){
+	@return ($target/$context)+0em;
+}
+
+/* Px values to Em values end */
+
+
+
+
+
+/* Rem Crossbrowser */
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*strip-unit($fs)}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  } 
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
+}
+
+/* Rem Crossbrowser end */
+
+
+
+
+
+/* Radius mixin */
+
+@mixin border-radius($radius:$hem) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+
+//-- Radius mixin end -- //
+
+
+//-- Transition mixin --//
+
+@mixin transit($type:all, $duration:0.5s, $in-out:ease-in-out, $delay:0s) {
+        -webkit-transition: $type $duration $in-out $delay;
+        -moz-transition: $type $duration $in-out $delay;
+        -o-transition: $type $duration $in-out $delay;
+        -ms-transition: $type $duration $in-out $delay;
+        transition: $type $duration $in-out $delay;
+    }
+
+//-- End Transition mixin --//
+
+//-- Box Shadow mixin --//
+
+@mixin shadow($mx, $my, $blur, $color) {
+            -webkit-box-shadow: $mx $my $blur $color;
+            -moz-box-shadow: $mx $my $blur $color;
+            box-shadow: $mx $my $blur $color;
+     }       
+
+//-- Box Shadow mixin end --//
+
+
+
+
+//-- Colors from map --//
+
+// retrieve color from map ie. `color(primary, base)`
+@function color($color-name, $color-variant:null) {
+  // color variant is optional
+  @if ($color-variant != null) {
+    // map inception
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}
+
+//-- Colors from map end --//
+
+//-- Property and Value set mixin --//
+
+
+//@mixin set-value($side, $value, $properties) {
+//    @each $prop in $properties {
+//        #{$prop}-#{$side}: $value;
+//    }
+//}
+
+//-- Property and Value set mixin end  --//
+
+//-- Grid Function --//
+
+
+
+
+
+
+
+//Миксина вывода адаптивной сетки
+@mixin adaptive-grid($media:0,$cols: $cols,$maxcol:$max-col,$col-options:null) {
+
+            
+              
+          @media only screen and (min-width: $media) {    
+          
+                  @each $col in $cols {
+                        
+                              &#{$col} {
+                                width: ($col/$maxcol) * 100%;
+                                
+                                $add-options: map-merge($adaptive-parameters, $col-options);
+                                @each $parameter, $value in $add-options {
+
+                                    #{$parameter}: $value;                                    
+
+                                }
+                                
+                                
+                                    
+                              }
+                  }  
+          }               
+  }  
+  
+
+  // Цикл вывода мобильной сетки с ячейками 100%. Используется в миксине mobile-grid
+  @mixin mgrid($cols,$maxcol:6,$col-options:null) {
+
+            @each $col in $cols {
+
+            
+
+                &#{$col} {
+                            width: 100%;
+                            $add-options: map-merge($mobile-parameters, $col-options);
+                            @each $parameter, $value in $add-options {
+
+                                    #{$parameter}: $value;     
+                                    //$adaptive-parameters: map-merge($mobile-parameters,$adaptive-parameters); - так можно складывать мапы                               
+
+                            }
+                            
+                            
+                                  
+                      }
+                
+            } 
+    
+
+
+  }
+  
+
+  //Миксина вывода мобильной сетки
+  @mixin mobile-grid($media,$cols,$maxcol:6,$col-options:null) {
+        
+        
+
+        @if ($media == 0) {
+            @include  mgrid($cols,$maxcol,$col-options);
+        }
+
+        @else {
+            @media only screen and (min-width: $media) {
+
+                @include  mgrid($cols,$maxcol,$col-options);
+               
+            } 
+        }                 
+
+
+  }
+  
+    
+//Миксина отступов в сетке
+
+@mixin grid-padding($media,$cols,$maxcol:6,$align:"left") {
+
+    @media only screen and (min-width: $media) {    
+          
+                  @each $col in $cols {
+                        
+                              &#{$col} {
+                                
+                                margin-#{$align}: ($col/$maxcol) * 100% !important;
+                                float: #{$align} !important;
+                                
+                                //$add-options: map-merge($adaptive-parameters, $col-options);
+                                                             
+                                
+                                    
+                              }
+                  }  
+    }   
+
+  
+}
+
+
+//-- Grid Function End --//
+
+
+//-- Center block mixin --//
+
+@mixin center-block($width) {
+  width: $width;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//-- Ceter block mixin end --//
+
+
+
+//-- Font size brakepoints mixins --//
+
+
+@mixin breaksize($size) {
+  $exp: 1;
+  $negative: false;
+  @if $size<0 {
+    $size:$size*-1;
+    $negative: true;
+  }
+  @for $i from 1 through $size {
+    $exp: $exp*$step;
+  }
+  
+  
+  $exp: $exp/$step;
+  @if $negative {
+    font-size: $baseline/$exp;
+    line-height: round($baseline/$exp*$line*2)/2;
+    margin: .5*$baseline 0 .5*$baseline 0;
+    
+  }
+  @else {
+    font-size: $baseline*$exp;
+    line-height: round($baseline*$exp*$line*2)/2;
+    margin: .5*$baseline 0 .5*$baseline 0;
+  }
+  
+}
+
+@mixin font-brakepoints() {
+
+    @each $point in $brakepoints {
+      $media: nth($point, 1);
+      $size: nth($point, 2);
+
+
+      @if ($media>0) {
+
+            @media only screen and (min-width: $media) {  
+                  html {
+                    font-size: $size;
+                  }
+                }  
+            }
+            @else {
+                html {
+                      font-size: $size;
+                }
+            }
+          
+      } 
+}     
+
+//-- Font size brakepoints  mixins end --//
+
+
+//css grid 
+
+//  global grid variables (☠ = don't touch)
+$☠__ms-col-gap: null;
+$☠__ms-row-gap: null;
+$☠__ms-col-count: null;
+$☠__ms-row-count: null;
+
+
+//
+//  repeat function
+//
+@function repeat($repeat, $stuff: 1fr){
+    $list: ();
+    @for $i from 1 through $repeat { $list: append($list, $stuff, space); }
+    @return $list;
+}
+
+//
+//  grid-column mixin 
+//
+@mixin grid-column($start: auto, $span: 1){
+    //  grid-column-gap using left margin 
+    @if $☠__ms-col-gap and not $☠__ms-col-count and $start != 1 {
+        margin-left: $☠__ms-col-gap;
+        @supports (grid-column-gap: 1px){ margin-left: 0; }
+    }     
+    -ms-grid-column: if($☠__ms-col-count, $start + $start - 1, $start);
+    -ms-grid-column-span: if($☠__ms-col-count, $span + $span - 1, $span);
+    grid-column: #{$start}/#{$start + $span}; 
+    @content;
+}
+
+//
+//  grid-row mixin
+//
+@mixin grid-row($start: auto, $span: 1){
+    //  grid-row-gap using top margin 
+    @if $☠__ms-row-gap and not $☠__ms-row-count and $start != 1 {
+        margin-top: $☠__ms-row-gap;
+        @supports (grid-row-gap: 1px){ margin-top: 0; }
+    } 
+    -ms-grid-row: if($☠__ms-row-count, $start + $start - 1, $start);
+    -ms-grid-row-span: if($☠__ms-row-count, $span + $span - 1, $span);
+    grid-row: #{$start}/#{$start + $span};
+    @content;    
+}
+
+
+//
+//  grid-cell mixin
+//
+@mixin grid-cell($col-start: auto, $col-span: 1, $row-start: auto, $row-span: 1){
+    @include grid-column($col-start, $col-span);
+    @include grid-row($row-start, $row-span); 
+    @content;    
+}
+
+
+//
+//  grid-area mixin 
+//
+@mixin grid-area($area){
+    $area: map-get($grid-areas, $area);
+    @include grid-column(nth($area, 1), nth($area, 2));
+    @include grid-row(nth($area, 3), nth($area, 4));  
+    @content;
+}
+
+//
+//  grid mixin 
+//
+@mixin grid($grid-map){
+    $cols: map-get($grid-map, cols);
+    $rows: map-get($grid-map, rows);    
+    $gap:  map-get($grid-map, gap);    
+    $col-gap:  map-get($grid-map, col-gap);        
+    $col-gap: if($col-gap,$col-gap,$gap);
+    $row-gap:  map-get($grid-map, row-gap);
+    $row-gap: if($row-gap,$row-gap,$gap);    
+
+    //  if cols or rows are numbers convert to fraction lists
+    @if $cols and length($cols) == 1 and unitless($cols) { $cols: repeat($cols); }
+    @if $rows and length($rows) == 1 and unitless($rows) { $rows: repeat($rows); }    
+    
+    //  ie does not support grid gap - why we insert the gap space as a row or colum
+    //  note! the first loop is to ensure cols/rows are not a multidimensional list
+    //  (when generated by the repeat function) 
+    $ms-cols: null;
+    $ms-rows: null;    
+    @if $col-gap and $cols {
+        $ms-cols: ();
+        @each $col in $cols { $ms-cols: if( type-of($col) == list, join($ms-cols, $col), append($ms-cols, $col)); }
+        @for $i from 1 through length($ms-cols) - 1{ $ms-cols: set-nth($ms-cols, $i, nth($ms-cols,$i) $col-gap);  }
+        //  globalize ms col count (used by grid-column)
+        $☠__ms-col-count: length($ms-cols) !global;        
+    }
+    @if $row-gap and $rows {
+        $ms-rows: ();        
+        @each $row in $rows { $ms-rows: if( type-of($row) == list, join($ms-rows, $row), append($ms-rows, $row)); }
+        @for $i from 1 through length($ms-rows) - 1 { $ms-rows: set-nth($ms-rows, $i, nth($ms-rows,$i) $row-gap); }
+
+        //  globalize ms row count (used by grid-row)
+        $☠__ms-row-count: length($ms-rows) !global;
+    }
+    // 
+    $☠__ms-col-gap: $col-gap !global;
+    $☠__ms-row-gap: $row-gap !global;
+
+
+    display: -ms-grid;    
+    display: grid;
+
+    -ms-grid-columns: $ms-cols or $cols;
+    -ms-grid-rows: $ms-rows or $rows;    
+
+    grid-template-columns: $cols;
+    grid-template-rows: $rows;    
+
+    grid-column-gap: $col-gap;
+    grid-row-gap: $row-gap;    
+    @content;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+

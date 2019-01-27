@@ -1,0 +1,29 @@
+/*	BreadCrumbs start	*/
+
+.crumbs {
+
+
+		line-height: 6 * $hem;
+		margin: 2* $hem 0;
+		padding: 0;
+		border-bottom: 1px color(lines) solid;
+		
+
+		li {
+			display: inline-block;
+			list-style: none;
+			}
+		li:before {
+			content: " \2192 ";
+			display: inline-block;
+			margin: 0 $hem;
+		}
+
+		li:first-child:before {
+			content: none;
+
+		}
+}
+
+
+/* BreadCrumbs end */

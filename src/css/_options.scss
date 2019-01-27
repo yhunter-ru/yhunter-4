@@ -1,0 +1,137 @@
+
+
+$colors: (
+  txt: #111,
+  links: #319BDE,
+	hover: #1D78AE,
+	bg: #efefef,
+	color4: #366,
+	color5: #39a,
+	lines: #ccc,
+	light: #fff,
+	gr: #1ab752,
+    nav: (
+    	BG1: #111,
+		BG2: #fff,
+		BG3: #efefef,
+		HBG: #1ab752,
+		links: #1ab752,
+		hover: #fff,
+		SubLinks: #797979
+		
+    ),
+    subheader: #999,
+    ghost: #fff,  // Ghost button color
+    ghost-hover: rgba(255,255,255,0.3) // Ghost button bg hover color
+    
+);
+
+// Fontsize breakpoints settings 
+
+$baseline: 1rem; // Font-size
+$step: 1.333; // Breakpoint step
+$line: 1.5; // Line height
+
+$brakepoints: 0 14px, 980px 16px, 1600px 18px;
+
+// Fontsize breakpoints settings end
+
+$hem: $baseline/2;
+$r: 5px; //defaul border radius
+
+
+/* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html */
+$base-font-size: 2*$hem;
+$base-line-height: 1.5 * $base-font-size;
+
+$type-settings: (
+  -1: (
+    font-size: 0.75rem,
+    line-height: $base-line-height
+  ),
+  0: (
+    font-size: 1rem,
+    line-height: $base-line-height
+  ),
+  1: (
+    font-size: 1.333rem,
+    line-height: $base-line-height * 2
+  ),
+  2: (
+    font-size: 1.778rem,
+    line-height: $base-line-height * 2
+  ),
+  3: (
+  	font-size: 2.369rem,
+  	line-height: $base-line-height * 3
+  	)
+);
+
+/* конец масштабирования */
+
+$alerts: (
+
+	active: #fff,
+	success: #dff0d8,
+	warning: #fcf8e3,
+	danger: #f2dede,
+	info: #d9edf7
+
+	);
+
+
+$btn-colors: (
+    "green": #1cb853,
+    "red": #D04C3F,
+    "orange": #DB972B,
+    "blue": #3670B7,
+    "black": #111
+    
+);
+
+
+
+$fs: 16px;
+$fs1: $fs - 1px;
+
+$aHem: $hem * -1;
+
+
+//Список выводимых колонок по умолчанию
+$cols: (1,2,3,4,5,6,7,8,9,10,11,12);
+
+//Максимальное количество колонок по умолчанию
+$max-col: 12;
+
+//Дополнительные параметры сетки
+$col-options: (
+		
+	);
+
+//Адаптивная сетка, параметры по умолчанию
+$adaptive-parameters: (
+
+	box-sizing:  border-box,
+	clear: none !important,
+	display: block,
+	float: left,
+	line-height: 1.5em,
+    min-height: 1px,
+	position: relative,
+	padding: $hem
+    
+);
+
+//Мобильная сетка, параметры по умолчанию
+$mobile-parameters: (
+	
+	box-sizing:  border-box,
+	clear: both,
+	display: block,
+    float: none,
+    line-height: 1.5em,
+    min-height: 1px,   
+    position: relative,
+    padding: $hem,    
+       
+);

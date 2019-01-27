@@ -1,0 +1,154 @@
+html {
+    color: #222;
+    font-size: 1em;
+    
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+    
+}
+
+html, body {height: 100% !important;}
+.all { position: relative; }
+
+body {color: color(txt);}
+
+a:link, a:visited {color: color(links); }
+a:hover {color: color(links);}
+
+.wide { background: color(bg);}
+
+
+
+
+
+
+body {color: color(txt);}
+a:link, a:visited {color: color(links); }
+a:hover {color: color(hover);}
+
+.wrapper {width: 100%; padding: $hem*2; box-sizing:  border-box;
+line-height: 1.5rem;
+
+
+}
+
+.wide {width: 100%; background: color(bg); }
+
+li ol, li ul {padding-left: $hem*5;}
+
+/* Headers */
+
+body {
+
+
+  font-weight: 400;
+  
+  color: #333;
+}
+
+
+p { line-height: 2em;
+
+font-size: 1rem;
+margin: 0, 0, 1rem, 0;
+
+}
+
+h1, h2, h3, h4, h5 {
+  
+  font-weight: inherit;
+  
+}
+
+
+html {
+    font-size: 14px;
+}
+
+p, ul, ol {
+  @include breaksize(1);
+  margin: .5*$baseline 0 1.5*$baseline 0;
+}
+
+li {
+    margin-bottom: .5em;
+    
+}
+
+h1 {
+  @include breaksize(4);
+}
+h2 {
+  @include breaksize(3);
+}
+h3 {
+  @include breaksize(2);
+}
+h4 {
+  @include breaksize(1);
+}
+h5 {
+  @include breaksize(-2);
+}
+
+        
+
+
+
+
+small, .font_small {font-size: 0.75em;}
+
+
+
+/* Headers end */
+
+/* Font size brakepoints */
+
+
+@include font-brakepoints(); 
+    
+
+/* Font size brakepoints end  */
