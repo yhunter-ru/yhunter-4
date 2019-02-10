@@ -20,7 +20,7 @@ var plugins = gulpLoadPlugins({
 
 
 var   jshint = require('gulp-jshint');
-var themepath= "wp-content/themes/test/";
+var themepath= "wp-content/themes/yhunter4/";
 
 console.timeEnd("Loading plugins"); //end measuring
 
@@ -35,6 +35,7 @@ function jsFunc() {
        .pipe(gulp.dest('build/'+themepath+'/js'));
 }
 
+exports.js = jsFunc;
 
 gulp.task('jslib', function() {
     return gulp.src('src/js/vendor/*.js')
@@ -42,7 +43,8 @@ gulp.task('jslib', function() {
 });
 
 function mainFunc() {
-    return  plugins.sass('src/css/main.scss')
+    return gulp.src('src/css/main.scss')    
+    .pipe(plugins.sass()) 
     .on('error', plugins.sass.logError)
     .pipe(plugins.autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     //.pipe(plugins.cleancss()) //Minify external CSS
@@ -51,28 +53,26 @@ function mainFunc() {
     .pipe(plugins.notify({ message: 'Main SASS styles task complete' }));
 }
 
-gulp.task('main', mainFunc);
+exports.main = mainFunc;
 
-function inlineFunc() {    
-
-    return  plugins.sass('src/css/inline.scss')
+function inlineFunc() { 
+    return gulp.src('src/css/inline.scss')       
+    .pipe(plugins.sass())    
     .on('error', plugins.sass.logError)
     .pipe(plugins.autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(plugins.cleancss())
     .pipe(plugins.rename("_inline.html"))
     .pipe(gulp.dest('src'))
     .pipe(plugins.notify({ message: 'Inline SASS styles task complete' }));
+
    
 }
 
-gulp.task('inline', inlineFunc);
+exports.inline = inlineFunc;
 
-function toolsFunc() {
-  mainFunc();
-  inlineFunc();
-}
 
-gulp.task('tools', toolsFunc);
+
+
 
 
 function imagesFunc() {
@@ -83,34 +83,42 @@ function imagesFunc() {
     .pipe(plugins.notify({ message: 'Images task complete' }));
 }
 
+exports.js = jsFunc;
+
 function htmlFunc() {
     plugins.del('build/*.html');
-    gulp.src('src/*.html')
+    return gulp
 
-        .pipe(plugins.htmlreplace({theme: ''}, {keepUnassigned: true}))
-        //.pipe(plugins.pagebuilder('src'))
-        .pipe(plugins.fileinclude({
+    .src('src/*.html')
+
+    .pipe(plugins.htmlreplace({theme: ''}, {keepUnassigned: true}))
+    //.pipe(plugins.pagebuilder('src'))
+    .pipe(plugins.fileinclude({
           prefix: '@@',
           basepath: '@file'
-        }))
-        .pipe(plugins.replace('@@hash', Math.random()))
-        .pipe(plugins.replace('@@path/', themepath))
+    }))
+    .pipe(plugins.replace('@@hash', Math.random()))
+    .pipe(plugins.replace('@@path/', themepath))
         
-        .pipe(plugins.htmlreplace({theme: ''}, {keepUnassigned: true}))
+    .pipe(plugins.htmlreplace({theme: ''}, {keepUnassigned: true}))
         
-        .pipe(gulp.dest('build/'))
-        .pipe(plugins.notify({ message: 'Html task complete' }))
+    .pipe(gulp.dest('build/'))
+    .pipe(plugins.notify({ message: 'Html task complete' }))
 
      
 
 }
 
-gulp.task('html', htmlFunc);
+
+//gulp.task('html', htmlFunc(dn));
+
+exports.html = htmlFunc;
 
 
 function themeFunc () {
     plugins.del('build/'+themepath+'/*.php');
-    gulp.src('src/*.html')
+    return gulp
+        .src('src/*.html')
         
         //.pipe(plugins.rigger())
         .pipe(plugins.htmlreplace({html: ''}, {keepUnassigned: true}))
@@ -125,7 +133,7 @@ function themeFunc () {
         .pipe(plugins.notify({ message: 'Template task complete' }))
 }
 
-
+exports.theme = themeFunc;
 
 // SVG sprite create
 
@@ -148,6 +156,8 @@ function iconsFunc() {
     
 }
 
+exports.icons = iconsFunc;
+
 
 function svgSingle() {
     return gulp.src('src/svg/*.svg')
@@ -155,65 +165,38 @@ function svgSingle() {
         .pipe(gulp.dest('build/'+themepath+'/img'));
 };
 
-
+exports.svgsingle = svgSingle;
 
 
     
 function ttfFunc(){
   plugins.del('build/'+themepath+'/fonts/*.woff');
-  gulp.src(['src/fonts/*.ttf'])
+  return gulp.src(['src/fonts/*.ttf'])
     .pipe(plugins.ttf2woff())
     .pipe(gulp.dest('build/'+themepath+'/fonts'));
 }
 
+exports.ttf = ttfFunc;
+
+const tools = gulp.series(inlineFunc, mainFunc);
+const template = gulp.series(htmlFunc, themeFunc);
+
+exports.tools = tools;
+
+function watchFunc() {
+    gulp.watch("src/css/**/*.scss", tools);
+    gulp.watch("src/css/inline.scss", inlineFunc);
+    gulp.watch("src/css/main.scss", mainFunc);
+    gulp.watch("src/svg/symbol/*.svg", iconsFunc);
+    gulp.watch("src/svg/*.svg", svgSingle);
+    gulp.watch("src/fonts/*.ttf", ttfFunc);
+    gulp.watch("src/js/*.js", jsFunc);
+    gulp.watch("src/img/*.+(jpg|jpeg|gif|png)", imagesFunc);
+    gulp.watch("src/*.html", template);
+    plugins.livereload.listen();
+    gulp.watch(['build/**']).on('change', plugins.livereload.changed);
+}
+
+exports.watch = watchFunc;
 
 
-
-
-gulp.task('watch', function watch() {
-
-
-
-  gulp.watch('src/css/**/*.scss', function() {
-    mainFunc();
-    inlineFunc();
-  } );
-
-  gulp.watch('src/css/*.scss', function () {
-    toolsFunc();
-  });
-
-  gulp.watch('src/svg/symbol/*.svg', function() {
-    iconsFunc();
-  });
-
-  gulp.watch('src/svg/*.svg', function() {
-    singSingle();
-  });
-
-  gulp.watch('src/fonts/*.ttf', function() {
-    ttfFunc();
-  });
-
-  // Наблюдение .js файлами
-  gulp.watch('src/js/*.js', function() {
-    jsFunc();
-  });
-
-  // Наблюдение файлами изображений
-  gulp.watch('src/img/*.+(jpg|jpeg|gif|png)',function() {
-    imagesFunc();
-  });
-
-  gulp.watch('src/*.html', function() {
-    htmlFunc();
-    themeFunc();
-  });
-
-    // Создание LiveReload сервера
-  plugins.livereload.listen();
-
-  // Наблюдайте за всеми файлами в dist/, перезагружайтесь при изменениях
-  gulp.watch(['build/**']).on('change', plugins.livereload.changed);
-
-});

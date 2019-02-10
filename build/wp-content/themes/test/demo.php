@@ -7,7 +7,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
  <style>
-	[snp tpl="_inline.html" ]
+	@@include('_inline.html')
 	* {}
  </style>
 
@@ -18,7 +18,7 @@ Owl Nest Framework Demo Page
 
 </head>
 <body>
-[snp tpl="symbol.html" ]
+@@include('symbol.html')
 
 
 <nav class="FixedNav">
@@ -606,9 +606,9 @@ Owl Nest Framework Demo Page
         <!-- end wrapper -->
 <!-- End of Body -->
 
-<link rel="stylesheet" href="wp-content/themes/test/css/main.min.css?rev=0.2733099182784495">
-<script>window.jQuery || document.write('<script src="wp-content/themes/test/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-<script src="wp-content/themes/test/js/main.js?rev=0.2733099182784495"></script>
+<link rel="stylesheet" href="wp-content/themes/yhunter4/css/main.min.css?rev=0.4549830839242981">
+<script>window.jQuery || document.write('<script src="wp-content/themes/yhunter4/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script src="wp-content/themes/yhunter4/js/main.js?rev=0.4549830839242981"></script>
 <script type="text/javascript">
         	 $(window).load(function () {
 			$('.gallery').featherlightGallery();

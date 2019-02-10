@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html┬а*/
-/* ╨║╨╛╨╜╨╡╤Ж ╨╝╨░╤Б╤И╤В╨░╨▒╨╕╤А╨╛╨▓╨░╨╜╨╕╤П┬а*/
+/* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html */
+/* конец масштабирования */
 /* Em values to Px values */
 /* Em values to Px values end */
 /* Px values to Em values */
@@ -8,25 +8,28 @@
 /* Rem Crossbrowser */
 /* Rem Crossbrowser end */
 /* Radius mixin */
-/* base┬а*/
+/* base */
 body {
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased; }
 
-/* layout┬а*/
-/* modules┬а*/
+/* layout */
+/* modules */
 /* Menu */
 nav {
   margin: 0;
   background: none;
   display: block;
   background: #fff; }
+  nav ul {
+    display: block;
+    float: left; }
 
 .menu {
   display: none;
   padding: 0;
   margin: 0;
-  text-align: right;
+  text-align: left;
   /* menu align */ }
   .menu li {
     display: block;
@@ -92,16 +95,13 @@ a.mobile-menu {
 
 @media (min-width: 768px) {
   nav {
-    background: #111; }
-
+    background: #fff; }
   .FixedNav {
     position: fixed;
     z-index: 100;
     width: 100%; }
-
   .mainWrap {
     width: 768px; }
-
   .menu {
     display: block !important; }
     .menu ul {
@@ -131,9 +131,9 @@ a.mobile-menu {
       font-size: 1em;
       line-height: 4em !important;
       display: block !important; }
-
   .mobile-menu {
     display: none !important; } }
+
 /* end of menu */
 /* Pagination starts */
 .navigator {
@@ -240,7 +240,7 @@ input[type="file"] {
   border: none; }
 
 /* Forms end */
-/* Meta┬аtags */
+/* Meta tags */
 .meta {
   clear: both;
   width: 100%; }
@@ -254,7 +254,7 @@ input[type="file"] {
       background: #efefef;
       border-radius: 0.25rem; }
 
-/* Meta tags end┬а*/
+/* Meta tags end */
 /* Accordeon */
 .ask {
   color: #1ab752 !important;
@@ -278,50 +278,41 @@ input[type="file"] {
     -webkit-box-shadow: none !important;
             box-shadow: none !important;
     text-shadow: none !important; }
-
   a,
   a:visited {
     text-decoration: underline; }
-
   a[href]:after {
     content: " (" attr(href) ")"; }
-
   abbr[title]:after {
     content: " (" attr(title) ")"; }
-
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: ""; }
-
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
-
   thead {
     display: table-header-group; }
-
   tr,
   img {
     page-break-inside: avoid; }
-
   img {
     max-width: 100% !important; }
-
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3; }
-
   h2,
   h3 {
     page-break-after: avoid; } }
+
 /**
- * Featherlight Gallery тАУ an extension for the ultra slim jQuery lightbox
+ * Featherlight Gallery – an extension for the ultra slim jQuery lightbox
  * Version 1.3.4 - http://noelboss.github.io/featherlight/
  *
- * Copyright 2015, No├лl Raoul Bossart (http://www.noelboss.com)
+ * Copyright 2015, Noël Raoul Bossart (http://www.noelboss.com)
  * MIT Licensed.
 **/
 @media all {
@@ -341,16 +332,14 @@ input[type="file"] {
     -ms-user-select: none;
     user-select: none;
     /* IE9 hack, otherwise navigation doesn't appear */
-    background: transparent;
+    background: rgba(0, 0, 0, 0);
     -webkit-transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.2s ease-in-out 0s;
     transition: all 0.2s ease-in-out 0s;
     opacity: 0; }
-
   .featherlight-previous {
     left: 0;
     right: 80%; }
-
   .featherlight-previous:hover {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;0.3+0,0+100 */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -360,13 +349,12 @@ input[type="file"] {
     /* Chrome10+,Safari5.1+ */
     /* Opera 11.10+ */
     /* IE10+ */
-    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), to(transparent));
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d000000', endColorstr='#00000000',GradientType=1 );
     /* IE6-8 */
     opacity: 1; }
-
   .featherlight-next:hover {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;0+0,0.3+100 */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -376,13 +364,12 @@ input[type="file"] {
     /* Chrome10+,Safari5.1+ */
     /* Opera 11.10+ */
     /* IE10+ */
-    background: -webkit-gradient(linear, left top, right top, from(transparent), to(rgba(0, 0, 0, 0.3)));
-    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.3)));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#4d000000',GradientType=1 );
     /* IE6-8 */
     opacity: 1; }
-
   .featherlight-next span,
   .featherlight-previous span {
     display: none;
@@ -399,27 +386,25 @@ input[type="file"] {
     color: #fff;
     font-style: normal;
     font-weight: normal; }
-
   .featherlight-next span {
     right: 5%;
     left: auto; }
-
   .featherlight-next:hover span,
   .featherlight-previous:hover span {
     display: inline-block; }
-
   /* Hide navigation while loading */
   .featherlight-loading .featherlight-previous, .featherlight-loading .featherlight-next {
     display: none; } }
+
 /* Always display arrows on touch devices */
 @media only screen and (max-device-width: 1024px) {
   .featherlight-next:hover,
   .featherlight-previous:hover {
     background: none; }
-
   .featherlight-next span,
   .featherlight-previous span {
     display: block; } }
+
 /* handling phones and small screens */
 @media only screen and (max-width: 1024px) {
   .featherlight-next,
@@ -427,20 +412,19 @@ input[type="file"] {
     top: 0;
     right: 0;
     left: 85%; }
-
   .featherlight-previous {
     left: 0;
     right: 85%; }
-
   .featherlight-next span,
   .featherlight-previous span {
     margin-top: -30px;
     font-size: 40px; } }
+
 /**
- * Featherlight тАУ ultra slim jQuery lightbox
+ * Featherlight – ultra slim jQuery lightbox
  * Version 1.3.4 - http://noelboss.github.io/featherlight/
  *
- * Copyright 2015, No├лl Raoul Bossart (http://www.noelboss.com)
+ * Copyright 2015, Noël Raoul Bossart (http://www.noelboss.com)
  * MIT Licensed.
 **/
 @media all {
@@ -462,12 +446,10 @@ input[type="file"] {
     cursor: pointer;
     background: #333;
     /* IE8 "hack" for nested featherlights */
-    background: transparent; }
-
+    background: rgba(0, 0, 0, 0); }
   /* support for nested featherlights. Does not work in IE8 (use JS to fix) */
   .featherlight:last-of-type {
     background: rgba(0, 0, 0, 0.8); }
-
   .featherlight:before {
     /* position: trick to center content vertically */
     content: '';
@@ -475,7 +457,6 @@ input[type="file"] {
     height: 100%;
     vertical-align: middle;
     margin-right: -0.25em; }
-
   .featherlight .featherlight-content {
     /* make content container for positioned elements (close button) */
     position: relative;
@@ -497,12 +478,10 @@ input[type="file"] {
     cursor: auto;
     /* reset white-space wrapping */
     white-space: normal; }
-
   /* contains the content */
   .featherlight .featherlight-inner {
     /* make sure its visible */
     display: block; }
-
   .featherlight .featherlight-close-icon {
     /* position: centering vertical and horizontal */
     position: absolute;
@@ -520,19 +499,17 @@ input[type="file"] {
     /* Set the background in case it overlaps the content */
     background: rgba(255, 255, 255, 0.3);
     color: #000; }
-
   .featherlight .featherlight-image {
     /* styling */
     width: 100%; }
-
   .featherlight-iframe .featherlight-content {
     /* removed the border for image croping since iframe is edge to edge */
     border-bottom: 0;
     padding: 0; }
-
   .featherlight iframe {
     /* styling */
     border: none; } }
+
 /* handling phones and small screens */
 @media only screen and (max-width: 1024px) {
   .featherlight .featherlight-content {
@@ -540,7 +517,8 @@ input[type="file"] {
     margin-left: 0;
     margin-right: 0;
     max-height: 98%; } }
-/* states┬а*/
+
+/* states */
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -605,6 +583,118 @@ input[type="file"] {
   opacity: 1; }
 
 /* Fade in end */
-/* theme┬а*/
+/* theme */
 body {
   scroll-behavior: smooth; }
+
+nav {
+  border-bottom: 1px #ccc solid;
+  float: left;
+  top: 0; }
+
+.logo {
+  float: left;
+  display: block; }
+
+.all {
+  min-height: 100vh;
+  position: relative; }
+  .all .col3 {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 100vh; }
+  .all .col9 {
+    position: relative;
+    display: block;
+    height: 100vh; }
+
+.sidebar {
+  height: 100vh;
+  padding: 4rem 0 0 0;
+  background: #666;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.inbar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  height: 100%;
+  position: relative; }
+
+.nopad {
+  padding: 0; }
+
+.entry {
+  display: block;
+  position: relative;
+  height: 33.3333%; }
+  .entry a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block; }
+
+.bgthumb {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .bgthumb h3 {
+    display: block;
+    position: absolute;
+    padding: .5rem 1rem;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    text-decoration: underline;
+    padding-top: 2rem;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.65)));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+    /* IE6-9 */ }
+
+.date {
+  display: block;
+  position: absolute;
+  padding: .05rem .5rem;
+  top: 1rem;
+  left: 1rem;
+  font-size: .7rem;
+  color: #fff; }
+
+.introtext {
+  width: 60%;
+  float: right;
+  margin-top: 5rem;
+  position: relative;
+  z-index: 2;
+  background: #1ab752;
+  padding: 1rem;
+  color: #fff; }
+
+.introfield {
+  height: 100vh;
+  width: 80%;
+  margin: 0 auto; }
+
+.selfie {
+  max-width: 90%;
+  position: relative;
+  z-index: 1;
+  top: -5rem; }
+  .selfie img {
+    display: block;
+    width: 100%;
+    position: relative; }
