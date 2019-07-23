@@ -1,9 +1,9 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.4549830839242981">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.2737206646873378">
 <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.4549830839242981"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.2737206646873378"></script>
 <?php
 /**
  * Чистый Шаблон для разработки

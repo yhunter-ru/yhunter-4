@@ -25,7 +25,7 @@
 @import "smacss/states/fade-in-viewport";
 
 /* theme */
-
+$green: #1ab752;
 
 body {
       scroll-behavior: smooth;
@@ -40,12 +40,31 @@ nav {
 .logo {
 	float: left;
 	display: block;
+	font-weight: bold;
+
+	margin-right: 1rem;
+	&:after {
+		content: "";
+		border-right: 1px color(lines) solid;
+		margin-left: 1.5rem;
+	}
+	img {
+		height: 3rem;
+		width: 3rem;
+		display: inline-block;
+		position: relative;
+		vertical-align: middle;
+		line-height: 4rem;
+		margin: .5rem .5rem .5rem 1rem;
+	}
 }
 
 .all {
 	
 	min-height: 100vh;
 	position: relative;
+
+	
 	.col3 {		
 		position: relative;
 		display: block;
@@ -63,7 +82,7 @@ nav {
 .sidebar {	
 	height: 100vh;
 	padding: 4rem 0 0 0;
-	background: #666;
+	
 	display: block;
 	position: relative;
 	box-sizing: border-box;
@@ -85,12 +104,52 @@ nav {
 	display: block;
 	position: relative;
 	height: 33.3333%;
+	padding: 1rem 1rem 0 1rem;
+	box-sizing: border-box;
+	z-index: 10;
+	&:after {
+		content: "";
+		display: block;
+		width: 4rem;
+		height: 4rem;
+		border-top: .2rem $green solid;
+		border-left: .2rem $green solid;
+		position: absolute;
+		top: .5rem;
+		left: .5rem;
+	}
+	&:before {
+		content: "";
+		display: block;
+		width: 3rem;
+		height: 3rem;
+		position: absolute;
+		bottom: -.5rem;
+		right: .5rem;
+		z-index: 1;
+		background-image: -webkit-linear-gradient(bottom left, transparent, transparent 48%, rgba(30,30,30,.3) 48%, rgba(30,30,30,.3) 52%, transparent 52%);
+		background-image: -o-linear-gradient(bottom left, transparent, transparent 48%, rgba(30,30,30,.3) 48%, rgba(30,30,30,.3) 52%, transparent 52%);
+		background-image: linear-gradient(to top right, transparent, transparent 48%, rgba(255,255,255,1) 48%, rgba(255,255,255,1) 52%, transparent 52%);
+		background-size:10px 10px;	
+	}
+	&:last-child {
+		padding-bottom: 1rem;
+		&:before {
+			bottom: .5rem;
+		}
+	}
 	a {
 		display: block;
+		box-sizing: border-box;
 		width: 100%;
 		height: 100%;
 		position: relative;
 		display: block;
+		z-index: 10;
+		@include transit();
+		&:hover {
+			transform: scale(0.95);
+		}
 	}
 }
 
@@ -104,6 +163,7 @@ nav {
 	h3 {
 		display: block;
 		position: absolute;
+		box-sizing: border-box;
 		padding: .5rem 1rem;
 		bottom: 0;
 		width: 100%;
@@ -132,31 +192,95 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .introtext {
 	width: 60%;
-	float: right;
-	margin-top: 5rem;
-	position: relative;
+	
+	//margin-top: 5rem;
+	position: absolute;
+	right: 1rem;
 	z-index: 2;
+	
+	top: 5rem;
+	
+	color: #fff;
+
+	&:before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform: translate(1rem, 1rem);
+			//background-color:#666;
+		    background-image: -webkit-linear-gradient(bottom left, transparent, transparent 48%, rgba(30,30,30,.3) 48%, rgba(30,30,30,.3) 52%, transparent 52%);
+		    background-image: -o-linear-gradient(bottom left, transparent, transparent 48%, rgba(30,30,30,.3) 48%, rgba(30,30,30,.3) 52%, transparent 52%);
+		    background-image: linear-gradient(to top right, transparent, transparent 48%, rgba(255,255,255,1) 48%, rgba(255,255,3255,1) 52%, transparent 52%);
+		    background-size:10px 10px;	
+		    z-index: 1;		
+	}
+}
+
+.introcont {
 	background: #1ab752;
 	padding: 1rem;
-	color: #fff;
+	position: relative;
+	z-index: 20;
 }
 
 .introfield {
 	height: 100vh;
 	width: 80%;
 	margin: 0 auto;
-}
+	//padding-top: 7rem;
+	position: relative;
 
+
+}
+.intro {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	background-image: url('../img/1119959624.jpg');
+	background-size: cover;
+}
 .selfie {
 	max-width: 90%;
 	position: relative;
 	z-index: 1;
-	top: -5rem;
+	top: 7rem;
+	display: block;
+
+	&:before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform: translate(-1rem, 1rem);
+			//background-color:#666;
+		    background-image: -webkit-linear-gradient(bottom left, transparent, transparent 48%, rgba(30,30,30,.3) 48%, rgba(30,30,30,.3) 52%, transparent 52%);
+		    background-image: -o-linear-gradient(bottom left, transparent, transparent 48%, rgba(30,30,30,.3) 48%, rgba(30,30,30,.3) 52%, transparent 52%);
+		    background-image: linear-gradient(to top right, transparent, transparent 48%, rgba(255,255,255,1) 48%, rgba(255,255,255,1) 52%, transparent 52%);
+		    background-size:10px 10px;			
+	}
+
 	
 	img {
 		display: block;
 		width: 100%;
 		position: relative;
 		//transform: translate(0, -50%);
+		
+
 	}
 }
+
+.introcontacts {
+	position: relative;
+	top: 10rem;
+	display: block;
+	width: 100%;
+	border-left: 1px #fff solid;
+	border-right: 1px #fff solid;
+	border-bottom: 1px #fff solid;
+	padding: 1rem;
+}
+

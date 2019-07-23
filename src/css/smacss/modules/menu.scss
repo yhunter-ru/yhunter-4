@@ -27,8 +27,8 @@ nav{
 			a {
 				
 				display: block;
-				font-weight:600;
-				line-height: 3em !important;
+				font-weight:normal;
+				line-height: 4em;
 				padding:0 $hem;
 				
 
@@ -78,7 +78,9 @@ nav{
 						display:block;
 						color: color(nav, SubLinks);
 						border-left:3px solid color(nav, NavBG3);
+						border-bottom: 1px color(lines) dotted;
 						background: color(nav, BG3);
+						line-height: 3rem;
 					}
 
 					&:hover > a {
@@ -150,7 +152,7 @@ a.mobile-menu:hover {
 					opacity: 0;
 					margin: 0 !important;
 					padding: 0 !important;
-					width: 150px !important;
+					width: 15rem !important;
 					position: absolute !important;
 					top: 4em !important;
 					left: 0px !important;
@@ -161,7 +163,7 @@ a.mobile-menu:hover {
 						width: 100%;
 						
 						ul {
-					    	left: 149px !important;
+					    	left: 15rem !important;
 					    	top: 0px !important;
 						}
 					}
@@ -177,10 +179,11 @@ a.mobile-menu:hover {
 					z-index:100 !important;
 				}
 
-				li a {
+				li>a {
 					font-size:1em;
-					line-height: 4em !important;
+					
 					display:block !important;
+
 				}
 
 		}
