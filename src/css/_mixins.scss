@@ -125,9 +125,6 @@
 
 
 
-
-
-
 //Миксина вывода адаптивной сетки
 @mixin adaptive-grid($media:0,$cols: $cols,$maxcol:$max-col,$col-options:null) {
 
@@ -158,9 +155,7 @@
   // Цикл вывода мобильной сетки с ячейками 100%. Используется в миксине mobile-grid
   @mixin mgrid($cols,$maxcol:6,$col-options:null) {
 
-            @each $col in $cols {
-
-            
+            @each $col in $cols {            
 
                 &#{$col} {
                             width: 100%;
@@ -170,15 +165,11 @@
                                     #{$parameter}: $value;     
                                     //$adaptive-parameters: map-merge($mobile-parameters,$adaptive-parameters); - так можно складывать мапы                               
 
-                            }
-                            
+                            }                        
                             
                                   
-                      }
-                
+                      }                
             } 
-    
-
 
   }
   
@@ -227,6 +218,71 @@
 
   
 }
+
+//-- CSS Grid function --//
+
+@mixin css-grid-params($maxcol,$gap,$padding) {
+    display: grid;
+    grid-template-columns: repeat($maxcol, 1fr);
+    grid-gap: $gap;
+    padding: $padding;
+}
+
+@mixin css-grid($maxcol,$gap,$padding,$media:0) {
+    @if $media == 0 {
+            @include css-grid-params($maxcol,$gap,$padding);
+    }  
+
+    @else {
+        @media only screen and (min-width: $media) { 
+            @include css-grid-params($maxcol,$gap,$padding);
+        } 
+    } 
+}
+
+@mixin grid-cols-prarams($cols) {
+    @each $c in $cols {
+          @if $c > 1 {
+            &#{$c} {
+              grid-column: span $c / auto;
+            }
+          }
+    } 
+}
+
+@mixin grid-cols($cols, $media:0) {
+  @if $media == 0 {
+      @include grid-cols-prarams($cols);
+  }
+  @else {  
+    @media only screen and (min-width: $media) { 
+      @include grid-cols-prarams($cols); 
+    }    
+  }  
+} 
+
+@mixin grid-rows-prarams($rows) {
+    @each $r in $rows {
+          @if $r > 1 {
+            &#{$r} {
+              grid-row: span $r / auto;
+            }
+          }
+    } 
+}  
+
+@mixin grid-rows($rows, $media:0) {
+  @if $media == 0 {
+      @include grid-rows-prarams($rows);
+  }
+  @else {  
+    @media only screen and (min-width: $media) { 
+      @include grid-rows-prarams($rows);
+    }
+  }      
+} 
+
+//-- CSS Grid function End --//
 
 
 //-- Grid Function End --//
@@ -300,131 +356,6 @@
 }     
 
 //-- Font size brakepoints  mixins end --//
-
-
-//css grid 
-
-//  global grid variables (☠ = don't touch)
-$☠__ms-col-gap: null;
-$☠__ms-row-gap: null;
-$☠__ms-col-count: null;
-$☠__ms-row-count: null;
-
-
-//
-//  repeat function
-//
-@function repeat($repeat, $stuff: 1fr){
-    $list: ();
-    @for $i from 1 through $repeat { $list: append($list, $stuff, space); }
-    @return $list;
-}
-
-//
-//  grid-column mixin 
-//
-@mixin grid-column($start: auto, $span: 1){
-    //  grid-column-gap using left margin 
-    @if $☠__ms-col-gap and not $☠__ms-col-count and $start != 1 {
-        margin-left: $☠__ms-col-gap;
-        @supports (grid-column-gap: 1px){ margin-left: 0; }
-    }     
-    -ms-grid-column: if($☠__ms-col-count, $start + $start - 1, $start);
-    -ms-grid-column-span: if($☠__ms-col-count, $span + $span - 1, $span);
-    grid-column: #{$start}/#{$start + $span}; 
-    @content;
-}
-
-//
-//  grid-row mixin
-//
-@mixin grid-row($start: auto, $span: 1){
-    //  grid-row-gap using top margin 
-    @if $☠__ms-row-gap and not $☠__ms-row-count and $start != 1 {
-        margin-top: $☠__ms-row-gap;
-        @supports (grid-row-gap: 1px){ margin-top: 0; }
-    } 
-    -ms-grid-row: if($☠__ms-row-count, $start + $start - 1, $start);
-    -ms-grid-row-span: if($☠__ms-row-count, $span + $span - 1, $span);
-    grid-row: #{$start}/#{$start + $span};
-    @content;    
-}
-
-
-//
-//  grid-cell mixin
-//
-@mixin grid-cell($col-start: auto, $col-span: 1, $row-start: auto, $row-span: 1){
-    @include grid-column($col-start, $col-span);
-    @include grid-row($row-start, $row-span); 
-    @content;    
-}
-
-
-//
-//  grid-area mixin 
-//
-@mixin grid-area($area){
-    $area: map-get($grid-areas, $area);
-    @include grid-column(nth($area, 1), nth($area, 2));
-    @include grid-row(nth($area, 3), nth($area, 4));  
-    @content;
-}
-
-//
-//  grid mixin 
-//
-@mixin grid($grid-map){
-    $cols: map-get($grid-map, cols);
-    $rows: map-get($grid-map, rows);    
-    $gap:  map-get($grid-map, gap);    
-    $col-gap:  map-get($grid-map, col-gap);        
-    $col-gap: if($col-gap,$col-gap,$gap);
-    $row-gap:  map-get($grid-map, row-gap);
-    $row-gap: if($row-gap,$row-gap,$gap);    
-
-    //  if cols or rows are numbers convert to fraction lists
-    @if $cols and length($cols) == 1 and unitless($cols) { $cols: repeat($cols); }
-    @if $rows and length($rows) == 1 and unitless($rows) { $rows: repeat($rows); }    
-    
-    //  ie does not support grid gap - why we insert the gap space as a row or colum
-    //  note! the first loop is to ensure cols/rows are not a multidimensional list
-    //  (when generated by the repeat function) 
-    $ms-cols: null;
-    $ms-rows: null;    
-    @if $col-gap and $cols {
-        $ms-cols: ();
-        @each $col in $cols { $ms-cols: if( type-of($col) == list, join($ms-cols, $col), append($ms-cols, $col)); }
-        @for $i from 1 through length($ms-cols) - 1{ $ms-cols: set-nth($ms-cols, $i, nth($ms-cols,$i) $col-gap);  }
-        //  globalize ms col count (used by grid-column)
-        $☠__ms-col-count: length($ms-cols) !global;        
-    }
-    @if $row-gap and $rows {
-        $ms-rows: ();        
-        @each $row in $rows { $ms-rows: if( type-of($row) == list, join($ms-rows, $row), append($ms-rows, $row)); }
-        @for $i from 1 through length($ms-rows) - 1 { $ms-rows: set-nth($ms-rows, $i, nth($ms-rows,$i) $row-gap); }
-
-        //  globalize ms row count (used by grid-row)
-        $☠__ms-row-count: length($ms-rows) !global;
-    }
-    // 
-    $☠__ms-col-gap: $col-gap !global;
-    $☠__ms-row-gap: $row-gap !global;
-
-
-    display: -ms-grid;    
-    display: grid;
-
-    -ms-grid-columns: $ms-cols or $cols;
-    -ms-grid-rows: $ms-rows or $rows;    
-
-    grid-template-columns: $cols;
-    grid-template-rows: $rows;    
-
-    grid-column-gap: $col-gap;
-    grid-row-gap: $row-gap;    
-    @content;
-}
 
 
 

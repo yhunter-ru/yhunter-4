@@ -2,7 +2,7 @@
 
     .forms input {width: 60%; margin: 0 auto; display: block;}
 
-    input, textarea, select {line-height: 2em; color: color(txt); padding: 0 $hem; border: 2px color(gr) solid; clear: both; width: 100%; box-sizing:  border-box;  @include border-radius($r !important);}
+    input, textarea, select {line-height: 2em; color: color(txt); padding: 0 $hem; border: 1px color(lines) solid; clear: both; width: 100%; box-sizing:  border-box;  @include border-radius($r !important);}
 
     select {height: 5 * $hem;}
 

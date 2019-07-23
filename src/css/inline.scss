@@ -9,10 +9,10 @@
 
 /* Layout */
 @import "smacss/layout/grid";
-@import "smacss/layout/default-grid"; 
-@import "smacss/layout/css-grid"; 
-@import "smacss/layout/grid-padding"; 
-@import "smacss/layout/mobile-grid"; 
+@import "smacss/layout/default-grid";
+@import "smacss/layout/css-grid";
+@import "smacss/layout/grid-padding";
+@import "smacss/layout/mobile-grid";
 @import "smacss/layout/square-block";
 @import "smacss/layout/center-block";
 @import "smacss/layout/clear";
@@ -43,3 +43,4 @@ nav  {
 	width: 100%;
 	display: block;
 }
+

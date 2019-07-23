@@ -70,11 +70,11 @@
 
 <!-- build:html -->
 
-<nav class="FixedNav">
+<nav class="FixedNav sticky-header">
 	
 	<div class="col10">
 		<div class="logo">
-			<img src="wp-content/themes/yhunter4/img/yhunter-logo.svg">
+			<a href="/" title="На главную страницу"><img src="wp-content/themes/yhunter4/img/yhunter-logo.svg"></a>
 			Юрий Баранов
 		</div>
 		<ul class="menu">
@@ -89,7 +89,14 @@
 			</ul>
 	</div>
 
-	<div class="col2">поиск</div>
+	<div class="col2">
+		<div class="searchform">
+					<form method="get" id="searchform" action="/">
+						<span class="icon-search"></span>	
+						<input type="text" name="s" id="s"  value="" onblur="this.className='';" onclick="this.className='act';">
+					</form>
+		</div>
+	</div>
 
 	
 </nav>

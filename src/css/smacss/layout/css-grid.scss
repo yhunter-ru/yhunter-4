@@ -1,36 +1,35 @@
-$grid: (
-    cols: repeat(12, 1fr) 2fr,
-    row-gap: 8px,
-    col-gap: 16px
-);
+$cols: 1,2,3,4,5,6,7,8,9,10,11,12; 
+$rows: 1,2,3,4,5,6; 
+$pad: $hem*2;
+$breakpoint: 980px;
 
-.grid {
-    //  create grid 
-    @include grid($grid); 
-    max-width: 80%;
-    margin-left : auto;
-    margin-right: auto; 
-    box-sizing: border-box;   
+.grid {	
+		@include css-grid(1,$pad,$pad); // Количество колонок сетки, зазор сетки, поля сетки, ширина для медиа-запроса (если 0 или пусто, запроса не будет).
 }
 
-.cell {
-    background: #ccc;
+.grid {	
+		@include css-grid(6,$pad,$pad,980px); // Количество колонок сетки, зазор сетки, поля сетки, ширина для медиа-запроса (если 0 или пусто, запроса не будет).
 }
 
-.cell-1 {
-    @include grid-column(1,2);
-    @include grid-row(1,1); 
-}
-.cell-2 {
-    @include grid-column(3,2);
-    @include grid-row(1,2);  
+.grid {	
+		@include css-grid(6,$pad,$pad,1600px); // Количество колонок сетки, зазор сетки, поля сетки, ширина для медиа-запроса (если 0 или пусто, запроса не будет).
 }
 
-.cell-3 {
-    @include grid-column(5,9);
-    @include grid-row(1,2); 
+.grid2 {	
+		@include css-grid(1,$pad,$pad); // Количество колонок сетки, зазор сетки, поля сетки, ширина для медиа-запроса (если 0 или пусто, запроса не будет).
 }
 
-.grid .grid {
-    max-width: 100%;
+.grid2 {	
+		@include css-grid(4,$pad,$pad,980px); // Количество колонок сетки, зазор сетки, поля сетки, ширина для медиа-запроса (если 0 или пусто, запроса не будет).
 }
+
+
+
+.c { //Создает классы ячеек для колонок c1, c2, c3... с соответствущим номеру grid-column: span
+	@include grid-cols($cols, $breakpoint); // Ширина медиа-запроса, массив необходимых колонок
+}
+.r { //Создает классы ячеек для рядов r1, r2, r3... с соответствущим номеру grid-row: span
+	@include grid-rows($rows, $breakpoint); 
+}
+
+  
