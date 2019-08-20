@@ -591,7 +591,48 @@ body {
 nav {
   border-bottom: 1px #ccc solid;
   float: left;
-  top: 0; }
+  top: 0;
+  height: 4rem; }
+
+.front {
+  position: relative;
+  display: grid;
+  margin-top: 4rem;
+  height: calc(100vh - 4rem);
+  grid-template-columns: 25vw;
+  grid-template-rows: auto;
+  grid-template-areas: "header about about sidebar" "header portfolio portfolio sidebar" "contacts portfolio portfolio sidebar" "contacts portfolio portfolio sidebar" "contacts portfolio portfolio sidebar"; }
+  .front div {
+    min-width: 25vw;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+
+.name {
+  grid-area: header;
+  background-image: url("../img/stock-photo-248125767.jpg");
+  background-size: cover; }
+
+.about {
+  grid-area: about;
+  padding: 2rem;
+  background: #1ab752;
+  color: #fff; }
+
+.contacts {
+  background: #148a3e;
+  grid-area: contacts; }
+
+.portfolio {
+  grid-area: portfolio;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+
+.blog {
+  grid-area: sidebar;
+  display: grid;
+  min-height: 100%;
+  background: #666;
+  grid-template-colums: repeat(1, 1fr); }
 
 .logo {
   float: left;
