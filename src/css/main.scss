@@ -112,8 +112,8 @@ nav {
 		display: block;
 		width: 4rem;
 		height: 4rem;
-		border-top: .2rem $green solid;
-		border-left: .2rem $green solid;
+		border-top: 1px $green solid;
+		border-left: 1px $green solid;
 		position: absolute;
 		top: .5rem;
 		left: .5rem;
@@ -240,7 +240,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	display: block;
 	position: relative;
 	overflow: hidden;
-	background-image: url('../img/Xaanw0s0pMk.jpg');
+	background-image: url('../img/artur-luczka-loAfOVk1eNc-unsplash.jpg');
 	background-size: cover;
 	min-height: 100vh;
 }
@@ -449,6 +449,15 @@ footer {
 	border-bottom: 1px $green solid;
 	text-align: right;
 	overflow: hidden;
+}
+
+#about {
+	padding: 2rem 1rem;
+	text-align: center;
+}
+
+.slab {
+	color: $green;
 }
 
 

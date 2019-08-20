@@ -655,8 +655,8 @@ nav {
     display: block;
     width: 4rem;
     height: 4rem;
-    border-top: 0.2rem #1ab752 solid;
-    border-left: 0.2rem #1ab752 solid;
+    border-top: 1px #1ab752 solid;
+    border-left: 1px #1ab752 solid;
     position: absolute;
     top: .5rem;
     left: .5rem; }
@@ -764,7 +764,7 @@ nav {
   display: block;
   position: relative;
   overflow: hidden;
-  background-image: url("../img/Xaanw0s0pMk.jpg");
+  background-image: url("../img/artur-luczka-loAfOVk1eNc-unsplash.jpg");
   background-size: cover;
   min-height: 100vh; }
 
@@ -902,3 +902,10 @@ footer {
   border-bottom: 1px #1ab752 solid;
   text-align: right;
   overflow: hidden; }
+
+#about {
+  padding: 2rem 1rem;
+  text-align: center; }
+
+.slab {
+  color: #1ab752; }
