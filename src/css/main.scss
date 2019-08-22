@@ -87,6 +87,13 @@ nav {
   grid-area: portfolio;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  svg {
+  	width: 1.5rem;
+  	height: 1.5rem;
+  	display: block;
+  	fill: $green;
+  	margin: 1rem 1rem;
+  }
 }
 .blog {
   grid-area: sidebar;
@@ -94,6 +101,13 @@ nav {
   min-height: 100%;
   background: #666;
   grid-template-colums: repeat(1, 1fr);
+  svg {
+  	width: 1.5rem;
+  	height: 1.5rem;
+  	display: block;
+  	fill: $green;
+  	margin: 1rem 1rem;
+  }
 }
 
 
@@ -456,9 +470,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 		height: 2rem;
 		fill: $green;
 		display: inline-block;
-		position: relative;
-		top: .5rem;
-		left: .5rem;
+		position: absolute;
+		top: 1.6rem;
+		left: -.5rem;
 	}
 
 }

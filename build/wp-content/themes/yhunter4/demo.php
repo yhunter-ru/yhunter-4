@@ -606,9 +606,9 @@ Owl Nest Framework Demo Page
         <!-- end wrapper -->
 <!-- End of Body -->
 
-<link rel="stylesheet" href="wp-content/themes/yhunter4/css/main.min.css?rev=0.16166915909939839">
+<link rel="stylesheet" href="wp-content/themes/yhunter4/css/main.min.css?rev=0.7055231589561166">
 <script>window.jQuery || document.write('<script src="wp-content/themes/yhunter4/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-<script src="wp-content/themes/yhunter4/js/main.js?rev=0.16166915909939839"></script>
+<script src="wp-content/themes/yhunter4/js/main.js?rev=0.7055231589561166"></script>
 <script type="text/javascript">
         	 $(window).load(function () {
 			$('.gallery').featherlightGallery();
