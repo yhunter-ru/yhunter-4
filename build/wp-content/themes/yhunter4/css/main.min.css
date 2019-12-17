@@ -9,6 +9,7 @@
 /* Rem Crossbrowser end */
 /* Radius mixin */
 /* base */
+@import url("https://fonts.googleapis.com/css?family=Alice&display=swap&subset=cyrillic");
 body {
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased; }
@@ -616,11 +617,13 @@ nav {
   grid-area: about;
   padding: 2rem;
   background: #1ab752;
-  color: #fff; }
+  color: #fff;
+  line-height: 1.5rem; }
 
 .contacts {
   background: #148a3e;
-  grid-area: contacts; }
+  grid-area: contacts;
+  position: relative; }
 
 .portfolio {
   grid-area: portfolio;
@@ -637,6 +640,7 @@ nav {
   grid-area: sidebar;
   display: grid;
   min-height: 100%;
+  width: 25vw;
   background: #666;
   grid-template-colums: repeat(1, 1fr); }
   .blog svg {
@@ -644,7 +648,42 @@ nav {
     height: 1.5rem;
     display: block;
     fill: #1ab752;
-    margin: 1rem 1rem; }
+    margin: 0rem .5rem 0rem 0.5rem;
+    display: inline; }
+
+.blog-item {
+  display: block;
+  position: relative;
+  background-size: cover; }
+  .blog-item a {
+    display: block;
+    width: 100%;
+    height: 100%; }
+    .blog-item a:hover span {
+      color: #1ab752; }
+
+.h-s {
+  word-wrap: break-word;
+  white-space: normal;
+  color: #fff;
+  padding: 3rem 1rem .5rem 1rem;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  background: black;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.75)), color-stop(31%, rgba(0, 0, 0, 0.75)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 31%, rgba(0, 0, 0, 0) 100%); }
+  .h-s a:link, .h-s a:visited {
+    color: #fff; }
+  .h-s a:hover {
+    opacity: .75; }
+  .h-s span {
+    text-decoration: underline; }
 
 .logo {
   float: left;
@@ -843,14 +882,64 @@ nav {
     width: 100%;
     position: relative; }
 
-.introcontacts {
+.ct-grid {
+  width: 80%;
+  min-width: auto !important;
+  margin: 0 10%;
+  text-align: center;
   position: relative;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  display: block;
-  width: 100%;
-  overflow: visible;
-  padding: 0rem; }
+  top: 10%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 0;
+  color: #fff;
+  height: 80%; }
+  .ct-grid div {
+    min-width: auto;
+    padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .ct-grid a:link, .ct-grid a:visited {
+    color: #fff; }
+  .ct-grid a:hover {
+    opacity: .7; }
+
+.ct6 {
+  grid-column: span 6 / auto;
+  border-bottom: 1px rgba(255, 255, 255, 0.5) dotted; }
+  .ct6 div {
+    display: block; }
+
+.ct2 {
+  grid-column: span 2 / auto; }
+
+.ct3 {
+  grid-column: span 3 / auto;
+  border-bottom: 1px rgba(255, 255, 255, 0.5) dotted; }
+
+.ct3, .ct2 {
+  border-right: 1px rgba(255, 255, 255, 0.5) dotted; }
+
+.ctend {
+  border-right: none !important; }
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .grid {
   padding: 0;
@@ -962,3 +1051,68 @@ footer {
 
 .slab {
   color: #1ab752; }
+
+#textabout {
+  font-weight: 100;
+  margin: 5rem auto;
+  color: #333;
+  font-family: 'Alice', serif;
+  font-style: normal;
+  clear: both; }
+
+.gridabout {
+  position: relative;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 20vw;
+  grid-template-rows: auto;
+  grid-template-areas: "aboutheader aboutheader shortabout shortabout shortabout" "aboutheader aboutheader work work work" "bigheader bigheader bigheader bigheader bigheader" "bigheader bigheader bigheader bigheader bigheader" "subheader subheader subheader subheader subheader" "period period abouttext abouttext abouttext" "years years abouttext abouttext abouttext" "works works abouttext abouttext abouttext"; }
+  .gridabout div {
+    min-width: 20vw;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1rem; }
+
+.aboutheader {
+  grid-area: aboutheader;
+  background: #1ab752;
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.shortabout {
+  grid-area: shortabout; }
+
+.work {
+  grid-area: work;
+  text-align: right;
+  font-size: 1.5rem;
+  border-bottom: 1px #1ab752 dotted; }
+
+.bigheader {
+  width: 100%;
+  height: 10rem;
+  grid-area: bigheader;
+  overflow: visible;
+  text-transform: uppercase;
+  text-align: center; }
+
+.subheader {
+  grid-area: subheader;
+  text-align: center; }
+
+.period {
+  grid-area: period; }
+
+.abouttext {
+  grid-area: abouttext; }
+
+.years {
+  grid-area: years; }
+
+.works {
+  grid-area: works; }
