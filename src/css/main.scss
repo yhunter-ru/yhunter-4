@@ -167,7 +167,7 @@ $ptbg: #555;
 
 .portfolio {
 	background-color: $ptbg;
-	padding: 2rem;
+	//padding: 2rem;
 	position: relative;
 	z-index: 1;
 
@@ -185,6 +185,7 @@ $ptbg: #555;
 		z-index: 10;
 		padding: 0;
 		transform: translate(-50%, -50%);
+		border-radius: 50%;
 		svg {
 			fill: #fff;
 		}
@@ -233,12 +234,31 @@ $ptbg: #555;
 	height: 110%;
 	top: -5%;
 	left: -5%;
-	-webkit-filter: blur(.9rem);
-    -moz-filter: blur(.9rem);
-	filter: blur(.9rem) saturate(.75);
+	-webkit-filter: blur(.7rem);
+    -moz-filter: blur(.7rem);
+	filter: blur(.7rem) saturate(.8);
 
-	opacity: .70;
+	opacity: 1;
 	z-index: 1;
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 200%;
+		height: 100%;
+		bottom: 0;
+		left: 0;
+		z-index: 10;
+		//background: rgba(30, 30, 30, 1.0);
+		//background: -webkit-radial-gradient(top right, rgba(30, 30, 30, 0.0), rgba(30, 30, 30, 1));
+		//background: -moz-radial-gradient(top right, rgba(30, 30, 30, 0.0), rgba(30, 30, 30, 1));
+		//background: radial-gradient(farthest-side ellipse at top right, rgba(30, 30, 30, 0.0), rgba(30, 40, 30, .5));
+		background: rgba(30, 30, 30, 0.0);
+background: -webkit-linear-gradient(top right, rgba(30, 30, 30, 0.0), rgba(30, 50, 30, 0.5));
+background: -moz-linear-gradient(top right, rgba(30, 30, 30, 0.0), rgba(30, 50, 30, 0.5));
+background: linear-gradient(to bottom left, rgba(30, 30, 30, 0.0), rgba(30, 50, 30, 0.5));
+
+	}
 }
 
 .pt-th {

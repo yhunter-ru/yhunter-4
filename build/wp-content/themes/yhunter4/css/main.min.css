@@ -689,7 +689,6 @@ nav {
 
 .portfolio {
   background-color: #555;
-  padding: 2rem;
   position: relative;
   z-index: 1; }
 
@@ -704,7 +703,8 @@ nav {
   z-index: 10;
   padding: 0;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+          transform: translate(-50%, -50%);
+  border-radius: 50%; }
   .pf-icon svg {
     fill: #fff; }
 
@@ -744,11 +744,23 @@ nav {
   height: 110%;
   top: -5%;
   left: -5%;
-  -webkit-filter: blur(0.9rem);
-  -moz-filter: blur(0.9rem);
-  filter: blur(0.9rem) saturate(0.75);
-  opacity: .70;
+  -webkit-filter: blur(0.7rem);
+  -moz-filter: blur(0.7rem);
+  filter: blur(0.7rem) saturate(0.8);
+  opacity: 1;
   z-index: 1; }
+  .pt-bl:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(30, 30, 30, 0);
+    background: -webkit-gradient(linear, right top, left bottom, from(rgba(30, 30, 30, 0)), to(rgba(30, 50, 30, 0.5)));
+    background: linear-gradient(to bottom left, rgba(30, 30, 30, 0), rgba(30, 50, 30, 0.5)); }
 
 .pt-th {
   display: block;
