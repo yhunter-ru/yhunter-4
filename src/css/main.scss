@@ -47,7 +47,7 @@ nav {
 
 
 .front {
-  
+  border-bottom: .5rem $green solid;
   position: relative;
   display: grid;
   margin-top: 4rem;
@@ -61,7 +61,7 @@ nav {
     "contacts portfolio portfolio sidebar"
     "contacts portfolio portfolio sidebar";
     div {
-    	min-width: 25vw;
+    	//min-width: 25vw;
     	box-sizing: border-box;
     }
 
@@ -81,9 +81,13 @@ nav {
 
 }
 .contacts {
-	background: darken($green, 10%);
+	//@at-rootbackground: darken($green, 10%);
+	background: #444;
 	  grid-area: contacts;
 	  position: relative;
+	  svg {
+		  fill: #fff;
+	  }
   
 }
 .portfolio {
@@ -157,7 +161,105 @@ background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.75) 31%, rgb
 }
 
 
+//Portfolio
 
+$ptbg: #555;
+
+.portfolio {
+	background-color: $ptbg;
+	padding: 2rem;
+	position: relative;
+	z-index: 1;
+
+}
+
+.pf-icon {
+	background-color: $ptbg;
+		display: block;
+
+		position: absolute;
+		text-align: center;
+		line-height: 3rem;
+		top: 50%;
+		left: 50%;
+		z-index: 10;
+		padding: 0;
+		transform: translate(-50%, -50%);
+		svg {
+			fill: #fff;
+		}
+}
+
+.portfolio-item {
+	overflow: hidden;
+	
+	a {
+		//display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		display: flex;
+  		justify-content: center;
+		align-items: center;
+		color: #fff;
+		box-sizing: border-box;
+		padding: 1rem;
+		
+	}
+	$pt-lines: #ccc;
+	&:nth-child(1) > a {
+		border-right: 1px $pt-lines dotted;
+		border-bottom: 1px $pt-lines dotted;
+	}
+	&:nth-child(2) > a {
+		border-bottom: 1px $pt-lines dotted;
+	}
+	&:nth-child(3) > a {
+		
+		border-right: 1px $pt-lines dotted;
+	}
+	&:nth-child(4) > a {
+		
+	}
+
+}
+
+.pt-bl {
+	background-size: cover;
+	display: block;
+	position: absolute;
+	width: 110%;
+	height: 110%;
+	top: -5%;
+	left: -5%;
+	-webkit-filter: blur(.9rem);
+    -moz-filter: blur(.9rem);
+	filter: blur(.9rem) saturate(.75);
+
+	opacity: .70;
+	z-index: 1;
+}
+
+.pt-th {
+	display: block;
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	line-height: 1.6rem;
+	svg {
+		display: inline-block;
+		margin: 0 .5rem 0 0;
+	}
+	img {
+		position: relative;
+		display: block;	
+		margin: 0 auto 1rem auto;
+		box-shadow: .0rem .5rem 1rem rgba(30,30,30, .3);	
+	}
+}
+
+//End of Portfolio
 
 
 
@@ -441,16 +543,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .ct2 {
 	grid-column: span 2 / auto;
+	svg {
+		width: 3rem;
+		height: 3rem;
+	}
 }
 
 .ct3 {
 	grid-column: span 3 / auto;
 	border-bottom: 1px $dotborder dotted;
+
 }
 
 
+
+
 	
-.ct3, .ct2 {
+.ct3, .ct2, .ct4 {
 	border-right: 1px $dotborder dotted;
 }
 
