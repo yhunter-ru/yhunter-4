@@ -597,6 +597,7 @@ nav {
 
 .front {
   border-bottom: 0.5rem #1ab752 solid;
+  background: #000;
   position: relative;
   display: grid;
   margin-top: 4rem;
@@ -606,12 +607,20 @@ nav {
   grid-template-areas: "header about about sidebar" "header portfolio portfolio sidebar" "contacts portfolio portfolio sidebar" "contacts portfolio portfolio sidebar" "contacts portfolio portfolio sidebar"; }
   .front div {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box; }
+            box-sizing: border-box;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+    opacity: 1; }
+  .front:hover >
+div {
+    opacity: .5; }
 
 .name {
   grid-area: header;
   background-image: url("../img/stock-photo-248125767.jpg");
   background-size: cover; }
+  .name:hover {
+    opacity: 1 !important; }
 
 .about {
   grid-area: about;
@@ -619,6 +628,8 @@ nav {
   background: #1ab752;
   color: #fff;
   line-height: 1.5rem; }
+  .about:hover {
+    opacity: 1 !important; }
 
 .contacts {
   background: #444;
@@ -626,6 +637,8 @@ nav {
   position: relative; }
   .contacts svg {
     fill: #fff; }
+  .contacts:hover {
+    opacity: 1 !important; }
 
 .portfolio {
   grid-area: portfolio;
@@ -637,6 +650,8 @@ nav {
     display: block;
     fill: #1ab752;
     margin: 1rem 1rem; }
+  .portfolio:hover {
+    opacity: 1 !important; }
 
 .blog {
   grid-area: sidebar;
@@ -644,7 +659,9 @@ nav {
   min-height: 100%;
   width: 25vw;
   background: #666;
-  grid-template-colums: repeat(1, 1fr); }
+  position: relative;
+  grid-template-colums: repeat(1, 1fr);
+  z-index: 10; }
   .blog svg {
     width: 1.5rem;
     height: 1.5rem;
@@ -652,6 +669,25 @@ nav {
     fill: #1ab752;
     margin: 0rem .5rem 0rem 0.5rem;
     display: inline; }
+  .blog:hover {
+    opacity: 1 !important; }
+    .blog:hover:before {
+      -webkit-transform: translate(-14.9vw, -50%) rotate(-90deg);
+              transform: translate(-14.9vw, -50%) rotate(-90deg); }
+  .blog:before {
+    content: "Блог";
+    position: absolute;
+    display: block;
+    font-size: 10vw;
+    z-index: -10;
+    left: 0;
+    top: 50%;
+    color: #fff;
+    font-weight: bold;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+    -webkit-transform: translate(0vw, -50%) rotate(-90deg);
+            transform: translate(0vw, -50%) rotate(-90deg); }
 
 .blog-item {
   display: block;
@@ -693,7 +729,7 @@ nav {
   z-index: 1; }
 
 .pf-icon {
-  background-color: #555;
+  background-color: #1ab752;
   display: block;
   position: absolute;
   text-align: center;
@@ -727,7 +763,7 @@ nav {
     color: #fff;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding: 1rem; }
+    padding: 1rem 1rem .5rem 1rem; }
   .portfolio-item:nth-child(1) > a {
     border-right: 1px #ccc dotted;
     border-bottom: 1px #ccc dotted; }
@@ -736,7 +772,7 @@ nav {
   .portfolio-item:nth-child(3) > a {
     border-right: 1px #ccc dotted; }
 
-.pt-bl {
+.pt-bg {
   background-size: cover;
   display: block;
   position: absolute;
@@ -744,37 +780,43 @@ nav {
   height: 110%;
   top: -5%;
   left: -5%;
-  -webkit-filter: blur(0.7rem);
-  -moz-filter: blur(0.7rem);
-  filter: blur(0.7rem) saturate(0.8);
   opacity: 1;
   z-index: 1; }
-  .pt-bl:after {
+  .pt-bg:after {
     content: "";
     display: block;
     position: absolute;
-    width: 200%;
+    width: 100%;
     height: 100%;
     bottom: 0;
     left: 0;
     z-index: 10;
     background: rgba(30, 30, 30, 0);
-    background: -webkit-gradient(linear, right top, left bottom, from(rgba(30, 30, 30, 0)), to(rgba(30, 50, 30, 0.5)));
-    background: linear-gradient(to bottom left, rgba(30, 30, 30, 0), rgba(30, 50, 30, 0.5)); }
+    background: -webkit-gradient(linear, right top, left bottom, from(rgba(30, 30, 30, 0)), to(rgba(30, 50, 30, 0.2)));
+    background: linear-gradient(to bottom left, rgba(30, 30, 30, 0), rgba(30, 50, 30, 0.2)); }
+
+.pt-bl {
+  -webkit-filter: blur(0.4rem);
+  -moz-filter: blur(0.4rem);
+  filter: blur(0.4rem) saturate(0.5); }
 
 .pt-th {
   display: block;
   position: relative;
   z-index: 2;
   text-align: center;
-  line-height: 1.6rem; }
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left; }
   .pt-th svg {
     display: inline-block;
     margin: 0 .5rem 0 0; }
   .pt-th img {
+    max-width: 40%;
     position: relative;
     display: block;
-    margin: 0 auto 1rem auto;
+    margin: 0 1rem 1rem 0;
     -webkit-box-shadow: 0rem 0.5rem 1rem rgba(30, 30, 30, 0.3);
             box-shadow: 0rem 0.5rem 1rem rgba(30, 30, 30, 0.3); }
 

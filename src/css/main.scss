@@ -48,6 +48,7 @@ nav {
 
 .front {
   border-bottom: .5rem $green solid;
+  background: #000;
   position: relative;
   display: grid;
   margin-top: 4rem;
@@ -62,14 +63,25 @@ nav {
     "contacts portfolio portfolio sidebar";
     div {
     	//min-width: 25vw;
-    	box-sizing: border-box;
-    }
+		box-sizing: border-box;
+		@include transit();
+		opacity: 1;
+		
+	}
+	&:hover >
+		div {
+			opacity: .5;
+		 
+	}
 
 }
 .name {
   grid-area: header;
   background-image: url('../img/stock-photo-248125767.jpg');
   background-size: cover;
+  &:hover {
+	opacity: 1 !important;
+  }
 }
 .about {
   grid-area: about;
@@ -77,6 +89,9 @@ nav {
   background: $green;
   color: #fff;
   line-height: 1.5rem;
+  &:hover {
+	opacity: 1 !important;
+  }
 
 
 }
@@ -88,7 +103,9 @@ nav {
 	  svg {
 		  fill: #fff;
 	  }
-  
+	&:hover {
+		opacity: 1 !important;
+	}
 }
 .portfolio {
   grid-area: portfolio;
@@ -101,6 +118,9 @@ nav {
   	fill: $green;
   	margin: 1rem 1rem;
   }
+  &:hover {
+	  opacity: 1 !important;
+  }
 }
 .blog {
   grid-area: sidebar;
@@ -108,7 +128,9 @@ nav {
   min-height: 100%;
   width: 25vw;
   background: #666;
+  position: relative;
   grid-template-colums: repeat(1, 1fr);
+  z-index: 10;
   svg {
   	width: 1.5rem;
   	height: 1.5rem;
@@ -116,6 +138,25 @@ nav {
   	fill: $green;
 	margin: 0rem .5rem 0rem 0.5rem;
 	display: inline;
+  }
+  &:hover {
+	opacity: 1 !important;
+	&:before {		
+		transform: translate(-14.9vw, -50%) rotate(-90deg);
+	}
+  }
+  &:before {
+	  content: "Блог";
+	  position: absolute;
+	  display: block;
+	  font-size: 10vw;
+	  z-index: -10;
+	  left: 0;
+	  top: 50%;
+	  color: #fff;
+	  font-weight: bold;
+	  @include transit();
+	  transform: translate(0vw, -50%) rotate(-90deg);
   }
 }
 
@@ -174,7 +215,7 @@ $ptbg: #555;
 }
 
 .pf-icon {
-	background-color: $ptbg;
+	background-color: $green;
 		display: block;
 
 		position: absolute;
@@ -205,7 +246,9 @@ $ptbg: #555;
 		align-items: center;
 		color: #fff;
 		box-sizing: border-box;
-		padding: 1rem;
+		padding: 1rem 1rem .5rem 1rem;
+
+
 		
 	}
 	$pt-lines: #ccc;
@@ -226,7 +269,7 @@ $ptbg: #555;
 
 }
 
-.pt-bl {
+.pt-bg {
 	background-size: cover;
 	display: block;
 	position: absolute;
@@ -234,9 +277,7 @@ $ptbg: #555;
 	height: 110%;
 	top: -5%;
 	left: -5%;
-	-webkit-filter: blur(.7rem);
-    -moz-filter: blur(.7rem);
-	filter: blur(.7rem) saturate(.8);
+
 
 	opacity: 1;
 	z-index: 1;
@@ -244,7 +285,7 @@ $ptbg: #555;
 		content: "";
 		display: block;
 		position: absolute;
-		width: 200%;
+		width: 100%;
 		height: 100%;
 		bottom: 0;
 		left: 0;
@@ -256,9 +297,15 @@ $ptbg: #555;
 		background: rgba(30, 30, 30, 0.0);
 background: -webkit-linear-gradient(top right, rgba(30, 30, 30, 0.0), rgba(30, 50, 30, 0.5));
 background: -moz-linear-gradient(top right, rgba(30, 30, 30, 0.0), rgba(30, 50, 30, 0.5));
-background: linear-gradient(to bottom left, rgba(30, 30, 30, 0.0), rgba(30, 50, 30, 0.5));
+background: linear-gradient(to bottom left, rgba(30, 30, 30, 0.0), rgba(30, 50, 30, 0.2));
 
 	}
+}
+
+.pt-bl {
+	-webkit-filter: blur(.4rem);
+    -moz-filter: blur(.4rem);
+	filter: blur(.4rem) saturate(.5);
 }
 
 .pt-th {
@@ -266,15 +313,20 @@ background: linear-gradient(to bottom left, rgba(30, 30, 30, 0.0), rgba(30, 50, 
 	position: relative;
 	z-index: 2;
 	text-align: center;
-	line-height: 1.6rem;
+	line-height: 1.5rem;
+	font-size: 1rem;
+
+	font-weight: bold;
+	text-align: left;
 	svg {
 		display: inline-block;
 		margin: 0 .5rem 0 0;
 	}
 	img {
+		max-width: 40%;
 		position: relative;
 		display: block;	
-		margin: 0 auto 1rem auto;
+		margin: 0 1rem 1rem 0;
 		box-shadow: .0rem .5rem 1rem rgba(30,30,30, .3);	
 	}
 }
