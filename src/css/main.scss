@@ -33,10 +33,11 @@ body {
 }
 
 nav {
-	border-bottom: 1px color(lines) solid;
+	//border-bottom: 1px color(lines) solid;
 	float: left;
 	top: 0;
 	height: 4rem;
+	box-shadow: .5rem 0 1rem rgba(30,30,30, .3), .1rem 0 .1rem rgba(30,30,30, .3);
 }
 
 
@@ -47,14 +48,17 @@ nav {
 
 
 .front {
-  border-bottom: .5rem $green solid;
-  background: #000;
+  //border-bottom: .5rem #333 solid;
+  background: #fff;
   position: relative;
   display: grid;
+  grid-gap: 1rem;
   margin-top: 4rem;
   height: calc(100vh - 4rem);
   grid-template-columns: 25vw;
   grid-template-rows: auto;
+  padding: 0 1rem;
+  @include transit();
   grid-template-areas: 
     "header about about sidebar"
     "header portfolio portfolio sidebar"
@@ -68,13 +72,17 @@ nav {
 		opacity: 1;
 		
 	}
-	&:hover >
-		div {
-			opacity: .5;
-		 
+	&:hover {
+
+	
+		> div {
+			opacity: .25;
+		}	 
 	}
 
 }
+
+
 .name {
   grid-area: header;
   background-image: url('../img/stock-photo-248125767.jpg');
@@ -89,6 +97,7 @@ nav {
   background: $green;
   color: #fff;
   line-height: 1.5rem;
+
   &:hover {
 	opacity: 1 !important;
   }
@@ -100,6 +109,7 @@ nav {
 	background: #444;
 	  grid-area: contacts;
 	  position: relative;
+
 	  svg {
 		  fill: #fff;
 	  }
@@ -142,7 +152,7 @@ nav {
   &:hover {
 	opacity: 1 !important;
 	&:before {		
-		transform: translate(-14.9vw, -50%) rotate(-90deg);
+		transform: translate(-15.9vw, -50%) rotate(-90deg);
 	}
   }
   &:before {
@@ -153,7 +163,7 @@ nav {
 	  z-index: -10;
 	  left: 0;
 	  top: 50%;
-	  color: #fff;
+	  color: $green;
 	  font-weight: bold;
 	  @include transit();
 	  transform: translate(0vw, -50%) rotate(-90deg);
@@ -164,6 +174,10 @@ nav {
 	display: block;
 	position: relative;
 	background-size: cover;
+	border-bottom: 2px #fff solid;
+	&:last-child {
+		border-bottom: none !important;
+	}
 	a {
 		display: block;
 		width: 100%;
@@ -206,11 +220,13 @@ background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.75) 31%, rgb
 
 $ptbg: #555;
 
+
 .portfolio {
 	background-color: $ptbg;
 	//padding: 2rem;
 	position: relative;
 	z-index: 1;
+
 
 }
 
@@ -234,6 +250,7 @@ $ptbg: #555;
 
 .portfolio-item {
 	overflow: hidden;
+
 	
 	a {
 		//display: block;
@@ -247,25 +264,26 @@ $ptbg: #555;
 		color: #fff;
 		box-sizing: border-box;
 		padding: 1rem 1rem .5rem 1rem;
+		overflow: hidden;
 
 
 		
 	}
-	$pt-lines: #ccc;
+	$pt-lines: 2px #fff solid;
 	&:nth-child(1) > a {
-		border-right: 1px $pt-lines dotted;
-		border-bottom: 1px $pt-lines dotted;
+		border-right: $pt-lines;
+		border-bottom: $pt-lines;
 	}
 	&:nth-child(2) > a {
-		border-bottom: 1px $pt-lines dotted;
+		border-bottom: $pt-lines;
 	}
 	&:nth-child(3) > a {
 		
-		border-right: 1px $pt-lines dotted;
+		border-right: $pt-lines;
 	}
 	&:nth-child(4) > a {
 		
-	}
+	} 
 
 }
 
@@ -305,7 +323,7 @@ background: linear-gradient(to bottom left, rgba(30, 30, 30, 0.0), rgba(30, 50, 
 .pt-bl {
 	-webkit-filter: blur(.4rem);
     -moz-filter: blur(.4rem);
-	filter: blur(.4rem) saturate(.5);
+	filter: blur(.4rem) saturate(.1);
 }
 
 .pt-th {
@@ -899,3 +917,59 @@ footer {
 	grid-area: works;
 }
 
+//text about spans
+.textabout 
+{	
+	font-size: cacl(2vw);
+	position: relative;
+
+	span {
+		display: block;
+		position: relative;
+		float: left;
+		background: #fff;
+		text-shadow: 1rem 1rem 1rem rgba(30,30,30,.3);
+		//padding: 1rem;
+		box-sizing: border-box;
+		
+	}
+}
+.a1 {
+	font-size: 3.1em;
+	width: 25%;
+	line-height: 7rem;
+	z-index: 100;
+	font-weight: bold;
+	padding-right: 1rem;
+	text-transform: uppercase;
+}
+
+.a2 {
+	font-size: 3.0em;
+	width: 75%;
+	line-height: 3.5rem;
+}
+.a3 {
+	font-size: 2.9em;
+	width: 75%;
+	line-height: 3.5rem;
+}
+
+.a4 {
+	margin-top: 1rem;
+	font-size: 3.0em;
+	width: 60%;
+	line-height: 3.0rem;
+}
+.a5 {
+	font-size: 5.6em;
+	width: 60%;
+	line-height: 6.0rem;
+}
+.a6 {
+	font-size: 6em;
+	width: 39%;
+	line-height: 6.0rem;
+}
+
+//text about spans end

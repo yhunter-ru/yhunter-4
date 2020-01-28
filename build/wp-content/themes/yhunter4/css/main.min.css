@@ -590,20 +590,24 @@ body {
   scroll-behavior: smooth; }
 
 nav {
-  border-bottom: 1px #ccc solid;
   float: left;
   top: 0;
-  height: 4rem; }
+  height: 4rem;
+  -webkit-box-shadow: 0.5rem 0 1rem rgba(30, 30, 30, 0.3), 0.1rem 0 0.1rem rgba(30, 30, 30, 0.3);
+          box-shadow: 0.5rem 0 1rem rgba(30, 30, 30, 0.3), 0.1rem 0 0.1rem rgba(30, 30, 30, 0.3); }
 
 .front {
-  border-bottom: 0.5rem #1ab752 solid;
-  background: #000;
+  background: #fff;
   position: relative;
   display: grid;
+  grid-gap: 1rem;
   margin-top: 4rem;
   height: calc(100vh - 4rem);
   grid-template-columns: 25vw;
   grid-template-rows: auto;
+  padding: 0 1rem;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
   grid-template-areas: "header about about sidebar" "header portfolio portfolio sidebar" "contacts portfolio portfolio sidebar" "contacts portfolio portfolio sidebar" "contacts portfolio portfolio sidebar"; }
   .front div {
     -webkit-box-sizing: border-box;
@@ -611,9 +615,8 @@ nav {
     -webkit-transition: all 0.5s ease-in-out 0s;
     transition: all 0.5s ease-in-out 0s;
     opacity: 1; }
-  .front:hover >
-div {
-    opacity: .5; }
+  .front:hover > div {
+    opacity: .25; }
 
 .name {
   grid-area: header;
@@ -672,8 +675,8 @@ div {
   .blog:hover {
     opacity: 1 !important; }
     .blog:hover:before {
-      -webkit-transform: translate(-14.9vw, -50%) rotate(-90deg);
-              transform: translate(-14.9vw, -50%) rotate(-90deg); }
+      -webkit-transform: translate(-15.9vw, -50%) rotate(-90deg);
+              transform: translate(-15.9vw, -50%) rotate(-90deg); }
   .blog:before {
     content: "Блог";
     position: absolute;
@@ -682,7 +685,7 @@ div {
     z-index: -10;
     left: 0;
     top: 50%;
-    color: #fff;
+    color: #1ab752;
     font-weight: bold;
     -webkit-transition: all 0.5s ease-in-out 0s;
     transition: all 0.5s ease-in-out 0s;
@@ -692,7 +695,10 @@ div {
 .blog-item {
   display: block;
   position: relative;
-  background-size: cover; }
+  background-size: cover;
+  border-bottom: 2px #fff solid; }
+  .blog-item:last-child {
+    border-bottom: none !important; }
   .blog-item a {
     display: block;
     width: 100%;
@@ -763,14 +769,15 @@ div {
     color: #fff;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding: 1rem 1rem .5rem 1rem; }
+    padding: 1rem 1rem .5rem 1rem;
+    overflow: hidden; }
   .portfolio-item:nth-child(1) > a {
-    border-right: 1px #ccc dotted;
-    border-bottom: 1px #ccc dotted; }
+    border-right: 2px #fff solid;
+    border-bottom: 2px #fff solid; }
   .portfolio-item:nth-child(2) > a {
-    border-bottom: 1px #ccc dotted; }
+    border-bottom: 2px #fff solid; }
   .portfolio-item:nth-child(3) > a {
-    border-right: 1px #ccc dotted; }
+    border-right: 2px #fff solid; }
 
 .pt-bg {
   background-size: cover;
@@ -798,7 +805,7 @@ div {
 .pt-bl {
   -webkit-filter: blur(0.4rem);
   -moz-filter: blur(0.4rem);
-  filter: blur(0.4rem) saturate(0.5); }
+  filter: blur(0.4rem) saturate(0.1); }
 
 .pt-th {
   display: block;
@@ -1254,3 +1261,50 @@ footer {
 
 .works {
   grid-area: works; }
+
+.textabout {
+  font-size: cacl(2vw);
+  position: relative; }
+  .textabout span {
+    display: block;
+    position: relative;
+    float: left;
+    background: #fff;
+    text-shadow: 1rem 1rem 1rem rgba(30, 30, 30, 0.3);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+
+.a1 {
+  font-size: 3.1em;
+  width: 25%;
+  line-height: 7rem;
+  z-index: 100;
+  font-weight: bold;
+  padding-right: 1rem;
+  text-transform: uppercase; }
+
+.a2 {
+  font-size: 3.0em;
+  width: 75%;
+  line-height: 3.5rem; }
+
+.a3 {
+  font-size: 2.9em;
+  width: 75%;
+  line-height: 3.5rem; }
+
+.a4 {
+  margin-top: 1rem;
+  font-size: 3.0em;
+  width: 60%;
+  line-height: 3.0rem; }
+
+.a5 {
+  font-size: 5.6em;
+  width: 60%;
+  line-height: 6.0rem; }
+
+.a6 {
+  font-size: 6em;
+  width: 39%;
+  line-height: 6.0rem; }
