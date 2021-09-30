@@ -48,23 +48,31 @@ nav {
 
 
 .front {
+
   //border-bottom: .5rem #333 solid;
+  box-sizing: border-box;
   background: #fff;
   position: relative;
   display: grid;
   grid-gap: 1rem;
   margin-top: 4rem;
-  height: calc(100vh - 4rem);
-  grid-template-columns: 25vw;
+  //height: calc(100vh - 4rem);
+  grid-template-columns: 100%;
   grid-template-rows: auto;
-  padding: 0 1rem;
+  padding:  1rem;
   @include transit();
   grid-template-areas: 
-    "header about about sidebar"
-    "header portfolio portfolio sidebar"
-    "contacts portfolio portfolio sidebar"
-    "contacts portfolio portfolio sidebar"
-    "contacts portfolio portfolio sidebar";
+  "name"
+  "about"
+  "contacts"
+  "portfolio"
+  "blog";
+  //grid-template-areas: 
+  //  "header about about sidebar"
+  //  "header portfolio portfolio sidebar"
+  //  "contacts portfolio portfolio sidebar"
+  //  "contacts portfolio portfolio sidebar"
+  //  "contacts portfolio portfolio sidebar";
     div {
     	//min-width: 25vw;
 		box-sizing: border-box;
@@ -72,24 +80,17 @@ nav {
 		opacity: 1;
 		
 	}
-	&:hover {
 
-	
-		> div {
-			opacity: .25;
-		}	 
-	}
 
 }
 
 
 .name {
-  grid-area: header;
+  grid-area: name;
   background-image: url('../img/stock-photo-248125767.jpg');
   background-size: cover;
-  &:hover {
-	opacity: 1 !important;
-  }
+  min-height: 30vh;
+
 }
 .about {
   grid-area: about;
@@ -98,24 +99,63 @@ nav {
   color: #fff;
   line-height: 1.5rem;
 
-  &:hover {
-	opacity: 1 !important;
-  }
+
 
 
 }
+$contacts_border: 1px rgba(255,255,255,.3) dotted;
 .contacts {
 	//@at-rootbackground: darken($green, 10%);
 	background: #444;
-	  grid-area: contacts;
-	  position: relative;
+	grid-area: contacts;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 1rem;
+	a {
+		color: #fff;
+	}
+	a {
+		padding: 1rem;
+	}
+	&__mail {
+		display: flex;
+		flex-direction: column;
+		border-bottom: $contacts_border;
+		padding: 1rem;
+		a {
+			padding: 0 1rem;
+		}
+	}
+	&__tel {
+		padding: 1rem;
+		border-bottom: $contacts_border;
+	}
+	&__messengers, &__social {
+		border-bottom: $contacts_border;
+		display: flex;
+		flex-direction: row;
+		a {
+			flex: 1;
+			box-sizing: border-box;
+			border-left: 1px transparent dotted;
+			border-right: $contacts_border;
+			display: block;
+			&:last-child {
+				border-right: 1px transparent dotted;
+			}
+		}
+	}
+	&__social {
+		border-bottom: none;
+	}
+	
 
 	  svg {
 		  fill: #fff;
 	  }
-	&:hover {
-		opacity: 1 !important;
-	}
+
 }
 .portfolio {
   grid-area: portfolio;
@@ -128,15 +168,13 @@ nav {
   	fill: $green;
   	margin: 1rem 1rem;
   }
-  &:hover {
-	  opacity: 1 !important;
-  }
+
 }
 .blog {
-  grid-area: sidebar;
+  grid-area: blog;
   display: grid;
-  min-height: 100%;
-  width: 25vw;
+  min-height: 100vh;
+  width: 100%;
   background: #666;
   position: relative;
   grid-template-colums: repeat(1, 1fr);
@@ -149,25 +187,7 @@ nav {
 	margin: 0rem .5rem 0rem 0.5rem;
 	display: inline;
   }
-  &:hover {
-	opacity: 1 !important;
-	&:before {		
-		transform: translate(-15.9vw, -50%) rotate(-90deg);
-	}
-  }
-  &:before {
-	  content: "Блог";
-	  position: absolute;
-	  display: block;
-	  font-size: 10vw;
-	  z-index: -10;
-	  left: 0;
-	  top: 50%;
-	  color: $green;
-	  font-weight: bold;
-	  @include transit();
-	  transform: translate(0vw, -50%) rotate(-90deg);
-  }
+  
 }
 
 .blog-item {
@@ -959,7 +979,7 @@ footer {
 	margin-top: 1rem;
 	font-size: 3.0em;
 	width: 60%;
-	line-height: 3.0rem;
+	line-height: 3.0rem;  
 }
 .a5 {
 	font-size: 5.6em;

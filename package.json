@@ -25,7 +25,7 @@
     "gulp-notify": "*",
     "gulp-rename": "*",
     "gulp-replace": "*",
-    "gulp-sass": "*",
+    "gulp-dart-sass": "*",
     "gulp-svgmin": "^2.1.0",
     "gulp-svgstore": "^6.1.0",
     "gulp-ttf2woff": "^1.1.1",

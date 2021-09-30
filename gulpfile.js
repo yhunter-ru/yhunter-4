@@ -10,7 +10,7 @@ var plugins = gulpLoadPlugins({
   rename: {
     'gulp-html-replace': 'htmlreplace',
     'gulp-file-include': 'fileinclude',
-    'gulp-sass': 'sass',
+    'gulp-dart-sass': 'sass',
     'gulp-clean-css': 'cleancss'
   }
 
