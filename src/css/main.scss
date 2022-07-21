@@ -63,9 +63,9 @@ nav {
   @include transit();
   grid-template-areas: 
   "name"
-  "about"
-  "contacts"
+  "about"  
   "portfolio"
+  "contacts"
   "blog";
   //grid-template-areas: 
   //  "header about about sidebar"

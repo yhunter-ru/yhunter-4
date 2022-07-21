@@ -738,7 +738,7 @@ nav {
   padding: 1rem;
   -webkit-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
-  grid-template-areas: "name" "about" "contacts" "portfolio" "blog";
+  grid-template-areas: "name" "about" "portfolio" "contacts" "blog";
 }
 .front div {
   -webkit-box-sizing: border-box;
