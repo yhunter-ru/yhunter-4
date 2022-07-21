@@ -4,12 +4,7 @@
 nav{
 	margin:0;
 	background:none;
-	display:block;
-	background: color(nav, BG2);	
-	ul {
-		display: block;
-		float: left;
-	}
+	display:block;	
 }
 
 
@@ -17,33 +12,27 @@ nav{
 		display:none;
 		padding: 0;
 		margin: 0;
-		text-align: left; /* menu align */
+		text-align: $menu-mobile-align;
 
 		li {
 			display:block;
 			margin:0;
-			text-align: left;
+			text-align: $menu-mobile-list-align;
 			
 			a {
 				
 				display: block;
-				font-weight:normal;
-				line-height: 4em;
-				padding:0 $hem;
-				
-
-				color: color(nav, links);
+				font-weight: $menu-mobile-list-width;
+				line-height: $menu-mobile-line-height;
+				padding:0 $hem*2;
+				color: $menu-mobile-list-color;
 
 			    @include transit(all, 0.2s, ease-in-out, 0s);
 			}
 
 			&:hover > a{
-				background: color(nav, HBG);
-				
-				
-				color: color(nav, hover);
-				background: color(nav, HBG);
-				
+				background: $menu-links-hover-bg;				
+				color: $menu-links-color;				
 			}	
 
 			&:hover ul {
@@ -76,18 +65,16 @@ nav{
 						
 						font-weight:normal;
 						display:block;
-						color: color(nav, SubLinks);
-						border-left:3px solid color(nav, NavBG3);
-						border-bottom: 1px color(lines) dotted;
-						background: color(nav, BG3);
-						line-height: 3rem;
+						color: $menu-sublinks-color;
+						border-left: $menu-sublinks-border;
+						background: $menu-sublinks-bg;
 					}
 
 					&:hover > a {
 						
-						background: color(bg);
-						border-left:3px solid color(nav, HBG);
-						color: color(nav, SubLinks);
+						background: $menu-sublinks-hover-bg;
+						border-left: $menu-sublinks-hover-border;
+						color: $menu-sublinks-hover;
 
 					}
 
@@ -98,15 +85,6 @@ nav{
 				left:0;
 				padding: 0;
 				margin: 0;
-				
-				
-				li > a {
-					
-					
-					
-				}
-
-				li:hover > a {}
 
 			}
 		}	
@@ -117,44 +95,61 @@ nav{
 .mobile-menu{
 
 	display:block;
-    line-height: $hem*6;
-    padding: 0 0.5em;
-    text-align: right;
-
-	//background: color(nav, BG1);
-	text-transform:uppercase;
-	font-weight:600;
+    line-height: $menu-mobile-line-height;
+	height: $menu-mobile-line-height;
+    padding: 0 1rem;
+    text-align: $menu-mobile-align;
+	text-transform: $menu-mobile-text-transform;
+	font-weight: $menu-mobile-list-width;
 }
 
-a.mobile-menu {color: color(nav, links) !important;}
+a.mobile-menu {
+	background: $menu-mobile-bg;
+	color: $menu-mobile-color;
+	&::before {
+		content: "";
+		width: 1.25rem;
+		height: 1.25rem;
+		margin: 0 1rem 0 0;
+		left: 0rem;
+		top: .25rem;
+		display: inline-block;
+		position: relative;
+		background-color: $menu-color;
+		mask-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgNDI0IDQyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDI0IDQyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiMwMTAwMDI7IiBkPSJNMzUsODlDMTUsODksMCw3NCwwLDU0czE1LTM2LDM1LTM2aDM1M2MyMCwwLDM2LDE2LDM2LDM2cy0xNiwzNS0zNiwzNUgzNXoiLz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojMDEwMDAyOyIgZD0iTTM4OCwxNzZjMjAsMCwzNiwxNiwzNiwzNnMtMTYsMzUtMzYsMzVIMzVjLTIwLDAtMzUtMTUtMzUtMzVzMTUtMzYsMzUtMzZIMzg4eiIvPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiMwMTAwMDI7IiBkPSJNMzg4LDMzNWMyMCwwLDM2LDE1LDM2LDM1cy0xNiwzNi0zNiwzNkgzNWMtMjAsMC0zNS0xNi0zNS0zNnMxNS0zNSwzNS0zNUgzODh6Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==)
+	}
+}
+
 
 a.mobile-menu:hover {
 
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: $menu-mobile-breakdown) {
 
-	nav {background: color(nav, BG1);}   
-	.FixedNav {position: fixed;  z-index: 100; width: 100%;}
+	nav {
+		background: $menu-bg;
+		position: $menu-desktop-position;
+		z-index: 100;
+		width: 100%;
+	}
 
 	.mainWrap{width:768px;}
 
 	.menu {
-		display: block !important;
-		
+		display: block !important;		
 
-				ul {
-					
-					background: color(nav, BG2);
+				ul {				
+				
 					display: block;
 					visibility: hidden;
 					opacity: 0;
 					margin: 0 !important;
 					padding: 0 !important;
-					width: 15rem !important;
+					width: $menu-desktop-submenu-width !important;
 					position: absolute !important;
-					top: 4em !important;
+					top: $menu-mobile-line-height !important;
 					left: 0px !important;
 					line-height: 1em !important;
 					@include transit();
@@ -163,7 +158,7 @@ a.mobile-menu:hover {
 						width: 100%;
 						
 						ul {
-					    	left: 15rem !important;
+					    	left: $menu-desktop-submenu-width !important;
 					    	top: 0px !important;
 						}
 					}
@@ -179,11 +174,10 @@ a.mobile-menu:hover {
 					z-index:100 !important;
 				}
 
-				li>a {
-					font-size:1em;
-					
+				li a {
+					font-size: 1em;
+					line-height: $menu-mobile-line-height !important;
 					display:block !important;
-
 				}
 
 		}

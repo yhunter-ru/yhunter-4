@@ -1,28 +1,6 @@
-%btn-ft {
-        display: inline-block;
-        text-decoration: none;
-
-        line-height: 3rem; 
-        padding: 0 1.5rem 0 1.5rem;
-        font-size: 1.2rem;
-        @include border-radius($r);
-        
-        color: color(light) !important;
-        border: none;
-        
-        
-        
-        position: relative;
-
-        @include transit(all, 0.2s, ease-in-out, 0s);
-        
-
-    }
-
  .btn-ft {
  	@each $name, $color in $btn-colors {
         &-#{$name} {
-            @extend %btn;
             background-color: $color;
             
             &:hover{

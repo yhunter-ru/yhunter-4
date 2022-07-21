@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import "options";
 @import "mixins";
 
@@ -8,39 +9,16 @@
 
 
 /* Layout */
-@import "smacss/layout/grid";
-@import "smacss/layout/default-grid";
-@import "smacss/layout/css-grid";
-@import "smacss/layout/grid-padding";
-@import "smacss/layout/mobile-grid";
-@import "smacss/layout/square-block";
-@import "smacss/layout/center-block";
-@import "smacss/layout/clear";
+@import "smacss/layout/flex";
 
 /* Modules */
 @import "smacss/modules/menu-inline";
-@import "smacss/modules/buttons";
-@import "smacss/modules/buttons-ghost";
-@import "smacss/modules/buttons-flat";
+
 @import "smacss/modules/breadcrumbs";
-@import "smacss/modules/alert";
 @import "smacss/modules/icons";
-@import "smacss/modules/images";
-@import "smacss/modules/tables";
-@import "smacss/modules/cover-image";
-
-@import "smacss/modules/featherlight-caption";
-
 
 
 /* States */
 @import "smacss/states/states-inline";
 
 /* Theme Inline */
-
-nav  {
-	padding: 0;
-	width: 100%;
-	display: block;
-}
-

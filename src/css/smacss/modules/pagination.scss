@@ -25,7 +25,7 @@
         }
 
         
-        @include border-radius($hem/2);
+        @include border-radius(math.div($hem, 2));
         
       
     }

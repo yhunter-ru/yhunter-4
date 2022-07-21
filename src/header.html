@@ -23,7 +23,7 @@
 	<!-- endbuild -->
 
 	<!-- build:html -->
-	@@include('_inline.html')
+	@@include('./_inline.html')
 	<!-- endbuild -->
 	* {}
  </style>
@@ -55,7 +55,7 @@
 <!-- endbuild -->
 
 <!-- build:html -->
-@@include('symbol.html')
+@@include('./symbol.html')
 <!-- endbuild -->	
 
 <!-- build:theme -->
@@ -69,40 +69,17 @@
 <!-- endbuild -->
 
 <!-- build:html -->
-
-<nav class="FixedNav sticky-header">
-	
-	<div class="col10">
-		<div class="logo">
-			<a href="/" title="На главную страницу"><img src="wp-content/themes/yhunter4/img/yhunter-logo.svg"></a>
-			Юрий Баранов
-		</div>
-		<ul class="menu">
-				<li><a href="">Портфолио</a>
-					<ul>
-						<li><a href="">Дизайн</a></li>
-						<li><a href="">Веб-разработка</a></li>
-					</ul></li>
-				<li><a href="">Путешествия</a></li>
-				<li><a href="">Фотографии</a></li>
-				<li><a href="">Контакты</a></li>
-			</ul>
-	</div>
-
-	<div class="col2">
-		<div class="searchform">
-					<svg viewBox="0 0 1000 1000"><use xlink:href="#search"></use></svg>	
-					<form method="get" id="searchform" action="/">
-						
-						<input type="text" name="s" id="s"  value="Поиск по сайту..."  value="Поиск по сайту..." onblur="if(this.value=='') this.value='Поиск по сайту...'; this.className='';" onfocus="if(this.value=='Поиск по сайту...') this.value='';  this.className='act';">
-					</form>
-		</div>
-	</div>
-
-	
+<nav>
+	<ul class="menu">
+		<li><a href="">menu1</a>
+			<ul>
+				<li><a href="">submenu1</a></li>
+				<li><a href="">submenu2</a></li>
+			</ul></li>
+		<li><a href="">menu2</a></li>
+		<li><a href="">menu3</a></li>
+	</ul>
 </nav>
-
-
 
 <!-- endbuild -->
 
