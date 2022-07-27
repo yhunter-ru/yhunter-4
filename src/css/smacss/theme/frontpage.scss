@@ -1,10 +1,41 @@
 .intro {
     min-height: 5rem;
     background-color: aliceblue;
+    height: 100vh;
+    min-height: 800px;
+    padding: 5rem 1rem 1rem 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 4fr;
+    
+    grid-template-areas: "ph ab ab blg"
+                         "ph pt pt blg"
+                         "ct pt pt blg";
+
+    &__photo {
+        grid-area: ph;
+    }
+
+    &__about {
+        grid-area: ab;
+    }
+
+    &__blog {
+        grid-area: blg;
+    }
+
+    &__portfolio {
+        grid-area: pt;
+    }
+
+    &__contacts {
+        grid-area: ct;
+    }
 }
 
 .about {
-    //min-height: 100vh;
+    
     background-color: #fff;
     color: #111;
     display: grid;

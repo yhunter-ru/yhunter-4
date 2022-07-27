@@ -811,7 +811,7 @@ a.mobile-menu::before {
 
 @media (min-width: 768px) {
   nav {
-    background: var(--dark-color);
+    background: var(--light-color);
     position: fixed;
     z-index: 100;
     width: 100%;
@@ -1664,9 +1664,110 @@ figure a {
 
 /* Fade in end */
 /* theme */
+.sticky-header {
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.is-hidden {
+  top: -5rem;
+}
+
+.logo {
+  width: 2.5rem;
+  overflow: hidden;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box svg;
+  box-sizing-max-height: 100%;
+  box-sizing-box-sizing: border-box;
+}
+
+.st0 {
+  fill: #00A551;
+}
+
+.st1 {
+  fill: #FFFFFF;
+}
+
+.st2 {
+  fill: #FAAF40;
+}
+
+.st3 {
+  fill: #231F20;
+}
+
+.st4 {
+  fill: #09572F;
+}
+
+.st5 {
+  fill: #006838;
+}
+
+.logo #eye-l {
+  transform-origin: 50% 50%;
+}
+.logo #eye-r {
+  transform-origin: 50% 50%;
+}
+.logo:hover svg #eye-r {
+  animation: blink 0.35s 1 ease-in-out;
+}
+.logo:hover svg #eye-l {
+  animation: blink 0.35s 1 ease-in-out 0.1s;
+}
+
+@keyframes blink {
+  from {
+    transform: scaleY(1);
+    animation-timing-function: ease-in;
+  }
+  75% {
+    transform: scaleY(0.1);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: scaleY(1);
+    animation-timing-function: ease-in;
+  }
+}
 .intro {
   min-height: 5rem;
   background-color: aliceblue;
+  height: 100vh;
+  min-height: 800px;
+  padding: 5rem 1rem 1rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 4fr;
+  grid-template-areas: "ph ab ab blg" "ph pt pt blg" "ct pt pt blg";
+}
+.intro__photo {
+  grid-area: ph;
+}
+.intro__about {
+  grid-area: ab;
+}
+.intro__blog {
+  grid-area: blg;
+}
+.intro__portfolio {
+  grid-area: pt;
+}
+.intro__contacts {
+  grid-area: ct;
 }
 
 .about {

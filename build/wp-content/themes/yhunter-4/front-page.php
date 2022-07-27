@@ -1,6 +1,25 @@
 <?php get_header();?>
 <div class="intro">
-    intro
+    <div class="intro__photo">
+        photo
+    </div>
+
+    <div class="intro__about">
+        Приветствую! Меня зовут Юрий, я дизайнер и веб-разработчик из Перми. Делаю сайты на WordPress, путешествую,
+        фотографирую концерты и пишу в блог.
+    </div>
+
+    <div class="intro__contacts">
+        contacts
+    </div>
+
+    <div class="intro__portfolio">
+        portfolio
+    </div>
+
+    <div class="intro__blog">
+        blog
+    </div>
 </div>
 
 <div class="about">
