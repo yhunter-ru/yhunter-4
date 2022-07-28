@@ -360,8 +360,15 @@
 			<div class="row">
 				<!-- begin col8 centered -->
 				<div class="col8 centered">
+					<form method="get" id="searchform" class="searchform action="/"> <input type="text" name="s" id="s"
+						value="Поиск по сайту..."
+						onblur="if(this.value=='') this.value='Поиск по сайту...'; this.className='';"
+						onfocus="if(this.value=='Поиск по сайту...') this.value='';  this.className='act';">
+						<input type="submit" value="Отправить" class="searchform__submit" />
+					</form>
 					<div role="form" class="wpcf7" id="wpcf7-f9135-p3224-o1" lang="ru-RU" dir="ltr">
 						<div class="screen-reader-response"></div>
+
 						<form action="/test/#wpcf7-f9135-p3224-o1" method="post" class="wpcf7-form"
 							enctype="multipart/form-data" novalidate="novalidate">
 							<div style="display: none;">
@@ -793,11 +800,11 @@
 			distinctio illo quasi.</p>
 	</div>
 
-	<link rel="stylesheet" href="wp-content/themes/yhunter-4/css/main.min.css?rev=0.7282379004705715">
+	<link rel="stylesheet" href="wp-content/themes/yhunter-4/css/main.min.css?rev=0.3488420289148355">
 	<script>
 		window.jQuery || document.write('<script src="wp-content/themes/yhunter-4/js/vendor/jquery.min.js"><\/script>');
 	</script>
-	<script src="wp-content/themes/yhunter-4/js/main.js?rev=0.7282379004705715"></script>
+	<script src="wp-content/themes/yhunter-4/js/main.js?rev=0.3488420289148355"></script>
 	<script type="text/javascript">
 		$(window).on('load', function () {
 			//$(".aligncenter, .alignnone, .alignleft, .alignright, figure img, iframe").keepTheRhythm();
