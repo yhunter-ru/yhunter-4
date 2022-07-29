@@ -1841,6 +1841,76 @@ figure a {
   grid-area: ct;
 }
 
+.contacts {
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+  position: relative;
+  color: #fff;
+  --contact-borders: 1px rgba(255,255,255,.5) dotted;
+  background-color: #111;
+}
+.contacts h3 {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contacts > div {
+  border-bottom: var(--contact-borders);
+  position: relative;
+  box-sizing: border-box;
+}
+.contacts > div:last-child {
+  border-bottom: 0;
+}
+.contacts > div a {
+  display: flex;
+  color: #fff;
+}
+.contacts__email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-top: var(--contact-borders);
+}
+.contacts__email a:last-child {
+  font-size: 0.75rem;
+}
+.contacts__tel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+.contacts__messengers, .contacts__social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+.contacts__messengers a, .contacts__social a {
+  border-right: var(--contact-borders);
+  width: 25%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.contacts__messengers a:last-child, .contacts__social a:last-child {
+  border-right: none;
+}
+
 .about {
   background-color: #fff;
   color: #111;

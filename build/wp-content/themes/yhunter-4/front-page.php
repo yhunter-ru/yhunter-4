@@ -9,8 +9,25 @@
         фотографирую концерты и пишу в блог.
     </div>
 
-    <div class="intro__contacts">
-        contacts
+    <div class="intro__contacts contacts">
+        <h3>Контакты</h3>
+        <div class="contacts__email">
+            <a href="mailto:mail@yhunter.ru">mail@yhunter.ru</a>
+            <a href="#">Отправить сообщение с сайта</a>
+        </div>
+        <div class="contacts__tel">
+            <a href="tel:+79028358830">+7-902-83-588-30</a>
+        </div>
+        <div class="contacts__messengers">
+            <a href="">tg</a>
+            <a href="">vb</a>
+        </div>
+        <div class="contacts__social">
+            <a href="">cp</a>
+            <a href="https://500px.com/yhunter">500</a>
+            <a href="https://www.youtube.com/channel/UCuIyI522EgSfT5W6qtmW61Q">yb</a>
+            <a href="https://www.last.fm/user/yhunter">lt</a>
+        </div>
     </div>
 
     <div class="intro__portfolio">
