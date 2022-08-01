@@ -1,0 +1,72 @@
+$mainColor: darken(#f0f8ff, 0%);
+$animationTime: 10s;
+
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+
+.window {  
+  background: darken($mainColor, 0%);
+  font-size: 2vw;
+  height: 100%;
+  position: relative;
+  //border-radius: .5em; 
+  //background: lighten($mainColor, 5%);
+}
+
+.tiles {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  
+  &__container {
+    position: relative;
+    height: 120%;
+    flex-direction: column;
+    transform: translate(3%, 0%) skew(22deg) scale(1.5, 1); 
+    overflow: hidden;
+  }
+  
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  
+  &__animation {
+    animation: moveTiles $animationTime linear infinite;
+  }
+  
+  @keyframes moveTiles { 
+  0% { 
+    transform: translateY(0); 
+  } 
+
+  100% {
+    transform: translateY(-100%); 
+ }
+}
+  
+  &__item {
+    position: relative;
+    background: lighten($mainColor, 15%);
+    //background: linear-gradient(135deg, rgba(lighten($mainColor, 5%),1) 0%, rgba(darken($mainColor, 2%),1) 100%); 
+    color: #999;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 30%;
+    margin: 1.5%;
+    border-radius: .1em;
+    box-shadow: -.15em -.15em .25em rgba(darken($mainColor, 25%), .25),      -1px -1px 1px rgba(darken($mainColor, 25%), .15);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .25s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: -.25em -.25em .35em rgba(darken($mainColor, 25%), .25),      -1px -1px 1px rgba(darken($mainColor, 25%), .15);
+    }
+  }
+}
