@@ -11,7 +11,7 @@ $colors: (
 	light: #fff,
 	gr: #1ab752,
     nav: (
-    	BG1: #fff, 
+    	BG1: #111,
 		BG2: #fff,
 		BG3: #efefef,
 		HBG: #1ab752,
@@ -26,6 +26,74 @@ $colors: (
     
 );
 
+$r: 5px; //defaul border radius
+
+//Color vars
+
+:root {
+  --txt-color: #111;
+  --lbg-color: #efefef;
+  --border-color: transparent;
+  --light-color: #fff;
+  --green: #1cb853;
+  --dark-color: #000;
+  --dark-gray: #797979;
+}
+
+//Inputs
+$input-borders: 1px var(--border-color) solid;
+$input-bg: var(--lbg-color);
+$input-button-color: var(--light-color);
+$input-text: var(--txt-color);
+$input-radius: $r;
+$input-height: 2rem;
+$input-textarea-height: 5rem;
+$input-button-bg: var(--green);
+$input-width: 100%;
+
+//Menu
+$menu-bg: var(--light-color);
+$menu-color: var(--green);
+$menu-light-color: var(--light-color);
+$menu-desktop-position: fixed;
+$menu-desktop-submenu-width: 150px;
+$menu-mobile-bg: var(--dark-color);
+$menu-mobile-color: var(--green);
+$menu-mobile-align: left;
+$menu-mobile-list-align: left;
+$menu-mobile-list-color: var(--green);
+$menu-mobile-list-width: 600;
+$menu-mobile-line-height: 4rem;
+
+$menu-links-hover-bg: var(--green);
+$menu-links-color: var(--light-color);
+$menu-links-border: none;
+
+$menu-sublinks-color: var(--dark-gray);
+$menu-sublinks-bg: var(--lbg-color);
+$menu-sublinks-border: 3px var(--dark-gray) solid;
+$menu-sublinks-hover: var(--green);
+$menu-sublinks-hover-bg: var(--lbg-color);
+$menu-sublinks-hover-border: 3px var(--green) solid;
+
+$menu-mobile-text-transform: none;
+$menu-main-level-bg: var(--light-color);
+$menu-submenu-bg: var(--lbg-color);
+
+$menu-mobile-breakdown: 768px;
+
+
+
+
+//Control points for flexbox
+$xs-width: 0;
+$sm-width: 576px;
+$md-width: 768px;
+$lg-width: 992px;
+$xl-width: 1200px;
+$xxl-width: 1400px;
+
+
 // Fontsize breakpoints settings 
 
 $baseline: 1rem; // Font-size
@@ -36,8 +104,8 @@ $brakepoints: 0 14px, 980px 16px, 1600px 18px;
 
 // Fontsize breakpoints settings end
 
-$hem: $baseline/2;
-$r: 0px; //defaul border radius
+$hem: math.div($baseline, 2);
+
 
 
 /* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html */
@@ -135,3 +203,61 @@ $mobile-parameters: (
     padding: $hem,    
        
 );
+
+//Control points mixins
+
+@mixin mobile {
+  @media (max-width: #{$md-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$md-width}) and (max-width: #{$lg-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$lg-width}) {
+    @content;
+  }
+}
+
+//Breakpoints for flexbox
+
+@mixin xs {
+  @media (max-width: #{$sm-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{sm-width}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{md-width}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{lg-width}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{xl-width}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{xxl-width}) {
+    @content;
+  }
+}

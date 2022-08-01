@@ -1,0 +1,200 @@
+.about {
+    
+    background-color: #fff;
+    color: #111;
+    display: grid;
+    position: relative;
+    padding: 1rem;
+
+    &__title {
+        grid-area: title;
+    }
+
+    &__main {
+        grid-area: main;
+    }
+
+    &__big {
+        grid-area: big;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        gap: 40px; 
+        position: relative;
+
+    }
+
+    &__activity {
+        grid-area: act;
+    }
+
+    &__years {
+        grid-area: yrs;
+    }
+
+    &__portfolio {
+        grid-area: prt;
+    }
+
+    &__works {
+        grid-area: wrk;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .about {
+        font-size: 2vw;
+
+        --about__lines: 1px #111 dotted;
+        --link__color: #111;
+        --link__underline: #f33;
+
+        a {
+            color: var(--link__color);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 20;
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 0.3em;
+                left: 0;
+                bottom: -0.3em;
+                background-color: var(--link__underline);
+                @include transit();
+                z-index: -1;
+            }
+
+            &:hover {
+                &::before {
+                    height: 1em;
+                }
+            }
+        }
+
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+        grid-template-areas: "title main main main main main main main main main main main"
+                             "big   big  big  big  big  big  big  big  big  big  big  big "
+                             "act   act   act act  yrs  yrs  prt  prt  prt  prt  wrk  wrk ";
+                             
+
+        &__title {
+            height: 4em;
+            border-right: var(--about__lines);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                position: relative;
+                display: inline-block;
+                transform: rotate(-90deg);
+                transform-origin: center;
+                font-weight: bold;
+                font-size: 1.5em;
+                line-height: 1.0em;
+            }
+        }
+
+        &__main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1.2em;
+
+            p {
+                position: relative;
+                font-size: inherit;
+            }
+        }
+
+        &__big {
+            border-top: var(--about__lines);
+            border-bottom: var(--about__lines);
+
+            h2 {
+                font-size: inherit;
+                font-weight: bold;
+            }
+
+            span {
+                display: block;
+                position: relative;
+
+                &:first-child {
+                    font-size: 3.3em;
+                    line-height: 1em;
+                    padding-top: .25em;
+                }
+    
+                &:last-child {
+                    font-size: 3.9em;
+                    line-height: 1em;
+                    padding-bottom: .25em;
+                }
+            }
+        }
+
+        &__activity {
+            border-right: var(--about__lines);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__years {
+            border-right: var(--about__lines);
+        }
+
+        &__portfolio {
+            border-right: var(--about__lines);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 1em;
+
+            p {
+                font-size: 1em;
+                line-height: 1.5em;
+                text-align: right;
+                font-style: italic;
+
+                a {
+                    font-style: normal;
+                    font-weight: bold;
+                    
+                    &::before {
+                        bottom: .25em;
+                    }
+                }
+            }
+        }
+
+        &__works {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1em;
+            
+
+            span {
+                font-size: 2em;
+                line-height: 1em;
+                font-weight: bold;
+                display: block;
+            }
+
+            i {
+                font-style: italic;
+                font-size: 1em;
+            }
+        }
+    }
+}

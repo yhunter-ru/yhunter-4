@@ -1,0 +1,19 @@
+@include mobile {
+    .up-tablet {
+        display: none;
+    }
+    .up-desktop {
+        display: none;
+    }
+}
+@include tablet {
+    .up-desktop {
+        display: none;
+    }
+}
+
+@include desktop {
+    .up-desktop {
+        display: none;
+    }    
+}

@@ -1,0 +1,51 @@
+$p: $hem*2;
+$paddings: 0,1,2,3; 
+
+$m: $hem*2;
+$margins: -3,-2,-1,0,1,2,3;
+
+@each $pad in $paddings {
+    $padding-rule: $pad * $p !important;
+    .p {
+        &#{$pad} {
+            padding: $padding-rule;
+        }
+    }
+
+    .ph {
+        &#{$pad} {
+            padding-left: $padding-rule;
+            padding-right: $padding-rule;
+        }
+    }
+
+    .pv {
+        &#{$pad} {
+            padding-top: $padding-rule;
+            padding-bottom: $padding-rule;
+        }
+    }
+}
+
+@each $marg in $margins {
+    $margin-rule: $marg * $m !important;
+    .m {
+        &#{$marg} {
+            margin: $margin-rule;
+        }
+    }
+
+    .mh {
+        &#{$marg} {
+            margin-left: $margin-rule;
+            margin-right: $margin-rule;
+        }
+    }
+
+    .mv {
+        &#{$marg} {
+            margin-top: $margin-rule;
+            margin-bottom: $margin-rule;
+        }
+    }
+}

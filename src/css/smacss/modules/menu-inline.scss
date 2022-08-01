@@ -3,7 +3,6 @@
 
 nav{
 	display:block;
-	.col2, .col10 { padding: 0;}
 }
 
 
@@ -12,30 +11,20 @@ nav{
 
 		li {
 			display:block;
-	
-
-
-		}
-
-			
+		}		
 	
 	}
 
 
-.mobile-menu{
-
+a.mobile-menu{
 	display:block;
-
+	padding: 0 1rem;
+	line-height: $menu-mobile-line-height;
 }
 
 
 
-@media (min-width: 768px) {
-
-
-	.FixedNav {position: fixed;  z-index: 100; width: 100%;}
-
-
+@media (min-width: $menu-mobile-breakdown) {
 
 	.menu {
 		display: block !important;
@@ -44,13 +33,8 @@ nav{
 				ul {
 					
 
-					display: none;
+					display: none;			
 
-					
-
-
-					
-				
 
 				}
 
@@ -65,7 +49,9 @@ nav{
 		}
 
 
-	.mobile-menu {display: none !important;}
+	.mobile-menu {
+		display: none !important;
+	}
 
 
 }

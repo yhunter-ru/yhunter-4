@@ -5,14 +5,18 @@
   "homepage": "http://yhunter.ru",
   "dependencies": {
     "gulp4": "^4.0.3",
-    "jquery": "*"
+    "jquery": "^3.4.1"
   },
   "license": "MIT",
   "devDependencies": {
     "del": "*",
     "gulp": "^4.0.0",
+    "jquery": "^1",
     "gulp-autoprefixer": "*",
     "gulp-cache": "*",
+    "gulp-babel": "*",
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
     "gulp-cheerio": "^0.6.2",
     "gulp-clean-css": "*",
     "gulp-concat": "*",
@@ -30,7 +34,14 @@
     "gulp-svgstore": "^6.1.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-uglify": "*",
-    "jshint": "^2.9.7"
+    "jshint": "^2.9.7",
+    "gulp-copy": "*",
+    "gulp-js-import": "*",
+    "slick-carousel": "*",
+    "slick-lightbox": "*",
+    "jquery-viewport-checker": "*",
+    "rellax": "*",
+    "inputmask": "*"
   },
   "repository": {
     "type": "git",

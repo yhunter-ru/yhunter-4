@@ -11,7 +11,8 @@ var plugins = gulpLoadPlugins({
     'gulp-html-replace': 'htmlreplace',
     'gulp-file-include': 'fileinclude',
     'gulp-dart-sass': 'sass',
-    'gulp-clean-css': 'cleancss'
+    'gulp-clean-css': 'cleancss',
+    'gulp-js-import': 'jsImport'
   }
 
 
@@ -20,22 +21,34 @@ var plugins = gulpLoadPlugins({
 
 
 var   jshint = require('gulp-jshint');
-var themepath= "wp-content/themes/yhunter4/";
+const { css } = require('jquery');
+var themepath= "wp-content/themes/yhunter-4/";
 
 console.timeEnd("Loading plugins"); //end measuring
 
 function jsFunc() {
-    plugins.del('build/'+themepath+'/js/*.*');
+    //plugins.del('build/'+themepath+'/js/*.*');
 
-    return gulp.src('src/js/*.js')
+    return gulp.src('src/js/main.js')
+       .pipe(plugins.jsImport({hideConsole: true}))
+       .pipe(plugins.babel({
+            presets: ['@babel/env']
+        }))
        .pipe(plugins.jshint())
        .pipe(plugins.jshint.reporter('default'))
        .pipe(plugins.uglify())
-       .pipe(plugins.concat('main.js'))
+       //.pipe(plugins.concat('main.js'))
        .pipe(gulp.dest('build/'+themepath+'/js'));
 }
 
 exports.js = jsFunc;
+
+function jQueryFunc() {
+  return gulp.src('./node_modules/jquery/dist/jquery.min.js')
+    .pipe(gulp.dest('build/'+themepath+'/js/vendor'));
+}
+
+exports.jquery = jQueryFunc;
 
 gulp.task('jslib', function() {
     return gulp.src('src/js/vendor/*.js')
@@ -43,17 +56,33 @@ gulp.task('jslib', function() {
 });
 
 function mainFunc() {
+    const outputPath = 'build/'+themepath+'/css';
     return gulp.src('src/css/main.scss')    
     .pipe(plugins.sass()) 
     .on('error', plugins.sass.logError)
-    .pipe(plugins.autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    //.pipe(plugins.cleancss()) //Minify external CSS
-    .pipe(plugins.rename({suffix: ".min"}))
-    .pipe(gulp.dest('build/'+themepath+'/css'))
+    //.pipe(plugins.autoprefixer('last 2 version'))
+
+    //.pipe(plugins.rename({suffix: ".min"}))
+    .pipe(gulp.dest(outputPath))
+    //.pipe(plugins.copy("../", { prefix: 'full' }))
+    //.pipe(plugins.rename({suffix: ".min"}))
     .pipe(plugins.notify({ message: 'Main SASS styles task complete' }));
 }
 
 exports.main = mainFunc;
+
+
+
+const miniCss = gulp.series(mainFunc, cssMin);
+
+gulp.task('cssMin', miniCss);
+
+function cssMin() {
+  return gulp.src('build/'+themepath+'/css/main.css')
+    .pipe(plugins.rename({suffix: ".min"}))
+    .pipe(plugins.cleancss()) //Minify external CSS
+    .pipe(gulp.dest('build/'+themepath+'/css'));
+}
 
 function inlineFunc() { 
     return gulp.src('src/css/inline.scss')       
@@ -63,9 +92,7 @@ function inlineFunc() {
     .pipe(plugins.cleancss())
     .pipe(plugins.rename("_inline.html"))
     .pipe(gulp.dest('src'))
-    .pipe(plugins.notify({ message: 'Inline SASS styles task complete' }));
-
-   
+    .pipe(plugins.notify({ message: 'Inline SASS styles task complete' })); 
 }
 
 exports.inline = inlineFunc;
@@ -83,7 +110,7 @@ function imagesFunc() {
     .pipe(plugins.notify({ message: 'Images task complete' }));
 }
 
-exports.js = jsFunc;
+exports.images = imagesFunc;
 
 function htmlFunc() {
     plugins.del('build/*.html');
@@ -103,7 +130,7 @@ function htmlFunc() {
     .pipe(plugins.htmlreplace({theme: ''}, {keepUnassigned: true}))
         
     .pipe(gulp.dest('build/'))
-    .pipe(plugins.notify({ message: 'Html task complete' }))
+    .pipe(plugins.notify({ message: 'Html task complete' }));
 
      
 
@@ -131,6 +158,7 @@ function themeFunc () {
           }))
         .pipe(gulp.dest('build/'+themepath))
         .pipe(plugins.notify({ message: 'Template task complete' }))
+        .pipe(plugins.livereload());
 }
 
 exports.theme = themeFunc;
@@ -178,15 +206,42 @@ function ttfFunc(){
 
 exports.ttf = ttfFunc;
 
-const tools = gulp.series(inlineFunc, mainFunc);
+const tools = gulp.series(inlineFunc, mainFunc, cssMin);
 const template = gulp.series(htmlFunc, themeFunc);
 
 exports.tools = tools;
 
+
+function style() {
+  return gulp.src(['./style.css'])
+  .pipe(gulp.dest('build/'+themepath));
+}
+
+exports.style = style;
+
+
+gulp.task('init',async function(){
+
+  inlineFunc();
+  miniCss();
+  iconsFunc();
+  svgSingle();
+  ttfFunc();
+  jsFunc();
+  jQueryFunc();
+  imagesFunc();  
+  template();
+  style();
+  
+  return console.log('Gulp init is running...');  
+});
+
+
+
 function watchFunc() {
     gulp.watch("src/css/**/*.scss", tools);
     gulp.watch("src/css/inline.scss", inlineFunc);
-    gulp.watch("src/css/main.scss", mainFunc);
+    gulp.watch("src/css/main.scss", cssMin);
     gulp.watch("src/svg/symbol/*.svg", iconsFunc);
     gulp.watch("src/svg/*.svg", svgSingle);
     gulp.watch("src/fonts/*.ttf", ttfFunc);
@@ -194,9 +249,7 @@ function watchFunc() {
     gulp.watch("src/img/*.+(jpg|jpeg|gif|png)", imagesFunc);
     gulp.watch("src/*.html", template);
     plugins.livereload.listen();
-    gulp.watch(['build/**']).on('change', plugins.livereload.changed);
+    //gulp.watch(['build/**']).on('change', plugins.livereload.changed);
 }
 
 exports.watch = watchFunc;
-
-

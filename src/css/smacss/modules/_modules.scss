@@ -14,12 +14,7 @@
         
         background: color(bg);
         border: 2px color(bg) solid;
-        @include border-radius($hem/2);
-        
-        
-        
-        
-        
+        @include border-radius($hem/2);     
     
     }
 
@@ -28,9 +23,7 @@
         left: 0;
         position: absolute;
         width: 4*$hem;
-        height: 4*$hem;
-
-        
+        height: 4*$hem;        
         overflow: hidden;
     
     }
@@ -80,32 +73,6 @@
     .accordeon-item {padding: $hem 0;}
 
 /* Accordeon end */
-
-/* Forms */
-
-    .forms input {width: 60%; margin: 0 auto; display: block;}
-
-    input, textarea, select {line-height: 2em; color: color(txt); padding: 0 $hem; border: 2px color(gr) solid; clear: both; width: 100%; box-sizing:  border-box;  @include border-radius(5px !important);}
-
-    select {height: 5 * $hem;}
-
-    label {margin: $hem 0 0 0; width: 100%; clear: both;}
-
-    textarea {height: 5em; margin: 0 auto; display: block;}
-
-    .count {width: 2em !important; display: inline !important; margin: 0 0.5em !important; text-align: center;  }
-
-    input[type="submit"] {margin: 0 !important;  width: auto;}
-
-    input[type="file"] {line-height: 1; padding:  $hem 0;}
-
-    input[type="checkbox"], input[type="radio"] {display: inline-block; width: auto; clear: none;}
-
-    .wpcf7-list-item span {margin-right: 2 * $hem;}
-
-    input[type="file"] {border: none;}
-
-/* Forms end */
 
 /* Meta tags */
 

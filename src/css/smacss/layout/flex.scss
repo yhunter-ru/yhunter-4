@@ -1,0 +1,77 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$cols: (1,2,3,4,5,6,7,8,9,10,11,12);
+$max-col: 12;
+$col-options: (
+	padding: $hem*2
+);
+
+.r {
+    position: relative;
+    display: block;
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1 0 0%
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-self-start {
+    align-self: flex-start;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.align-self-end {
+    align-self: flex-end;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.xs, .c { 	
+	@include adaptive-grid(0,$cols,$max-col, $col-options);
+}
+
+.sm { 	
+	@include adaptive-grid($sm-width,$cols,$max-col, $col-options);
+}
+
+.md { 	
+	@include adaptive-grid($md-width,$cols,$max-col, $col-options);
+}
+
+.lg { 	
+	@include adaptive-grid($lg-width,$cols,$max-col, $col-options);
+}
+
+.xl { 	
+	@include adaptive-grid($xl-width,$cols,$max-col, $col-options);
+}
+
+.xxl { 	
+	@include adaptive-grid($xxl-width,$cols,$max-col, $col-options);
+}

@@ -1,13 +1,13 @@
 /* Em values to Px values */
-@function emtopx($target, $context){
-	@return ($target*$context)+0px;
+@function emtopx($target, $context) {
+  @return ($target*$context)+0px;
 }
 
 /* Em values to Px values end */
 
 /* Px values to Em values */
-@function pxtoem($target, $context){
-	@return ($target/$context)+0em;
+@function pxtoem($target, $context) {
+  @return ($target/$context)+0em;
 }
 
 /* Px values to Em values end */
@@ -34,7 +34,7 @@
     @if $i < $max {
       $pxValues: #{$pxValues + " "};
     }
-  } 
+  }
 
   @for $i from 1 through $max {
     $value: strip-unit(nth($values, $i));
@@ -43,10 +43,10 @@
     @if $i < $max {
       $remValues: #{$remValues + " "};
     }
-  } 
-  
-  #{$property}: $pxValues; 
-  #{$property}: $remValues; 
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
 }
 
 /* Rem Crossbrowser end */
@@ -59,9 +59,9 @@
 
 @mixin border-radius($radius:$hem) {
   -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
 }
 
 
@@ -72,22 +72,22 @@
 //-- Transition mixin --//
 
 @mixin transit($type:all, $duration:0.5s, $in-out:ease-in-out, $delay:0s) {
-        -webkit-transition: $type $duration $in-out $delay;
-        -moz-transition: $type $duration $in-out $delay;
-        -o-transition: $type $duration $in-out $delay;
-        -ms-transition: $type $duration $in-out $delay;
-        transition: $type $duration $in-out $delay;
-    }
+  -webkit-transition: $type $duration $in-out $delay;
+  -moz-transition: $type $duration $in-out $delay;
+  -o-transition: $type $duration $in-out $delay;
+  -ms-transition: $type $duration $in-out $delay;
+  transition: $type $duration $in-out $delay;
+}
 
 //-- End Transition mixin --//
 
 //-- Box Shadow mixin --//
 
 @mixin shadow($mx, $my, $blur, $color) {
-            -webkit-box-shadow: $mx $my $blur $color;
-            -moz-box-shadow: $mx $my $blur $color;
-            box-shadow: $mx $my $blur $color;
-     }       
+  -webkit-box-shadow: $mx $my $blur $color;
+  -moz-box-shadow: $mx $my $blur $color;
+  box-shadow: $mx $my $blur $color;
+}
 
 //-- Box Shadow mixin end --//
 
@@ -98,11 +98,14 @@
 
 // retrieve color from map ie. `color(primary, base)`
 @function color($color-name, $color-variant:null) {
+
   // color variant is optional
-  @if ($color-variant != null) {
+  @if ($color-variant !=null) {
     // map inception
     @return map-get(map-get($colors, $color-name), $color-variant);
-  } @else {
+  }
+
+  @else {
     @return map-get($colors, $color-name);
   }
 }
@@ -126,161 +129,166 @@
 
 
 //Миксина вывода адаптивной сетки
-@mixin adaptive-grid($media:0,$cols: $cols,$maxcol:$max-col,$col-options:null) {
+@mixin adaptive-grid($media:0, $cols: $cols, $maxcol:$max-col, $col-options:null) {
 
-            
-              
-          @media only screen and (min-width: $media) {    
-          
-                  @each $col in $cols {
-                        
-                              &#{$col} {
-                                width: ($col/$maxcol) * 100%;
-                                
-                                $add-options: map-merge($adaptive-parameters, $col-options);
-                                @each $parameter, $value in $add-options {
 
-                                    #{$parameter}: $value;                                    
 
-                                }
-                                
-                                
-                                    
-                              }
-                  }  
-          }               
-  }  
-  
+  @media only screen and (min-width: $media) {
 
-  // Цикл вывода мобильной сетки с ячейками 100%. Используется в миксине mobile-grid
-  @mixin mgrid($cols,$maxcol:6,$col-options:null) {
+    @each $col in $cols {
 
-            @each $col in $cols {            
+      &#{$col} {
+        width: math.div($col, $maxcol) * 100%;
 
-                &#{$col} {
-                            width: 100%;
-                            $add-options: map-merge($mobile-parameters, $col-options);
-                            @each $parameter, $value in $add-options {
+        $add-options: map-merge($adaptive-parameters, $col-options);
 
-                                    #{$parameter}: $value;     
-                                    //$adaptive-parameters: map-merge($mobile-parameters,$adaptive-parameters); - так можно складывать мапы                               
+        @each $parameter,
+        $value in $add-options {
 
-                            }                        
-                            
-                                  
-                      }                
-            } 
+          #{$parameter}: $value;
 
-  }
-  
-
-  //Миксина вывода мобильной сетки
-  @mixin mobile-grid($media,$cols,$maxcol:6,$col-options:null) {
-        
-        
-
-        @if ($media == 0) {
-            @include  mgrid($cols,$maxcol,$col-options);
         }
 
-        @else {
-            @media only screen and (min-width: $media) {
-
-                @include  mgrid($cols,$maxcol,$col-options);
-               
-            } 
-        }                 
 
 
+      }
+    }
   }
-  
-    
+}
+
+
+// Цикл вывода мобильной сетки с ячейками 100%. Используется в миксине mobile-grid
+@mixin mgrid($cols, $maxcol:6, $col-options:null) {
+
+  @each $col in $cols {
+
+    &#{$col} {
+      width: 100%;
+      $add-options: map-merge($mobile-parameters, $col-options);
+
+      @each $parameter,
+      $value in $add-options {
+
+        #{$parameter}: $value;
+        //$adaptive-parameters: map-merge($mobile-parameters,$adaptive-parameters); - так можно складывать мапы                               
+
+      }
+
+    }
+  }
+
+}
+
+
+//Миксина вывода мобильной сетки
+@mixin mobile-grid($media, $cols, $maxcol:6, $col-options:null) {
+
+
+
+  @if ($media==0) {
+    @include mgrid($cols, $maxcol, $col-options);
+  }
+
+  @else {
+    @media only screen and (min-width: $media) {
+
+      @include mgrid($cols, $maxcol, $col-options);
+
+    }
+  }
+
+
+}
+
+
 //Миксина отступов в сетке
 
-@mixin grid-padding($media,$cols,$maxcol:6,$align:"left") {
+@mixin grid-padding($media, $cols, $maxcol:6, $align:"left") {
 
-    @media only screen and (min-width: $media) {    
-          
-                  @each $col in $cols {
-                        
-                              &#{$col} {
-                                
-                                margin-#{$align}: ($col/$maxcol) * 100% !important;
-                                float: #{$align} !important;
-                                
-                                //$add-options: map-merge($adaptive-parameters, $col-options);
-                                                             
-                                
-                                    
-                              }
-                  }  
-    }   
+  @media only screen and (min-width: $media) {
 
-  
+    @each $col in $cols {
+
+      &#{$col} {
+
+        margin-#{$align}: math.div($col, $maxcol) * 100% !important;
+        float: #{$align} !important;
+
+        //$add-options: map-merge($adaptive-parameters, $col-options);
+
+
+
+      }
+    }
+  }
+
+
 }
 
 //-- CSS Grid function --//
 
-@mixin css-grid-params($maxcol,$gap,$padding) {
-    display: grid;
-    grid-template-columns: repeat($maxcol, 1fr);
-    grid-gap: $gap;
-    padding: $padding;
+@mixin css-grid-params($maxcol, $gap, $padding) {
+  display: grid;
+  grid-template-columns: repeat($maxcol, 1fr);
+  grid-gap: $gap;
+  padding: $padding;
 }
 
-@mixin css-grid($maxcol,$gap,$padding,$media:0) {
-    @if $media == 0 {
-            @include css-grid-params($maxcol,$gap,$padding);
-    }  
+@mixin css-grid($maxcol, $gap, $padding, $media:0) {
+  @if $media==0 {
+    @include css-grid-params($maxcol, $gap, $padding);
+  }
 
-    @else {
-        @media only screen and (min-width: $media) { 
-            @include css-grid-params($maxcol,$gap,$padding);
-        } 
-    } 
+  @else {
+    @media only screen and (min-width: $media) {
+      @include css-grid-params($maxcol, $gap, $padding);
+    }
+  }
 }
 
 @mixin grid-cols-prarams($cols) {
-    @each $c in $cols {
-          @if $c > 1 {
-            &#{$c} {
-              grid-column: span $c / auto;
-            }
-          }
-    } 
+  @each $c in $cols {
+    @if $c>1 {
+      &#{$c} {
+        grid-column: span $c / auto;
+      }
+    }
+  }
 }
 
 @mixin grid-cols($cols, $media:0) {
-  @if $media == 0 {
-      @include grid-cols-prarams($cols);
+  @if $media==0 {
+    @include grid-cols-prarams($cols);
   }
-  @else {  
-    @media only screen and (min-width: $media) { 
-      @include grid-cols-prarams($cols); 
-    }    
-  }  
-} 
+
+  @else {
+    @media only screen and (min-width: $media) {
+      @include grid-cols-prarams($cols);
+    }
+  }
+}
 
 @mixin grid-rows-prarams($rows) {
-    @each $r in $rows {
-          @if $r > 1 {
-            &#{$r} {
-              grid-row: span $r / auto;
-            }
-          }
-    } 
-}  
+  @each $r in $rows {
+    @if $r>1 {
+      &#{$r} {
+        grid-row: span $r / auto;
+      }
+    }
+  }
+}
 
 @mixin grid-rows($rows, $media:0) {
-  @if $media == 0 {
-      @include grid-rows-prarams($rows);
+  @if $media==0 {
+    @include grid-rows-prarams($rows);
   }
-  @else {  
-    @media only screen and (min-width: $media) { 
+
+  @else {
+    @media only screen and (min-width: $media) {
       @include grid-rows-prarams($rows);
     }
-  }      
-} 
+  }
+}
 
 //-- CSS Grid function End --//
 
@@ -307,89 +315,57 @@
 @mixin breaksize($size) {
   $exp: 1;
   $negative: false;
+
   @if $size<0 {
-    $size:$size*-1;
+    $size: $size*-1;
     $negative: true;
   }
+
   @for $i from 1 through $size {
     $exp: $exp*$step;
   }
-  
-  
-  $exp: $exp/$step;
+
+
+  $exp: math.div($exp, $step);
+
   @if $negative {
-    font-size: $baseline/$exp;
-    line-height: round($baseline/$exp*$line*2)/2;
+    font-size: math.div($baseline, $exp);
+    line-height: math.div(round(math.div($baseline, $exp*$line*2)), 2);
     margin: .5*$baseline 0 .5*$baseline 0;
-    
+
   }
+
   @else {
     font-size: $baseline*$exp;
-    line-height: round($baseline*$exp*$line*2)/2;
+    line-height: math.div(round($baseline*$exp*$line*2), 2);
     margin: .5*$baseline 0 .5*$baseline 0;
   }
-  
+
 }
 
 @mixin font-brakepoints() {
 
-    @each $point in $brakepoints {
-      $media: nth($point, 1);
-      $size: nth($point, 2);
+  @each $point in $brakepoints {
+    $media: nth($point, 1);
+    $size: nth($point, 2);
 
 
-      @if ($media>0) {
+    @if ($media>0) {
 
-            @media only screen and (min-width: $media) {  
-                  html {
-                    font-size: $size;
-                  }
-                }  
-            }
-            @else {
-                html {
-                      font-size: $size;
-                }
-            }
-          
-      } 
-}     
+      @media only screen and (min-width: $media) {
+        html {
+          font-size: $size;
+        }
+      }
+    }
+
+    @else {
+      html {
+        font-size: $size;
+      }
+    }
+
+  }
+}
 
 //-- Font size brakepoints  mixins end --//
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
-

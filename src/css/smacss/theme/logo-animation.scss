@@ -1,0 +1,38 @@
+.logo {
+    #eye-l {
+        transform-origin: 50% 50%;
+    }
+
+    #eye-r {
+        transform-origin: 50% 50%;
+    }
+
+    &:hover {
+        svg {
+            #eye-r {
+                animation: blink  .35s 1 ease-in-out;
+            }
+
+            #eye-l {
+                animation: blink  .35s 1 ease-in-out .1s;
+            }
+        }
+    }
+}
+
+@keyframes blink {
+    from {
+        transform: scaleY(1);
+        animation-timing-function: ease-in;
+    }
+
+    75% {
+        transform: scaleY(.1);
+        animation-timing-function: ease-out;
+      }
+
+    100% {
+        transform: scaleY(1);
+        animation-timing-function: ease-in;
+    }
+}
