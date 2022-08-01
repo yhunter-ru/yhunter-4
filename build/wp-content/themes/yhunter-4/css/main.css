@@ -1941,8 +1941,10 @@ figure a {
   position: relative;
   height: 120%;
   flex-direction: column;
-  transform: translate(3%, 0%) skew(22deg) scale(1.5, 1);
+  transform: translate(10%, 0%) skew(22deg) scale(1.5, 1);
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 .tiles__wrapper {
   position: relative;
@@ -1950,6 +1952,7 @@ figure a {
   flex-direction: row;
   flex-wrap: wrap;
   height: 100%;
+  z-index: -100;
 }
 .tiles__animation {
   animation: moveTiles 10s linear infinite;
@@ -1970,17 +1973,18 @@ figure a {
   box-sizing: border-box;
   width: 30%;
   margin: 1.5%;
-  border-radius: 0.1em;
-  box-shadow: -0.15em -0.15em 0.25em rgba(113, 189, 255, 0.25), -1px -1px 1px rgba(113, 189, 255, 0.15);
+  border: 1px #efefef dotted;
   padding: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.25s ease-in-out;
+  z-index: -10;
 }
 .tiles__item:hover {
   transform: scale(1.05);
-  box-shadow: -0.25em -0.25em 0.35em rgba(113, 189, 255, 0.25), -1px -1px 1px rgba(113, 189, 255, 0.15);
+  box-shadow: 0.25em 0.25em 1em rgba(113, 189, 255, 0.25), 1px 1px 1px rgba(113, 189, 255, 0.15);
+  z-index: 100;
 }
 
 .about {
