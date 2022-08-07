@@ -48,9 +48,68 @@
         </div>
     </div>
 
-    <div class="intro__blog">
-        blog
-    </div>
+    <section itemscope itemtype="http://schema.org/Blog" class="intro__blog blog">
+        <div class="blog__header">
+            Свежее в <a href="">Блоге</a>
+        </div>
+        <div class="blog__body">
+            <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting" class="blog__item item">
+                <a href="/">
+
+                    <img class="item__pic" src="https://www.yhunter.ru/wp-content/uploads/2022/07/DSC1584-400x400.jpg"
+                        alt="">
+
+                    <h2 class="item__header header">Фотоотчет с Panicomix 2022, день второй</h2>
+                    <div class="item__date date">
+                        15 июля, 2022
+                    </div>
+                    <div class="item__text text">
+                        <p>Фотографии со второго дня фестиваля современной визуальной культуры и комикс-конвенция
+                            Panicomix
+                            2022
+                            в
+                            Перми. Всего за 2 дня было отснято [&hellip;]</p>
+                    </div>
+                </a>
+
+            </article>
+            <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting" class="blog__item item">
+                <a href="/">
+
+                    <img class="item__pic" src="https://www.yhunter.ru/wp-content/uploads/2022/07/DSC9407-400x400.jpg"
+                        alt="">
+
+                    <h2 class="item__header header">Фотоотчет с Panicomix 2022, день второй</h2>
+                    <div class="item__date date">
+                        15 июля, 2022
+                    </div>
+                    <div class="item__text text">
+                        <p>Фотографии с первого дня фестиваля современной визуальной культуры и комикс-конвенция
+                            Panicomix
+                            2022 в Перми. Всего за 2 дня было отснято […]</p>
+                    </div>
+                </a>
+
+            </article>
+            <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting" class="blog__item item">
+                <a href="/">
+
+                    <img class="item__pic" src="https://www.yhunter.ru/wp-content/uploads/2022/04/cover-400x400.jpg"
+                        alt="">
+
+                    <h2 class="item__header header">Фотоотчет с Panicomix 2022, день второй</h2>
+                    <div class="item__date date">
+                        15 июля, 2022
+                    </div>
+                    <div class="item__text text">
+                        <p>Концерт в пермском клубе «Мичурин» 4-го апреля 2022 года.</p>
+                    </div>
+                </a>
+
+            </article>
+        </div>
+
+</div>
 </div>
 
 <div class="about">

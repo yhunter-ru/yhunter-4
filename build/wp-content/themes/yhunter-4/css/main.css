@@ -8,6 +8,8 @@
   --green: #1cb853;
   --dark-color: #000;
   --dark-gray: #797979;
+  --dark-trans: rgba(30,30,30,.5);
+  --white-trans: rgba(255,255,255,.75);
 }
 
 /* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html */
@@ -2151,6 +2153,105 @@ figure a {
     font-size: 1em;
   }
 }
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-color);
+}
+.blog__header {
+  text-align: center;
+  display: block;
+  width: 100%;
+  min-height: 2rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1.333rem;
+  line-height: 2rem;
+}
+.blog__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  gap: 1rem;
+}
+.blog__item {
+  flex: 1;
+}
+.blog .item {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.blog .item__pic {
+  object-fit: cover;
+  width: 100%;
+  object-position: center center;
+  position: relative;
+}
+.blog .item__header {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 4rem 1rem 1rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  margin: 0;
+  color: var(--light-color);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+.blog .item__date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--green);
+  padding: 0.5rem 1rem;
+  color: var(--light-color);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+.blog .item__text {
+  background-color: var(--white-trans);
+  color: var(--txt-color);
+  padding: 1rem;
+  box-sizing: border-box;
+  position: absolute;
+  right: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+.blog .item a:hover .text {
+  right: 0;
+  opacity: 1;
+}
+.blog .item a:hover .date {
+  opacity: 0;
+  top: -100%;
+}
+.blog .item a:hover .header {
+  opacity: 0;
+  bottom: -100%;
+}
+
 body {
   scroll-behavior: smooth;
 }
