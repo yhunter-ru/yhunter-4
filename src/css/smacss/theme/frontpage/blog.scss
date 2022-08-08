@@ -7,6 +7,7 @@
     &__header {
         //border-bottom: 1px var(--dark-gray) dotted;
         text-align: center;
+        box-sizing: border-box;
         display: block;
         width: 100%;
         min-height: 2rem;
@@ -14,6 +15,16 @@
         margin: 0;
         font-size: 1.333rem;
         line-height: 2rem;
+        background-color: var(--light-color);
+        //color: var(--green);
+
+        a {
+            color: var(--green);
+
+            &:hover {
+                color: var(--yellow);
+            }
+        }
     }
 
     &__body {
@@ -23,11 +34,20 @@
         width: 100%;
         flex: 1;
         overflow: hidden;
-        gap: 1rem;
+        //gap: .5rem;
     }
     
     &__item {
         flex: 1;
+        border-bottom: 1px var(--dark-gray) dotted;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:first-child {
+            //border-top: 1px var(--dark-gray) dotted;
+        }
     }
 
     .item {
@@ -59,15 +79,16 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-color: var(--green);
+            background-color: var(--dark-green);
             padding: .5rem 1rem;
             color: var(--light-color);
+            font-size: .75rem;
             @include transit();
         }
 
         &__text {
-            background-color: var(--white-trans);
-            color: var(--txt-color);
+            background-color: var(--dark-trans);
+            color: var(--light-color);
             padding: 1rem;
             box-sizing: border-box;
             position: absolute;

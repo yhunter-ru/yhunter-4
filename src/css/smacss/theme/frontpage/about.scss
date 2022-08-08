@@ -47,7 +47,7 @@
 
         --about__lines: 1px #111 dotted;
         --link__color: #111;
-        --link__underline: #f33;
+        --link__underline: var(--green);
 
         a {
             color: var(--link__color);

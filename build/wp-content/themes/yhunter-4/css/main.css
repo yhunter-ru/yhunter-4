@@ -5,10 +5,13 @@
   --lbg-color: #efefef;
   --border-color: transparent;
   --light-color: #fff;
+  --white: #fff;
   --green: #1cb853;
+  --yellow: #faaf40;
+  --dark-green: #09572f;
   --dark-color: #000;
   --dark-gray: #797979;
-  --dark-trans: rgba(30,30,30,.5);
+  --dark-trans: rgba(30,30,30,.75);
   --white-trans: rgba(255,255,255,.75);
 }
 
@@ -1857,13 +1860,58 @@ figure a {
   grid-area: ct;
 }
 
+.portfolio {
+  position: relative;
+}
+.portfolio__tiles {
+  font-size: 2vw;
+  height: 100%;
+  position: relative;
+}
+.portfolio__header {
+  position: absolute;
+  display: block;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  text-align: center;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-height: 2rem;
+  padding: 0.5rem 0;
+  font-size: 1.333rem;
+  line-height: 2rem;
+  background-color: var(--light-color);
+  border-bottom: 1px var(--dark-gray) dotted;
+}
+.portfolio__header a {
+  color: var(--white);
+  text-decoration: none;
+}
+.portfolio__header a:hover {
+  background-color: var(--yellow);
+}
+.portfolio__counter {
+  display: block;
+  position: absolute;
+  right: 1rem;
+  top: 0.75rem;
+  font-size: 0.75rem;
+  background-color: var(--dark-green);
+  line-height: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2rem;
+}
+
 .contacts {
   display: grid;
   grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
   position: relative;
-  color: #fff;
+  color: var(--light-color);
   --contact-borders: 1px rgba(255,255,255,.5) dotted;
-  background-color: #111;
+  background-color: var(--txt-color);
 }
 .contacts h3 {
   text-align: center;
@@ -1927,17 +1975,11 @@ figure a {
   border-right: none;
 }
 
-.window {
-  background: aliceblue;
-  font-size: 2vw;
-  height: 100%;
-  position: relative;
-}
-
 .tiles {
   display: block;
   position: relative;
   overflow: hidden;
+  background: aliceblue;
 }
 .tiles__container {
   position: relative;
@@ -2028,7 +2070,7 @@ figure a {
     font-size: 2vw;
     --about__lines: 1px #111 dotted;
     --link__color: #111;
-    --link__underline: #f33;
+    --link__underline: var(--green);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "title main main main main main main main main main main main" "big   big  big  big  big  big  big  big  big  big  big  big " "act   act   act act  yrs  yrs  prt  prt  prt  prt  wrk  wrk ";
   }
@@ -2161,6 +2203,7 @@ figure a {
 }
 .blog__header {
   text-align: center;
+  box-sizing: border-box;
   display: block;
   width: 100%;
   min-height: 2rem;
@@ -2168,6 +2211,13 @@ figure a {
   margin: 0;
   font-size: 1.333rem;
   line-height: 2rem;
+  background-color: var(--light-color);
+}
+.blog__header a {
+  color: var(--green);
+}
+.blog__header a:hover {
+  color: var(--yellow);
 }
 .blog__body {
   display: flex;
@@ -2176,10 +2226,13 @@ figure a {
   width: 100%;
   flex: 1;
   overflow: hidden;
-  gap: 1rem;
 }
 .blog__item {
   flex: 1;
+  border-bottom: 1px var(--dark-gray) dotted;
+}
+.blog__item:last-child {
+  border-bottom: none;
 }
 .blog .item {
   position: relative;
@@ -2212,9 +2265,10 @@ figure a {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--green);
+  background-color: var(--dark-green);
   padding: 0.5rem 1rem;
   color: var(--light-color);
+  font-size: 0.75rem;
   -webkit-transition: all 0.5s ease-in-out 0s;
   -moz-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
@@ -2222,8 +2276,8 @@ figure a {
   transition: all 0.5s ease-in-out 0s;
 }
 .blog .item__text {
-  background-color: var(--white-trans);
-  color: var(--txt-color);
+  background-color: var(--dark-trans);
+  color: var(--light-color);
   padding: 1rem;
   box-sizing: border-box;
   position: absolute;
