@@ -76,16 +76,15 @@
         padding: .5rem 0;
         font-size: 1.333rem;
         line-height: 2rem;
-        background-color: var(--light-color);
-        border-bottom: 1px var(--dark-gray) dotted;
+        background-color: var(--white-trans);
+        //border-bottom: 1px var(--dark-gray) dotted;
         //box-shadow: 0rem 1px 1px rgba(30,30,30,.05), 0rem .5rem .5rem rgba(30,30,30,.05);
 
         a {
-            color: var(--white);
-            text-decoration: none;
+            color: var(--green);
 
             &:hover {
-                background-color: var(--yellow);
+                color: var(--yellow);
             }
         }
     }
@@ -96,10 +95,16 @@
         right: 1rem;
         top: .75rem;
         font-size: .75rem;
-        background-color: var(--dark-green);
+        background-color: var(--green);
         line-height: .75rem;
         padding: .5rem .75rem;
         border-radius: 2rem;
+        color: var(--white) !important;
+        text-decoration: none;
+
+        &:hover {
+            background-color: var(--yellow);
+        }
         
     }
 }

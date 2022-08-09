@@ -1883,15 +1883,13 @@ figure a {
   padding: 0.5rem 0;
   font-size: 1.333rem;
   line-height: 2rem;
-  background-color: var(--light-color);
-  border-bottom: 1px var(--dark-gray) dotted;
+  background-color: var(--white-trans);
 }
 .portfolio__header a {
-  color: var(--white);
-  text-decoration: none;
+  color: var(--green);
 }
 .portfolio__header a:hover {
-  background-color: var(--yellow);
+  color: var(--yellow);
 }
 .portfolio__counter {
   display: block;
@@ -1899,10 +1897,15 @@ figure a {
   right: 1rem;
   top: 0.75rem;
   font-size: 0.75rem;
-  background-color: var(--dark-green);
+  background-color: var(--green);
   line-height: 0.75rem;
   padding: 0.5rem 0.75rem;
   border-radius: 2rem;
+  color: var(--white) !important;
+  text-decoration: none;
+}
+.portfolio__counter:hover {
+  background-color: var(--yellow);
 }
 
 .contacts {
@@ -2378,7 +2381,7 @@ figure a {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--dark-green);
+  background-color: var(--txt-color);
   padding: 0.5rem 1rem;
   color: var(--light-color);
   font-size: 0.75rem;
