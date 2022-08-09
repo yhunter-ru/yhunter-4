@@ -145,8 +145,83 @@
             139
         </span> <i>работ</i>
     </div>
+    <div class="about__skills skills">
+        <div class="skills1">
+            <div class="skills__descr">
+                Создание сайтов на WordPress, лендингов, презентаций с уникальным дизайном,<br />без использования
+                шаблонов
+                из интернета
+            </div>
+            <div class="skills__item">
+                Фронтэнд-разработка, React
+            </div>
+            <div class="skills__item">
+                HTML5
+            </div>
+            <div class="skills__item">
+                CSS3/SASS
+            </div>
+            <div class="skills__item">
+                JS
+            </div>
+            <div class="skills__item">
+                Верстка нестандартных интерфейсов
+            </div>
+            <div class="skills__item">
+                14 лет с WordPress
+            </div>
+        </div>
+
+        <div class="skills2">
+            <div class="skills__descr">
+                Работаю с растровой (техдизайн, ретушь фотографий) и векторной графикой (разработка логотипов),
+                занимаюсь созданием анимации (от простого интернет-баннера до презентационного ролика)
+            </div>
+            <div class="skills__item">
+                UX/UI
+            </div>
+            <div class="skills__item">
+                Figma
+            </div>
+            <div class="skills__item">
+                Adobe XD
+            </div>
+            <div class="skills__item">
+                Photoshop
+            </div>
+            <div class="skills__item">
+                Illustrator
+            </div>
+            <div class="skills__item">
+                Анимация
+            </div>
+        </div>
+
+    </div>
+
+    <div class="about__os os">
+        <div class="os__descr">
+            Работаю на:
+        </div>
+        <div class="os__items">
+            <div class="os__item">
+                OSX
+            </div>
+            <div class="os__item">
+                Windows
+            </div>
+        </div>
+    </div>
+
+    <div class="about__add add">
+        Увлекаюсь репортажной фотографией, съемкой и видеомонтажом, путешествиями, перспективными технологиями
+        (3д-печать), японской культурой. В разное время был причастен к популяризации моддинга, увлечен аэрографией, был
+        замечен в концертно-организацонной деятельности. Передвигаюсь по городу на автомобиле и велосипеде.
+    </div>
+
 
     about me test
+
 </div>
 
 <?php get_footer(); // Подключаем футер ?>

@@ -2038,6 +2038,9 @@ figure a {
   position: relative;
   padding: 1rem;
 }
+.about > div {
+  box-sizing: border-box;
+}
 .about__title {
   grid-area: title;
 }
@@ -2064,6 +2067,116 @@ figure a {
 .about__works {
   grid-area: wrk;
 }
+.about__skills {
+  grid-area: scl;
+}
+.about__os {
+  grid-area: os;
+}
+.about__add {
+  grid-area: add;
+  font-size: 0.5em;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.5em;
+}
+.skills > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  border-top: var(--about__lines);
+}
+.skills__descr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  transform: translateX(-50%);
+  height: 4em;
+  text-align: center;
+  border: var(--about__lines);
+  border-top: 0;
+  background-color: var(--white);
+}
+.skills__item {
+  padding-top: 4rem;
+  box-sizing: border-box;
+  border-right: var(--about__lines);
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.skills__item:last-child {
+  border-right: 1px transparent solid;
+}
+.skills .skills2 {
+  border-bottom: var(--about__lines);
+}
+.skills .skills2 .skills__descr {
+  width: 60%;
+}
+
+.os {
+  font-size: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-right: var(--about__lines);
+}
+.os__descr {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2em;
+  box-sizing: border-box;
+  border-right: var(--about__lines);
+  height: 100%;
+}
+.os__items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  box-sizing: border-box;
+}
+.os__item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2em;
+  margin: 0 -2em;
+  width: 100%;
+  border-bottom: var(--about__lines);
+}
+.os__item:last-child {
+  border-bottom: none;
+}
+
+.add {
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  line-height: 1.5em;
+}
 
 @media only screen and (min-width: 768px) {
   .about {
@@ -2072,7 +2185,7 @@ figure a {
     --link__color: #111;
     --link__underline: var(--green);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "title main main main main main main main main main main main" "big   big  big  big  big  big  big  big  big  big  big  big " "act   act   act act  yrs  yrs  prt  prt  prt  prt  wrk  wrk ";
+    grid-template-areas: "title main main main main main main main main main main main" "big   big  big  big  big  big  big  big  big  big  big  big " "act   act  act  act  yrs  yrs  prt  prt  prt  prt  wrk  wrk " "scl   scl  scl  scl  scl  scl  scl  scl  scl  scl  scl  scl " "os    os   os   os   add  add  add  add  add  add  add  add ";
   }
   .about a {
     color: var(--link__color);
