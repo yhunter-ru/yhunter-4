@@ -1,0 +1,50 @@
+footer {
+    background-color: var(--light-color);
+    //color: var(--light-color);
+    margin-top: 1rem;
+
+    a:link, a:visited {
+        color: var(--green);
+    }
+
+    ul {
+        list-style: square;
+        padding: .5em 1em 1em 1em;
+    }
+}
+
+.footer {
+    padding-bottom: 0;
+
+    &__cloud {
+        padding: 1rem 0; 
+
+        a:link, a:visited {
+            background: var(--green);
+            padding: .1em .2em;
+            color: var(--light-color);
+            border-radius: 3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        a:hover {
+            background: var(--yellow);
+            z-index: 10;
+        }
+    }
+
+    &__copy {
+        text-align: center;
+        border-top: 1px var(--dark-gray) dotted;
+        color: var(--dark-gray);
+        font-size: .75em;
+    }
+
+    &__header {
+        border-bottom: 1px var(--dark-gray) dotted;
+        padding: 1rem 0;
+        //color: var(--green);
+        font-weight: bold;
+    }
+}

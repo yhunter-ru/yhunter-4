@@ -1,12 +1,17 @@
+<footer>
+	
+
+</footer>
 
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.6932520759024483">
+
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.7499991414173344">
 <script>
 	window.jQuery || document.write(
 		'<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.min.js"><\/script>')
 </script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.6932520759024483"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.7499991414173344"></script>
 <?php
 /**
  * Чистый Шаблон для разработки

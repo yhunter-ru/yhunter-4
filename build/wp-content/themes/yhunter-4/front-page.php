@@ -129,12 +129,12 @@
         </h2>
     </div>
     <div class="about__activity">
-        <p> — моя основная
+        <p> — моя <b>основная</b>
             деятельность
             на протяжении:</p>
     </div>
     <div class="about__years">
-        <p><span>17</span>-ти <br /> лет</p>
+        <p><span>17</span>-ти <br /> <i>лет</i></p>
     </div>
     <div class="about__portfolio">
         <p>За это время
@@ -152,9 +152,7 @@
                 шаблонов
                 из интернета
             </div>
-            <div class="skills__item">
-                Фронтэнд-разработка, React
-            </div>
+
             <div class="skills__item">
                 HTML5
             </div>
@@ -169,6 +167,9 @@
             </div>
             <div class="skills__item">
                 14 лет с WordPress
+            </div>
+            <div class="skills__item">
+                Фронтэнд-разработка, React
             </div>
         </div>
 
@@ -218,9 +219,6 @@
         (3д-печать), японской культурой. В разное время был причастен к популяризации моддинга, увлечен аэрографией, был
         замечен в концертно-организацонной деятельности. Передвигаюсь по городу на автомобиле и велосипеде.
     </div>
-
-
-    about me test
 
 </div>
 

@@ -44,9 +44,14 @@
 /* theme */
 @import "smacss/theme/common";
 @import "smacss/theme/frontpage";
+@import "smacss/theme/footer";
 
 body {
       scroll-behavior: smooth;
+
+      ::selection {
+            background: var(--light-green);
+      }
 }
 
 

@@ -7,6 +7,7 @@
   --light-color: #fff;
   --white: #fff;
   --green: #1cb853;
+  --light-green: #aeebc4;
   --yellow: #faaf40;
   --dark-green: #09572f;
   --dark-color: #000;
@@ -1820,6 +1821,10 @@ figure a {
     animation-timing-function: ease-in;
   }
 }
+body {
+  background-color: aliceblue;
+}
+
 .intro {
   min-height: 5rem;
   background-color: aliceblue;
@@ -1932,7 +1937,7 @@ figure a {
 }
 .contacts > div a {
   display: flex;
-  color: #fff;
+  color: var(--light-color);
 }
 .contacts__email {
   display: flex;
@@ -1982,7 +1987,6 @@ figure a {
   display: block;
   position: relative;
   overflow: hidden;
-  background: aliceblue;
 }
 .tiles__container {
   position: relative;
@@ -2040,6 +2044,7 @@ figure a {
   display: grid;
   position: relative;
   padding: 1rem;
+  margin: 0 1rem;
 }
 .about > div {
   box-sizing: border-box;
@@ -2269,11 +2274,38 @@ figure a {
   .about__activity {
     border-right: var(--about__lines);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: right;
+    padding: 1.25em 1em;
+  }
+  .about__activity p {
+    font-size: 1em;
+    line-height: 1.5em;
+    font-style: italic;
+  }
+  .about__activity p b {
+    font-style: normal;
   }
   .about__years {
     border-right: var(--about__lines);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+  }
+  .about__years p {
+    text-align: center;
+  }
+  .about__years span {
+    font-size: 4em;
+    line-height: 1em;
+    font-weight: bold;
+  }
+  .about__years i {
+    font-style: italic;
+    font-size: 2em;
   }
   .about__portfolio {
     border-right: var(--about__lines);
@@ -2424,8 +2456,53 @@ figure a {
   bottom: -100%;
 }
 
+footer {
+  background-color: var(--light-color);
+  margin-top: 1rem;
+}
+footer a:link, footer a:visited {
+  color: var(--green);
+}
+footer ul {
+  list-style: square;
+  padding: 0.5em 1em 1em 1em;
+}
+
+.footer {
+  padding-bottom: 0;
+}
+.footer__cloud {
+  padding: 1rem 0;
+}
+.footer__cloud a:link, .footer__cloud a:visited {
+  background: var(--green);
+  padding: 0.1em 0.2em;
+  color: var(--light-color);
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+}
+.footer__cloud a:hover {
+  background: var(--yellow);
+  z-index: 10;
+}
+.footer__copy {
+  text-align: center;
+  border-top: 1px var(--dark-gray) dotted;
+  color: var(--dark-gray);
+  font-size: 0.75em;
+}
+.footer__header {
+  border-bottom: 1px var(--dark-gray) dotted;
+  padding: 1rem 0;
+  font-weight: bold;
+}
+
 body {
   scroll-behavior: smooth;
+}
+body ::selection {
+  background: var(--light-green);
 }
 
 /* Slider */

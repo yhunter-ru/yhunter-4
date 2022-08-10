@@ -5,6 +5,7 @@
     display: grid;
     position: relative;
     padding: 1rem;
+    margin: 0 1rem;
 
     > div {
         box-sizing: border-box;
@@ -277,12 +278,44 @@
         &__activity {
             border-right: var(--about__lines);
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-end;
+            align-items: flex-start;
+            text-align: right;
+            padding: 1.25em 1em;
+            p {
+                font-size: 1em;
+                line-height: 1.5em;
+                font-style: italic;
+
+                b {
+                    font-style: normal;
+                }
+            }
         }
 
         &__years {
             border-right: var(--about__lines);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1em;
+            
+            p {
+                text-align: center;
+            }
+            
+            span {
+                font-size: 4em;
+                line-height: 1em;
+                font-weight: bold;
+            }
+
+            i {
+                font-style: italic;
+                font-size: 2em;
+            }
         }
 
         &__portfolio {

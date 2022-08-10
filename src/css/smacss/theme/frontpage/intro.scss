@@ -114,9 +114,11 @@
     grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
     position: relative;
     color: var(--light-color);
+    //color: var(--txt-color);
 
     --contact-borders: 1px rgba(255,255,255,.5) dotted;
     background-color: var(--txt-color);
+    //background-color: var(--light-color);
 
     h3 {
         text-align: center;
@@ -137,7 +139,7 @@
 
         a {
             display: flex;
-            color: #fff;
+            color: var(--light-color);
         }
     }
 
