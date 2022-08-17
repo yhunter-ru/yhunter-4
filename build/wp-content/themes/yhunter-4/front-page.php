@@ -5,10 +5,10 @@
     </div>
 
     <div class="intro__about">
-        Приветствую! Меня зовут Юрий, я&nbsp;дизайнер и&nbsp;веб-разработчик из&nbsp;Перми. <a href="">
+        Приветствую! Я&nbsp;дизайнер и&nbsp;веб-разработчик из&nbsp;Перми. <a href="">
             Делаю сайты</a> на&nbsp;<a href="">WordPress</a>, <a href="">путешествую</a>, <a href="">фотографирую</a>
         концерты
-        и&nbsp;пишу в&nbsp;<a href="">блог</a>. </div>
+        и&nbsp;пишу в&nbsp;<a href="">блог</a>.</div>
     <div class="intro__contacts contacts">
         <h3>Контакты</h3>
         <div class="contacts__email">
@@ -19,14 +19,14 @@
             <a href="tel:+79028358830">+7-902-83-588-30</a>
         </div>
         <div class="contacts__messengers">
-            <a href="">tg</a>
-            <a href="">vb</a>
+            <a href="" class="contacts__icon tg">tg</a>
+            <a href="" class="contacts__icon vb">vb</a>
         </div>
         <div class="contacts__social">
-            <a href="">cp</a>
-            <a href="https://500px.com/yhunter">500</a>
-            <a href="https://www.youtube.com/channel/UCuIyI522EgSfT5W6qtmW61Q">yb</a>
-            <a href="https://www.last.fm/user/yhunter">lt</a>
+            <a href="" class="contacts__icon cp">codepen</a>
+            <a href="https://500px.com/yhunter" class="contacts__icon px">500px</a>
+            <a href="https://www.youtube.com/channel/UCuIyI522EgSfT5W6qtmW61Q" class="contacts__icon yb">youtube</a>
+            <a href="https://www.last.fm/user/yhunter" class="contacts__icon fm">last.fm</a>
         </div>
     </div>
 
