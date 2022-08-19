@@ -19,14 +19,15 @@
             <a href="tel:+79028358830">+7-902-83-588-30</a>
         </div>
         <div class="contacts__messengers">
-            <a href="" class="contacts__icon tg">tg</a>
-            <a href="" class="contacts__icon vb">vb</a>
+            <a href="" class="contacts__icon tg"><span>telegram</span></a>
+            <a href="" class="contacts__icon vb"><span>viber</span></a>
         </div>
         <div class="contacts__social">
-            <a href="" class="contacts__icon cp">codepen</a>
-            <a href="https://500px.com/yhunter" class="contacts__icon px">500px</a>
-            <a href="https://www.youtube.com/channel/UCuIyI522EgSfT5W6qtmW61Q" class="contacts__icon yb">youtube</a>
-            <a href="https://www.last.fm/user/yhunter" class="contacts__icon fm">last.fm</a>
+            <a href="" class="contacts__icon cp"><span>codepen</span></a>
+            <a href="https://500px.com/yhunter" class="contacts__icon px"><span>500px</span></a>
+            <a href="https://www.youtube.com/channel/UCuIyI522EgSfT5W6qtmW61Q"
+                class="contacts__icon yb"><span>youtube</span></a>
+            <a href="https://www.last.fm/user/yhunter" class="contacts__icon fm"><span>last.fm</span></a>
         </div>
     </div>
 
@@ -154,21 +155,27 @@
             </div>
 
             <div class="skills__item">
+                <img src="/wp-content/themes/yhunter-4/img/html.svg" alt="">
                 HTML5
             </div>
             <div class="skills__item">
+                <img src="/wp-content/themes/yhunter-4/img/css.svg" alt="">
                 CSS3/SASS
             </div>
             <div class="skills__item">
+                <img src="/wp-content/themes/yhunter-4/img/js.svg" alt="">
                 JS
             </div>
             <div class="skills__item">
+                <img src="/wp-content/themes/yhunter-4/img/website.svg" alt="">
                 Верстка нестандартных интерфейсов
             </div>
             <div class="skills__item">
+                <img src="/wp-content/themes/yhunter-4/img/wordpress.svg" alt="">
                 14 лет с WordPress
             </div>
             <div class="skills__item">
+                <img src="/wp-content/themes/yhunter-4/img/react.svg" alt="">
                 Фронтэнд-разработка, React
             </div>
         </div>

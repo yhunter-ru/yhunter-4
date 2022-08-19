@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 :root {
   --txt-color: #111;
-  --lbg-color: #efefef;
+  --lbg-color: aliceblue;
   --border-color: transparent;
   --light-color: #fff;
   --white: #fff;
@@ -13,7 +13,7 @@
   --dark-color: #000;
   --dark-gray: #797979;
   --dark-trans: rgba(30,30,30,.75);
-  --white-trans: rgba(255,255,255,.75);
+  --white-trans: rgba(255,255,255,.5);
 }
 
 /* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html */
@@ -1028,6 +1028,7 @@ input[type=file] {
 }
 .searchform input[type=text] {
   color: var(--dark-gray);
+  font-size: 0.85rem;
 }
 .searchform input.act {
   color: var(--txt-color);
@@ -1861,7 +1862,7 @@ figure a {
 }
 
 body {
-  background-color: aliceblue;
+  background-color: var(--lbg-color);
 }
 
 .intro {
@@ -1928,6 +1929,7 @@ body {
   font-size: 1.333rem;
   line-height: 2rem;
   background-color: var(--white-trans);
+  backdrop-filter: blur(0.25rem);
 }
 .portfolio__header a {
   color: var(--green);
@@ -1979,7 +1981,23 @@ body {
   color: var(--light-color);
 }
 .contacts__icon {
-  font-size: 0;
+  overflow: hidden;
+}
+.contacts__icon span {
+  position: absolute;
+  font-size: 0.75em;
+  line-height: 1rem;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  display: block;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+  text-align: center;
+  color: var(--white-trans);
 }
 .contacts__icon::before {
   content: "";
@@ -1994,6 +2012,17 @@ body {
   mask-size: 2rem 2rem;
   mask-repeat: no-repeat;
   mask-position: 50% 50%;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+.contacts__icon:hover::before {
+  background-color: var(--green);
+}
+.contacts__icon:hover span {
+  bottom: 0.5rem;
 }
 .contacts__email {
   display: flex;
@@ -2154,7 +2183,6 @@ body {
   justify-content: space-between;
   position: relative;
   width: 100%;
-  height: 10rem;
   border-top: var(--about__lines);
 }
 .skills__descr {
@@ -2173,7 +2201,6 @@ body {
   background-color: var(--white);
 }
 .skills__item {
-  padding-top: 4rem;
   box-sizing: border-box;
   border-right: var(--about__lines);
   flex: 1;
@@ -2181,10 +2208,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   text-align: center;
-  padding-bottom: 1rem;
-  font-weight: bold;
+  padding: 6em 1em 2em 1em;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.25em;
+  gap: 1em;
+}
+.skills__item img {
+  --icon-size: 3em;
+  display: block;
+  width: var(--icon-size);
+  max-width: var(--icon-size);
+  max-height: var(--icon-size);
 }
 .skills__item:last-child {
   border-right: 1px transparent solid;
@@ -2247,7 +2284,7 @@ body {
 @media only screen and (min-width: 768px) {
   .about {
     font-size: 2vw;
-    --about__lines: 1px #111 dotted;
+    --about__lines: 1px rgb(182, 205, 225) dotted;
     --link__color: #111;
     --link__underline: var(--green);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
