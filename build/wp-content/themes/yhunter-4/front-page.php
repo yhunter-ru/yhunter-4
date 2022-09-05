@@ -1,7 +1,7 @@
 <?php get_header();?>
 <div class="intro">
     <div class="intro__photo">
-        photo
+        <img src="/wp-content/themes/yhunter-4/img/yuri.jpg" alt="Юрий Баранов">
     </div>
 
     <div class="intro__about">
