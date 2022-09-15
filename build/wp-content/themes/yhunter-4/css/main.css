@@ -1952,6 +1952,7 @@ body {
   line-height: 2rem;
   background-color: var(--white-trans);
   backdrop-filter: blur(0.25rem);
+  box-shadow: 0rem 1px 1px rgba(30, 60, 30, 0.03), 0rem 1rem 1rem rgba(30, 60, 30, 0.05);
 }
 .portfolio__header a {
   color: var(--green);
@@ -2003,7 +2004,7 @@ body {
   color: var(--light-color);
 }
 .contacts > div a:hover {
-  color: var(--yellow);
+  color: var(--green);
 }
 .contacts__icon {
   overflow: hidden;
