@@ -32,7 +32,7 @@ $r: 5px; //defaul border radius
 
 :root {
   --txt-color: #111;
-  --lbg-color: aliceblue;
+  --lbg-color: #f0f8ff;
   --border-color: transparent;
   --light-color: #fff;
   --white: #fff;
@@ -42,8 +42,8 @@ $r: 5px; //defaul border radius
   --dark-green: #09572f;
   --dark-green2: #006838;
   --dark-color: #000;
-  --dark-gray: #797979;
-  --dark-trans: rgba(30,30,30,.75);
+  --dark-gray: rgba(30,30,30,.3);
+  --dark-trans: rgba(30,30,30,.5);
   --white-trans: rgba(255,255,255,.5);
 }
 

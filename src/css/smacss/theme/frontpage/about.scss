@@ -57,6 +57,11 @@
         grid-area: add;
         font-size: .5em;
     }
+
+    &__text {
+        grid-area: text;
+        font-size: .75em;
+    }
 }
 
 .skills {
@@ -109,11 +114,14 @@
         gap: 1em;
 
         img {
-            --icon-size: 3em;
+            --icon-size: 5em;
             display: block;
             width: var(--icon-size);
             max-width: var(--icon-size);
             max-height: var(--icon-size);
+            opacity: 1;
+            //position: absolute;
+            
         }
 
 
@@ -139,19 +147,24 @@
     justify-content: center;
     border-right: var(--about__lines);
 
+    border-bottom: var(--about__lines);
+
     &__descr {
         flex: 1;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding: 2em;
+        padding: 1em .5em;
         box-sizing: border-box;
         border-right: var(--about__lines);
         height: 100%;
+        font-size: 2em;
+        line-height: 2.5em;
+        font-style: italic;
     }
 
     &__items {
-        flex: 1;
+        flex: 2;
         display: flex;
         flex-direction: column;
         padding: 2em;
@@ -166,7 +179,17 @@
         padding: 2em;
         margin: 0 -2em;
         width: 100%;
+        gap: 1em;
         border-bottom: var(--about__lines);
+
+        img {
+            --icon-size: 7em;
+            display: block;
+            width: var(--icon-size);
+            max-width: var(--icon-size);
+            max-height: var(--icon-size);
+            opacity: 1;
+        }
 
         &:last-child {
             border-bottom: none;
@@ -176,6 +199,27 @@
 
 .add {
     padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: .75em;
+    line-height: 1.5em;
+
+    border-bottom: var(--about__lines);
+
+    &__descr {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    &__items {
+        list-style: square;
+    }
+}
+
+.text {
+    padding: 2em 0em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,7 +268,8 @@
                              "big   big  big  big  big  big  big  big  big  big  big  big "
                              "act   act  act  act  yrs  yrs  prt  prt  prt  prt  wrk  wrk "
                              "scl   scl  scl  scl  scl  scl  scl  scl  scl  scl  scl  scl "
-                             "os    os   os   os   add  add  add  add  add  add  add  add ";
+                             "os    os   os   os   os  os  add  add  add  add  add  add "
+                             ".     .     text  text text text text text text    .    .    .  ";
                              
 
         &__title {

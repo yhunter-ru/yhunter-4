@@ -6,12 +6,12 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.03165754000467391">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.8098909333135145">
 <script>
 	window.jQuery || document.write(
 		'<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.min.js"><\/script>')
 </script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.03165754000467391"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.8098909333135145"></script>
 <?php
 /**
  * Чистый Шаблон для разработки
