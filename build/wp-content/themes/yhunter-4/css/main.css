@@ -2001,6 +2001,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 2rem;
+  padding: 0.5rem 0;
+  font-size: 1.333rem;
+  line-height: 2rem;
+  margin: 0;
+  box-shadow: 0rem 1px 1px rgba(30, 60, 30, 0.03), 0rem 1rem 1rem rgba(30, 60, 30, 0.05);
 }
 .contacts > div {
   border-bottom: var(--contact-borders);
@@ -2009,6 +2015,9 @@ body {
 }
 .contacts > div:last-child {
   border-bottom: 0;
+}
+.contacts > div:nth-child(2n) {
+  border-top: 0;
 }
 .contacts > div a {
   display: flex;

@@ -104,6 +104,8 @@
         //border-bottom: 1px var(--dark-gray) dotted;
         box-shadow: 0rem 1px 1px rgba(30,60,30,.03), 0rem 1rem 1rem rgba(30,60,30,.05);
 
+
+
         a {
             color: var(--green);
 
@@ -149,6 +151,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 2rem;
+        padding: .5rem 0;
+        font-size: 1.333rem;
+        line-height: 2rem;
+        margin: 0;
+
+        box-shadow: 0rem 1px 1px rgba(30,60,30,.03), 0rem 1rem 1rem rgba(30,60,30,.05);
     }
 
     > div {
@@ -157,8 +166,14 @@
         position: relative;
         box-sizing: border-box;
 
+        
+
         &:last-child {
             border-bottom: 0;
+        }
+
+        &:nth-child(2n) {
+            border-top: 0;
         }
 
         a {
