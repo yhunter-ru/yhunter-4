@@ -1,0 +1,58 @@
+/* Custom styles */
+
+/* Options */ 
+
+$lines-color: #efefef;
+$lines-weight: 1px;
+$lines-style: solid;
+
+$skill-radius: 8px;
+$skill-gap: 2px;
+
+$skill-line-color: #1ab752;
+$skill-line-height: .5rem;
+
+$skill-transition:  all 1s ease-in-out 0s;
+
+/* Script Function Styles */ 
+
+.skill {
+  border: $lines-weight $lines-color $lines-style;
+  background-color: var(--lbg-color);
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  align-self: flex-end;
+  justify-self: flex-end;
+  padding: $skill-gap;
+  width: calc(100% - 2em);
+  transform: translateX(-50%);
+  border-radius: $skill-radius;
+
+  div {
+    transition: $skill-transition;
+    width: 0%;
+    height: $skill-line-height;
+    box-sizing: border-box;
+    background: $skill-line-color;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    border-radius: $skill-radius - math.div($skill-gap, 2);
+    
+    
+  }
+}
+
+.skill-line {
+  
+  width: 0%;
+
+  
+}
+
+.skill-show {
+  width: 50% !important;
+}

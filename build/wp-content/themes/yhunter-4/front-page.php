@@ -157,26 +157,32 @@
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/html.svg" alt="">
                 HTML5
+                <div class="skills__points skill" data-fill="85%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/css.svg" alt="">
                 CSS3/SASS
+                <div class="skills__points skill" data-fill="85%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/js.svg" alt="">
                 JS
+                <div class="skills__points skill" data-fill="70%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/website.svg" alt="">
                 Верстка нестандартных интерфейсов
+                <div class="skills__points skill" data-fill="90%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/wordpress.svg" alt="">
                 14 лет с WordPress
+                <div class="skills__points skill" data-fill="90%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/react.svg" alt="">
                 Фронтэнд-разработка, React
+                <div class="skills__points skill" data-fill="45%"></div>
             </div>
         </div>
 
@@ -188,46 +194,38 @@
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/des.svg" alt="">
                 UX/UI
+                <div class="skills__points skill" data-fill="85%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/fg.svg" alt="">
                 Figma
+                <div class="skills__points skill" data-fill="50%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/xd.svg" alt="">
                 Adobe XD
+                <div class="skills__points skill" data-fill="50%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/psd.svg" alt="">
                 Photoshop
+                <div class="skills__points skill" data-fill="90%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/il.svg" alt="">
                 Illustrator
+                <div class="skills__points skill" data-fill="60%"></div>
             </div>
             <div class="skills__item">
                 <img src="/wp-content/themes/yhunter-4/img/ani.svg" alt="">
                 Анимация
+                <div class="skills__points skill" data-fill="50%"></div>
             </div>
         </div>
 
     </div>
 
-    <div class="about__os os">
-        <div class="os__descr">
-            Работаю на:
-        </div>
-        <div class="os__items">
-            <div class="os__item">
-                <img src="/wp-content/themes/yhunter-4/img/apl.svg" alt="">
-                OSX
-            </div>
-            <div class="os__item">
-                <img src="/wp-content/themes/yhunter-4/img/win.svg" alt="">
-                Windows
-            </div>
-        </div>
-    </div>
+
 
     <div class="about__add add">
         <div class="add__descr">

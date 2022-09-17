@@ -2217,7 +2217,7 @@ body {
   font-size: 0.5em;
 }
 .about__text {
-  grid-area: text;
+  grid-area: txt;
   font-size: 0.75em;
 }
 
@@ -2249,6 +2249,8 @@ body {
   border: var(--about__lines);
   border-top: 0;
   background-color: var(--white);
+  z-index: 5;
+  line-height: 1.5em;
 }
 .skills__item {
   box-sizing: border-box;
@@ -2260,11 +2262,12 @@ body {
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  padding: 6em 1em 2em 1em;
+  padding: 6em 1em 3em 1em;
   font-weight: normal;
   font-style: italic;
   font-size: 1.25em;
   gap: 1em;
+  position: relative;
 }
 .skills__item img {
   --icon-size: 5em;
@@ -2344,7 +2347,7 @@ body {
   flex-direction: column;
   font-size: 0.75em;
   line-height: 1.5em;
-  border-bottom: var(--about__lines);
+  border-right: var(--about__lines);
 }
 .add__descr {
   font-size: 1em;
@@ -2352,14 +2355,15 @@ body {
 }
 .add__items {
   list-style: square;
+  font-style: italic;
 }
 
 .text {
-  padding: 2em 0em;
+  padding: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75em;
+  font-size: 0.5em;
   line-height: 1.5em;
 }
 
@@ -2370,7 +2374,7 @@ body {
     --link__color: #111;
     --link__underline: var(--green);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "title main main main main main main main main main main main" "big   big  big  big  big  big  big  big  big  big  big  big " "act   act  act  act  yrs  yrs  prt  prt  prt  prt  wrk  wrk " "scl   scl  scl  scl  scl  scl  scl  scl  scl  scl  scl  scl " "os    os   os   os   os  os  add  add  add  add  add  add " ".     .     text  text text text text text text    .    .    .  ";
+    grid-template-areas: "title main main main main main main main main main main main" "big   big  big  big  big  big  big  big  big  big  big  big " "act   act  act  act  yrs  yrs  prt  prt  prt  prt  wrk  wrk " "scl   scl  scl  scl  scl  scl  scl  scl  scl  scl  scl  scl " "add   add  add  add  add  add  txt  txt  txt  txt  txt  txt ";
   }
   .about a {
     color: var(--link__color);
@@ -2520,6 +2524,44 @@ body {
     font-size: 1em;
   }
 }
+/* Custom styles */
+/* Options */
+/* Script Function Styles */
+.skill {
+  border: 1px #efefef solid;
+  background-color: var(--lbg-color);
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  align-self: flex-end;
+  justify-self: flex-end;
+  padding: 2px;
+  width: calc(100% - 2em);
+  transform: translateX(-50%);
+  border-radius: 8px;
+}
+.skill div {
+  transition: all 1s ease-in-out 0s;
+  width: 0%;
+  height: 0.5rem;
+  box-sizing: border-box;
+  background: #1ab752;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  border-radius: 7px;
+}
+
+.skill-line {
+  width: 0%;
+}
+
+.skill-show {
+  width: 50% !important;
+}
+
 .blog {
   display: flex;
   flex-direction: column;
