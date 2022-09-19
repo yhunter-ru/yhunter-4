@@ -6,20 +6,6 @@
 @import './skills.js';
 @import './accordeon.js';
 
-$(window).on('load', function(){
-    $('.left').addClass("jump-left").viewportChecker({
-        classToAdd: 'left-show',
-        offset: 100,
-        repeat: true
-    });
-
-    $('.right').addClass("jump-right").viewportChecker({
-        classToAdd: 'right-show',
-        offset: 100,
-        repeat: true
-    });
-});
-
 @import '../../node_modules/inputmask/dist/jquery.inputmask.js';
 
 document.addEventListener('DOMContentLoaded', function(){

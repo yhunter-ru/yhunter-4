@@ -63,7 +63,7 @@ $menu-bg: var(--light-color);
 $menu-color: var(--green);
 $menu-light-color: var(--light-color);
 $menu-desktop-position: fixed;
-$menu-desktop-submenu-width: 150px;
+$menu-desktop-submenu-width: 250px;
 $menu-mobile-bg: var(--dark-color);
 $menu-mobile-color: var(--green);
 $menu-mobile-align: left;
@@ -76,11 +76,11 @@ $menu-links-hover-bg: var(--green);
 $menu-links-color: var(--light-color);
 $menu-links-border: none;
 
-$menu-sublinks-color: var(--dark-gray);
-$menu-sublinks-bg: var(--lbg-color);
+$menu-sublinks-color: var(--txt-color);
+$menu-sublinks-bg: var(--white);
 $menu-sublinks-border: 3px var(--dark-gray) solid;
 $menu-sublinks-hover: var(--green);
-$menu-sublinks-hover-bg: var(--lbg-color);
+$menu-sublinks-hover-bg: var(--white);
 $menu-sublinks-hover-border: 3px var(--green) solid;
 
 $menu-mobile-text-transform: none;
@@ -89,8 +89,7 @@ $menu-submenu-bg: var(--lbg-color);
 
 $menu-mobile-breakdown: 768px;
 
-
-
+$top-shadow: 0rem 1px 1px rgba(30,60,30,.03), 0rem 1rem 1rem rgba(30,60,30,.05);
 
 //Control points for flexbox
 $xs-width: 0;

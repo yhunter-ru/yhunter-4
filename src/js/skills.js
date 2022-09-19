@@ -1,21 +1,37 @@
+$(window).on('load', function(){
+  $('.left').addClass("jump-left").viewportChecker({
+      classToAdd: 'left-show',
+      offset: 100,
+      repeat: true
+  });
+
+  $('.right').addClass("jump-right").viewportChecker({
+      classToAdd: 'right-show',
+      offset: 100,
+      repeat: true
+  });
+});
+
 window.onload = function () {  
     const skillsElements = document.querySelectorAll('.skill');
-    
-    /* Demo Links Script */
-    
-    document.getElementById("ShowSkills").onclick = 
-      function(e) {
-        e.preventDefault();
-        ShowSkills();
-      };
-    
-    document.getElementById("ResetSkills").onclick = 
-       function(e) {
-        e.preventDefault();
+
+
+    $('.skills').viewportChecker({
+      classToAdd: 'show',
+      offset: 100,
+      repeat: true,
+      callbackFunction: function(elem, action){
+        if (action=='add') {
+          ShowSkills();
+        }
+        else {
           ResetSkills(); 
-       }; 
+        }
+        
+      },
+    });
     
-    /* Demo Links Script end */
+    
    
     function ResetSkills() {
        for (var i = 0; i < skillsElements.length; i++) {

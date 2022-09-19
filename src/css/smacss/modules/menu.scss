@@ -131,6 +131,7 @@ a.mobile-menu:hover {
 	nav {
 		background: $menu-bg;
 		position: $menu-desktop-position;
+		box-shadow: $top-shadow;
 		z-index: 100;
 		width: 100%;
 	}
@@ -153,6 +154,7 @@ a.mobile-menu:hover {
 					left: 0px !important;
 					line-height: 1em !important;
 					@include transit();
+					box-shadow: $top-shadow;
 					
 					li {
 						width: 100%;
