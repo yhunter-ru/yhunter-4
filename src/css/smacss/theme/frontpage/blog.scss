@@ -131,3 +131,36 @@
         }
     }
 }
+
+@media (min-width: 768px) {
+    .blog {
+        &__body {
+            flex-direction: row;
+        }
+
+        &__item {
+            border-right: 1px var(--dark-gray) dotted;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog {
+        &__body {
+            flex-direction: column;
+        }
+
+        &__item {
+            border-right: none;
+            border-bottom: 1px var(--dark-gray) dotted;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }        
+    }
+}

@@ -18,7 +18,7 @@ nav{
 
 a.mobile-menu{
 	display:block;
-	padding: 0 1rem;
+	padding: 0 0 0 1rem;
 	line-height: $menu-mobile-line-height;
 }
 
@@ -39,7 +39,7 @@ a.mobile-menu{
 				}
 
 				li {
-					display: inline-block !important;
+					display: inline-block;
 					position: relative !important;
 					z-index:100 !important;
 				}

@@ -1,19 +1,18 @@
 .intro {
     min-height: 5rem;
     background-color: aliceblue;
-    height: calc(100vh - 6rem);
     min-height: 800px;
     padding: 5rem 1rem 1rem 1rem;
 
     display: grid;
 
     gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 4fr;
+    grid-template-areas: "ph"
+                         "ab"
+                         "pt"
+                         "ct"
+                         "blg";
     
-    grid-template-areas: "ph ab ab blg"
-                         "ph pt pt blg"
-                         "ct pt pt blg";
 
     &__photo {
         grid-area: ph;
@@ -25,6 +24,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: 0 50%;
         }
     }
 
@@ -43,18 +43,6 @@
             &:hover {
                 opacity: .75;
             }
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            width: 2rem;
-            height: 2rem;
-            background-color: var(--green);
-            left: -1rem;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-            z-index: 1;
         }
     }
 
@@ -75,6 +63,7 @@
 
 .portfolio {
     position: relative;
+    height: 100vw;
 
     &__tiles {            
         font-size: 2vw;
@@ -280,6 +269,47 @@
                 border-right: none;
             }
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .intro {
+        height: 1024px;
+        grid-template-areas: "ph  ab  ab"
+                             "ph  pt  pt"
+                             "ct  pt  pt"
+                             "blg blg blg";
+
+        .portfolio {
+            height: auto;
+        }
+
+        &__about {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 2rem;
+                height: 2rem;
+                background-color: var(--green);
+                left: -1rem;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                z-index: 1;
+            }
+        }
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .intro {
+        height: calc(100vh - 6rem);
+        grid-template-areas: "ph ab ab blg"
+                             "ph pt pt blg"
+                             "ct pt pt blg";
+
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 4fr;
     }
 }
 

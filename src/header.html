@@ -130,13 +130,20 @@
 
 			<li><a href="">Контакты</a></li>
 
+			<li class="search">
+				<form method="get" id="searchform" class="searchform" action="/"> <input type="text" name="s" id="s"
+						value="Поиск по сайту..."
+						onblur="if(this.value=='') this.value='Поиск по сайту...'; this.className='';"
+						onfocus="if(this.value=='Поиск по сайту...') this.value='';  this.className='act';">
+					<input type="submit" value="Отправить" class="searchform__submit" />
+				</form>
+			</li>
+
 		</ul>
 
-		<form method="get" id="searchform" class="searchform" action="/"> <input type="text" name="s" id="s"
-				value="Поиск по сайту..." onblur="if(this.value=='') this.value='Поиск по сайту...'; this.className='';"
-				onfocus="if(this.value=='Поиск по сайту...') this.value='';  this.className='act';">
-			<input type="submit" value="Отправить" class="searchform__submit" />
-		</form>
+
+
+		<a href="#" id="touch-menu" class="mobile-menu"></a>
 	</nav>
 
 

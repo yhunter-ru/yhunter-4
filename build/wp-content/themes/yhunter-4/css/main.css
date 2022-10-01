@@ -719,13 +719,30 @@ nav {
   margin: 0;
   background: none;
   display: block;
+  position: fixed;
+  background: var(--light-color);
+  box-shadow: 0rem 1px 1px rgba(30, 60, 30, 0.03), 0rem 1rem 1rem rgba(30, 60, 30, 0.05);
+  z-index: 100;
+  width: 100%;
 }
 
 .menu {
-  display: none;
+  display: block;
+  position: absolute;
+  top: calc(4rem + 1px);
+  left: -100vw;
+  opacity: 0;
   padding: 0;
   margin: 0;
+  width: 100%;
+  background-color: var(--lbg-color);
   text-align: left;
+  box-shadow: 0 0.5rem 0.5rem rgba(30, 30, 30, 0.25);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
 }
 .menu li {
   display: block;
@@ -790,25 +807,32 @@ nav {
   margin: 0;
 }
 
+.show-nav .menu {
+  left: 0;
+  opacity: 1;
+}
+
 .mobile-menu {
   display: block;
+  position: absolute;
+  right: 1rem;
   line-height: 4rem;
   height: 4rem;
-  padding: 0 1rem;
+  padding: 0 0 0 1rem;
   text-align: left;
   text-transform: none;
   font-weight: 600;
 }
 
 a.mobile-menu {
-  background: var(--dark-color);
+  background: var(--light-color);
   color: var(--green);
 }
 a.mobile-menu::before {
   content: "";
   width: 1.25rem;
   height: 1.25rem;
-  margin: 0 1rem 0 0;
+  margin: 0 0 0 0;
   left: 0rem;
   top: 0.25rem;
   display: inline-block;
@@ -818,20 +842,18 @@ a.mobile-menu::before {
 }
 
 @media (min-width: 768px) {
-  nav {
-    background: var(--light-color);
-    position: fixed;
-    box-shadow: 0rem 1px 1px rgba(30, 60, 30, 0.03), 0rem 1rem 1rem rgba(30, 60, 30, 0.05);
-    z-index: 100;
-    width: 100%;
-  }
-
   .mainWrap {
     width: 768px;
   }
 
   .menu {
-    display: block !important;
+    display: flex !important;
+    position: relative;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    box-shadow: none;
+    background-color: var(--white);
   }
   .menu ul {
     display: block;
@@ -859,7 +881,7 @@ a.mobile-menu::before {
     top: 0px !important;
   }
   .menu li {
-    display: inline-block !important;
+    display: inline-block;
     position: relative !important;
     z-index: 100 !important;
   }
@@ -1730,15 +1752,22 @@ figure a {
   transition: all 0.5s ease-in-out 0s;
   top: 0;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  height: 4rem;
 }
 .sticky-header .menu {
   flex: 1;
 }
+.sticky-header .search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--white);
+}
 .sticky-header .searchform {
-  justify-self: flex-end;
-  margin-right: 1rem;
+  width: 100%;
+  max-width: 320px;
 }
 
 .is-hidden {
@@ -1759,6 +1788,9 @@ figure a {
   text-decoration: none;
   font-weight: bold;
   color: var(--txt-color) !important;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .logo svg {
   position: relative;
@@ -1766,16 +1798,6 @@ figure a {
   box-sizing: border-box;
   object-fit: cover;
   width: 2.5rem;
-}
-.logo::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 1.5rem;
-  border: 1px var(--lbg-color) solid;
-  right: 0;
-  top: 1.25rem;
 }
 
 .st0 {
@@ -1802,6 +1824,32 @@ figure a {
   fill: #006838;
 }
 
+@media (min-width: 768px) {
+  .logo {
+    position: relative;
+  }
+  .logo::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 1.5rem;
+    border: 1px var(--lbg-color) solid;
+    right: 0;
+    top: 1.25rem;
+  }
+
+  .sticky-header .search {
+    justify-content: flex-end;
+    padding: 0;
+  }
+  .sticky-header .searchform {
+    justify-self: flex-end;
+    margin-right: 1rem;
+    width: 10%;
+    min-width: 200px;
+  }
+}
 .logo #eye-l {
   transform-origin: 50% 50%;
 }
@@ -1887,14 +1935,11 @@ body {
 .intro {
   min-height: 5rem;
   background-color: aliceblue;
-  height: calc(100vh - 6rem);
   min-height: 800px;
   padding: 5rem 1rem 1rem 1rem;
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 4fr;
-  grid-template-areas: "ph ab ab blg" "ph pt pt blg" "ct pt pt blg";
+  grid-template-areas: "ph" "ab" "pt" "ct" "blg";
 }
 .intro__photo {
   grid-area: ph;
@@ -1906,6 +1951,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 0 50%;
 }
 .intro__about {
   grid-area: ab;
@@ -1922,17 +1968,6 @@ body {
 .intro__about a:hover {
   opacity: 0.75;
 }
-.intro__about::before {
-  content: "";
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  background-color: var(--green);
-  left: -1rem;
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
-  z-index: 1;
-}
 .intro__blog {
   grid-area: blg;
 }
@@ -1947,6 +1982,7 @@ body {
 
 .portfolio {
   position: relative;
+  height: 100vw;
 }
 .portfolio__tiles {
   font-size: 2vw;
@@ -2120,6 +2156,34 @@ body {
   border-right: none;
 }
 
+@media (min-width: 768px) {
+  .intro {
+    height: 1024px;
+    grid-template-areas: "ph  ab  ab" "ph  pt  pt" "ct  pt  pt" "blg blg blg";
+  }
+  .intro .portfolio {
+    height: auto;
+  }
+  .intro__about::before {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--green);
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 1;
+  }
+}
+@media (min-width: 1200px) {
+  .intro {
+    height: calc(100vh - 6rem);
+    grid-template-areas: "ph ab ab blg" "ph pt pt blg" "ct pt pt blg";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 4fr;
+  }
+}
 .tiles {
   display: block;
   position: relative;
@@ -2698,6 +2762,29 @@ body {
   bottom: -100%;
 }
 
+@media (min-width: 768px) {
+  .blog__body {
+    flex-direction: row;
+  }
+  .blog__item {
+    border-right: 1px var(--dark-gray) dotted;
+  }
+  .blog__item:last-child {
+    border-right: none;
+  }
+}
+@media (min-width: 1200px) {
+  .blog__body {
+    flex-direction: column;
+  }
+  .blog__item {
+    border-right: none;
+    border-bottom: 1px var(--dark-gray) dotted;
+  }
+  .blog__item:last-child {
+    border-bottom: none;
+  }
+}
 footer {
   background-color: var(--light-color);
   margin-top: 1rem;

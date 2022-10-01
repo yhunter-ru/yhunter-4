@@ -1,10 +1,11 @@
 $(document).ready(function(){ 
 	var touch 	= $('#touch-menu');
-	var menu 	= $('.menu');
+	var nav 	= $('body > nav');
 
 	$(touch).on('click', function(e) {
 		e.preventDefault();
-		menu.slideToggle();
+    nav.toggleClass("show-nav");
+		//menu.slideToggle();
 	});
 	
 	$(window).resize(function(){
