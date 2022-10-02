@@ -2248,15 +2248,44 @@ body {
 }
 
 .about {
+  font-size: 2vw;
+  --about__lines: none;
+  --link__color: #111;
+  --link__underline: var(--green);
   background-color: #fff;
   color: #111;
   display: grid;
   position: relative;
   padding: 1rem;
   margin: 0 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "title title title title" "main  main  main  main" "big   big   big   big" "act   act   yrs   yrs" "prt   prt   wrk   wrk" "scl   scl   scl   scl" "add   add   add   add" "txt   txt   txt   txt";
 }
 .about > div {
   box-sizing: border-box;
+}
+.about a {
+  color: var(--link__color);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  z-index: 20;
+}
+.about a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  left: 0;
+  bottom: -2px;
+  background-color: var(--link__underline);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+  z-index: -1;
 }
 .about__title {
   grid-area: title;
@@ -2271,6 +2300,7 @@ body {
   flex-direction: column;
   gap: 40px;
   position: relative;
+  margin-bottom: 3em;
 }
 .about__activity {
   grid-area: act;
@@ -2292,11 +2322,60 @@ body {
 }
 .about__add {
   grid-area: add;
-  font-size: 0.5em;
 }
 .about__text {
   grid-area: txt;
-  font-size: 0.75em;
+}
+.about__title {
+  border-bottom: var(--about__lines);
+}
+.about__title span {
+  display: block;
+  font-size: 3em;
+  font-weight: bold;
+}
+.about__title br {
+  display: none;
+}
+.about__big span {
+  display: block;
+}
+.about__years {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+}
+.about__years p {
+  text-align: center;
+}
+.about__years span {
+  font-size: 2em;
+  line-height: 1em;
+  font-weight: bold;
+}
+.about__years i {
+  font-style: italic;
+  font-size: 1.5em;
+}
+.about__works {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0em;
+  transform: translateY(-0.75em);
+}
+.about__works span {
+  font-size: 3em;
+  line-height: 1em;
+  font-weight: bold;
+  display: block;
+}
+.about__works i {
+  font-style: italic;
+  font-size: 1.5em;
 }
 
 .skills {
@@ -2307,6 +2386,7 @@ body {
 .skills > div {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -2317,24 +2397,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  transform: translateX(-50%);
-  height: 4em;
-  text-align: center;
-  border: var(--about__lines);
+  width: 100%;
+  text-align: left;
+  border: none;
   border-top: 0;
   background-color: var(--white);
+  font-size: 3.5em;
   z-index: 5;
   line-height: 1.5em;
+  padding: 2em 0 0 0;
 }
 .skills__item {
   box-sizing: border-box;
   border-right: var(--about__lines);
-  flex: 1;
-  height: 100%;
+  width: 50%;
+  height: 55vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2343,7 +2420,7 @@ body {
   padding: 6em 1em 3em 1em;
   font-weight: normal;
   font-style: italic;
-  font-size: 1.25em;
+  font-size: 3em;
   gap: 1em;
   position: relative;
 }
@@ -2358,64 +2435,6 @@ body {
 .skills__item:last-child {
   border-right: 1px transparent solid;
 }
-.skills .skills2 {
-  border-bottom: var(--about__lines);
-}
-.skills .skills2 .skills__descr {
-  width: 60%;
-}
-
-.os {
-  font-size: 0.5em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-right: var(--about__lines);
-  border-bottom: var(--about__lines);
-}
-.os__descr {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 1em 0.5em;
-  box-sizing: border-box;
-  border-right: var(--about__lines);
-  height: 100%;
-  font-size: 2em;
-  line-height: 2.5em;
-  font-style: italic;
-}
-.os__items {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  padding: 2em;
-  box-sizing: border-box;
-  font-weight: bold;
-}
-.os__item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 2em;
-  margin: 0 -2em;
-  width: 100%;
-  gap: 1em;
-  border-bottom: var(--about__lines);
-}
-.os__item img {
-  --icon-size: 7em;
-  display: block;
-  width: var(--icon-size);
-  max-width: var(--icon-size);
-  max-height: var(--icon-size);
-  opacity: 1;
-}
-.os__item:last-child {
-  border-bottom: none;
-}
 
 .add {
   padding: 2em;
@@ -2428,8 +2447,9 @@ body {
   border-right: var(--about__lines);
 }
 .add__descr {
-  font-size: 1em;
+  font-size: 3em;
   font-weight: bold;
+  margin: 1em 0;
 }
 .add__items {
   list-style: square;
@@ -2437,11 +2457,11 @@ body {
 }
 
 .text {
-  padding: 2em;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.5em;
+  font-size: 1.5em;
   line-height: 1.5em;
 }
 
@@ -2454,29 +2474,6 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "title main main main main main main main main main main main" "big   big  big  big  big  big  big  big  big  big  big  big " "act   act  act  act  yrs  yrs  prt  prt  prt  prt  wrk  wrk " "scl   scl  scl  scl  scl  scl  scl  scl  scl  scl  scl  scl " "add   add  add  add  add  add  txt  txt  txt  txt  txt  txt ";
   }
-  .about a {
-    color: var(--link__color);
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    z-index: 20;
-  }
-  .about a::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 15px;
-    left: 0;
-    bottom: -2px;
-    background-color: var(--link__underline);
-    -webkit-transition: all 0.5s ease-in-out 0s;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.5s ease-in-out 0s;
-    -ms-transition: all 0.5s ease-in-out 0s;
-    transition: all 0.5s ease-in-out 0s;
-    z-index: -1;
-  }
   .about a:hover::before {
     height: 1em;
   }
@@ -2486,6 +2483,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .about__title br {
+    display: block;
   }
   .about__title span {
     position: relative;
@@ -2509,6 +2509,7 @@ body {
   .about__big {
     border-top: var(--about__lines);
     border-bottom: var(--about__lines);
+    margin-bottom: 0;
   }
   .about__big h2 {
     font-size: inherit;
@@ -2519,12 +2520,12 @@ body {
     position: relative;
   }
   .about__big span:first-child {
-    font-size: 3.2em;
+    font-size: 3.15em;
     line-height: 1em;
     padding-top: 0.25em;
   }
   .about__big span:last-child {
-    font-size: 3.9em;
+    font-size: 3.75em;
     line-height: 1em;
     padding-bottom: 0.25em;
   }
@@ -2546,22 +2547,12 @@ body {
   }
   .about__years {
     border-right: var(--about__lines);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     padding: 1em;
-  }
-  .about__years p {
-    text-align: center;
   }
   .about__years span {
     font-size: 4em;
-    line-height: 1em;
-    font-weight: bold;
   }
   .about__years i {
-    font-style: italic;
     font-size: 2em;
   }
   .about__portfolio {
@@ -2585,21 +2576,57 @@ body {
     bottom: 0.25em;
   }
   .about__works {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     padding: 1em;
   }
   .about__works span {
     font-size: 2em;
-    line-height: 1em;
-    font-weight: bold;
-    display: block;
   }
   .about__works i {
-    font-style: italic;
     font-size: 1em;
+  }
+  .about .skills__item {
+    flex: 1;
+    height: 100%;
+    font-size: 1.25em;
+  }
+  .about .skills__descr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    transform: translateX(-50%);
+    height: 4em;
+    text-align: center;
+    border: var(--about__lines);
+    border-top: 0;
+    background-color: var(--white);
+    z-index: 5;
+    line-height: 1.5em;
+    font-size: 1em;
+    padding: 0;
+  }
+  .about .skills2 {
+    border-bottom: var(--about__lines);
+  }
+  .about .skills2 .skills__descr {
+    width: 60%;
+  }
+  .about__add {
+    font-size: 0.5em;
+  }
+  .about__text {
+    font-size: 0.75em;
+  }
+  .about .text {
+    padding: 2em;
+    font-size: 0.5em;
+  }
+  .about .add__descr {
+    font-size: 1em;
+    margin: 0;
   }
 }
 /* Custom styles */

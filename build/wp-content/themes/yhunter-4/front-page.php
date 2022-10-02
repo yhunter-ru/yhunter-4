@@ -128,7 +128,7 @@
 
 <div class="about">
     <div class="about__title">
-        <span>Обо<br />мне</span>
+        <span>Обо&nbsp;<br>мне</span>
     </div>
     <div class="about__main">
         <p><i>Меня зовут</i> <b>Юрий Баранов</b><i>, мне 36 лет, я живу и</i> <b>делаю сайты в Перми</b></p>
