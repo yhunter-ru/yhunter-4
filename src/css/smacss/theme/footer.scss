@@ -17,22 +17,8 @@ footer {
 .footer {
     padding-bottom: 0;
 
-    &__cloud {
-        padding: 1rem 0; 
-
-        a:link, a:visited {
-            background: var(--green);
-            padding: .1em .2em;
-            color: var(--light-color);
-            border-radius: 3px;
-            position: relative;
-            z-index: 1;
-        }
-
-        a:hover {
-            background: var(--yellow);
-            z-index: 10;
-        }
+    &__menu {
+        display: none;
     }
 
     &__copy {
@@ -49,7 +35,25 @@ footer {
         font-weight: bold;
     }
 
+    &__cloud {
+        padding: 1rem 0; 
+
+        a:link, a:visited {
+            background: var(--green);
+            padding: .1em .2em;
+            color: var(--light-color);
+            border-radius: 3px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.5em;
+        }
+    }
+
     .contact {
+        .footer__header {
+            text-align: center;
+        }
+
         ul {
             list-style: none;
             padding-left: 0;
@@ -60,6 +64,7 @@ footer {
                 a {
                     display: flex;
                     flex-direction: row;
+                    justify-content: center;
                     gap: 1em;
 
                     &::before {
@@ -69,6 +74,7 @@ footer {
                         width: 1.5em;
                         height: 1.5em;
                         background-color: var(--dark-gray);
+                        object-fit: contain;
                     }
                 }
 
@@ -78,7 +84,63 @@ footer {
 
     .logo {
         transform: rotate(-15deg) scale(1.1) translate(-5%, -5%);
-        display: block;
         height: 300px;
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        &__menu {
+            display: block;
+        }
+
+        
+
+        &__cloud {
+            padding: 1rem 0; 
+    
+            a:link, a:visited {
+                background: var(--green);
+                padding: .1em .2em;
+                color: var(--light-color);
+                border-radius: 3px;
+                position: relative;
+                z-index: 1;
+            }
+    
+            a:hover {
+                background: var(--yellow);
+                z-index: 10;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        .logo {
+            display: block;
+        }
+
+        .contact {
+            .footer__header {
+                text-align: left;
+            }
+
+            ul {
+
+    
+                li {
+    
+                    a {
+
+                        justify-content: flex-start;
+
+                    }
+    
+                }            
+            }
+        }
     }
 }

@@ -26,16 +26,22 @@ var themepath= "wp-content/themes/yhunter-4/";
 
 console.timeEnd("Loading plugins"); //end measuring
 
+function lint() {
+  return gulp.src('src/js/*.*')
+    .pipe(plugins.jshint())
+    .pipe(plugins.jshint.reporter('default'));
+}
+
+exports.lint = lint;
+
 function jsFunc() {
     //plugins.del('build/'+themepath+'/js/*.*');
 
-    return gulp.src('src/js/main.js')
-       .pipe(plugins.jsImport({hideConsole: true}))
+    return gulp.src('src/js/main.js')  
+       .pipe(plugins.jsImport({hideConsole: true}))        
        .pipe(plugins.babel({
             presets: ['@babel/env']
-        }))
-       .pipe(plugins.jshint())
-       .pipe(plugins.jshint.reporter('default'))
+        }))         
        .pipe(plugins.uglify())
        //.pipe(plugins.concat('main.js'))
        .pipe(gulp.dest('build/'+themepath+'/js'));
@@ -245,6 +251,7 @@ function watchFunc() {
     gulp.watch("src/svg/symbol/*.svg", iconsFunc);
     gulp.watch("src/svg/*.svg", svgSingle);
     gulp.watch("src/fonts/*.ttf", ttfFunc);
+    gulp.watch("src/js/*.js", lint);
     gulp.watch("src/js/*.js", jsFunc);
     gulp.watch("src/img/*.+(jpg|jpeg|gif|png)", imagesFunc);
     gulp.watch("src/*.html", template);

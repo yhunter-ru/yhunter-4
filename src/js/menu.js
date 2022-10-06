@@ -10,8 +10,8 @@ $(document).ready(function(){
 	
 	$(window).resize(function(){
 		var w = $(window).width();
-		if(w > 767 && menu.is(':hidden')) {
-			menu.removeAttr('style');
+		if(w > 767 && nav.hasClass("show-nav")) {
+			nav.removeClass('show-nav');
 		}
 	});
 
