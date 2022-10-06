@@ -15,9 +15,7 @@ window.onload = function () {
     });     
    
     function ResetSkills() {
-
       $(".skills .skill").html("<div></div>");
-
     }
    
     ResetSkills();  

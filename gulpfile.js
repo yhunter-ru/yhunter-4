@@ -28,7 +28,7 @@ console.timeEnd("Loading plugins"); //end measuring
 
 function lint() {
   return gulp.src('src/js/*.*')
-    .pipe(plugins.jshint())
+    .pipe(plugins.jshint({esversion: 6}))
     .pipe(plugins.jshint.reporter('default'));
 }
 
