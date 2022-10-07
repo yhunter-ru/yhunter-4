@@ -1846,8 +1846,8 @@ figure a {
   .sticky-header .searchform {
     justify-self: flex-end;
     margin-right: 1rem;
-    width: 10%;
-    min-width: 200px;
+    width: 12vw;
+    min-width: 220px;
   }
 }
 .logo #eye-l {
@@ -2877,7 +2877,8 @@ footer ul {
   width: 1.5em;
   height: 1.5em;
   background-color: var(--dark-gray);
-  object-fit: contain;
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 .footer .logo {
   transform: rotate(-15deg) scale(1.1) translate(-5%, -5%);
@@ -2916,6 +2917,19 @@ footer ul {
     justify-content: flex-start;
   }
 }
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  width: 65%;
+  padding: 2rem 0;
+  margin: 4rem auto 0 auto;
+  flex: 1;
+}
+
 body {
   scroll-behavior: smooth;
 }

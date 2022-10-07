@@ -74,7 +74,8 @@ footer {
                         width: 1.5em;
                         height: 1.5em;
                         background-color: var(--dark-gray);
-                        object-fit: contain;
+                        mask-repeat: no-repeat;
+                        mask-size: contain;
                     }
                 }
 
