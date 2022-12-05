@@ -11,7 +11,7 @@ $content-width: 65%;
 
 .page-content {
     padding: 2rem 1rem;
-    margin: 4rem auto 0 auto;
+    margin: 0 auto 0 auto;
     position: relative;
     box-sizing: border-box;
     flex: 1;
@@ -74,6 +74,7 @@ $content-width: 65%;
                 -webkit-mask-image: var(--arrow-icon);
                 mask-position: 50% 50%;
                 mask-size: contain;
+                mask-repeat: no-repeat;
             }
         }    
     }
@@ -103,4 +104,8 @@ $content-width: 65%;
             left: .4rem;
         }
     }
+}
+
+.add-spacer {
+    margin-top: 4rem;
 }

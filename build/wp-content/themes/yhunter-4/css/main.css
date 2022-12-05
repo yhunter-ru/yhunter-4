@@ -16,6 +16,8 @@
   --dark-trans: rgba(30,30,30,.5);
   --white-trans: rgba(255,255,255,.5);
   --gray: #666;
+  --text-perc: 65%;
+  --text-max: 920px;
 }
 
 /* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html */
@@ -2935,7 +2937,7 @@ main {
 
 .page-content {
   padding: 2rem 1rem;
-  margin: 4rem auto 0 auto;
+  margin: 0 auto 0 auto;
   position: relative;
   box-sizing: border-box;
   flex: 1;
@@ -2986,6 +2988,7 @@ main {
   -webkit-mask-image: var(--arrow-icon);
   mask-position: 50% 50%;
   mask-size: contain;
+  mask-repeat: no-repeat;
 }
 .navigation .NavNext a {
   flex-direction: row-reverse;
@@ -3003,6 +3006,108 @@ main {
     margin: 0 50%;
     transform: translateX(-50%);
     left: 0.4rem;
+  }
+}
+.add-spacer {
+  margin-top: 4rem;
+}
+
+.bigheader {
+  display: block;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+.bigheader__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.bigheader__image img {
+  display: block;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+  object-position: 50% 50%;
+  z-index: -10;
+}
+.bigheader__image::before {
+  position: absolute;
+  content: "";
+  display: block;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkQyMkQxODlEQUVCRTExRTBBNTU0ODc4MzU5RkU4RjcwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkQyMkQxODlFQUVCRTExRTBBNTU0ODc4MzU5RkU4RjcwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RDIyRDE4OUJBRUJFMTFFMEE1NTQ4NzgzNTlGRThGNzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RDIyRDE4OUNBRUJFMTFFMEE1NTQ4NzgzNTlGRThGNzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7kCcmTAAAAGUlEQVR42mJmYGBw+P///wNmEAHkMAAEGABJyggBddvkywAAAABJRU5ErkJggg==);
+}
+.bigheader__image::after {
+  position: absolute;
+  content: "";
+  display: block;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+.bigheader__field {
+  position: absolute;
+  bottom: 2rem;
+  z-index: 20;
+  padding: 0 1rem;
+  color: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+.bigheader__field h1 {
+  font-size: 3.5rem;
+  text-shadow: 1px 1px 0 var(--dark-trans), 0.2rem 0.2rem 0.5rem var(--dark-trans), 0.5rem 0.5rem 0.75rem var(--dark-trans);
+  font-weight: bold;
+}
+.bigheader__date {
+  display: block;
+  background-color: var(--green);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+.bigheader__share {
+  display: block;
+}
+.bigheader__meta {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+}
+
+.bigheader.thin {
+  height: 60vh;
+  min-height: 500px;
+}
+
+@media (min-width: 768px) {
+  .bigheader {
+    height: 100vh;
+  }
+  .bigheader__image img {
+    height: auto;
+  }
+  .bigheader__field {
+    width: var(--text-perc);
+    max-width: var(--text-max);
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 body {
