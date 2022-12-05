@@ -800,11 +800,11 @@
 			distinctio illo quasi.</p>
 	</div>
 
-	<link rel="stylesheet" href="wp-content/themes/yhunter-4/css/main.min.css?rev=0.9928471102292091">
+	<link rel="stylesheet" href="wp-content/themes/yhunter-4/css/main.min.css?rev=0.7689316387137051">
 	<script>
 		window.jQuery || document.write('<script src="wp-content/themes/yhunter-4/js/vendor/jquery.min.js"><\/script>');
 	</script>
-	<script src="wp-content/themes/yhunter-4/js/main.js?rev=0.9928471102292091"></script>
+	<script src="wp-content/themes/yhunter-4/js/main.js?rev=0.7689316387137051"></script>
 	<script type="text/javascript">
 		$(window).on('load', function () {
 			//$(".aligncenter, .alignnone, .alignleft, .alignright, figure img, iframe").keepTheRhythm();

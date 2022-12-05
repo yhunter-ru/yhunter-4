@@ -1,6 +1,10 @@
 <?php get_header();?>
 
 
+
+
+
+
 <h1><?php // Генерация заголовка в зависимости от архива
 					if ( is_day() ) :
 						printf( __( 'Архив постов: %s', 'twentytwelve' ),   get_the_date()  );
@@ -35,9 +39,6 @@ echo paginate_links( array(
 	'total' => $wp_query->max_num_pages
 ) );
 ?>
-
-
-<?php get_sidebar(); // Подключаем сайдбар ?>
 
 
 <?php get_footer(); // Подключаем футер ?>

@@ -1,5 +1,31 @@
-<!-- build:theme --><?php get_header();?><!-- endbuild --><!-- build:html -->[snp tpl="header.html" ]<!-- endbuild -->
+<!-- build:theme --><?php get_header();?>
+<!-- endbuild -->
+<!-- build:html -->@@include('./header.html')
+<!-- endbuild -->
 
+<!-- build:html -->
+
+<section class="page-content archive-content">
+	<div class="page-content__textheader">
+		<h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h1>
+	</div>
+
+	<articele class="page-content__entry entry">
+		<div class="entry__image">
+			<img src="https://www.yhunter.ru/wp-content/uploads/2022/11/ready-1024x1024.jpg" alt="">
+		</div>
+		<h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h3>
+		<div class="entry__date">3.12.2022</div>
+		<div class="entry__body">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem placeat labore adipisci veritatis iusto
+			nostrum nemo officiis? Recusandae quaerat nobis velit asperiores suscipit quidem quisquam quibusdam sequi,
+			sit, inventore quos?
+		</div>
+	</articele>
+
+</section>
+
+<!-- endbuild -->
 
 <!-- build:theme -->
 <h1><?php // Генерация заголовка в зависимости от архива
@@ -20,7 +46,7 @@
 <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } // Проверяем наличие миниатюры, если есть показываем ?>
 <?php the_content(''); // Выводим анонс ?>
 <?php endwhile; // Конец цикла.
-else: echo '<h2>Извините, ничего не найдено...</h2>'; endif; // Если записей нет - извиняемся ?>	
+else: echo '<h2>Извините, ничего не найдено...</h2>'; endif; // Если записей нет - извиняемся ?>
 <!-- endbuild -->
 
 <!-- build:theme -->
@@ -40,13 +66,9 @@ echo paginate_links( array(
 <!-- endbuild -->
 
 <!-- build:theme -->
-<?php get_sidebar(); // Подключаем сайдбар ?>
-<!-- endbuild -->
-
-<!-- build:theme -->
 <?php get_footer(); // Подключаем футер ?>
 <!-- endbuild -->
 
 <!-- build:html -->
-[snp tpl="footer.html" ]
+@@include('./footer.html')
 <!-- endbuild -->

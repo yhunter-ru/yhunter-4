@@ -1,5 +1,118 @@
-<!-- build:theme --><?php get_header();?><!-- endbuild --><!-- build:html -->[snp tpl="header.html" ]<!-- endbuild -->
+<!-- build:theme --><?php get_header();?>
+<!-- endbuild -->
+<!-- build:html -->@@include('./header.html')
+<!-- endbuild -->
 
+
+<!-- build:html -->
+
+<article class="page-content">
+    <div class="page-content__bigheader">
+        bigheader
+    </div>
+
+    <div class="page-content__header">
+        wideheader
+    </div>
+
+    <div class="page-content__textheader">
+        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h1>
+    </div>
+
+
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam delectus facilis mollitia omnis nesciunt amet,
+    nisi aut, praesentium possimus earum, assumenda nulla. Officiis corrupti dolor dignissimos mollitia ipsa
+    consectetur
+    quae?
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+    <div class="page-content__full">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum blanditiis sed ducimus recusandae odit, iure, ab
+        impedit exercitationem amet laborum nesciunt ut excepturi distinctio eveniet ratione ipsum cumque, sit delectus?
+    </div>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+    <div class="page-content__related">
+
+        <h3>Похожие записи:</h3>
+        <ul>
+
+            <li>
+                <a href="https://www.yhunter.ru/portfolio/prezentaciya-megafona/">Презентация «Мегафона»</a>
+            </li>
+
+            <li>
+                <a href="https://www.yhunter.ru/portfolio/design/presentations/novogodnyaya-flash-otkrytka-2009/">Новогодняя
+                    флеш-открытка 2009</a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.yhunter.ru/portfolio/design/presentations/zastavka-videorolika-dlya-permskix-motorov/">Заставка
+                    видеоролика для «Пермских моторов»</a>
+            </li>
+
+            <li>
+                <a href="https://www.yhunter.ru/portfolio/design/presentations/novogodnyaya-flesh-otkrytka/">Новогодняя
+                    флеш-открытка</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="page-content__meta">
+        Рубрики: <a href="https://www.yhunter.ru/portfolio/design/animation/" rel="category tag">Анимация</a> | <a
+            href="https://www.yhunter.ru/portfolio/" rel="category tag">Портфолио</a> | <a
+            href="https://www.yhunter.ru/portfolio/design/presentations/" rel="category tag">Презентации</a>&nbsp;
+        &nbsp;
+        Тэги: <a href="https://www.yhunter.ru/tag/flash/" rel="tag">flash</a> | <a
+            href="https://www.yhunter.ru/tag/prezentacii/" rel="tag">презентации</a>&nbsp; &nbsp;
+        Поделиться: <div style="display: inline;" class="ya-share2" data-size="s"
+            data-services="vkontakte,facebook,twitter,pinterest"
+            data-yashareImage="https://www.yhunter.ru/wp-content/uploads/2015/08/2_1.jpg"></div>
+    </div>
+
+
+    </div>
+
+    <div class="page-content__comments">
+        comments section
+    </div>
+
+
+
+</article>
+
+<div class="navigation">
+    <div class="NavPrev">
+        <a href="https://www.yhunter.ru/portfolio/design/web/sajt-magazina-fotografij-rusklipart/" rel="prev"></span>
+            Сайт магазина фотографий «Русклипарт»</a> </div>
+    <div class="NavNext">
+        <a href="https://www.yhunter.ru/portfolio/design/web/interaktivnyj-sajt-senatora/" rel="next">Интерактивный
+            сайт «Сенатора»</a>
+
+    </div>
+</div>
+
+<!-- endbuild -->
 
 <!-- build:theme -->
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); // Начало цикла ?>
@@ -14,7 +127,7 @@
 
 <!-- build:theme -->
 <?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'twentyten' ) . '</span> %title' ); // Ссылка на предидущий пост?>
-<?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '</span>' ); // Ссылка на следующий пост?> 
+<?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '</span>' ); // Ссылка на следующий пост?>
 <!-- endbuild -->
 
 <!-- build:theme -->
@@ -23,13 +136,9 @@
 
 
 <!-- build:theme -->
-<?php get_sidebar(); // Подключаем сайдбар ?>
-<!-- endbuild -->
-
-<!-- build:theme -->
 <?php get_footer(); // Подключаем футер ?>
 <!-- endbuild -->
 
 <!-- build:html -->
-[snp tpl="footer.html" ]
+@@include('./footer.html')
 <!-- endbuild -->
