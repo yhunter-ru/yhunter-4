@@ -2267,7 +2267,7 @@ body {
   display: grid;
   position: relative;
   padding: 1rem;
-  margin: 0 1rem;
+  margin: 0 1rem 1rem 1rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas: "title title title title" "main  main  main  main" "big   big   big   big" "act   act   yrs   yrs" "prt   prt   wrk   wrk" "scl   scl   scl   scl" "add   add   add   add" "txt   txt   txt   txt";
 }
@@ -2824,7 +2824,6 @@ body {
 }
 footer {
   background-color: var(--light-color);
-  margin-top: 1rem;
   overflow: hidden;
 }
 footer a:link, footer a:visited {
@@ -3072,6 +3071,7 @@ main .mt0 {
     height: 100vh;
   }
   .bigheader__image img {
+    width: 100%;
     height: auto;
   }
   .bigheader__field {
@@ -3085,6 +3085,7 @@ main .mt0 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .navigation .NavNext a, .navigation .NavPrev a {
   display: flex;
@@ -3170,6 +3171,7 @@ main .mt0 {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 .pagination a:first-child, .pagination a:last-child {
   flex: 1;
