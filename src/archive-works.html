@@ -1,0 +1,206 @@
+<!-- build:theme --><?php get_header();?>
+<!-- endbuild -->
+<!-- build:html -->@@include('./header.html')
+<!-- endbuild -->
+
+<!-- build:html -->
+
+<section class="works">
+    <a href="" class="works__entry work">
+        <div class="work__image">
+            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+        </div>
+        <h2 class="work__header">
+            Веб-версия книги «Медведь в истории культуры»
+        </h2>
+
+        <div class="work__meta">
+            <ul>
+                <li>Дизайн</li>
+                <li>Веб-разработка</li>
+            </ul>
+        </div>
+
+    </a>
+
+    <a href="" class="works__entry work">
+        <div class="work__image">
+            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+        </div>
+        <h2 class="work__header">
+            Веб-версия книги «Медведь в истории культуры»
+        </h2>
+
+        <div class="work__meta">
+            <ul>
+                <li>Дизайн</li>
+                <li>Веб-разработка</li>
+            </ul>
+        </div>
+
+    </a>
+
+    <a href="" class="works__entry work">
+        <div class="work__image">
+            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+        </div>
+        <h2 class="work__header">
+            Веб-версия книги «Медведь в истории культуры»
+        </h2>
+
+        <div class="work__meta">
+            <ul>
+                <li>Дизайн</li>
+                <li>Веб-разработка</li>
+            </ul>
+        </div>
+
+    </a>
+
+    <a href="" class="works__entry work">
+        <div class="work__image">
+            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+        </div>
+        <h2 class="work__header">
+            Веб-версия книги «Медведь в истории культуры»
+        </h2>
+
+        <div class="work__meta">
+            <ul>
+                <li>Дизайн</li>
+                <li>Веб-разработка</li>
+            </ul>
+        </div>
+
+    </a>
+
+    <a href="" class="works__entry work">
+        <div class="work__image">
+            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+        </div>
+        <h2 class="work__header">
+            Веб-версия книги «Медведь в истории культуры»
+        </h2>
+
+        <div class="work__meta">
+            <ul>
+                <li>Дизайн</li>
+                <li>Веб-разработка</li>
+            </ul>
+        </div>
+
+    </a>
+
+    <a href="" class="works__entry work">
+        <div class="work__image">
+            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+        </div>
+        <h2 class="work__header">
+            Веб-версия книги «Медведь в истории культуры»
+        </h2>
+
+        <div class="work__meta">
+            <ul>
+                <li>Дизайн</li>
+                <li>Веб-разработка</li>
+            </ul>
+        </div>
+
+    </a>
+
+    <a href="" class="works__entry work">
+        <div class="work__image">
+            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+        </div>
+        <h2 class="work__header">
+            Веб-версия книги «Медведь в истории культуры»
+        </h2>
+
+        <div class="work__meta">
+            <ul>
+                <li>Дизайн</li>
+                <li>Веб-разработка</li>
+            </ul>
+        </div>
+
+    </a>
+
+    <a href="" class="works__entry work">
+        <div class="work__image">
+            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+        </div>
+        <h2 class="work__header">
+            Веб-версия книги «Медведь в истории культуры»
+        </h2>
+
+        <div class="work__meta">
+            <ul>
+                <li>Дизайн</li>
+                <li>Веб-разработка</li>
+            </ul>
+        </div>
+
+    </a>
+</section>
+
+<div class="pagination">
+
+    <a class="prev page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">Вперед в будущее</a>
+    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/1/">1</a>
+    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">2</a>
+    <span aria-current="page" class="page-numbers current">3</span>
+    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">4</a>
+    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/5/">5</a>
+    <span class="page-numbers dots">&hellip;</span>
+    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/14/">14</a>
+    <a class="next page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">Назад в прошлое</a>
+
+</div>
+
+<!-- endbuild -->
+
+<!-- build:theme -->
+<h1><?php // Генерация заголовка в зависимости от архива
+					if ( is_day() ) :
+						printf( __( 'Архив постов: %s', 'twentytwelve' ),   get_the_date()  );
+					elseif ( is_month() ) :
+						printf( __( 'Архив постов: %s', 'twentytwelve' ),   get_the_date( _x( 'F Y', 'monthly archives date format', 'twentytwelve' ) )  );
+					elseif ( is_year() ) :
+						printf( __( 'Архив постов: %s', 'twentytwelve' ),   get_the_date( _x( 'Y', 'yearly archives date format', 'twentytwelve' ) )  );
+					else :
+						_e( 'Archives', 'twentytwelve' );
+					endif;
+	?>
+</h1>
+<?php if (have_posts()) : while (have_posts()) : the_post(); // Цикл записей ?>
+<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3><!-- Заголовок поста + ссылка на него -->
+<?php the_time('F j, Y'); // Дата создания поста?>
+<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } // Проверяем наличие миниатюры, если есть показываем ?>
+<?php the_content(''); // Выводим анонс ?>
+<?php endwhile; // Конец цикла.
+else: echo '<h2>Извините, ничего не найдено...</h2>'; endif; // Если записей нет - извиняемся ?>
+<!-- endbuild -->
+
+<!-- build:theme -->
+<?php // Пагинация
+global $wp_query;
+$big = 999999999;
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+	'type' => 'list',
+	'prev_text'    => __('« Сюда'), 
+    'next_text'    => __('Туда »'),
+	'total' => $wp_query->max_num_pages
+) );
+?>
+<!-- endbuild -->
+
+<!-- build:theme -->
+<?php get_footer(); // Подключаем футер ?>
+<!-- endbuild -->
+
+<!-- build:html -->
+@@include('./footer.html')
+<!-- endbuild -->
