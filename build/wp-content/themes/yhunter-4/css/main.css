@@ -2937,11 +2937,12 @@ main {
 
 .page-content {
   padding: 2rem 1rem;
-  margin: 0 auto 0 auto;
+  margin: 4rem auto 0 auto;
   position: relative;
   box-sizing: border-box;
   flex: 1;
   width: 100%;
+  line-height: 1.5rem;
 }
 .page-content__full {
   width: 100vw;
@@ -2963,38 +2964,8 @@ main {
   color: var(--green);
   font-weight: bold;
 }
-
-.navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.navigation .NavNext a, .navigation .NavPrev a {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0 1rem;
-}
-.navigation .NavNext a::before, .navigation .NavPrev a::before {
-  content: "";
-  width: 2rem;
-  height: 2rem;
-  background-color: var(--green);
-  border-radius: 50%;
-  display: block;
-  position: relative;
-  mask-image: var(--arrow-icon);
-  -webkit-mask-image: var(--arrow-icon);
-  mask-position: 50% 50%;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-}
-.navigation .NavNext a {
-  flex-direction: row-reverse;
-}
-.navigation .NavNext a::before {
-  transform: rotate(180deg);
+.page-content h1, .page-content h2, .page-content h3 {
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
@@ -3008,8 +2979,8 @@ main {
     left: 0.4rem;
   }
 }
-.add-spacer {
-  margin-top: 4rem;
+main .mt0 {
+  margin-top: 0;
 }
 
 .bigheader {
@@ -3108,6 +3079,131 @@ main {
     max-width: var(--text-max);
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navigation .NavNext a, .navigation .NavPrev a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 1rem;
+}
+.navigation .NavNext a::before, .navigation .NavPrev a::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--green);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  mask-image: var(--arrow-icon);
+  -webkit-mask-image: var(--arrow-icon);
+  mask-position: 50% 50%;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+.navigation .NavNext a {
+  flex-direction: row-reverse;
+}
+.navigation .NavNext a::before {
+  transform: rotate(180deg);
+}
+
+.archive-content .entry {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.archive-content .entry:last-child {
+  margin-bottom: 0;
+}
+.archive-content .entry__image {
+  flex: 1;
+  position: relative;
+}
+.archive-content .entry__image img {
+  position: relative;
+  max-width: 100%;
+}
+.archive-content .entry__textfield {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.archive-content .entry__date {
+  display: inline-block;
+  background-color: var(--green);
+  padding: 0.15rem 0.75rem;
+  border-radius: 1rem;
+  color: var(--light-color);
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+.archive-content .entry__meta {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  color: var(--gray);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5em 2em;
+}
+.archive-content .entry__meta a:link, .archive-content .entry__meta a:visited {
+  color: var(--green);
+}
+
+@media (min-width: 768px) {
+  .archive-content .entry {
+    flex-direction: row;
+  }
+}
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.pagination a:first-child, .pagination a:last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 1rem;
+  font-size: 0;
+}
+.pagination a:first-child::before, .pagination a:last-child::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--green);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  mask-image: var(--arrow-icon);
+  -webkit-mask-image: var(--arrow-icon);
+  mask-position: 50% 50%;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+.pagination a:last-child {
+  flex-direction: row-reverse;
+}
+.pagination a:last-child::before {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .pagination a:first-child, .pagination a:last-child {
+    font-size: 1rem;
   }
 }
 body {

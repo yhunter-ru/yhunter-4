@@ -47,6 +47,9 @@
 @import "smacss/theme/footer";
 @import "smacss/theme/page";
 @import "smacss/theme/single";
+@import "smacss/theme/single/navigation";
+@import "smacss/theme/archive";
+@import "smacss/theme/archive/pagination";
 
 body {
       scroll-behavior: smooth;
