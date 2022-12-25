@@ -67,6 +67,14 @@
         }
     }
 
+    &__slider {
+        width: 100%;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        z-index: 10;
+    }
+
     &__date {
         display: block;
         background-color: var(--green);
@@ -112,5 +120,7 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
+        
     }
 }

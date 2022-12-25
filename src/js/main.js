@@ -13,4 +13,29 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll(".tiles__wrapper").forEach(box => 
         box.classList.add("tiles__animation")  
     );
-  });
+});
+
+$(window).on('load', function(){
+    
+    $('.slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        variableWidth: true,
+        centerMode: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                variableWidth: false,
+                centerMode: false,
+                arrows: true,
+              }
+            },
+          ]
+      });
+
+});
