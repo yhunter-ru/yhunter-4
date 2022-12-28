@@ -49,6 +49,7 @@
 @import "smacss/theme/page";
 @import "smacss/theme/single";
 @import "smacss/theme/single/navigation";
+@import "smacss/theme/single/work-slider";
 @import "smacss/theme/archive";
 @import "smacss/theme/archive/pagination";
 @import "smacss/theme/archive-works";
@@ -63,6 +64,5 @@ body {
 
 
 @import "../../node_modules/slick-carousel/slick/slick.scss";
-@import "../../node_modules/slick-carousel/slick/slick-theme.scss"; // стоит написать свою
 
 @import "../../node_modules/slick-lightbox/src/styles/slick-lightbox.sass";
