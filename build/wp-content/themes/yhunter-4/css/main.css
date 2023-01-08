@@ -3228,12 +3228,6 @@ main .mt0 {
   align-items: center;
   width: 100%;
 }
-.bigheader .header-blur {
-  filter: blur(30px);
-}
-.bigheader .header-blur img {
-  transform: scale(1.1);
-}
 
 .bigheader.thin {
   height: 60vh;
@@ -3312,6 +3306,52 @@ main .mt0 {
   color: var(--light-color);
 }
 
+.bigheader .header-blur {
+  filter: blur(30px);
+}
+.bigheader .header-blur img {
+  transform: scale(1.1);
+}
+.bigheader .device::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.bigheader .devices__desktop {
+  display: block;
+  width: 1024px !important;
+  height: 500px !important;
+  position: relative;
+}
+.bigheader .devices__desktop::after {
+  background-image: url("../img/work-dekstop.png");
+  width: 100%;
+  height: 100%;
+}
+
+.works-slider {
+  height: 60vh;
+}
+
+@media (min-width: 768px) {
+  .works-slider {
+    height: 650px;
+  }
+  .works-slider::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--lbg-color);
+  }
+}
 .archive-content .entry {
   display: flex;
   flex-direction: column;
