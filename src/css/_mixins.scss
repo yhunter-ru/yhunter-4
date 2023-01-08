@@ -336,7 +336,7 @@
   }
 
   @else {
-    font-size: $baseline*$exp;
+    font-size: math.div(round($baseline*$exp*10), 10);
     line-height: math.div(round($baseline*$exp*$line*2), 2);
     margin: .5*$baseline 0 .5*$baseline 0;
   }

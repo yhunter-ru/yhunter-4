@@ -3403,8 +3403,8 @@ main .mt0 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-bottom: 1rem;
-  padding-top: calc(4rem + 1px);
+  gap: 1rem;
+  padding: calc(5rem + 1px) 0rem 1rem 1rem;
 }
 .works__entry {
   width: 100%;
@@ -3414,6 +3414,7 @@ main .mt0 {
   display: block;
   overflow: hidden;
   background-color: var(--dark-color);
+  width: calc(20% - 1rem);
   -webkit-transition: all 0.5s ease-in-out 0s;
   -moz-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
