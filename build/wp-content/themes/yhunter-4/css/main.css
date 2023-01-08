@@ -3228,6 +3228,12 @@ main .mt0 {
   align-items: center;
   width: 100%;
 }
+.bigheader .header-blur {
+  filter: blur(30px);
+}
+.bigheader .header-blur img {
+  transform: scale(1.1);
+}
 
 .bigheader.thin {
   height: 60vh;

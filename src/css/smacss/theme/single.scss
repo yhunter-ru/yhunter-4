@@ -96,6 +96,14 @@
         align-items: center;
         width: 100%;
     }
+
+    .header-blur {
+        filter: blur(30px);
+
+        img {
+            transform: scale(1.1);
+        }
+    }
 }
 
 .bigheader.thin {

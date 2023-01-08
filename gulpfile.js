@@ -14,12 +14,9 @@ var plugins = gulpLoadPlugins({
     'gulp-clean-css': 'cleancss',
     'gulp-js-import': 'jsImport'
   }
-
-
-
 });
 
-
+var imagemin = require('gulp-imagemin');
 var   jshint = require('gulp-jshint');
 const { css } = require('jquery');
 var themepath= "wp-content/themes/yhunter-4/";
@@ -111,7 +108,7 @@ exports.inline = inlineFunc;
 function imagesFunc() {
   plugins.del('build/'+themepath+'/img/*.+(jpg|jpeg|gif|png)');
   return gulp.src('src/img/*.+(jpg|jpeg|gif|png)')
-    .pipe(plugins.imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest('build/'+themepath+'/img'))
     .pipe(plugins.notify({ message: 'Images task complete' }));
 }
