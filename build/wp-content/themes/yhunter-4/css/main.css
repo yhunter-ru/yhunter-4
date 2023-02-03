@@ -3321,16 +3321,90 @@ main .mt0 {
   background-size: contain;
   background-repeat: no-repeat;
 }
-.bigheader .devices__desktop {
+.bigheader .devices .desktop {
   display: block;
-  width: 1024px !important;
+  width: 320px !important;
   height: 500px !important;
   position: relative;
+  z-index: 2;
 }
-.bigheader .devices__desktop::after {
+.bigheader .devices .desktop::after {
   background-image: url("../img/work-dekstop.png");
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 1;
+  top: 100px;
+}
+.bigheader .devices .desktop__screen {
+  position: absolute;
+  display: block;
+  background: #fff;
+  opacity: 1;
+  left: 40px;
+  top: 110px;
+  width: 245px;
+  height: 160px;
+  z-index: 2;
+  border-radius: 2px;
+}
+.bigheader .devices .tablet {
+  display: flex;
+  width: 320px !important;
+  height: 500px !important;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+}
+.bigheader .devices .tablet::after {
+  background-image: url("../img/work-tablet.png");
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  background-position: 50% 20px;
+}
+.bigheader .devices .tablet__screen {
+  position: absolute;
+  display: block;
+  background: #fff;
+  opacity: 1;
+  left: 62px;
+  top: 36px;
+  width: 199px;
+  height: 320px;
+  z-index: 2;
+  border-radius: 7px;
+}
+.bigheader .devices .tel {
+  display: flex !important;
+  width: 320px !important;
+  height: 500px !important;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+}
+.bigheader .devices .tel::after {
+  background-image: url("../img/work-mobile.png");
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  background-position: 50% 0%;
+  top: -100px;
+}
+.bigheader .devices .tel__screen {
+  position: absolute;
+  display: block;
+  background: #fff;
+  opacity: 1;
+  width: 140px;
+  height: 297px;
+  z-index: 1;
+  border-radius: 15px;
+  transform: translate(-3px, -32px);
 }
 
 .works-slider {
@@ -3350,6 +3424,48 @@ main .mt0 {
     width: 100%;
     height: 100px;
     background-color: var(--lbg-color);
+  }
+
+  .bigheader .devices .desktop {
+    width: 1024px !important;
+    height: 500px !important;
+  }
+  .bigheader .devices .desktop::after {
+    top: 0;
+  }
+  .bigheader .devices .desktop__screen {
+    left: 100px;
+    top: 25px;
+    width: 635px;
+    height: 395px;
+    border-radius: 2px;
+  }
+  .bigheader .devices .tablet {
+    width: 450px !important;
+    height: 500px !important;
+    left: -380px;
+    top: -45px;
+  }
+  .bigheader .devices .tablet__screen {
+    left: 83px;
+    top: 21px;
+    width: 280px;
+    height: 450px;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  .bigheader .devices .tel {
+    width: 300px !important;
+    height: 500px !important;
+    left: -580px;
+    top: 0px;
+  }
+  .bigheader .devices .tel__screen {
+    left: 33px;
+    bottom: 33px;
+    width: 139px;
+    height: 297px;
+    border-radius: 15px;
   }
 }
 .archive-content .entry {
