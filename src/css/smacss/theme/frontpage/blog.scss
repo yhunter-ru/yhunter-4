@@ -1,4 +1,4 @@
-.blog {
+.intro .blog {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,7 +133,7 @@
 }
 
 @media (min-width: 768px) {
-    .blog {
+    section.blog {
         &__body {
             flex-direction: row;
         }
@@ -149,7 +149,7 @@
 }
 
 @media (min-width: 1200px) {
-    .blog {
+    section.blog {
         &__body {
             flex-direction: column;
         }

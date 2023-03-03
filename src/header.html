@@ -56,7 +56,9 @@
 
 </head>
 
-<body>
+<body <!-- build:theme --><?php body_class(); ?>
+	<!-- endbuild --> >
+	<!-- build:theme -->
 	<!-- build:theme -->
 	<?php include (TEMPLATEPATH . '/symbol.php'); ?>
 	<!-- endbuild -->
@@ -75,7 +77,7 @@
 ?>
 	<!-- endbuild -->
 
-	<!-- build:html -->
+
 	<nav class="sticky-header">
 		<a href="/" class="logo" title="На главную">
 			<svg version=" 1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -113,8 +115,8 @@
 		</a>
 
 		<ul class="menu">
+			<!-- build:html -->
 			<li><a href="">Портфолио</a>
-
 				<ul>
 
 					<li><a href="">Дизайн</a></li>
@@ -130,6 +132,8 @@
 
 			<li><a href="">Контакты</a></li>
 
+			<!-- endbuild -->
+
 			<li class="search">
 				<form method="get" id="searchform" class="searchform" action="/"> <input type="text" name="s" id="s"
 						value="Поиск по сайту..."
@@ -143,6 +147,6 @@
 		<a href="#" id="touch-menu" class="mobile-menu"></a>
 	</nav>
 
-	<!-- endbuild -->
+
 
 	<main>
