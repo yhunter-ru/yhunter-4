@@ -128,12 +128,12 @@
     display: grid;
     grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
     position: relative;
-    color: var(--txt-color);
+    color: var(--white);
     //color: var(--txt-color);
 
-    --contact-borders: 1px var(--dark-trans) dotted;
+    --contact-borders: 1px var(--white-trans) dotted;
     //background-color: var(--txt-color);
-    background-color: var(--white);
+    background-color: var(--dark);
 
     h3 {
         text-align: center;
@@ -145,7 +145,7 @@
         font-size: 1.333rem;
         line-height: 2rem;
         margin: 0;
-
+        
         box-shadow: 0rem 1px 1px rgba(30,60,30,.03), 0rem 1rem 1rem rgba(30,60,30,.05);
     }
 
@@ -189,7 +189,7 @@
             display: block;
             @include transit();
             text-align: center;
-            color: var(--txt-color);
+            color: var(--white);
         }
 
         &::before {
@@ -200,8 +200,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            color: var(--dark-trans);
-            background-color: var(--txt-color);
+            color: var(--white-trans);
+            background-color: var(--white-trans);
             mask-size: 2rem 2rem;
             mask-repeat: no-repeat;
             mask-position: 50% 50%;

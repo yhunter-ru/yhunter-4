@@ -60,6 +60,8 @@
             width: 100%;
             object-position: center center;
             position: relative;
+            filter: grayscale(1) brightness(0.95) contrast(1.2);
+            @include transit();
         }
 
         &__header {
@@ -127,6 +129,10 @@
             .header {
                 opacity: 0;
                 bottom: -100%;
+            }
+
+            img {
+                filter: grayscale(0) brightness(1.2) contrast(1.2);
             }
         }
     }

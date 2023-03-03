@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 :root {
   --txt-color: #111;
+  --dark: #1d2327;
   --lbg-color: #f0f8ff;
   --border-color: transparent;
   --light-color: #fff;
@@ -18,6 +19,7 @@
   --gray: #666;
   --text-perc: 65%;
   --text-max: 920px;
+  --w-max: 1900px;
 }
 
 /* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html */
@@ -717,7 +719,7 @@ li ol, li ul {
 }
 
 @media only screen and (min-width: 980px) {
-  .sticky-header {
+  .admin-bar .sticky-header {
     top: 32px !important;
   }
 }
@@ -1920,6 +1922,9 @@ figure a {
   -ms-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
   top: 0;
+  transform: translateY(0);
+}
+.sticky-header .w {
   display: flex;
   height: 4rem;
 }
@@ -1940,7 +1945,7 @@ figure a {
 }
 
 .is-hidden {
-  top: -5rem;
+  transform: translateY(-5rem);
 }
 
 .logo {
@@ -2210,9 +2215,9 @@ body {
   display: grid;
   grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
   position: relative;
-  color: var(--txt-color);
-  --contact-borders: 1px var(--dark-trans) dotted;
-  background-color: var(--white);
+  color: var(--white);
+  --contact-borders: 1px var(--white-trans) dotted;
+  background-color: var(--dark);
 }
 .contacts h3 {
   text-align: center;
@@ -2261,7 +2266,7 @@ body {
   -ms-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
   text-align: center;
-  color: var(--txt-color);
+  color: var(--white);
 }
 .contacts__icon::before {
   content: "";
@@ -2271,8 +2276,8 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  color: var(--dark-trans);
-  background-color: var(--txt-color);
+  color: var(--white-trans);
+  background-color: var(--white-trans);
   mask-size: 2rem 2rem;
   mask-repeat: no-repeat;
   mask-position: 50% 50%;
@@ -2805,6 +2810,11 @@ body {
     margin: 0;
   }
 }
+@media only screen and (min-width: 1900px) {
+  .about {
+    font-size: 38px;
+  }
+}
 /* Custom styles */
 /* Options */
 /* Script Function Styles */
@@ -2892,6 +2902,12 @@ body {
   width: 100%;
   object-position: center center;
   position: relative;
+  filter: grayscale(1) brightness(0.95) contrast(1.2);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
 }
 .intro .blog .item__header {
   position: absolute;
@@ -2963,6 +2979,9 @@ body {
 .intro .blog .item a:hover .header {
   opacity: 0;
   bottom: -100%;
+}
+.intro .blog .item a:hover img {
+  filter: grayscale(0) brightness(1.2) contrast(1.2);
 }
 
 @media (min-width: 768px) {
@@ -3259,13 +3278,17 @@ main .mt0 {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 1rem;
+  width: 100%;
+  max-width: var(--w-max);
+  margin-left: auto;
+  margin-right: auto;
 }
 .navigation .NavNext a, .navigation .NavPrev a {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
-  margin: 0 1rem;
+  margin: 0 1rem 0 0.5rem;
 }
 .navigation .NavNext a::before, .navigation .NavPrev a::before {
   content: "";
@@ -3283,6 +3306,7 @@ main .mt0 {
 }
 .navigation .NavNext a {
   flex-direction: row-reverse;
+  margin: 0 0.5rem 0 1rem;
 }
 .navigation .NavNext a::before {
   transform: rotate(180deg);
@@ -3722,6 +3746,12 @@ body {
 }
 body ::selection {
   background: var(--light-green);
+}
+
+.w {
+  max-width: var(--w-max);
+  margin: 0 auto;
+  position: relative;
 }
 
 /* Slider */

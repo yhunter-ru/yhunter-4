@@ -1,7 +1,7 @@
 <footer>
 
 	<div class="footer">
-		<div class="r">
+		<div class="r w">
 			<div class="lg2 footer__logo logo">
 				<img src="/wp-content/themes/yhunter-4/img/logo-lines.svg" alt="">
 			</div>
@@ -131,10 +131,10 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.14200596230324858">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.38620373003895914">
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.14200596230324858"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.38620373003895914"></script>
 <?php
 /**
  * Чистый Шаблон для разработки

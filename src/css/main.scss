@@ -17,7 +17,7 @@
 @import "smacss/layout/center-block";
 @import "smacss/layout/clear";
 @import "smacss/layout/paddings";
-@import "smacss/layout/admin-panel";
+@import "smacss/layout/admin-bar";
 
 
 
@@ -63,6 +63,12 @@ body {
       ::selection {
             background: var(--light-green);
       }
+}
+
+.w {
+      max-width: var(--w-max);;
+      margin: 0 auto;
+      position: relative;
 }
 
 

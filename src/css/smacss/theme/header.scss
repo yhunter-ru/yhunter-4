@@ -1,8 +1,13 @@
 .sticky-header {
     @include transit();
     top: 0;
-    display: flex;
-    height: 4rem;
+    transform: translateY(0);
+
+
+    .w {
+        display: flex;
+        height: 4rem;
+    }
 
     .menu {
         flex: 1;
@@ -24,7 +29,7 @@
 }
 
 .is-hidden {
-    top: -5rem;
+    transform: translateY(-5rem);
 }
 
 .logo {

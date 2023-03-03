@@ -32,6 +32,7 @@ $r: 5px; //defaul border radius
 
 :root {
   --txt-color: #111;
+  --dark: #1d2327;
   --lbg-color: #f0f8ff;
   --border-color: transparent;
   --light-color: #fff;
@@ -49,6 +50,8 @@ $r: 5px; //defaul border radius
 
   --text-perc: 65%;
   --text-max: 920px;
+
+  --w-max: 1900px;
 }
 
 //Inputs
