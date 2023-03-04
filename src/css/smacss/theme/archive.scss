@@ -16,6 +16,7 @@
             img {
                 position: relative;
                 max-width: 100%;
+                height: auto;
             }
         }
 
@@ -25,6 +26,12 @@
             flex-direction: column;
             align-items: flex-start;
         } 
+
+        &__body {
+            p {
+                margin: 0;
+            }
+        }
 
         &__date {
             display: inline-block;
@@ -57,5 +64,11 @@
         .entry {
             flex-direction: row;
         }
+    }
+}
+
+.tag-content {
+    h1 {
+        text-transform: capitalize;
     }
 }

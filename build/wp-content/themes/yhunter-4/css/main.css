@@ -20,6 +20,7 @@
   --text-perc: 65%;
   --text-max: 920px;
   --w-max: 1900px;
+  --radius: .75rem;
 }
 
 /* http://prgssr.ru/development/estetichnyj-sass-chast-3-tipografika-i-vertikalnyj-ritm.html */
@@ -3513,12 +3514,16 @@ main .mt0 {
 .archive-content .entry__image img {
   position: relative;
   max-width: 100%;
+  height: auto;
 }
 .archive-content .entry__textfield {
   flex: 3;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.archive-content .entry__body p {
+  margin: 0;
 }
 .archive-content .entry__date {
   display: inline-block;
@@ -3547,6 +3552,10 @@ main .mt0 {
     flex-direction: row;
   }
 }
+.tag-content h1 {
+  text-transform: capitalize;
+}
+
 .pagination {
   display: flex;
   flex-direction: row;
@@ -3612,19 +3621,23 @@ main .mt0 {
   display: block;
   overflow: hidden;
   background-color: var(--dark-color);
-  width: calc(20% - 1rem);
+  width: calc(100% - 1rem);
+  height: 100vw;
   -webkit-transition: all 0.5s ease-in-out 0s;
   -moz-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
+  border-radius: var(--radius);
 }
 .works .work__image {
   position: relative;
+  height: 100%;
 }
 .works .work__image img {
   position: relative;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   -webkit-transition: all 0.5s ease-in-out 0s;
   -moz-transition: all 0.5s ease-in-out 0s;
@@ -3743,9 +3756,19 @@ main .mt0 {
   .works__entry {
     width: 20%;
   }
+  .works .work {
+    width: calc(50% - 1rem);
+    height: 50vw;
+  }
   .works .work__meta ul li {
     font-size: 0.7rem;
     padding: 0.25rem 0.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .works .work {
+    width: calc(20% - 1rem);
+    height: 20vw;
   }
 }
 body {
