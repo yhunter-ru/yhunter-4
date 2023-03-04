@@ -3550,13 +3550,20 @@ main .mt0 {
 .pagination {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
+.pagination .next {
+  position: absolute;
+  right: -0.5rem;
+}
+.pagination .prev {
+  position: absolute;
+  left: -0.5rem;
+}
 .pagination a:first-child, .pagination a:last-child {
-  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
