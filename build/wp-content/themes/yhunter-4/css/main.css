@@ -3369,7 +3369,7 @@ main .mt0 {
 .bigheader .devices .desktop__screen {
   position: absolute;
   display: block;
-  background: #fff;
+  background: #5e9370;
   opacity: 1;
   left: 40px;
   top: 110px;
@@ -3398,7 +3398,7 @@ main .mt0 {
 .bigheader .devices .tablet__screen {
   position: absolute;
   display: block;
-  background: #fff;
+  background: #5e9370;
   opacity: 1;
   left: 62px;
   top: 36px;
@@ -3428,7 +3428,7 @@ main .mt0 {
 .bigheader .devices .tel__screen {
   position: absolute;
   display: block;
-  background: #fff;
+  background: #5e9370;
   opacity: 1;
   width: 140px;
   height: 297px;
@@ -3441,7 +3441,7 @@ main .mt0 {
   height: 60vh;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .works-slider {
     height: 650px;
   }
@@ -3459,6 +3459,7 @@ main .mt0 {
   .bigheader .devices .desktop {
     width: 1024px !important;
     height: 500px !important;
+    left: -50px;
   }
   .bigheader .devices .desktop::after {
     top: 0;
@@ -3472,14 +3473,14 @@ main .mt0 {
   }
   .bigheader .devices .tablet {
     width: 450px !important;
-    height: 500px !important;
-    left: -380px;
-    top: -45px;
+    height: 520px !important;
+    left: -430px;
+    top: -65px;
   }
   .bigheader .devices .tablet__screen {
-    left: 83px;
-    top: 21px;
-    width: 280px;
+    left: 85px;
+    top: 43px;
+    width: 283px;
     height: 450px;
     z-index: 2;
     border-radius: 10px;
@@ -3487,15 +3488,39 @@ main .mt0 {
   .bigheader .devices .tel {
     width: 300px !important;
     height: 500px !important;
-    left: -580px;
-    top: 0px;
+    left: -630px;
+    top: 83px;
   }
   .bigheader .devices .tel__screen {
-    left: 33px;
-    bottom: 33px;
+    left: 80px;
+    bottom: 101px;
     width: 139px;
-    height: 297px;
+    height: 298px;
     border-radius: 15px;
+  }
+  .bigheader .devices .slick-track div:first-child:nth-last-child(1) div .desktop,
+.bigheader .devices .slick-track div:first-child:nth-last-child(1) ~ div div .desktop {
+    left: 100px;
+  }
+  .bigheader .devices .slick-track div:first-child:nth-last-child(1) div .tel,
+.bigheader .devices .slick-track div:first-child:nth-last-child(1) ~ div div .tel {
+    left: 0px;
+    top: 0px;
+    transform: scale(1.5);
+  }
+  .bigheader .devices .slick-track div:first-child:nth-last-child(2) div .desktop,
+.bigheader .devices .slick-track div:first-child:nth-last-child(2) ~ div div .desktop {
+    left: 0px;
+  }
+  .bigheader .devices .slick-track div:first-child:nth-last-child(2) div .tablet,
+.bigheader .devices .slick-track div:first-child:nth-last-child(2) ~ div div .tablet {
+    left: -380px;
+  }
+  .bigheader .devices .slick-track div:first-child:nth-last-child(2) div .tel,
+.bigheader .devices .slick-track div:first-child:nth-last-child(2) ~ div div .tel {
+    left: -260px;
+    top: 30px;
+    transform: scale(1.3);
   }
 }
 .archive-content .entry {
