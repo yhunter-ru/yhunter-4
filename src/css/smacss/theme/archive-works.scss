@@ -13,7 +13,7 @@
         position: relative;
         display: block;
         overflow: hidden;
-        background-color: var(--dark-color);
+        background-color: var(--light-color);
         width: calc(100% - 1rem);
         height: 100vw;
         @include transit();
@@ -30,7 +30,7 @@
                 z-index: 0;
                 @include transit();
                 object-fit: cover;
-                transform: scale(1.0) translateZ(0);
+                transform: scale(1.05) translateZ(0);
             }
 
             &::after {
