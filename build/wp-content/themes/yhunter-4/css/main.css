@@ -2179,10 +2179,14 @@ body {
 .frontpage .intro__contacts {
   flex: 1;
   padding: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 .frontpage .intro__photo {
   padding: 0;
   flex: 1;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 .frontpage .intro__photo img {
   position: relative;
@@ -2384,6 +2388,11 @@ body {
 }
 .about .skills {
   margin: 2rem 0;
+  background-color: var(--dark);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  color: var(--white-trans);
+  border-radius: 0.5rem;
 }
 .about .skills__item {
   min-width: 45%;
@@ -2521,6 +2530,8 @@ body {
   position: relative;
   overflow: hidden;
   width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 .blog .item__pic {
   object-fit: cover;
@@ -2556,7 +2567,7 @@ body {
   top: 0.75rem;
   left: 0.75rem;
   background-color: var(--green);
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   color: var(--light-color);
   font-size: 0.75rem;
   -webkit-transition: all 0.5s ease-in-out 0s;
@@ -2564,7 +2575,7 @@ body {
   -o-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
-  border-radius: 4rem;
+  border-radius: 0.25rem;
 }
 .blog .item__text {
   background-color: var(--dark-trans);
