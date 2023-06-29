@@ -29,7 +29,7 @@
         comments section
     </div>
 
-    <!-- build:theme -->
+
     <?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'twentyten' ) . '</span> %title' ); // Ссылка на предидущий пост?>
     <?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '</span>' ); // Ссылка на следующий пост?>
 
@@ -42,13 +42,14 @@
 
 <div class="page-content mt0">
 
+
     <?php comments_template( '', true ); // Комментарии ?>
 
 
 
 </div>
 
-
+<!-- build:html -->
 
 <div class="navigation">
     <div class="NavPrev">
@@ -61,7 +62,6 @@
     </div>
 </div>
 
-<!-- endbuild -->
 
 
 

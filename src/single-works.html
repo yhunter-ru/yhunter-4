@@ -21,6 +21,8 @@
 -->
 <!-- endbuild -->
 
+
+<!-- build:html -->
 <div class="page-content__header bigheader works-slider">
     <div class="bigheader__image header-blur">
         <img src="https://www.yhunter.ru/wp-content/uploads/2022/07/DSC1584.jpg" alt="">
@@ -47,7 +49,9 @@
     </div>
 </div>
 
-<article class="page-content mt0">
+<!-- endbuild -->
+
+<article class="page-content mt0 add-spacer">
     <!-- .add-spacer class for 4rem top margin -->
 
 
@@ -61,11 +65,16 @@
     </div>
 
     <?php the_content(); // Содержимое страницы ?>
-    <?php echo 'Рубрики: '; the_category( ' | ' ); // Выводим категории поста ?>
-    <?php the_tags( 'Тэги: ', ' | ', '' ); // Выводим тэги(метки) поста ?>
+
+    <div class="page-content__meta ">
+        <?php echo 'Рубрики: '; the_category( ' | ' ); // Выводим категории поста ?>
+        <?php the_tags( 'Тэги: ', ' | ', '' ); // Выводим тэги(метки) поста ?>
+    </div>
     <?php endwhile; // Конец цикла ?>
 
     <!-- endbuild -->
+
+    <!-- build:html -->
 
     <div class="page-content__related">
 
@@ -95,6 +104,7 @@
 
     </div>
 
+
     <div class="page-content__meta">
         Рубрики: <a href="https://www.yhunter.ru/portfolio/design/animation/" rel="category tag">Анимация</a> |
         <a href="https://www.yhunter.ru/portfolio/" rel="category tag">Портфолио</a> | <a
@@ -109,6 +119,7 @@
 
 
     </div>
+    <!-- endbuild -->
 
     <div class="page-content__comments">
         <!-- build:theme -->

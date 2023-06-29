@@ -1,0 +1,133 @@
+.about {
+
+    font-size: 2vw;
+
+    --about__lines: none;
+    --link__color: #111;
+    --link__underline: var(--green);
+    
+    gap: 0;
+    
+    h3 {
+        text-align: center;
+    }
+
+    ul {
+        list-style: square;
+        padding-left: 1.5rem;
+
+        li {
+
+            &::marker {
+                color: var(--green);
+            }
+        }
+    }
+
+    a {
+        color: var(--link__color);
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        z-index: 20;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            left: 0;
+            bottom: -2px;
+            background-color: var(--link__underline);
+            @include transit();
+            z-index: -1;
+        }
+    }
+
+    .skills {
+        margin: 2rem 0;
+
+
+        
+        &__item {
+            min-width: 45%;
+            flex: 1;  
+            position: relative; 
+            display: flex;
+            flex-direction: column;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            
+            padding-bottom: 2.5rem;
+            
+            
+            padding: 1rem 2rem 3rem 2rem;
+            box-sizing: border-box;
+
+            &:nth-child(odd) {
+                border-right: 1px #666 dotted;
+            }
+
+            
+            
+            
+            
+            img {
+                position: relative;
+                height: 4rem;
+                filter: invert(80%) sepia(50%) saturate(6698%) hue-rotate(97deg) brightness(93%) contrast(80%);
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    .about {
+        font-size: 2vw;   
+        gap: 4rem 0rem;     
+
+        --about__lines: 1px rgb(182, 205, 225) dotted;
+        --link__color: #111;
+        --link__underline: var(--green);
+
+        h3 {
+            text-align: left;
+        }
+
+        a {         
+
+            
+
+            &:hover {
+                &::before {
+                    height: 1em;
+                }
+            }
+        }
+
+        .skills {
+            &__item {
+                min-width: 15%;
+                border-right: 1px #666 dotted;
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+        
+}
+
+@media only screen and (min-width: 1900px) {
+
+    
+}
+
+@import "skill-points";

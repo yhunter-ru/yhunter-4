@@ -2,7 +2,7 @@
 
 /* Options */ 
 
-$lines-color: #efefef;
+$lines-color: #ccc;
 $lines-weight: 1px;
 $lines-style: solid;
 
@@ -27,7 +27,7 @@ $skill-transition:  all 1s ease-in-out 0s;
   align-self: flex-end;
   justify-self: flex-end;
   padding: $skill-gap;
-  width: calc(100% - 2em);
+  width: calc(80% - 2em);
   transform: translateX(-50%);
   border-radius: $skill-radius;
 

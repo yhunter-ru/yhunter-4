@@ -2,27 +2,27 @@ window.onload = function () {
 
     $('.skills').viewportChecker({
       classToAdd: 'show',
-      offset: 100,
+      offset: 0,
       repeat: true,
       callbackFunction: function(elem, action){
         if (action=='add') {
-          ShowSkills();
+          ShowSkills(elem);
         }
         else {
-          ResetSkills(); 
+          ResetSkills(elem);           
         }        
       },
     });     
    
-    function ResetSkills() {
-      $(".skills .skill").html("<div></div>");
+    function ResetSkills(elem) {
+      elem.find(".skill").html("<div></div>");
     }
    
-    ResetSkills();  
+    ResetSkills($(".skills"));  
     
-    function ShowSkills()  {   
+    function ShowSkills(elem)  {   
       $(".skills .skill > div").addClass('skill-line');
-      $(".skills .skill").each(
+      elem.find(".skill").each(
         function() {
           $(this).find("div").width($(this).data("fill"));
         }

@@ -46,7 +46,8 @@
 
 /* theme */
 @import "smacss/theme/common";
-@import "smacss/theme/frontpage";
+//@import "smacss/theme/frontpage";
+@import "smacss/theme/frontpage2";
 @import "smacss/theme/footer";
 @import "smacss/theme/page";
 @import "smacss/theme/single";
@@ -66,9 +67,13 @@ body {
 }
 
 .w {
-      max-width: var(--w-max);;
+      max-width: var(--w-max);
       margin: 0 auto;
       position: relative;
+}
+
+.pt0 {
+      padding-top: 0;
 }
 
 
