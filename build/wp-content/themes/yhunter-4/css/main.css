@@ -2140,7 +2140,9 @@ body {
 .frontpage .intro__bottomline {
   gap: 1rem;
   padding: 0 1rem;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  width: calc(100vw - 2rem);
+  overflow: hidden;
 }
 .frontpage .intro__aboutme {
   font-size: 1.5rem;
@@ -2198,6 +2200,71 @@ body {
 }
 .frontpage .intro__portfolio {
   flex: 2;
+  overflow: hidden;
+  width: 100%;
+}
+.frontpage .intro__portfolio .port {
+  height: 400px;
+  position: relative;
+}
+.frontpage .intro__portfolio .port__slider {
+  height: 100%;
+  margin-bottom: 0 !important;
+}
+.frontpage .intro__portfolio .port__slider .slick-arrow {
+  bottom: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.frontpage .intro__portfolio .port__slider .slick-arrow::before {
+  background: var(--green);
+  color: var(--white);
+}
+.frontpage .intro__portfolio .port__slider .slick-next {
+  right: 0;
+}
+.frontpage .intro__portfolio .port__slider .slick-dots {
+  bottom: 3.25rem;
+}
+.frontpage .intro__portfolio .port__slider .slick-dots li button::before {
+  color: var(--gray);
+}
+.frontpage .intro__portfolio .port__slider .slick-dots li.slick-active button::before {
+  color: var(--green);
+}
+.frontpage .intro__portfolio .port .slick-list {
+  margin: 0 -0.5rem;
+}
+.frontpage .intro__portfolio .port .slick-slide {
+  width: 150px;
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1;
+  align-items: center;
+}
+.frontpage .intro__portfolio .port .slick-slide div {
+  position: relative;
+  height: 100%;
+}
+.frontpage .intro__portfolio .port .slick-slide div div {
+  position: relative;
+  height: 100%;
+}
+.frontpage .intro__portfolio .port .slick-slide img {
+  position: relative;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  max-height: 250px;
+}
+.frontpage .intro__portfolio .port .slick-slide h3 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.frontpage .intro__portfolio .port .slick-track {
+  border-spacing: 1rem 0;
 }
 .frontpage .contacts {
   display: grid;
@@ -2342,8 +2409,61 @@ body {
     flex-direction: row;
   }
   .frontpage .intro__bottomline {
+    width: unset;
+    overflow: visible;
     gap: 2rem;
     flex-direction: row;
+  }
+  .frontpage .intro__portfolio {
+    width: unset;
+    overflow: visible;
+  }
+  .frontpage .intro__portfolio .port {
+    position: absolute;
+    width: 66.6666666667vw;
+    top: 0;
+    left: calc(33% + 2rem);
+    height: 100%;
+  }
+  .frontpage .intro__portfolio .port__slider {
+    height: 100%;
+    margin-bottom: 0 !important;
+  }
+  .frontpage .intro__portfolio .port__slider .slick-arrow {
+    bottom: 0;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transform: none;
+  }
+  .frontpage .intro__portfolio .port__slider .slick-arrow::before {
+    background: var(--white);
+    color: var(--green);
+  }
+  .frontpage .intro__portfolio .port__slider .slick-next {
+    right: 0;
+    left: 5rem;
+    right: unset;
+  }
+  .frontpage .intro__portfolio .port__slider .slick-dots {
+    bottom: 3.25rem;
+  }
+  .frontpage .intro__portfolio .port__slider .slick-dots li button::before {
+    color: var(--gray);
+  }
+  .frontpage .intro__portfolio .port__slider .slick-dots li.slick-active button::before {
+    color: var(--green);
+  }
+  .frontpage .intro__portfolio .port .slick-list {
+    margin: 0;
+  }
+  .frontpage .intro__portfolio .port .slick-slide {
+    width: 200px;
+    margin: 0 1rem 0 0;
+  }
+  .frontpage .intro__portfolio .port .slick-slide img {
+    max-height: 350px;
   }
 }
 .about {
@@ -2388,10 +2508,12 @@ body {
 }
 .about .skills {
   margin: 2rem 0;
-  background-color: var(--dark);
-  padding: 2rem 1rem;
   box-sizing: border-box;
   color: var(--white-trans);
+}
+.about .skills .r {
+  background-color: var(--dark);
+  padding: 2rem 1rem;
   border-radius: 0.5rem;
 }
 .about .skills__item {

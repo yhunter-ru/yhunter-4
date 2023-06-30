@@ -131,10 +131,10 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.34547660626120424">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.21673173638704024">
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.34547660626120424"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.21673173638704024"></script>
 <?php
 /**
  * Чистый Шаблон для разработки

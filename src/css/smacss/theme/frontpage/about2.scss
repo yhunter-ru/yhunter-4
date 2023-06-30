@@ -47,11 +47,15 @@
 
     .skills {
         margin: 2rem 0;
-        background-color: var(--dark);
-        padding: 2rem 1rem;
+
         box-sizing: border-box;
         color: var(--white-trans);
-        border-radius: .5rem;
+
+        .r {
+            background-color: var(--dark);
+            padding: 2rem 1rem;
+            border-radius: .5rem;
+        }
         
         &__item {
             min-width: 45%;

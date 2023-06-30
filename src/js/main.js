@@ -38,4 +38,25 @@ $(window).on('load', function(){
           ]
       });
 
+      $('.frontpage .port__slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        dots: false,
+        variableWidth: false,
+        centerMode: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                dots: true,
+                variableWidth: false,
+                centerMode: false,
+                arrows: true,
+              }
+            },
+          ]
+      });
+
 });
