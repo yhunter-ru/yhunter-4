@@ -2123,10 +2123,20 @@ body {
 }
 
 .frontpage section {
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
 }
 .frontpage section h3 {
   font-weight: bold;
+}
+.frontpage .bigtext, .frontpage .bigtext p, .frontpage .bigtext h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-wrap: balance;
+  font-weight: bold;
+}
+.frontpage .bigtext b, .frontpage .bigtext p b, .frontpage .bigtext h2 b {
+  color: var(--green);
+  white-space: nowrap;
 }
 .frontpage .intro {
   --link__underline: var(--green);
@@ -2145,11 +2155,8 @@ body {
   overflow: hidden;
 }
 .frontpage .intro__aboutme {
-  font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: bold;
   padding: 0 0 2rem 0;
-  text-wrap: balance;
   flex: 2;
 }
 .frontpage .intro__aboutme a {
@@ -2221,6 +2228,11 @@ body {
 .frontpage .intro__portfolio .port__slider .slick-arrow::before {
   background: var(--green);
   color: var(--white);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
 }
 .frontpage .intro__portfolio .port__slider .slick-next {
   right: 0;
@@ -2265,6 +2277,19 @@ body {
 }
 .frontpage .intro__portfolio .port .slick-track {
   border-spacing: 1rem 0;
+}
+.frontpage .intro__portlink {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+.frontpage .intro__portlink a:link, .frontpage .intro__portlink a:visited {
+  color: var(--green);
+}
+.frontpage .intro__portlink a:hover {
+  color: var(--yellow);
 }
 .frontpage .contacts {
   display: grid;
@@ -2399,9 +2424,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  .frontpage section {
+    margin-bottom: 8rem;
+  }
   .frontpage .intro__aboutme {
-    font-size: 2rem;
-    line-height: 3rem;
     padding: 1rem 0;
   }
   .frontpage .intro__topline {
@@ -2420,10 +2446,22 @@ body {
   }
   .frontpage .intro__portfolio .port {
     position: absolute;
-    width: 66.6666666667vw;
+    width: calc(var(--w-max) / 1.25);
+    max-width: 80vw;
     top: 0;
     left: calc(33% + 2rem);
     height: 100%;
+  }
+  .frontpage .intro__portfolio .port::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(240, 248, 255, 0) 0%, aliceblue 100%);
+    width: 200px;
+    pointer-events: none;
   }
   .frontpage .intro__portfolio .port__slider {
     height: 100%;
@@ -2431,8 +2469,8 @@ body {
   }
   .frontpage .intro__portfolio .port__slider .slick-arrow {
     bottom: 0;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 0.5rem;
     overflow: hidden;
     transform: none;
@@ -2440,10 +2478,16 @@ body {
   .frontpage .intro__portfolio .port__slider .slick-arrow::before {
     background: var(--white);
     color: var(--green);
+    width: 3rem;
+    height: 3rem;
+  }
+  .frontpage .intro__portfolio .port__slider .slick-arrow:hover::before {
+    background-color: var(--green);
+    color: var(--white);
   }
   .frontpage .intro__portfolio .port__slider .slick-next {
     right: 0;
-    left: 5rem;
+    left: 4rem;
     right: unset;
   }
   .frontpage .intro__portfolio .port__slider .slick-dots {
@@ -2465,6 +2509,37 @@ body {
   .frontpage .intro__portfolio .port .slick-slide img {
     max-height: 350px;
   }
+  .frontpage .intro__portlink {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    margin-bottom: 0;
+    line-height: 2rem;
+  }
+  .frontpage .bigtext, .frontpage .bigtext p {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+  .frontpage .bigtext h2 {
+    color: var(--green) !important;
+    margin-bottom: 1rem;
+  }
+  .frontpage .lb p {
+    border-left: 4px var(--green) solid;
+    padding-left: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .frontpage .bigtext, .frontpage .bigtext p {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  .frontpage .bigtext h2 {
+    font-size: 3.25rem;
+    line-height: 4.25rem;
+    color: var(--green) !important;
+    margin-bottom: 1rem;
+  }
 }
 .about {
   font-size: 2vw;
@@ -2478,7 +2553,11 @@ body {
 }
 .about ul {
   list-style: square;
-  padding-left: 1.5rem;
+  padding-left: 0.85rem;
+  list-style-position: outside;
+}
+.about ul li {
+  padding-left: 0.5rem;
 }
 .about ul li::marker {
   color: var(--green);
@@ -2545,7 +2624,7 @@ body {
     font-size: 2vw;
     gap: 4rem 0rem;
     --about__lines: 1px rgb(182, 205, 225) dotted;
-    --link__color: #111;
+    --link__color: #333;
     --link__underline: var(--green);
   }
   .about h3 {
@@ -2627,6 +2706,10 @@ body {
   font-size: 1.333rem;
   line-height: 2rem;
 }
+.blog__header h3 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
 .blog__header a {
   color: var(--green);
 }
@@ -2672,6 +2755,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 100%;
   padding: 4rem 1rem 1rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5rem;
@@ -2744,6 +2828,11 @@ body {
 }
 
 @media (min-width: 768px) {
+  .blog__header h3 {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
   section.blog__body {
     flex-direction: row;
   }

@@ -32,6 +32,11 @@
         //background-color: var(--light-color);
         //color: var(--green);
 
+        h3 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
         a {
             color: var(--green);
 
@@ -85,6 +90,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
+            width: 100%;
             padding: 4rem 1rem 1rem 1rem;
             font-size: 1.25rem;
             line-height: 1.5rem;
@@ -156,6 +162,15 @@
 }
 
 @media (min-width: 768px) {
+    .blog {
+        &__header {
+            h3 {
+                text-align: left;
+                margin-bottom: 0;
+            }
+        }
+    }
+    
     section.blog {
         &__body {
             flex-direction: row;

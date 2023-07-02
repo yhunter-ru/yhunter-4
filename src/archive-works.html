@@ -3,25 +3,25 @@
 <!-- build:html -->@@include('./header.html')
 <!-- endbuild -->
 
+<div class="w">
 
+    <!-- build:theme -->
+    <section class="works">
 
-<!-- build:theme -->
-<section class="works">
+        <?php if (have_posts()) : while (have_posts()) : the_post(); // Цикл записей ?>
+        <a href="<?php the_permalink(); ?>" class="works__entry work" style="width: calc(20% - 1rem);">
+            <?php if ( has_post_thumbnail() ): ?>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); // Цикл записей ?>
-    <a href="<?php the_permalink(); ?>" class="works__entry work" style="width: calc(20% - 1rem);">
-        <?php if ( has_post_thumbnail() ): ?>
+            <div class="work__image">
+                <?php echo the_post_thumbnail(); ?>
+            </div>
+            <?php endif; ?>
+            <h2 class="work__header">
+                <?php the_title(); ?>
+            </h2>
 
-        <div class="work__image">
-            <?php echo the_post_thumbnail(); ?>
-        </div>
-        <?php endif; ?>
-        <h2 class="work__header">
-            <?php the_title(); ?>
-        </h2>
-
-        <div class="work__meta">
-            <?php 
+            <div class="work__meta">
+                <?php 
                 $categories = get_the_category();
                 if ( ! empty( $categories ) ) {
                     echo '<ul>';
@@ -33,174 +33,175 @@
                     echo '</;>';
                 }
              ?>
-        </div>
+            </div>
 
-    </a>
+        </a>
 
 
-    <?php endwhile;  endif;  ?>
-</section>
-<!-- endbuild -->
+        <?php endwhile;  endif;  ?>
+    </section>
+    <!-- endbuild -->
 
-<!-- build:html -->
+    <!-- build:html -->
 
-<section class="works">
-    <a href="" class="works__entry work" style="width: calc(100% - 1rem);">
-        <div class="work__image">
-            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
-        </div>
-        <h2 class="work__header">
-            Веб-версия книги «Медведь в истории культуры»
-        </h2>
+    <section class="works">
+        <a href="" class="works__entry work" style="width: calc(100% - 1rem);">
+            <div class="work__image">
+                <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+            </div>
+            <h2 class="work__header">
+                Веб-версия книги «Медведь в истории культуры»
+            </h2>
 
-        <div class="work__meta">
-            <ul>
-                <li>Дизайн</li>
-                <li>Веб-разработка</li>
-            </ul>
-        </div>
+            <div class="work__meta">
+                <ul>
+                    <li>Дизайн</li>
+                    <li>Веб-разработка</li>
+                </ul>
+            </div>
 
-    </a>
+        </a>
 
-    <a href="" class="works__entry work">
-        <div class="work__image">
-            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
-        </div>
-        <h2 class="work__header">
-            Веб-версия книги «Медведь в истории культуры»
-        </h2>
+        <a href="" class="works__entry work">
+            <div class="work__image">
+                <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+            </div>
+            <h2 class="work__header">
+                Веб-версия книги «Медведь в истории культуры»
+            </h2>
 
-        <div class="work__meta">
-            <ul>
-                <li>Дизайн</li>
-                <li>Веб-разработка</li>
-            </ul>
-        </div>
+            <div class="work__meta">
+                <ul>
+                    <li>Дизайн</li>
+                    <li>Веб-разработка</li>
+                </ul>
+            </div>
 
-    </a>
+        </a>
 
-    <a href="" class="works__entry work" style="width: calc(60% - 1rem);">
-        <div class="work__image">
-            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
-        </div>
-        <h2 class="work__header">
-            Веб-версия книги «Медведь в истории культуры»
-        </h2>
+        <a href="" class="works__entry work" style="width: calc(60% - 1rem);">
+            <div class="work__image">
+                <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+            </div>
+            <h2 class="work__header">
+                Веб-версия книги «Медведь в истории культуры»
+            </h2>
 
-        <div class="work__meta">
-            <ul>
-                <li>Дизайн</li>
-                <li>Веб-разработка</li>
-            </ul>
-        </div>
+            <div class="work__meta">
+                <ul>
+                    <li>Дизайн</li>
+                    <li>Веб-разработка</li>
+                </ul>
+            </div>
 
-    </a>
+        </a>
 
-    <a href="" class="works__entry work">
-        <div class="work__image">
-            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
-        </div>
-        <h2 class="work__header">
-            Веб-версия книги «Медведь в истории культуры»
-        </h2>
+        <a href="" class="works__entry work">
+            <div class="work__image">
+                <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+            </div>
+            <h2 class="work__header">
+                Веб-версия книги «Медведь в истории культуры»
+            </h2>
 
-        <div class="work__meta">
-            <ul>
-                <li>Дизайн</li>
-                <li>Веб-разработка</li>
-            </ul>
-        </div>
+            <div class="work__meta">
+                <ul>
+                    <li>Дизайн</li>
+                    <li>Веб-разработка</li>
+                </ul>
+            </div>
 
-    </a>
+        </a>
 
-    <a href="" class="works__entry work">
-        <div class="work__image">
-            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
-        </div>
-        <h2 class="work__header">
-            Веб-версия книги «Медведь в истории культуры»
-        </h2>
+        <a href="" class="works__entry work">
+            <div class="work__image">
+                <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+            </div>
+            <h2 class="work__header">
+                Веб-версия книги «Медведь в истории культуры»
+            </h2>
 
-        <div class="work__meta">
-            <ul>
-                <li>Дизайн</li>
-                <li>Веб-разработка</li>
-            </ul>
-        </div>
+            <div class="work__meta">
+                <ul>
+                    <li>Дизайн</li>
+                    <li>Веб-разработка</li>
+                </ul>
+            </div>
 
-    </a>
+        </a>
 
-    <a href="" class="works__entry work">
-        <div class="work__image">
-            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
-        </div>
-        <h2 class="work__header">
-            Веб-версия книги «Медведь в истории культуры»
-        </h2>
+        <a href="" class="works__entry work">
+            <div class="work__image">
+                <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+            </div>
+            <h2 class="work__header">
+                Веб-версия книги «Медведь в истории культуры»
+            </h2>
 
-        <div class="work__meta">
-            <ul>
-                <li>Дизайн</li>
-                <li>Веб-разработка</li>
-            </ul>
-        </div>
+            <div class="work__meta">
+                <ul>
+                    <li>Дизайн</li>
+                    <li>Веб-разработка</li>
+                </ul>
+            </div>
 
-    </a>
+        </a>
 
-    <a href="" class="works__entry work">
-        <div class="work__image">
-            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
-        </div>
-        <h2 class="work__header">
-            Веб-версия книги «Медведь в истории культуры»
-        </h2>
+        <a href="" class="works__entry work">
+            <div class="work__image">
+                <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+            </div>
+            <h2 class="work__header">
+                Веб-версия книги «Медведь в истории культуры»
+            </h2>
 
-        <div class="work__meta">
-            <ul>
-                <li>Дизайн</li>
-                <li>Веб-разработка</li>
-            </ul>
-        </div>
+            <div class="work__meta">
+                <ul>
+                    <li>Дизайн</li>
+                    <li>Веб-разработка</li>
+                </ul>
+            </div>
 
-    </a>
+        </a>
 
-    <a href="" class="works__entry work">
-        <div class="work__image">
-            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
-        </div>
-        <h2 class="work__header">
-            Веб-версия книги «Медведь в истории культуры»
-        </h2>
+        <a href="" class="works__entry work">
+            <div class="work__image">
+                <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
+            </div>
+            <h2 class="work__header">
+                Веб-версия книги «Медведь в истории культуры»
+            </h2>
 
-        <div class="work__meta">
-            <ul>
-                <li>Дизайн</li>
-                <li>Веб-разработка</li>
-            </ul>
-        </div>
+            <div class="work__meta">
+                <ul>
+                    <li>Дизайн</li>
+                    <li>Веб-разработка</li>
+                </ul>
+            </div>
 
-    </a>
-</section>
+        </a>
+    </section>
 
-<div class="pagination">
 
-    <a class="prev page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">Вперед в будущее</a>
-    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/1/">1</a>
-    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">2</a>
-    <span aria-current="page" class="page-numbers current">3</span>
-    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">4</a>
-    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/5/">5</a>
-    <span class="page-numbers dots">&hellip;</span>
-    <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/14/">14</a>
-    <a class="next page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">Назад в прошлое</a>
+    <div class="pagination">
 
-</div>
+        <a class="prev page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">Вперед в будущее</a>
+        <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/1/">1</a>
+        <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">2</a>
+        <span aria-current="page" class="page-numbers current">3</span>
+        <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">4</a>
+        <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/5/">5</a>
+        <span class="page-numbers dots">&hellip;</span>
+        <a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/14/">14</a>
+        <a class="next page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">Назад в прошлое</a>
 
-<!-- endbuild -->
+    </div>
 
-<!-- build:theme -->
-<div class="pagination">
-    <?php // Пагинация
+    <!-- endbuild -->
+
+    <!-- build:theme -->
+    <div class="pagination">
+        <?php // Пагинация
 global $wp_query;
 $big = 999999999;
 echo paginate_links( array(
@@ -213,8 +214,9 @@ echo paginate_links( array(
 	'total' => $wp_query->max_num_pages
 ) );
 ?>
+    </div>
+    <!-- endbuild -->
 </div>
-<!-- endbuild -->
 
 <!-- build:theme -->
 <?php get_footer(); // Подключаем футер ?>
