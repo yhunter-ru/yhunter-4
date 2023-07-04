@@ -25,6 +25,45 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 ?>
 
 <?php
+//Словоформы после числительных
+function plural_form($number, $after, $separator = '') {
+	$cases = array (2, 0, 1, 1, 1, 2);
+	global $worksform;
+	$worksform=$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
+	return $number.$separator.$worksform;
+}
+
+//Шорткоды для главной
+
+
+function yearsOfExp() {
+	$exp = date('Y')-2005; //Текущий год минус начало работы в 2005
+	$years = plural_form(
+	$exp,
+	/* варианты написания для количества 1, 2 и 5 */
+	array('-го года','-х лет','-и лет')
+	);
+	return $years;
+}
+
+add_shortcode('years-of-exp', 'yearsOfExp');
+
+function portfolioCount() {
+	$count_works = wp_count_posts('works') -> publish;
+	$works = plural_form(
+	$count_works,
+	/* варианты написания для количества 1, 2 и 5 */
+	array('работа','работы','работ'),	
+	'&nbsp;'
+	);
+	return $works;
+}
+
+add_shortcode('portfolio-count', 'portfolioCount');
+
+?>
+
+<?php
 add_action('admin_init', 'gpm_add_meta_boxes', 2);
 
 function gpm_add_meta_boxes() {
@@ -123,6 +162,8 @@ function custom_repeatable_meta_box_save($post_id) {
         update_post_meta( $post_id, 'customdata_group', $new );
     elseif ( empty($new) && $old )
         delete_post_meta( $post_id, 'customdata_group', $old );
+
+
 
 
 }

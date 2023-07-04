@@ -6,11 +6,8 @@
                 <img src="/wp-content/themes/yhunter-4/img/yuri.jpg" alt="Юрий Баранов">
             </div>
             <div class="intro__aboutme bigtext">
-                Приветствую! Я&nbsp;дизайнер и&nbsp;веб-разработчик из&nbsp;Перми. <a href="">
-                    Делаю сайты</a> на&nbsp;<a href="">WordPress</a>, <a href="">путешествую</a>, <a
-                    href="">фотографирую</a>
-                концерты
-                и&nbsp;пишу в&nbsp;<a href="">блог</a>.
+                <?php the_field('greetings');?>
+                
             </div>
         </div>
         <div class="intro__bottomline r">
@@ -43,40 +40,29 @@
             <div class="intro__portfolio">
                 <div class="port">
                     <div class="port__slider">
+                        <?php 
+                        $args = array(
+                        'posts_per_page' => 8,
+                        'post_type' => 'works',
+                        'orderby' => 'date'
+                        );
+                        $query = new WP_Query( $args );
+                     
+                        if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); 
+                    
+                    
+                        ?>
+
                         <div>
-                            <img src="https://www.yhunter.ru/wp-content/uploads/2019/10/404667_original.jpg" alt="">
-                            <h3>Сумка с цитатой Набокова</h3>
-                        </div>
-                        <div>
-                            <img src="https://www.yhunter.ru/wp-content/uploads/2020/06/bear-cover.jpg" alt="">
-                            <h3>Веб-версия книги «Медведь в истории культуры»</h3>
-                        </div>
-                        <div>
-                            <img src="https://www.yhunter.ru/wp-content/uploads/2019/10/may-logo.jpg" alt="">
-                            <h3>3</h3>
-                        </div>
-                        <div>
-                            <img src="https://www.yhunter.ru/wp-content/uploads/2019/10/pzs-thumb-300x300.jpg" alt="">
-                            <h3>4</h3>
-                        </div>
-                        <div>
-                            <img src="https://www.yhunter.ru/wp-content/uploads/2018/06/kompros.jpg" alt="">
-                            <h3>5</h3>
-                        </div>
-                        <div>
-                            <img src="https://www.yhunter.ru/wp-content/uploads/2018/06/mobius-web.jpg" alt="">
-                            <h3>6</h3>
-                        </div>
-                        <div>
-                            <img src="https://www.yhunter.ru/wp-content/uploads/2018/06/datanomics.jpg" alt="">
-                            <h3>7</h3>
-                        </div>
-                        <div>
-                            <img src="https://www.yhunter.ru/wp-content/uploads/2018/06/senator.png" alt="">
-                            <h3>8</h3>
+                            <img src="<?php if ( has_post_thumbnail() ) { $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail'); echo $large_image_url[0]; } // Проверяем наличие миниатюры, если есть показываем ?>g"
+                                alt="<?php the_title(); ?>">
+                            <h3> <?php the_title(); ?></h3>
                         </div>
 
-                    </div>
+                        <?php endwhile; // Конец цикла.
+					    else:  endif; ?>
+                        <?php wp_reset_query(); ?>
+                                            </div>
                 </div>
 
                 <div class="intro__portlink">
@@ -93,64 +79,37 @@
         </div>
         <div class="blog__line  xs12 md12">
             <div class="r">
+                <?php 
+					$query = new WP_Query("posts_per_page=3&post-type=post");
+				 
+					if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); 
+				
+				
+					?>
                 <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"
                     class="blog__item item">
-                    <a href="/">
+                    <a href="<?php the_permalink(); ?>">
 
                         <img class="item__pic"
-                            src="https://www.yhunter.ru/wp-content/uploads/2022/07/DSC1584-400x400.jpg" alt="">
+                            src="<?php if ( has_post_thumbnail() ) { $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail'); echo $large_image_url[0]; } // Проверяем наличие миниатюры, если есть показываем ?>"
+                            alt="<?php the_title(); ?>">
 
-                        <h2 class="item__header header">Фотоотчет с Panicomix 2022, день второй</h2>
+                        <h2 class="item__header header"><?php the_title(); ?></h2>
                         <div class="item__date date">
-                            15 июля, 2022
+                            <?php the_time('j F, Y'); // Дата создания поста ?>
                         </div>
                         <div class="item__text text">
-                            <p>Фотографии со второго дня фестиваля современной визуальной культуры и комикс-конвенция
-                                Panicomix
-                                2022
-                                в
-                                Перми. Всего за 2 дня было отснято [&hellip;]</p>
+                            <?php the_excerpt(''); // Выводим анонс ?>
                         </div>
                     </a>
 
                 </article>
-                <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"
-                    class="blog__item item">
-                    <a href="/">
 
-                        <img class="item__pic"
-                            src="https://www.yhunter.ru/wp-content/uploads/2022/07/DSC9407-400x400.jpg" alt="">
 
-                        <h2 class="item__header header">Фотоотчет с Panicomix 2022, день второй</h2>
-                        <div class="item__date date">
-                            15 июля, 2022
-                        </div>
-                        <div class="item__text text">
-                            <p>Фотографии с первого дня фестиваля современной визуальной культуры и комикс-конвенция
-                                Panicomix
-                                2022 в Перми. Всего за 2 дня было отснято […]</p>
-                        </div>
-                    </a>
-
-                </article>
-                <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"
-                    class="blog__item item">
-                    <a href="/">
-
-                        <img class="item__pic" src="https://www.yhunter.ru/wp-content/uploads/2022/04/cover-400x400.jpg"
-                            alt="">
-
-                        <h2 class="item__header header">Фотоотчет с Panicomix 2022, день второй</h2>
-                        <div class="item__date date">
-                            15 июля, 2022
-                        </div>
-                        <div class="item__text text">
-                            <p>Концерт в пермском клубе «Мичурин» 4-го апреля 2022 года.</p>
-                        </div>
-                    </a>
-
-                </article>
-            </div>
+                <?php endwhile; // Конец цикла.
+					else:  endif; // Если записей нет - извиняемся ?>
+                <?php wp_reset_query(); ?>
+                            </div>
         </div>
     </section>
 
@@ -159,25 +118,15 @@
             <h3>Обо мне</h3>
         </div>
         <div class="about__main  xs12 md6 bigtext">
-            <p>Меня зовут Юрий Баранов. <br />Я живу и <b>делаю сайты в Перми</b>.</p>
-
-            <h2>
-                <a href="">Создание сайтов</a>, <a href="">дизайн</a>, <a href="">фронтенд разработка</a>
-            </h2>
-
-            <p>— это моя основная деятельность на протяжении: <b>17-ти лет</b>.</p>
-
-            <p>За это время в портфолио скопилось <b>139 работ</b>.</p>
-
-
-
+            <?php the_field('about');?>
+            
         </div>
         <div class="xs12 md4">
             <h3>Разработка</h3>
         </div>
         <div class="about__main  xs12 md6 lb">
-            <p>Создание сайтов на WordPress, лендингов, презентаций с уникальным дизайном,
-                без использования шаблонов из интернета </p>
+            <?php the_field('dev');?>
+            
         </div>
         <div class="about__skills xs12 md12 skills">
             <div class="r">
@@ -217,11 +166,8 @@
             <h3>Дизайн</h3>
         </div>
         <div class="about__main  xs12 md6 lb">
-            <p>
-                Работаю с растровой (техдизайн, ретушь фотографий) и векторной графикой (разработка логотипов),
-                занимаюсь созданием анимации (от простого интернет-баннера до презентационного ролика)
-            </p>
-        </div>
+            <?php the_field('design');?>
+                    </div>
         <div class="about__skills xs12 md12  skills">
             <div class="r">
                 <div class="skills__item">
@@ -260,25 +206,18 @@
             <h3>Софт-скиллз</h3>
         </div>
         <div class="about__main  xs12 md6 lb">
+            <?php the_field('soft-skills');?>
+            
 
-            <ul>
-                <li>Опыт самостоятельного создания продуктов под ключ и работы в команде;</li>
-                <li>Опыт работы в международной европейской компании;</li>
-                <li>Легкая самообучаемость и знакомство с любыми технологиями, в зависимости от поставленной задачи;
-                </li>
-                <li>Самостоятельный тайм-менеджмент, постановка реальных сроков и их строгое соблюдение.</li>
-            </ul>
         </div>
 
         <div class="xs12 md4">
             <h3>А что еще?</h3>
         </div>
         <div class="about__main  xs12 md6 lb">
+            <?php the_field('add');?>
+            
 
-            <p>Увлекаюсь репортажной фотографией, съемкой и видеомонтажом, путешествиями, перспективными технологиями
-                (3д-печать), DIY: от электросварки до строительства, японской культурой. В разное время был причастен к
-                популяризации моддинга, увлечен аэрографией, был замечен в концертно-организацонной деятельности.
-                Передвигаюсь по городу на автомобиле и велосипеде. </p>
         </div>
     </section>
 

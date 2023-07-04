@@ -201,11 +201,12 @@
             width: 100%;
             height: 100%;
             color: var(--white-trans);
-            background-color: var(--white-trans);
-            mask-size: 2rem 2rem;
-            mask-repeat: no-repeat;
-            mask-position: 50% 50%;
+            //background-color: var(--white-trans);
+
             @include transit();
+            background-size: 2rem 2rem;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
         }
 
         &:hover {

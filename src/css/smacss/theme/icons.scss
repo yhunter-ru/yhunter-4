@@ -22,63 +22,54 @@
 
 .tg {
     &::before {
-        mask-image: var(--tg-icon);    
-        -webkit-mask-image: var(--tg-icon);
+        background-image: var(--tg-icon);    
     }
 }
 
 .vb {
     &::before {
-        mask-image: var(--vb-icon);    
-        -webkit-mask-image: var(--vb-icon);
+        background-image: var(--vb-icon);    
     }
 }
 
 .px {
     &::before {
-        mask-image: var(--500px-icon);    
-        -webkit-mask-image: var(--500px-icon);
+        background-image: var(--500px-icon);
     }
 }
 
 .cp {
     &::before {
-        mask-image: var(--cp-icon);    
-        -webkit-mask-image: var(--cp-icon);
+        background-image: var(--cp-icon);            
     }
 }
 
 .ig {
     &::before {
-        mask-image: var(--inst-icon);    
-        -webkit-mask-image: var(--inst-icon);
+        background-image: var(--inst-icon);
     }
 }
 
 .yb {
     &::before {
-        mask-image: var(--yb-icon);    
-        -webkit-mask-image: var(--yb-icon);
+        background-image: var(--yb-icon);
     }
 }
 
 .fm {
     &::before {
-        mask-image: var(--fm-icon);    
-        -webkit-mask-image: var(--fm-icon);
+        background-image: var(--fm-icon);
     }
 }
 
 .mail {
     &::before {
-        mask-image: var(--mail-icon);
-        -webkit-mask-image: var(--mail-icon);
+        background-image: var(--mail-icon);
     }
 }
 
 .tel {
     &::before {
-        mask-image: var(--tel-icon);
-        -webkit-mask-image: var(--tel-icon);
+        background-image: var(--tel-icon);
     }
 }

@@ -2066,48 +2066,39 @@ figure a {
 }
 
 .tg::before {
-  mask-image: var(--tg-icon);
-  -webkit-mask-image: var(--tg-icon);
+  background-image: var(--tg-icon);
 }
 
 .vb::before {
-  mask-image: var(--vb-icon);
-  -webkit-mask-image: var(--vb-icon);
+  background-image: var(--vb-icon);
 }
 
 .px::before {
-  mask-image: var(--500px-icon);
-  -webkit-mask-image: var(--500px-icon);
+  background-image: var(--500px-icon);
 }
 
 .cp::before {
-  mask-image: var(--cp-icon);
-  -webkit-mask-image: var(--cp-icon);
+  background-image: var(--cp-icon);
 }
 
 .ig::before {
-  mask-image: var(--inst-icon);
-  -webkit-mask-image: var(--inst-icon);
+  background-image: var(--inst-icon);
 }
 
 .yb::before {
-  mask-image: var(--yb-icon);
-  -webkit-mask-image: var(--yb-icon);
+  background-image: var(--yb-icon);
 }
 
 .fm::before {
-  mask-image: var(--fm-icon);
-  -webkit-mask-image: var(--fm-icon);
+  background-image: var(--fm-icon);
 }
 
 .mail::before {
-  mask-image: var(--mail-icon);
-  -webkit-mask-image: var(--mail-icon);
+  background-image: var(--mail-icon);
 }
 
 .tel::before {
-  mask-image: var(--tel-icon);
-  -webkit-mask-image: var(--tel-icon);
+  background-image: var(--tel-icon);
 }
 
 body {
@@ -2134,7 +2125,7 @@ body {
   text-wrap: balance;
   font-weight: bold;
 }
-.frontpage .bigtext b, .frontpage .bigtext p b, .frontpage .bigtext h2 b {
+.frontpage .bigtext b, .frontpage .bigtext strong, .frontpage .bigtext p b, .frontpage .bigtext p strong, .frontpage .bigtext h2 b, .frontpage .bigtext h2 strong {
   color: var(--green);
   white-space: nowrap;
 }
@@ -2357,10 +2348,10 @@ body {
   width: 100%;
   height: 100%;
   color: var(--white-trans);
-  background-color: var(--white-trans);
-  mask-size: 2rem 2rem;
-  mask-repeat: no-repeat;
-  mask-position: 50% 50%;
+  filter: invert(80%) sepia(50%) saturate(0%) hue-rotate(97deg) brightness(93%) contrast(80%);
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   -webkit-transition: all 0.5s ease-in-out 0s;
   -moz-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
@@ -2368,7 +2359,7 @@ body {
   transition: all 0.5s ease-in-out 0s;
 }
 .frontpage .contacts__icon:hover::before {
-  background-color: var(--green);
+  filter: invert(80%) sepia(50%) saturate(6698%) hue-rotate(97deg) brightness(93%) contrast(80%);
 }
 .frontpage .contacts__icon:hover span {
   bottom: 0.5rem;
@@ -2922,9 +2913,10 @@ footer ul {
   position: relative;
   width: 1.5em;
   height: 1.5em;
-  background-color: var(--dark-gray);
-  mask-repeat: no-repeat;
-  mask-size: contain;
+  opacity: 0.25;
+  backgrond-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
 }
 .footer .logo {
   transform: rotate(-15deg) scale(1.1) translate(-5%, -5%);
