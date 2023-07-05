@@ -59,8 +59,11 @@
 @import "smacss/theme/archive-works";
 @import "smacss/theme/wp-classic-editor";
 
-body {
+html {
       scroll-behavior: smooth;
+}
+
+body {     
 
       ::selection {
             background: var(--light-green);

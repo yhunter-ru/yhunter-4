@@ -47,9 +47,10 @@ $(window).on('load', function(){
                 dots: true,
                 variableWidth: false,
                 centerMode: false,
-                arrows: true,
+                arrows: true
               }
-            },
+            }
+          },
           ]
       });
 

@@ -1,10 +1,8 @@
 body {
     background-color: var(--lbg-color);
     --w80-max: 1280px;
-
     --c30: calc((100% / 3) - 1rem);
 }
-
 
 
 .w80 {
@@ -15,7 +13,6 @@ body {
 
 .frontpage {
     section {
-
         margin-bottom: 4rem;
 
         h3 {
@@ -85,7 +82,45 @@ body {
                     }
                 }
             }
+
+            .intro__scrolldown {
+                display: none;
+                width: 2rem;
+                height: 2rem;
+                margin-left: .5rem;
+                font-size: 1rem;
+                font-weight: normal;
+                overflow: visible;
+    
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 100% !important;
+                    bottom: 0;
+                    position: relative;
+                    left: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: unset;
+                    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJub25lIj4NCiAgPHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNC43MDcgMi4yOTNhMSAxIDAgMDAtMS40MTQgMS40MTRsNiA2YTEgMSAwIDAwMS40MTQgMGw2LTZhMSAxIDAgMDAtMS40MTQtMS40MTRMMTAgNy41ODYgNC43MDcgMi4yOTN6bTAgOGExIDEgMCAxMC0xLjQxNCAxLjQxNGw2IDZhMSAxIDAgMDAxLjQxNCAwbDYtNmExIDEgMCAwMC0xLjQxNC0xLjQxNEwxMCAxNS41ODZsLTUuMjkzLTUuMjkzeiIvPg0KPC9zdmc+);
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    background-size: 2rem 2rem;
+                    filter: invert(80%) sepia(50%) saturate(6698%) hue-rotate(97deg) brightness(93%) contrast(80%);
+                    transform: rotate(-90deg) scale(1);
+                    opacity: 1;
+                }
+
+                &:hover {
+                    &::before {
+                        transform: rotate(-360deg) scale(.7);
+                    }
+                }
+            }
         }
+
+        
 
         &__contacts {
             flex: 1;
@@ -148,12 +183,29 @@ body {
                     .slick-dots {
                         bottom: 3.25rem;
 
+                        li {
+                            button {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                        }
+
                         li button::before {
+                            position: relative;
+                            display: block;
                             color: var(--gray);
+                            background: var(--gray);
+                            content: "";
+                            border-radius: 50%;
+                            width: .75rem;
+                            height: .75rem;
+                            opacity: .5;
                         }
 
                         li.slick-active button::before {
-                            color: var(--green);
+                            background: var(--green);
+                            opacity: 1;
                         }
                     }
                 }
@@ -195,8 +247,9 @@ body {
                     }
 
                     h3 {
-                        font-size: 1rem;
-                        line-height: 1.5rem;
+                        font-size: .9rem;
+                        line-height: 1.2rem;
+                        text-align: center;
                     }
                 }
 
@@ -226,9 +279,10 @@ body {
 
     .contacts {
         display: grid;
-        grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 1.5fr 1.5fr;
         position: relative;
         color: var(--white);
+        min-height: 26rem;
         //color: var(--txt-color);
 
         --contact-borders: 1px var(--white-trans) dotted;
@@ -240,12 +294,12 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 2rem;
-            padding: .5rem 0;
+            min-height: 1rem;
+            padding: 1rem 0;
             font-size: 1.333rem;
             line-height: 2rem;
             margin: 0;
-            
+            border-bottom: var(--contact-borders);
             box-shadow: 0rem 1px 1px rgba(30,60,30,.03), 0rem 1rem 1rem rgba(30,60,30,.05);
         }
 
@@ -348,6 +402,12 @@ body {
             gap: .5rem;
             padding: .5rem 1rem;
             width: 100%;
+
+            a {
+                &:last-child {
+                    font-size: .75rem;
+                }
+            }
         }
 
         &__messengers, &__social {
@@ -400,6 +460,11 @@ body {
             
             &__aboutme {
                 padding: 1rem 0;
+
+                .intro__scrolldown {
+                    display: inline-block;
+                    bottom: .5em;
+                }
             }
     
             &__topline {
@@ -415,7 +480,7 @@ body {
             }
 
             &__portfolio {
-                //width: unset;
+                width: unset;
                 //overflow: visible;
                 
                 .port {
@@ -423,7 +488,7 @@ body {
                     //width: calc(var(--w-max) / 1.25);
                     position: relative;
                     width: 100%;
-                    //max-width: calc(100vw / 1.25);
+                    max-width: calc(100vw / 1.5);
                     top: 0;
                     //left: calc(33% + 2rem);                    
                     height: 100%;
@@ -495,7 +560,7 @@ body {
                         margin: 0 1rem 0 0;
 
                         img {
-                            max-height: 350px;
+                            max-height: 250px;
                         }
                     }
                 }
@@ -539,6 +604,23 @@ body {
 
 @media (min-width: 1200px) {
     .frontpage {
+        .intro {
+            &__portfolio {
+                .port {
+                    .slick-slide {
+                        img {
+                            max-height: 350px;
+                        }
+
+                        h3 {
+                            font-size: 1rem;
+                            line-height: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+
         .bigtext, .bigtext p {
             font-size: 2rem;
             line-height: 3rem;

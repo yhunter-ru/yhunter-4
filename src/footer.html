@@ -44,6 +44,7 @@
 					Облако меток
 				</div>
 				<div class="footer__cloud">
+					<!-- build:html -->
 
 					<a href="https://www.yhunter.ru/tag/backend/" class="tag-cloud-link tag-link-80 tag-link-position-1"
 						style="font-size: 13.079646017699pt;" aria-label="backend (17 элементов)">backend</a>
@@ -129,20 +130,42 @@
 					<a href="https://www.yhunter.ru/tag/%d1%84%d0%be%d1%82%d0%be%d1%88%d0%be%d0%bf/"
 						class="tag-cloud-link tag-link-51 tag-link-position-30" style="font-size: 11.716814159292pt;"
 						aria-label="фотошоп (13 элементов)">фотошоп</a>
+
+					<!-- endbuild -->
+					<!-- build:theme -->
+					<?php 
+							$args = array(
+							'taxonomy' => array('post_tag'),
+							'number'=>30
+							);
+	 
+							wp_tag_cloud( $args );
+						?>
+					<!-- endbuild -->
 				</div>
 			</div>
 			<div class="xs12 md12 lg3 contact">
 				<div class="footer__header">
 					Контакты
 				</div>
+				<!-- build:html -->
 				<ul>
 					<li><a href="tel:+79028358830" class="tel">+7–902–83–588–30</a></li>
 					<li><a href="/" class="mail">mail@yhunter.ru</a></li>
 					<li><a href="tg://resolve?domain=yhunter" class="tg">@yhunter</a></li>
 				</ul>
+				<!-- endbuild -->
+				<!-- build:theme -->
+				<?php the_field('footer-contacts', 11430); ?>
+				<!-- endbuild -->
+
 			</div>
 			<div class="xs12 md12 footer__copy">
-				© Юрий Баранов, 2004—2022. v4.0 β
+
+				<!-- build:html -->© Юрий Баранов, 2004—2022. v4.0 β
+				<!-- endbuild -->
+				<!-- build:theme -->© Юрий Баранов, 2004—<?php echo date('Y').'. v4.0 β'; ?>
+				<!-- endbuild -->
 			</div>
 		</div>
 	</div>

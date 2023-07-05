@@ -3,7 +3,7 @@
 
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); // Начало цикла ?>
-
+<?php $large_image_url=''; //Запомним для socialshare ?>
 <?php if ( has_post_thumbnail() ): ?>
 <div class="page-content__header bigheader thin blur">
     <div class="bigheader__image">

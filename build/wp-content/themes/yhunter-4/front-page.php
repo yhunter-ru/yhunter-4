@@ -6,7 +6,7 @@
                 <img src="/wp-content/themes/yhunter-4/img/yuri.jpg" alt="Юрий Баранов">
             </div>
             <div class="intro__aboutme bigtext">
-                <?php the_field('greetings');?>
+                <?php the_field('greetings');?><a href="#about" class="intro__scrolldown" title="Подробнее обо мне"></a>
                 
             </div>
         </div>
@@ -113,7 +113,7 @@
         </div>
     </section>
 
-    <section class="about r">
+    <section class="about r" id="about">
         <div class="about__header xs12 md4">
             <h3>Обо мне</h3>
         </div>

@@ -33,17 +33,6 @@ function plural_form($number, $after, $separator = '') {
 	return $number.$separator.$worksform;
 }
 
-//Single meta (date + share)
-
-function singlemeta() {
-    echo '<div class="bigheader__meta">';
-    echo '<div class="bigheader__date">'.get_post_time("j F, Y").'</div>';
-    echo '<div class="bigheader__share">';
-    echo '<div class="ya-share2" data-curtain data-shape="round"  data-services="vkontakte,odnoklassniki,telegram,twitter,pinterest,reddit"></div>';
-    echo '</div>';
-    echo '</div>';
-}
-
 //Шорткоды для главной
 
 

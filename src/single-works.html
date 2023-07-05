@@ -50,8 +50,51 @@
 </div>
 
 <!-- endbuild -->
+<!-- build:theme -->
 
-<article class="page-content mt0 add-spacer">
+<?php 
+
+$bigheader = false;
+if ((get_field('desktop')) or (get_field('tablet')) or (get_field('mobile'))): ?>
+<?php $bigheader = true; ?>
+
+<div class="page-content__header bigheader works-slider">
+    <?php if ( has_post_thumbnail() ): ?>
+    <div class="bigheader__image header-blur">
+        <img src="<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large'); echo $large_image_url[0];?>"
+            alt="<?php the_title(); ?>">
+    </div>
+    <?php endif; ?>
+    <div class="bigheader__slider">
+        <div class="slider multiple-items devices">
+            <?php if (get_field('desktop')): ?>
+            <div class="devices__desktop device desktop">
+                <div class="desktop__screen">
+                    <?php echo wp_get_attachment_image( get_field('desktop'), 'large'); ?>
+                </div>
+            </div>
+            <?php endif; ?>
+            <?php if (get_field('tablet')): ?>
+            <div class="devices__tablet  device tablet">
+                <div class="tablet__screen">
+                    <?php echo wp_get_attachment_image( get_field('tablet'), 'large'); ?>
+                </div>
+            </div>
+            <?php endif; ?>
+            <?php if (get_field('mobile')): ?>
+            <div class="devices__mobile  device tel">
+                <div class="tel__screen">
+                    <?php echo wp_get_attachment_image( get_field('mobile'), 'large'); ?>
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+
+<!-- endbuild -->
+<article class="page-content mt0 <!-- build:theme --><?php if (!bigheader) echo 'add-spacer'; ?>≈<!-- endbuild -->">
     <!-- .add-spacer class for 4rem top margin -->
 
 
@@ -61,7 +104,7 @@
     <!-- build:theme -->
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); // Начало цикла ?>
     <div class="page-content__textheader">
-        <h1><?php the_title(); // Заголовок ?></h1>
+        <h1><?php the_title(); ?></h1>
     </div>
 
     <?php the_content(); // Содержимое страницы ?>
@@ -121,11 +164,7 @@
     </div>
     <!-- endbuild -->
 
-    <div class="page-content__comments">
-        <!-- build:theme -->
-        <?php comments_template( '', true ); // Комментарии ?>
-        <!-- endbuild -->
-    </div>
+
 
 
 

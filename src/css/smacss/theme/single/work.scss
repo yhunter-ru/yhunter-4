@@ -41,15 +41,20 @@
             &__screen {
                 position: absolute;
                 display: block;
-                background: #5e9370;
+                background: var(--dark);
                 opacity: 1;
                 left: 40px;
                 top: 110px;
                 width: 245px;
                 height: 160px;
                 z-index: 2;
-                border-radius: 2px;
+                overflow: hidden;
 
+                img {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                }
             }
             
         }
@@ -84,6 +89,14 @@
                 z-index: 2;
                 border-radius: 7px;
 
+                overflow: hidden;
+
+                img {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                }
+
             }
             
         }
@@ -117,6 +130,14 @@
                 z-index: 1;
                 border-radius: 15px;
                 transform: translate(-3px, -32px);
+
+                overflow: hidden;
+
+                img {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                }
             }
             
         }
