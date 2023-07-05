@@ -94,10 +94,8 @@
         gap: 1rem;     
         //justify-content: space-between;
         align-items: center;
-        width: 100%;
-
-        
-    }
+        width: 100%;        
+    } 
 }
 
 .bigheader.thin {
@@ -105,9 +103,18 @@
     min-height: 500px;
 }
 
+.blur {
+    .bigheader__image {
+        img {
+            filter: blur(.5rem);
+        } 
+    }
+}
+
 @media (min-width: 768px) {
     .bigheader {
         height: 100vh;
+        @include transit();
 
         &__image {
             img {
@@ -121,8 +128,6 @@
             max-width: var(--text-max);
             left: 50%;
             transform: translateX(-50%);
-        }
-
-        
+        }        
     }
 }

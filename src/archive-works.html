@@ -9,7 +9,7 @@
     <section class="works">
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); // Цикл записей ?>
-        <a href="<?php the_permalink(); ?>" class="works__entry work" style="width: calc(20% - 1rem);">
+        <a href="<?php the_permalink(); ?>" class="works__entry work">
             <?php if ( has_post_thumbnail() ): ?>
 
             <div class="work__image">

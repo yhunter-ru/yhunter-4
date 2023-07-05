@@ -8,69 +8,77 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); // Начало цикла ?>
 
-<div class="page-content__header bigheader thin">
+<?php if ( has_post_thumbnail() ): ?>
+<div class="page-content__header bigheader thin blur">
     <div class="bigheader__image">
-        <img src="https://www.yhunter.ru/wp-content/uploads/2022/07/DSC1584.jpg" alt="">
+        <img id="featured-image"
+            src="<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); echo $large_image_url[0];?>"
+            alt="<?php the_title(); ?>">
     </div>
     <div class="bigheader__field">
-        <h1><?php the_title(); // Заголовок ?></h1>
+        <h1><?php the_title(); ?></h1>
         <div class="bigheader__meta">
             <div class="bigheader__date"><?php the_time('j F, Y');  ?></div>
-            <div class="bigheader__share">share</div>
+            <!--<div class="bigheader__share">share</div>-->
         </div>
     </div>
 </div>
-
 <article class="page-content mt0">
-    <!-- .add-spacer class for 4rem top margin -->
-
-    <?php the_content(); // Содержимое страницы ?>
-    <?php echo 'Рубрики: '; the_category( ' | ' ); // Выводим категории поста ?>
-    <?php the_tags( 'Тэги: ', ' | ', '' ); // Выводим тэги(метки) поста ?>
-    <?php endwhile; // Конец цикла ?>
-
-    <div class="page-content__comments">
-        comments section
-    </div>
+    <?php else: ?>
+    <article class="page-content mt0 add-spacer">
+        <h1><?php the_title(); ?></h1>
+        <?php endif; ?>
 
 
-    <?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'twentyten' ) . '</span> %title' ); // Ссылка на предидущий пост?>
-    <?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '</span>' ); // Ссылка на следующий пост?>
+        <!-- .add-spacer class for 4rem top margin -->
 
-
+        <?php the_content(); // Содержимое страницы ?>
+        <div class="page-content__meta ">
+            <?php echo 'Рубрики: '; the_category( ' | ' ); // Выводим категории поста ?>
+            <?php the_tags( 'Тэги: ', ' | ', '' ); // Выводим тэги(метки) поста ?>
+        </div>
+        <?php endwhile; // Конец цикла ?>
 
 
 
 
-</article>
-
-<div class="page-content mt0">
-
-
-    <?php comments_template( '', true ); // Комментарии ?>
 
 
 
-</div>
 
-<!-- build:html -->
 
-<div class="navigation">
-    <div class="NavPrev">
-        <a href="https://www.yhunter.ru/portfolio/design/web/sajt-magazina-fotografij-rusklipart/" rel="prev"></span>
-            Сайт магазина фотографий «Русклипарт»</a> </div>
-    <div class="NavNext">
-        <a href="https://www.yhunter.ru/portfolio/design/web/interaktivnyj-sajt-senatora/" rel="next">Интерактивный
-            сайт «Сенатора»</a>
+
+
+    </article>
+
+    <div class="page-content mt0">
+
+
+        <?php comments_template( '', true ); // Комментарии ?>
+
+
 
     </div>
-</div>
 
-<!-- endbuild -->
+    <!-- build:html -->
 
-<!-- build:html -->
+    <div class="navigation">
+        <div class="NavPrev">
+            <a href="https://www.yhunter.ru/portfolio/design/web/sajt-magazina-fotografij-rusklipart/"
+                rel="prev"></span>
+                Сайт магазина фотографий «Русклипарт»</a> </div>
+        <div class="NavNext">
+            <a href="https://www.yhunter.ru/portfolio/design/web/interaktivnyj-sajt-senatora/" rel="next">Интерактивный
+                сайт «Сенатора»</a>
 
-<!--
+        </div>
+    </div>
+
+    <!-- endbuild -->
+
+    <!-- build:html -->
+
+    <!--
 <div class="bigheader">
     <div class="bigheader__image">
         <img src="https://www.yhunter.ru/wp-content/uploads/2022/07/DSC1584.jpg" alt="">
@@ -85,134 +93,135 @@
 </div>
 -->
 
-<div class="page-content__header bigheader thin">
-    <div class="bigheader__image">
-        <img src="https://www.yhunter.ru/wp-content/uploads/2022/07/DSC1584.jpg" alt="">
-    </div>
-    <div class="bigheader__field">
-        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h1>
-        <div class="bigheader__meta">
-            <div class="bigheader__date">15 июля, 2022</div>
-            <div class="bigheader__share">share</div>
+    <div class="page-content__header bigheader thin">
+        <div class="bigheader__image">
+            <img src="https://www.yhunter.ru/wp-content/uploads/2022/07/DSC1584.jpg" alt="">
+        </div>
+        <div class="bigheader__field">
+            <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h1>
+            <div class="bigheader__meta">
+                <div class="bigheader__date">15 июля, 2022</div>
+                <div class="bigheader__share">share</div>
+            </div>
         </div>
     </div>
-</div>
 
-<article class="page-content mt0">
-    <!-- .add-spacer class for 4rem top margin -->
+    <article class="page-content mt0">
+        <!-- .add-spacer class for 4rem top margin -->
 
 
-    <div class="page-content__textheader">
-        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h1>
+        <div class="page-content__textheader">
+            <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h1>
+        </div>
+
+
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam delectus facilis mollitia omnis nesciunt
+        amet,
+        nisi aut, praesentium possimus earum, assumenda nulla. Officiis corrupti dolor dignissimos mollitia ipsa
+        consectetur
+        quae?
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
+            libero id,
+            minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
+            nulla
+            perspiciatis?</p>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
+            libero id,
+            minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
+            nulla
+            perspiciatis?</p>
+
+        <div class="page-content__full">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum blanditiis sed ducimus recusandae odit,
+            iure, ab
+            impedit exercitationem amet laborum nesciunt ut excepturi distinctio eveniet ratione ipsum cumque, sit
+            delectus?
+        </div>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
+            libero id,
+            minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
+            nulla
+            perspiciatis?</p>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
+            libero id,
+            minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
+            nulla
+            perspiciatis?</p>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
+            libero id,
+            minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
+            nulla
+            perspiciatis?</p>
+
+        <div class="page-content__related">
+
+            <h3>Похожие записи:</h3>
+            <ul>
+
+                <li>
+                    <a href="https://www.yhunter.ru/portfolio/prezentaciya-megafona/">Презентация «Мегафона»</a>
+                </li>
+
+                <li>
+                    <a href="https://www.yhunter.ru/portfolio/design/presentations/novogodnyaya-flash-otkrytka-2009/">Новогодняя
+                        флеш-открытка 2009</a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.yhunter.ru/portfolio/design/presentations/zastavka-videorolika-dlya-permskix-motorov/">Заставка
+                        видеоролика для «Пермских моторов»</a>
+                </li>
+
+                <li>
+                    <a href="https://www.yhunter.ru/portfolio/design/presentations/novogodnyaya-flesh-otkrytka/">Новогодняя
+                        флеш-открытка</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="page-content__meta">
+            Рубрики: <a href="https://www.yhunter.ru/portfolio/design/animation/" rel="category tag">Анимация</a> |
+            <a href="https://www.yhunter.ru/portfolio/" rel="category tag">Портфолио</a> | <a
+                href="https://www.yhunter.ru/portfolio/design/presentations/" rel="category tag">Презентации</a>&nbsp;
+            &nbsp;
+            Тэги: <a href="https://www.yhunter.ru/tag/flash/" rel="tag">flash</a> | <a
+                href="https://www.yhunter.ru/tag/prezentacii/" rel="tag">презентации</a>&nbsp; &nbsp;
+            Поделиться: <div style="display: inline;" class="ya-share2" data-size="s"
+                data-services="vkontakte,facebook,twitter,pinterest"
+                data-yashareImage="https://www.yhunter.ru/wp-content/uploads/2015/08/2_1.jpg"></div>
+        </div>
+
+
+        </div>
+
+        <div class="page-content__comments">
+            comments section
+        </div>
+
+
+
+    </article>
+
+    <div class="navigation">
+        <div class="NavPrev">
+            <a href="https://www.yhunter.ru/portfolio/design/web/sajt-magazina-fotografij-rusklipart/"
+                rel="prev"></span>
+                Сайт магазина фотографий «Русклипарт»</a> </div>
+        <div class="NavNext">
+            <a href="https://www.yhunter.ru/portfolio/design/web/interaktivnyj-sajt-senatora/" rel="next">Интерактивный
+                сайт «Сенатора»</a>
+
+        </div>
     </div>
 
-
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam delectus facilis mollitia omnis nesciunt
-    amet,
-    nisi aut, praesentium possimus earum, assumenda nulla. Officiis corrupti dolor dignissimos mollitia ipsa
-    consectetur
-    quae?
-
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
-        libero id,
-        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
-        nulla
-        perspiciatis?</p>
-
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
-        libero id,
-        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
-        nulla
-        perspiciatis?</p>
-
-    <div class="page-content__full">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum blanditiis sed ducimus recusandae odit,
-        iure, ab
-        impedit exercitationem amet laborum nesciunt ut excepturi distinctio eveniet ratione ipsum cumque, sit
-        delectus?
-    </div>
-
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
-        libero id,
-        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
-        nulla
-        perspiciatis?</p>
-
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
-        libero id,
-        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
-        nulla
-        perspiciatis?</p>
-
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam
-        libero id,
-        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum,
-        nulla
-        perspiciatis?</p>
-
-    <div class="page-content__related">
-
-        <h3>Похожие записи:</h3>
-        <ul>
-
-            <li>
-                <a href="https://www.yhunter.ru/portfolio/prezentaciya-megafona/">Презентация «Мегафона»</a>
-            </li>
-
-            <li>
-                <a href="https://www.yhunter.ru/portfolio/design/presentations/novogodnyaya-flash-otkrytka-2009/">Новогодняя
-                    флеш-открытка 2009</a>
-            </li>
-
-            <li>
-                <a
-                    href="https://www.yhunter.ru/portfolio/design/presentations/zastavka-videorolika-dlya-permskix-motorov/">Заставка
-                    видеоролика для «Пермских моторов»</a>
-            </li>
-
-            <li>
-                <a href="https://www.yhunter.ru/portfolio/design/presentations/novogodnyaya-flesh-otkrytka/">Новогодняя
-                    флеш-открытка</a>
-            </li>
-        </ul>
-
-    </div>
-
-    <div class="page-content__meta">
-        Рубрики: <a href="https://www.yhunter.ru/portfolio/design/animation/" rel="category tag">Анимация</a> |
-        <a href="https://www.yhunter.ru/portfolio/" rel="category tag">Портфолио</a> | <a
-            href="https://www.yhunter.ru/portfolio/design/presentations/" rel="category tag">Презентации</a>&nbsp;
-        &nbsp;
-        Тэги: <a href="https://www.yhunter.ru/tag/flash/" rel="tag">flash</a> | <a
-            href="https://www.yhunter.ru/tag/prezentacii/" rel="tag">презентации</a>&nbsp; &nbsp;
-        Поделиться: <div style="display: inline;" class="ya-share2" data-size="s"
-            data-services="vkontakte,facebook,twitter,pinterest"
-            data-yashareImage="https://www.yhunter.ru/wp-content/uploads/2015/08/2_1.jpg"></div>
-    </div>
-
-
-    </div>
-
-    <div class="page-content__comments">
-        comments section
-    </div>
-
-
-
-</article>
-
-<div class="navigation">
-    <div class="NavPrev">
-        <a href="https://www.yhunter.ru/portfolio/design/web/sajt-magazina-fotografij-rusklipart/" rel="prev"></span>
-            Сайт магазина фотографий «Русклипарт»</a> </div>
-    <div class="NavNext">
-        <a href="https://www.yhunter.ru/portfolio/design/web/interaktivnyj-sajt-senatora/" rel="next">Интерактивный
-            сайт «Сенатора»</a>
-
-    </div>
-</div>
-
-<!-- endbuild -->
+    <!-- endbuild -->
 
 
 
@@ -220,10 +229,10 @@
 
 
 
-<!-- build:theme -->
-<?php get_footer(); // Подключаем футер ?>
-<!-- endbuild -->
+    <!-- build:theme -->
+    <?php get_footer(); // Подключаем футер ?>
+    <!-- endbuild -->
 
-<!-- build:html -->
-@@include('./footer.html')
-<!-- endbuild -->
+    <!-- build:html -->
+    @@include('./footer.html')
+    <!-- endbuild -->

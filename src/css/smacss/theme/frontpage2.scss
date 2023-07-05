@@ -187,6 +187,16 @@ body {
                         max-height: 250px;
                     }
 
+                    a {
+                        color: var(--txt-color);
+                        text-decoration: none;
+                        @include transit();
+
+                        &:hover {
+                            opacity: .7;
+                        }
+                    }
+
                     h3 {
                         font-size: 1rem;
                         line-height: 1.5rem;

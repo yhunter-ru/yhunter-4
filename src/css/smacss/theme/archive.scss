@@ -12,11 +12,13 @@
         &__image {
             flex: 1;
             position: relative;
+            padding-top: 1rem;
 
             img {
                 position: relative;
                 max-width: 100%;
                 height: auto;
+                border-radius: .5rem;
             }
         }
 

@@ -53,4 +53,19 @@ $(window).on('load', function(){
           ]
       });
 
+      var featuredImg = document.getElementById('featured-image'); 
+      var featuredImgWidth = featuredImg.naturalHeight;
+      var featuredImgHeight = featuredImg.naturalHeight;  
+
+      console.log(featuredImgWidth);
+      console.log(featuredImgHeight);
+      
+      if (featuredImgWidth >= 1024) {
+        $(".bigheader").removeClass("blur");
+      }
+
+      if (featuredImgHeight >= 760) {
+        $(".bigheader").removeClass("thin");
+      }
+
 });

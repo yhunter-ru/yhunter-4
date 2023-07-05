@@ -57,6 +57,7 @@
 @import "smacss/theme/archive";
 @import "smacss/theme/archive/pagination";
 @import "smacss/theme/archive-works";
+@import "smacss/theme/wp-classic-editor";
 
 body {
       scroll-behavior: smooth;
@@ -79,4 +80,4 @@ body {
 
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 
-@import "../../node_modules/slick-lightbox/src/styles/slick-lightbox.sass";
+@import "smacss/theme/slick-lightbox";
