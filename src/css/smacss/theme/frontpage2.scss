@@ -169,15 +169,11 @@ body {
                     flex-direction: column;
                     gap: 1;
                     align-items: center;
+                    
 
                     div {
                         position: relative;
                         height: 100%;
-
-                        div {
-                            position: relative;
-                            height: 100%;
-                        }
                     }
 
                     img {
@@ -185,6 +181,7 @@ body {
                         max-width: 100%;
                         border-radius: .5rem;
                         max-height: 250px;
+                        margin: 0 auto;
                     }
 
                     a {
@@ -418,15 +415,17 @@ body {
             }
 
             &__portfolio {
-                width: unset;
-                overflow: visible;
+                //width: unset;
+                //overflow: visible;
                 
                 .port {
-                    position: absolute;
-                    width: calc(var(--w-max) / 1.25);
-                    max-width: calc(100vw / 1.25);
+                    //position: absolute;
+                    //width: calc(var(--w-max) / 1.25);
+                    position: relative;
+                    width: 100%;
+                    //max-width: calc(100vw / 1.25);
                     top: 0;
-                    left: calc(33% + 2rem);                    
+                    //left: calc(33% + 2rem);                    
                     height: 100%;
 
                     &::after {
@@ -437,7 +436,7 @@ body {
                         top: 0;
                         height: 100%;
                         background: linear-gradient(90deg, rgba(240,248,255,0) 0%, rgba(240,248,255,1) 100%);
-                        width: 200px;
+                        width: 150px;
                         pointer-events: none;
                     }
 
@@ -515,6 +514,14 @@ body {
             font-size: 1.5rem;
             line-height: 2.5rem;
         }
+
+        .bigtext {
+            > div {
+                border-left: 4px var(--green) solid;
+                padding-left: 1rem;
+            }
+        }
+
 
         .bigtext h2 {
 

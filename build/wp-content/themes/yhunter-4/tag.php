@@ -9,7 +9,7 @@
 	<div class="page-content__textheader">
 		
 
-		<h1><?php single_tag_title(); ?>
+		<h1>#<?php single_tag_title(); ?>
 		</h1>
 
 	</div>

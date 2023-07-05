@@ -17,16 +17,14 @@
     </div>
     <div class="bigheader__field">
         <h1><?php the_title(); ?></h1>
-        <div class="bigheader__meta">
-            <div class="bigheader__date"><?php the_time('j F, Y');  ?></div>
-            <!--<div class="bigheader__share">share</div>-->
-        </div>
+        <?php get_template_part( 'single-meta' ); ?>
     </div>
 </div>
 <article class="page-content mt0">
     <?php else: ?>
     <article class="page-content mt0 add-spacer">
         <h1><?php the_title(); ?></h1>
+        <?php get_template_part( 'single-meta' ); ?>
         <?php endif; ?>
 
 

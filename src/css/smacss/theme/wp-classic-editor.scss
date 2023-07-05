@@ -71,6 +71,10 @@ blockquote {
     border-radius: .5rem;
 }
 
+.alignnone {
+    display: inline-block;
+}
+
 @media (min-width: 768px) {
     .wp-caption {
         margin: 0 50%;

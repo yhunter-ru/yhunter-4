@@ -2241,15 +2241,12 @@ body {
   position: relative;
   height: 100%;
 }
-.frontpage .intro__portfolio .port .slick-slide div div {
-  position: relative;
-  height: 100%;
-}
 .frontpage .intro__portfolio .port .slick-slide img {
   position: relative;
   max-width: 100%;
   border-radius: 0.5rem;
   max-height: 250px;
+  margin: 0 auto;
 }
 .frontpage .intro__portfolio .port .slick-slide a {
   color: var(--txt-color);
@@ -2432,16 +2429,10 @@ body {
     gap: 2rem;
     flex-direction: row;
   }
-  .frontpage .intro__portfolio {
-    width: unset;
-    overflow: visible;
-  }
   .frontpage .intro__portfolio .port {
-    position: absolute;
-    width: calc(var(--w-max) / 1.25);
-    max-width: 80vw;
+    position: relative;
+    width: 100%;
     top: 0;
-    left: calc(33% + 2rem);
     height: 100%;
   }
   .frontpage .intro__portfolio .port::after {
@@ -2452,7 +2443,7 @@ body {
     top: 0;
     height: 100%;
     background: linear-gradient(90deg, rgba(240, 248, 255, 0) 0%, aliceblue 100%);
-    width: 200px;
+    width: 150px;
     pointer-events: none;
   }
   .frontpage .intro__portfolio .port__slider {
@@ -2511,6 +2502,10 @@ body {
   .frontpage .bigtext, .frontpage .bigtext p {
     font-size: 1.5rem;
     line-height: 2.5rem;
+  }
+  .frontpage .bigtext > div {
+    border-left: 4px var(--green) solid;
+    padding-left: 1rem;
   }
   .frontpage .bigtext h2 {
     color: var(--green) !important;
@@ -2620,7 +2615,7 @@ body {
     --link__underline: var(--green);
   }
   .about h3 {
-    text-align: left;
+    text-align: right;
   }
   .about a:hover::before {
     height: 1em;
@@ -2822,7 +2817,11 @@ body {
 @media (min-width: 768px) {
   .blog__header h3 {
     text-align: left;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+    width: 33.3333333333%;
+    text-align: right;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
   }
 
   section.blog__body {
@@ -3001,6 +3000,15 @@ main {
   font-weight: bold;
   text-wrap: balance;
 }
+.page-content iframe {
+  margin: 1rem auto;
+  display: block;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
 
 @media (min-width: 768px) {
   .page-content {
@@ -3040,6 +3048,12 @@ main .add-spacer {
   object-fit: cover;
   object-position: 50% 50%;
   z-index: -10;
+  transform: scale(1);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
 }
 .bigheader__image::before {
   position: absolute;
@@ -3071,7 +3085,6 @@ main .add-spacer {
   color: var(--light-color);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: 1rem;
   box-sizing: border-box;
@@ -3088,15 +3101,6 @@ main .add-spacer {
   left: 0;
   z-index: 10;
 }
-.bigheader__date {
-  display: block;
-  background-color: var(--green);
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-}
-.bigheader__share {
-  display: block;
-}
 .bigheader__meta {
   display: flex;
   flex-direction: row;
@@ -3106,6 +3110,18 @@ main .add-spacer {
   width: 100%;
 }
 
+.bigheader__date, .single-date {
+  display: inline-block;
+  background-color: var(--green);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  color: var(--white);
+}
+
+.bigheader__share, .shingle-share {
+  display: block;
+}
+
 .bigheader.thin {
   height: 60vh;
   min-height: 500px;
@@ -3113,6 +3129,7 @@ main .add-spacer {
 
 .blur .bigheader__image img {
   filter: blur(0.5rem);
+  transform: scale(1.2);
 }
 
 @media (min-width: 768px) {
@@ -3726,6 +3743,10 @@ blockquote::before {
 .wp-caption {
   max-width: 100%;
   border-radius: 0.5rem;
+}
+
+.alignnone {
+  display: inline-block;
 }
 
 @media (min-width: 768px) {

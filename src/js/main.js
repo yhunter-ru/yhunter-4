@@ -33,8 +33,8 @@ $(window).on('load', function(){
       });
 
       $('.frontpage .port__slider').slick({
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToShow: 4,
+        slidesToScroll: 2,
         dots: false,
         variableWidth: false,
         centerMode: false,
@@ -53,19 +53,26 @@ $(window).on('load', function(){
           ]
       });
 
-      var featuredImg = document.getElementById('featured-image'); 
-      var featuredImgWidth = featuredImg.naturalHeight;
-      var featuredImgHeight = featuredImg.naturalHeight;  
-
-      console.log(featuredImgWidth);
-      console.log(featuredImgHeight);
+      var featuredImg = $('#featured-image');
       
-      if (featuredImgWidth >= 1024) {
-        $(".bigheader").removeClass("blur");
-      }
+      if (featuredImg.length) { 
+        console.log('header image exist');
+        var featuredImgWidth = featuredImg[0].naturalWidth;
+        var featuredImgHeight = featuredImg[0].naturalHeight;  
 
-      if (featuredImgHeight >= 760) {
-        $(".bigheader").removeClass("thin");
+        console.log(featuredImgWidth);
+        console.log(featuredImgHeight);
+        
+        if (featuredImgWidth >= 1024) {
+          $(".bigheader").removeClass("blur");
+        }
+
+        if (featuredImgHeight >= 760) {
+          $(".bigheader").removeClass("thin");
+        }
       }
+      
 
 });
+
+@import './share.js';

@@ -33,6 +33,17 @@ function plural_form($number, $after, $separator = '') {
 	return $number.$separator.$worksform;
 }
 
+//Single meta (date + share)
+
+function singlemeta() {
+    echo '<div class="bigheader__meta">';
+    echo '<div class="bigheader__date">'.get_post_time("j F, Y").'</div>';
+    echo '<div class="bigheader__share">';
+    echo '<div class="ya-share2" data-curtain data-shape="round"  data-services="vkontakte,odnoklassniki,telegram,twitter,pinterest,reddit"></div>';
+    echo '</div>';
+    echo '</div>';
+}
+
 //Шорткоды для главной
 
 
@@ -60,6 +71,19 @@ function portfolioCount() {
 }
 
 add_shortcode('portfolio-count', 'portfolioCount');
+
+
+//Вывод кастомных постов (портфолио) на странице меток и категорий
+
+function crunchify_add_cpt_to_archive_page( $query ) {
+    if( (is_category() || is_tag()) && $query->is_archive() && empty( $query->query_vars['suppress_filters'] ) ) {
+      $query->set( 'post_type', array(
+       'post', 'works'
+          ));
+      }
+      return $query;
+  }
+  add_filter( 'pre_get_posts', 'crunchify_add_cpt_to_archive_page' );
 
 
 //Галерея
@@ -140,61 +164,61 @@ function Repeatable_meta_box_display() {
      wp_nonce_field( 'gpm_repeatable_meta_box_nonce', 'gpm_repeatable_meta_box_nonce' );
     ?>
 <script type="text/javascript">
-	jQuery(document).ready(function ($) {
-		$('#add-row').on('click', function () {
-			var row = $('.empty-row.screen-reader-text').clone(true);
-			row.removeClass('empty-row screen-reader-text');
-			row.insertBefore('#repeatable-fieldset-one tbody>tr:last');
-			return false;
-		});
+    jQuery(document).ready(function ($) {
+        $('#add-row').on('click', function () {
+            var row = $('.empty-row.screen-reader-text').clone(true);
+            row.removeClass('empty-row screen-reader-text');
+            row.insertBefore('#repeatable-fieldset-one tbody>tr:last');
+            return false;
+        });
 
-		$('.remove-row').on('click', function () {
-			$(this).parents('tr').remove();
-			return false;
-		});
-	});
+        $('.remove-row').on('click', function () {
+            $(this).parents('tr').remove();
+            return false;
+        });
+    });
 </script>
 <table id="repeatable-fieldset-one" width="100%">
-	<tbody>
-		<?php
+    <tbody>
+        <?php
      if ( $gpminvoice_group ) :
       foreach ( $gpminvoice_group as $field ) {
     ?>
-		<tr>
-			<td width="15%">
-				<input type="text" placeholder="Title" name="TitleItem[]"
-					value="<?php if($field['TitleItem'] != '') echo esc_attr( $field['TitleItem'] ); ?>" /></td>
-			<td width="70%">
-				<textarea placeholder="Description" cols="55" rows="5"
-					name="TitleDescription[]"> <?php if ($field['TitleDescription'] != '') echo esc_attr( $field['TitleDescription'] ); ?> </textarea>
-			</td>
-			<td width="15%"><a class="button remove-row" href="#1">Remove</a></td>
-		</tr>
-		<?php
+        <tr>
+            <td width="15%">
+                <input type="text" placeholder="Title" name="TitleItem[]"
+                    value="<?php if($field['TitleItem'] != '') echo esc_attr( $field['TitleItem'] ); ?>" /></td>
+            <td width="70%">
+                <textarea placeholder="Description" cols="55" rows="5"
+                    name="TitleDescription[]"> <?php if ($field['TitleDescription'] != '') echo esc_attr( $field['TitleDescription'] ); ?> </textarea>
+            </td>
+            <td width="15%"><a class="button remove-row" href="#1">Remove</a></td>
+        </tr>
+        <?php
     }
     else :
     // show a blank one
     ?>
-		<tr>
-			<td>
-				<input type="text" placeholder="Title" title="Title" name="TitleItem[]" /></td>
-			<td>
-				<textarea placeholder="Description" name="TitleDescription[]" cols="55" rows="5">  </textarea>
-			</td>
-			<td><a class="button  cmb-remove-row-button button-disabled" href="#">Remove</a></td>
-		</tr>
-		<?php endif; ?>
+        <tr>
+            <td>
+                <input type="text" placeholder="Title" title="Title" name="TitleItem[]" /></td>
+            <td>
+                <textarea placeholder="Description" name="TitleDescription[]" cols="55" rows="5">  </textarea>
+            </td>
+            <td><a class="button  cmb-remove-row-button button-disabled" href="#">Remove</a></td>
+        </tr>
+        <?php endif; ?>
 
-		<!-- empty hidden one for jQuery -->
-		<tr class="empty-row screen-reader-text">
-			<td>
-				<input type="text" placeholder="Title" name="TitleItem[]" /></td>
-			<td>
-				<textarea placeholder="Description" cols="55" rows="5" name="TitleDescription[]"></textarea>
-			</td>
-			<td><a class="button remove-row" href="#">Remove</a></td>
-		</tr>
-	</tbody>
+        <!-- empty hidden one for jQuery -->
+        <tr class="empty-row screen-reader-text">
+            <td>
+                <input type="text" placeholder="Title" name="TitleItem[]" /></td>
+            <td>
+                <textarea placeholder="Description" cols="55" rows="5" name="TitleDescription[]"></textarea>
+            </td>
+            <td><a class="button remove-row" href="#">Remove</a></td>
+        </tr>
+    </tbody>
 </table>
 <p><a id="add-row" class="button" href="#">Add another</a></p>
 <?php

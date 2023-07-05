@@ -10,12 +10,22 @@
 					Разделы сайта
 				</div>
 				<ul>
-					<li><a href="">Главная</a></li>
-					<li><a href="">Портфолио</a></li>
-					<li><a href="">Путешествия</a></li>
-					<li><a href="">Фотографии</a></li>
-					<li><a href="">Контакты</a></li>
+					<li><a href="/">Главная</a></li>
+					
+
+
+					<?php
+					$args = array( // Выводим верхнее меню
+						'menu'=>'Главное меню',
+						'container'=>false,
+						'depth'=> 1,
+						'items_wrap' => '%3$s');
+						
+					wp_nav_menu($args);
+				?>
+
 				</ul>
+
 			</div>
 			<div class="xs12 md10 lg5">
 				<div class="footer__header">
@@ -131,10 +141,10 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.21807666043110374">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.5929759229379579">
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.21807666043110374"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.5929759229379579"></script>
 <?php
 /**
  * Чистый Шаблон для разработки

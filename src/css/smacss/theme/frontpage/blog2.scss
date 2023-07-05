@@ -166,7 +166,11 @@
         &__header {
             h3 {
                 text-align: left;
-                margin-bottom: 0;
+                margin-bottom: 1rem;
+                width: calc(100% / 3);
+                text-align: right;
+                padding-right: 1.5rem;
+                box-sizing: border-box;
             }
         }
     }

@@ -54,9 +54,9 @@
                         ?>
 
                         <a href="<?php the_permalink(); ?>">
-                            <img src="<?php if ( has_post_thumbnail() ) { $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail'); echo $large_image_url[0]; } // Проверяем наличие миниатюры, если есть показываем ?>g"
+                            <img src="<?php if ( has_post_thumbnail() ) { $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'); echo $large_image_url[0]; } // Проверяем наличие миниатюры, если есть показываем ?>"
                                 alt="<?php the_title(); ?>">
-                            <h3> <?php the_title(); ?></h3>
+                            <h3><?php the_title(); ?></h3>
                         </a>
 
                         <?php endwhile; // Конец цикла.
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="intro__portlink">
-                    Другие работы <a href="">в портфолио</a>
+                    Другие работы <a href="/portfolio/">в портфолио</a>
                 </div>
 
             </div>
@@ -75,7 +75,7 @@
 
     <section class="w blog">
         <div class="blog__header xs12 md4">
-            <h3>Свежее в <a href="">Блоге</a></h3>
+            <h3>Свежее в <a href="/c/blog/">Блоге</a></h3>
         </div>
         <div class="blog__line  xs12 md12">
             <div class="r">
@@ -118,8 +118,10 @@
             <h3>Обо мне</h3>
         </div>
         <div class="about__main  xs12 md6 bigtext">
-            <?php the_field('about');?>
-            
+            <div>
+                <?php the_field('about');?>
+                            </div>
+
         </div>
         <div class="xs12 md4">
             <h3>Разработка</h3>
