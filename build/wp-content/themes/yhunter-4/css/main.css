@@ -838,6 +838,7 @@ nav {
 a.mobile-menu {
   background: var(--light-color);
   color: var(--green);
+  --menu-icon: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgNDI0IDQyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDI0IDQyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiMwMTAwMDI7IiBkPSJNMzUsODlDMTUsODksMCw3NCwwLDU0czE1LTM2LDM1LTM2aDM1M2MyMCwwLDM2LDE2LDM2LDM2cy0xNiwzNS0zNiwzNUgzNXoiLz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojMDEwMDAyOyIgZD0iTTM4OCwxNzZjMjAsMCwzNiwxNiwzNiwzNnMtMTYsMzUtMzYsMzVIMzVjLTIwLDAtMzUtMTUtMzUtMzVzMTUtMzYsMzUtMzZIMzg4eiIvPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiMwMTAwMDI7IiBkPSJNMzg4LDMzNWMyMCwwLDM2LDE1LDM2LDM1cy0xNiwzNi0zNiwzNkgzNWMtMjAsMC0zNS0xNi0zNS0zNnMxNS0zNSwzNS0zNUgzODh6Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
 }
 a.mobile-menu::before {
   content: "";
@@ -849,7 +850,14 @@ a.mobile-menu::before {
   display: inline-block;
   position: relative;
   background-color: var(--green);
-  mask-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgNDI0IDQyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDI0IDQyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiMwMTAwMDI7IiBkPSJNMzUsODlDMTUsODksMCw3NCwwLDU0czE1LTM2LDM1LTM2aDM1M2MyMCwwLDM2LDE2LDM2LDM2cy0xNiwzNS0zNiwzNUgzNXoiLz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojMDEwMDAyOyIgZD0iTTM4OCwxNzZjMjAsMCwzNiwxNiwzNiwzNnMtMTYsMzUtMzYsMzVIMzVjLTIwLDAtMzUtMTUtMzUtMzVzMTUtMzYsMzUtMzZIMzg4eiIvPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiMwMTAwMDI7IiBkPSJNMzg4LDMzNWMyMCwwLDM2LDE1LDM2LDM1cy0xNiwzNi0zNiwzNkgzNWMtMjAsMC0zNS0xNi0zNS0zNnMxNS0zNSwzNS0zNUgzODh6Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
+  mask-image: var(--menu-icon);
+  mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: 50% 50%;
+  -webkit-mask-size: cover;
+  -webkit-mask-image: var(--menu-icon);
 }
 
 @media (min-width: 768px) {
@@ -2173,6 +2181,7 @@ body {
   font-size: 1rem;
   font-weight: normal;
   overflow: visible;
+  --chevron-icon: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJub25lIj4NCiAgPHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNC43MDcgMi4yOTNhMSAxIDAgMDAtMS40MTQgMS40MTRsNiA2YTEgMSAwIDAwMS40MTQgMGw2LTZhMSAxIDAgMDAtMS40MTQtMS40MTRMMTAgNy41ODYgNC43MDcgMi4yOTN6bTAgOGExIDEgMCAxMC0xLjQxNCAxLjQxNGw2IDZhMSAxIDAgMDAxLjQxNCAwbDYtNmExIDEgMCAwMC0xLjQxNC0xLjQxNEwxMCAxNS41ODZsLTUuMjkzLTUuMjkzeiIvPg0KPC9zdmc+);
 }
 .frontpage .intro__aboutme .intro__scrolldown::before {
   content: "";
@@ -2185,13 +2194,17 @@ body {
   align-items: center;
   justify-content: center;
   background-color: unset;
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJub25lIj4NCiAgPHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNC43MDcgMi4yOTNhMSAxIDAgMDAtMS40MTQgMS40MTRsNiA2YTEgMSAwIDAwMS40MTQgMGw2LTZhMSAxIDAgMDAtMS40MTQtMS40MTRMMTAgNy41ODYgNC43MDcgMi4yOTN6bTAgOGExIDEgMCAxMC0xLjQxNCAxLjQxNGw2IDZhMSAxIDAgMDAxLjQxNCAwbDYtNmExIDEgMCAwMC0xLjQxNC0xLjQxNEwxMCAxNS41ODZsLTUuMjkzLTUuMjkzeiIvPg0KPC9zdmc+);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 2rem 2rem;
-  filter: invert(80%) sepia(50%) saturate(6698%) hue-rotate(97deg) brightness(93%) contrast(80%);
+  mask-image: var(--chevron-icon);
+  mask-position: 50% 50%;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: var(--chevron-icon);
+  -webkit-mask-position: 50% 50%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  background-color: var(--green);
+  border: 1px #fff solid;
   transform: rotate(-90deg) scale(1);
-  opacity: 1;
 }
 .frontpage .intro__aboutme .intro__scrolldown:hover::before {
   transform: rotate(-360deg) scale(0.7);
@@ -2398,11 +2411,6 @@ body {
   background-size: 2rem 2rem;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  -ms-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
 }
 .frontpage .contacts__icon:hover::before {
   filter: invert(80%) sepia(50%) saturate(6698%) hue-rotate(97deg) brightness(93%) contrast(80%);
@@ -3833,8 +3841,16 @@ blockquote::before {
 }
 
 .wp-caption {
-  max-width: 100%;
+  max-width: var(--w-max) !important;
   border-radius: 0.5rem;
+}
+.wp-caption .wp-caption-text {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  font-style: italic;
 }
 
 .alignnone {
@@ -3861,6 +3877,7 @@ body ::selection {
   max-width: var(--w-max);
   margin: 0 auto;
   position: relative;
+  width: 100%;
 }
 
 .pt0 {

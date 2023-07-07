@@ -56,22 +56,18 @@
 
     <!-- build:html -->
 
-    <div class="navigation">
-        <div class="NavPrev">
-            <a href="https://www.yhunter.ru/portfolio/design/web/sajt-magazina-fotografij-rusklipart/"
-                rel="prev"></span>
-                Сайт магазина фотографий «Русклипарт»</a> </div>
-        <div class="NavNext">
-            <a href="https://www.yhunter.ru/portfolio/design/web/interaktivnyj-sajt-senatora/" rel="next">Интерактивный
-                сайт «Сенатора»</a>
-
-        </div>
-    </div>
-
 
     
 
 
+    <div class="navigation">
+        <div class="NavPrev">
+            <?php previous_post_link( '%link', '' . _x( '', 'Previous post link', 'twentyten' ) . ' %title' ); // Ссылка на предидущий пост?>
+        </div>
+        <div class="NavNext">
+            <?php next_post_link( '%link', '%title' . _x( '', 'Next post link', 'twentyten' ) . '' ); // Ссылка на следующий пост?>
+        </div>
+    </div>
 
 
 

@@ -91,6 +91,8 @@ body {
                 font-size: 1rem;
                 font-weight: normal;
                 overflow: visible;
+
+                --chevron-icon: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJub25lIj4NCiAgPHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNC43MDcgMi4yOTNhMSAxIDAgMDAtMS40MTQgMS40MTRsNiA2YTEgMSAwIDAwMS40MTQgMGw2LTZhMSAxIDAgMDAtMS40MTQtMS40MTRMMTAgNy41ODYgNC43MDcgMi4yOTN6bTAgOGExIDEgMCAxMC0xLjQxNCAxLjQxNGw2IDZhMSAxIDAgMDAxLjQxNCAwbDYtNmExIDEgMCAwMC0xLjQxNC0xLjQxNEwxMCAxNS41ODZsLTUuMjkzLTUuMjkzeiIvPg0KPC9zdmc+);
     
                 &::before {
                     content: "";
@@ -103,13 +105,22 @@ body {
                     align-items: center;
                     justify-content: center;
                     background-color: unset;
-                    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJub25lIj4NCiAgPHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNC43MDcgMi4yOTNhMSAxIDAgMDAtMS40MTQgMS40MTRsNiA2YTEgMSAwIDAwMS40MTQgMGw2LTZhMSAxIDAgMDAtMS40MTQtMS40MTRMMTAgNy41ODYgNC43MDcgMi4yOTN6bTAgOGExIDEgMCAxMC0xLjQxNCAxLjQxNGw2IDZhMSAxIDAgMDAxLjQxNCAwbDYtNmExIDEgMCAwMC0xLjQxNC0xLjQxNEwxMCAxNS41ODZsLTUuMjkzLTUuMjkzeiIvPg0KPC9zdmc+);
-                    background-position: 50% 50%;
-                    background-repeat: no-repeat;
-                    background-size: 2rem 2rem;
-                    filter: invert(80%) sepia(50%) saturate(6698%) hue-rotate(97deg) brightness(93%) contrast(80%);
+                    
+                    mask-image: var(--chevron-icon);
+                    mask-position: 50% 50%;
+                    mask-repeat: no-repeat;
+                    mask-size: contain;
+
+                    -webkit-mask-image: var(--chevron-icon);
+                    -webkit-mask-position: 50% 50%;
+                    -webkit-mask-repeat: no-repeat;
+                    -webkit-mask-size: contain;
+
+                    background-color: var(--green);
+                    border: 1px #fff solid;
+
+
                     transform: rotate(-90deg) scale(1);
-                    opacity: 1;
                 }
 
                 &:hover {
@@ -360,7 +371,7 @@ body {
                 background-size: 2rem 2rem;
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
-                @include transit();
+                //@include transit();
             }
 
             &:hover {

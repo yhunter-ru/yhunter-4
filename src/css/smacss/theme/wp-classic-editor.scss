@@ -67,9 +67,20 @@ blockquote {
 .wp-caption {
 
     
-    max-width: 100%;
+    max-width: var(--w-max) !important;
     border-radius: .5rem;
+
+    .wp-caption-text {
+        max-width: 920px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: .5rem 1rem;
+        box-sizing: border-box;
+        font-style: italic;
+    }
 }
+
+
 
 .alignnone {
     display: inline-block;
