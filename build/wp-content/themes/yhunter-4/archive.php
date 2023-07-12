@@ -49,11 +49,11 @@
 
 </section>
 
+<div class="w">
+	<div class="pagination">
+		
 
-<div class="pagination">
-	
-
-	<?php // Пагинация
+		<?php // Пагинация
 	global $wp_query;
 	$big = 999999999;
 	echo paginate_links( array(
@@ -68,9 +68,9 @@
 	?>
 
 
+	</div>
+
 </div>
-
-
 
 
 

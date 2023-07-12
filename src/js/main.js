@@ -50,19 +50,14 @@ $(window).on('load', function(){
                 arrows: true
               }
             }
-          },
           ]
       });
 
       var featuredImg = $('#featured-image');
       
       if (featuredImg.length) { 
-        console.log('header image exist');
         var featuredImgWidth = featuredImg[0].naturalWidth;
         var featuredImgHeight = featuredImg[0].naturalHeight;  
-
-        console.log(featuredImgWidth);
-        console.log(featuredImgHeight);
         
         if (featuredImgWidth >= 1024) {
           $(".bigheader").removeClass("blur");
@@ -72,7 +67,8 @@ $(window).on('load', function(){
           $(".bigheader").removeClass("thin");
         }
       }
-      
+
+      $("img.aligncenter").parent().addClass("link-block");      
 
 });
 

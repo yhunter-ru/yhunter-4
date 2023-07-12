@@ -13,7 +13,7 @@
     <div class="bigheader__image">
         <img id="featured-image"
             src="<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); echo $large_image_url[0];?>"
-            alt="<?php the_title(); ?>">
+            alt="<?php the_title(); ?>" skip_lazy>
     </div>
     <div class="bigheader__field">
         <h1><?php the_title(); ?></h1>

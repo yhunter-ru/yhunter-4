@@ -71,10 +71,10 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.43091287200478257">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.03388173386536186">
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.43091287200478257"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.03388173386536186"></script>
 <?php
 /**
  * Чистый Шаблон для разработки
@@ -86,6 +86,43 @@
 
 	wp_footer(); // Необходимо для нормальной работы плагинов
 ?>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+	(function (d, w, c) {
+		(w[c] = w[c] || []).push(function () {
+			try {
+				w.yaCounter18194194 = new Ya.Metrika({
+					id: 18194194,
+					clickmap: true,
+					trackLinks: true,
+					accurateTrackBounce: true,
+					trackHash: true
+				});
+			} catch (e) {}
+		});
+		var n = d.getElementsByTagName("script")[0],
+			x = "https://mc.yandex.ru/metrika/watch.js",
+			s = d.createElement("script"),
+			f = function () {
+				n.parentNode.insertBefore(s, n);
+			};
+		for (var i = 0; i < document.scripts.length; i++) {
+			if (document.scripts[i].src === x) {
+				return;
+			}
+		}
+		s.type = "text/javascript";
+		s.async = true;
+		s.src = x;
+		if (w.opera == "[object Opera]") {
+			d.addEventListener("DOMContentLoaded", f, false);
+		} else {
+			f();
+		}
+	})(document, window, "yandex_metrika_callbacks");
+</script> <noscript>
+	<div><img src="https://mc.yandex.ru/watch/18194194" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript> <!-- /Yandex.Metrika counter -->
 
 
 </body>

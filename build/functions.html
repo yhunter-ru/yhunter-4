@@ -115,6 +115,10 @@ function my_post_gallery($output, $attr) {
     return $output;
 }
 
+//Режем excerpt
+add_filter( 'excerpt_length', function(){
+	return 25;
+} );
 
 
 add_action('admin_init', 'gpm_add_meta_boxes', 2);

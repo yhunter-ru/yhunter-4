@@ -86,6 +86,15 @@ blockquote {
     display: inline-block;
 }
 
+a.link-block {
+    display: block;
+
+    img.aligncenter {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 @media (min-width: 768px) {
     .wp-caption {
         margin: 0 50%;

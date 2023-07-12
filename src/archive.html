@@ -119,27 +119,27 @@
 
 </section>
 
-
-<div class="pagination">
-	<!-- build:html -->
-
-
-
-	<a class="prev page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">Вперед в будущее</a>
-	<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/1/">1</a>
-	<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">2</a>
-	<span aria-current="page" class="page-numbers current">3</span>
-	<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">4</a>
-	<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/5/">5</a>
-	<span class="page-numbers dots">&hellip;</span>
-	<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/14/">14</a>
-	<a class="next page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">Назад в прошлое</a>
+<div class="w">
+	<div class="pagination">
+		<!-- build:html -->
 
 
 
-	<!-- endbuild -->
-	<!-- build:theme -->
-	<?php // Пагинация
+		<a class="prev page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">Вперед в будущее</a>
+		<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/1/">1</a>
+		<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/2/">2</a>
+		<span aria-current="page" class="page-numbers current">3</span>
+		<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">4</a>
+		<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/5/">5</a>
+		<span class="page-numbers dots">&hellip;</span>
+		<a class="page-numbers" href="https://www.yhunter.ru/portfolio/design/page/14/">14</a>
+		<a class="next page-numbers" href="https://www.yhunter.ru/portfolio/design/page/4/">Назад в прошлое</a>
+
+
+
+		<!-- endbuild -->
+		<!-- build:theme -->
+		<?php // Пагинация
 	global $wp_query;
 	$big = 999999999;
 	echo paginate_links( array(
@@ -152,11 +152,11 @@
 		'total' => $wp_query->max_num_pages
 	) );
 	?>
-	<!-- endbuild -->
+		<!-- endbuild -->
+
+	</div>
 
 </div>
-
-
 
 
 
