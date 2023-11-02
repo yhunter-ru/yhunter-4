@@ -34,7 +34,7 @@
 	</article>
 
 	<?php endwhile;
-	else: echo '<h2>Извините, ничего не найдено...</h2>'; endif; я ?>
+	else: echo '<h2>Извините, ничего не найдено...</h2>'; endif; ?>
 
 
 	

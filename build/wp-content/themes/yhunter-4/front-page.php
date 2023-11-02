@@ -94,6 +94,9 @@
                             src="<?php if ( has_post_thumbnail() ) { $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large'); echo $large_image_url[0]; } // Проверяем наличие миниатюры, если есть показываем ?>"
                             alt="<?php the_title(); ?>">
 
+                        <!--<?php echo wp_get_attachment_image( get_post_thumbnail_id(), array('250', '350'), "", array( "class" => "item__pic" ) );  ?>-->
+
+
                         <h2 class="item__header header"><?php the_title(); ?></h2>
                         <div class="item__date date">
                             <?php the_time('j F, Y'); // Дата создания поста ?>
