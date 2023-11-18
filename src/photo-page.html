@@ -1,0 +1,60 @@
+<!-- build:theme --><?php /* Template Name: Фото */ ?><?php get_header();?>
+<!-- endbuild -->
+<!-- build:html -->@@include('./header.html')
+<!-- endbuild -->
+
+<!-- build:html -->
+
+<article class="page-content">
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h1>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam delectus facilis mollitia omnis nesciunt amet,
+    nisi aut, praesentium possimus earum, assumenda nulla. Officiis corrupti dolor dignissimos mollitia ipsa
+    consectetur
+    quae?
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+    <div class="page-content__full">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum blanditiis sed ducimus recusandae odit, iure, ab
+        impedit exercitationem amet laborum nesciunt ut excepturi distinctio eveniet ratione ipsum cumque, sit delectus?
+    </div>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil optio, recusandae laboriosam quibusdam libero id,
+        minus eius perferendis at numquam iste, consectetur fuga facilis! Maiores, quisquam facilis. Illum, nulla
+        perspiciatis?</p>
+
+</article>
+
+<!-- endbuild -->
+
+<!-- build:theme -->
+<article class="page-content">
+    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); // Начало цикла ?>
+    <h1><?php the_title(); // Заголовок ?></h1>
+    <?php the_content(); // Содержимое страницы ?>
+    <?php endwhile; // Конец цикла ?>
+</article>
+<!-- endbuild -->
+
+
+<!-- build:theme -->
+<?php get_footer(); // Подключаем футер ?>
+<!-- endbuild -->
+
+<!-- build:html -->
+@@include('./footer.html')
+<!-- endbuild -->

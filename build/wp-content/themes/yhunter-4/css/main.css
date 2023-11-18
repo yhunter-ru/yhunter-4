@@ -3118,7 +3118,7 @@ main {
 @media (min-width: 768px) {
   .page-content {
     width: 65%;
-    max-width: 920px;
+    max-width: var(--text-max);
   }
   .page-content__full {
     margin: 0 50%;
@@ -3805,6 +3805,35 @@ main .add-spacer {
   .works .work {
     width: calc(20% - 1rem);
     min-width: unset;
+  }
+}
+.page-template-photo-page main {
+  background-color: var(--dark-color);
+  color: var(--white);
+}
+figure.size-full {
+  max-width: var(--w-max) !important;
+  width: calc(100vw - 3rem);
+  position: relative;
+}
+figure.size-full figcaption {
+  font-style: italic;
+  color: var(--white-trans);
+}
+
+@media (min-width: 768px) {
+  figure.size-full {
+    margin: 0 50% 2rem 50%;
+    transform: translateX(-50%);
+    max-width: 100vw;
+    border-radius: 0.5rem;
+  }
+  figure.size-full figcaption {
+    width: var(--text-perc);
+    max-width: var(--text-max);
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
   }
 }
 .wp-gallery {

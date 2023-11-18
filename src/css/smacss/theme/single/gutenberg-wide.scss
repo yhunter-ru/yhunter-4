@@ -1,0 +1,28 @@
+figure.size-full {
+    max-width: var(--w-max) !important;
+    width: calc(100vw - 3rem);
+    position: relative;
+
+    figcaption {
+        font-style: italic;
+        color: var(--white-trans);
+    }
+}
+
+
+@media (min-width: 768px) {
+    figure.size-full {
+        margin: 0 50% 2rem 50%;
+        transform: translateX(-50%);
+        max-width: 100vw;
+        border-radius: .5rem;
+
+        figcaption {
+            width: var(--text-perc);
+            max-width: var(--text-max);
+            margin: 0 auto;
+            padding: 1rem 1rem;
+            box-sizing: border-box;
+        }
+    }
+}

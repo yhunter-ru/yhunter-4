@@ -74,7 +74,7 @@ $content-width: 65%;
     .page-content {
 
         width: $content-width;
-        max-width: 920px;
+        max-width: var(--text-max);
 
         &__full {
             margin: 0 50%;
