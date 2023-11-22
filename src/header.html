@@ -8,29 +8,30 @@
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 	<!-- build:theme -->
-	<!-- RSS, стили -->
 	<link rel="alternate" type="application/rdf+xml" title="RDF mapping" href="<?php bloginfo('rdf_url'); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="<?php bloginfo('rss_url'); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="Comments RSS"
 		href="<?php bloginfo('comments_rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	<!--[if lt IE 9]>
- <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
- <![endif]-->
 	<!-- endbuild -->
-
+	<!-- build:theme-->
 	<style>
-		<!-- build:theme 
-		-->
 		<?php include (TEMPLATEPATH . '/_inline.php');
 		?>
+		*
+		{}
+	</style>
+	<!-- endbuild -->
+	<!-- build:html -->
+	<style>
+		<?php include (TEMPLATEPATH . '/_inline.php');
+		?>
+		*
+		{}
+	</style>
+
 	<!-- endbuild -->
 
-	<!-- build:html -->
-	@@include('./_inline.html')
-	<!-- endbuild -->
-	* {}
-	</style>
 
 
 	<title>
@@ -56,9 +57,8 @@
 
 </head>
 
-<body <!-- build:theme --><?php body_class(); ?>
+<body <!-- build:theme --> <?php body_class(); ?>
 	<!-- endbuild --> >
-	<!-- build:theme -->
 	<!-- build:theme -->
 	<?php include (TEMPLATEPATH . '/symbol.php'); ?>
 	<!-- endbuild -->
