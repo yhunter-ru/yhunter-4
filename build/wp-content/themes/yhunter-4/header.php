@@ -6,6 +6,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<?php global $post; if (get_field('description', $post->ID)): ?>
+	<meta name="description" content="<?php echo get_field('description', $post->ID); ?>" />
+	<?php else : ?>
+	<meta name="description"
+		content="<?php wp_title( '—', true, 'right' ); echo ' '.get_bloginfo( 'description', 'display' ); ?>" />
+	<?php endif; ?>
 
 	<link rel="alternate" type="application/rdf+xml" title="RDF mapping" href="<?php bloginfo('rdf_url'); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="<?php bloginfo('rss_url'); ?>" />
