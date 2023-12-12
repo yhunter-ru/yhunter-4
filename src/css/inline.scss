@@ -6,6 +6,7 @@
 /* Inline */
 @import "smacss/base/normalize";
 @import "smacss/base/base-inline";
+@import "smacss/base/base";
 
 
 /* Layout */
@@ -22,3 +23,29 @@
 @import "smacss/states/states-inline";
 
 /* Theme Inline */
+
+
+.intro__portfolio {
+    overflow: hidden;
+    max-height: 500px;
+}
+
+.port__slider {
+    width: 9999px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    a {
+        opacity: 0;
+        transition: all 1s ease-out;
+    }
+}
+
+.slick-initialized {
+    width: unset;
+
+    a {
+        opacity: 1;
+    }
+}
