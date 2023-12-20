@@ -33,11 +33,6 @@
 /* Rem Crossbrowser end */
 /* Radius mixin */
 /* base */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
 /* layout */
 /* Grid */
 .row {
@@ -3625,17 +3620,26 @@ figure.size-full {
   max-width: var(--w-max) !important;
   width: calc(100vw - 3rem);
   position: relative;
+  text-align: center;
 }
 figure.size-full figcaption {
   font-style: italic;
   color: var(--white-trans);
 }
 
+.wp-block-gallery {
+  margin: 1rem 0;
+  --gallery-block--gutter-size: 1rem;
+}
+
 @media (min-width: 768px) {
-  figure.size-full {
-    margin: 0 50% 2rem 50%;
+  article > figure.size-full, article > .wp-block-image figure.size-full {
+    margin: 0 50% 2rem 50% !important;
     transform: translateX(-50%);
     max-width: 100vw;
+  }
+
+  figure.size-full {
     border-radius: 0.5rem;
   }
   figure.size-full figcaption {

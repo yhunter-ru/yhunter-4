@@ -1,7 +1,6 @@
 @import './menu.js';
 @import '../../node_modules/slick-carousel/slick/slick.js';
 @import '../../node_modules/slick-lightbox/dist/slick-lightbox.js';
-@import '../../node_modules/rellax/rellax.js';
 @import '../../node_modules/jquery-viewport-checker/src/jquery.viewportchecker.js';
 @import './skills.js';
 @import './accordeon.js';
