@@ -186,11 +186,7 @@
                     Figma
                     <div class="skills__points skill" data-fill="50%"></div>
                 </div>
-                <div class="skills__item">
-                    <img src="/wp-content/themes/yhunter-4/img/xd.svg" alt="">
-                    Adobe XD
-                    <div class="skills__points skill" data-fill="50%"></div>
-                </div>
+
                 <div class="skills__item">
                     <img src="/wp-content/themes/yhunter-4/img/psd.svg" alt="">
                     Photoshop
@@ -200,6 +196,11 @@
                     <img src="/wp-content/themes/yhunter-4/img/il.svg" alt="">
                     Illustrator
                     <div class="skills__points skill" data-fill="60%"></div>
+                </div>
+                <div class="skills__item">
+                    <img src="/wp-content/themes/yhunter-4/img/ai.svg" alt="">
+                    Нейросети
+                    <div class="skills__points skill" data-fill="50%"></div>
                 </div>
                 <div class="skills__item">
                     <img src="/wp-content/themes/yhunter-4/img/ani.svg" alt="">

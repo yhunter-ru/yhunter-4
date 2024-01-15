@@ -71,10 +71,10 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.08831899209556782">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/main.min.css?rev=0.8440807707703559">
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.08831899209556782"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?rev=0.8440807707703559"></script>
 <?php
 /**
  * Чистый Шаблон для разработки
