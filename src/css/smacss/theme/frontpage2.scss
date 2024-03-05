@@ -102,20 +102,17 @@ body {
                     position: relative;
                     left: 0;
                     display: flex;
-                    align-items: center;
+                    align-items: flex-end;
                     justify-content: center;
-                    background-color: unset;
-                    
+                    background-color: unset;                    
                     mask-image: var(--chevron-icon);
                     mask-position: 50% 50%;
                     mask-repeat: no-repeat;
                     mask-size: contain;
-
                     -webkit-mask-image: var(--chevron-icon);
                     -webkit-mask-position: 50% 50%;
                     -webkit-mask-repeat: no-repeat;
                     -webkit-mask-size: contain;
-
                     background-color: var(--green);
                     border: 1px #fff solid;
 
@@ -474,7 +471,7 @@ body {
 
                 .intro__scrolldown {
                     display: inline-block;
-                    bottom: .5em;
+                    bottom: -.25em;
                 }
             }
     

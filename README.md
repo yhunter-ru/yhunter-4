@@ -1,4 +1,4 @@
-# Owl
+# Owl starter theme by Yuri Baranov (yhunter.ru)
 
 1) npm install
 
